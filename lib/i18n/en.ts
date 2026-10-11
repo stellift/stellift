@@ -63,6 +63,7 @@ export const en: Dictionary = {
         "dashboards for the producer.",
       stack: "React, Vite, React Router, React Aria, Supabase, Zod",
       href: "https://app.lumnihub.com",
+      shot: "/shots/lumnihub.webp",
     },
     {
       name: "BloxHarbor",
@@ -80,6 +81,16 @@ export const en: Dictionary = {
         "the card machine.",
       stack: "C++20, Qt6, SQLite, Go, Spring Boot, React Native, Next.js",
       href: "https://stellift.dev/pivenda",
+      shot: "/shots/pdv.webp",
+    },
+    {
+      name: "orce.me",
+      text:
+        "Quoting system for small businesses. Gathers products, services and " +
+        "client details into a branded PDF proposal, without rebuilding a " +
+        "spreadsheet for every request.",
+      stack: "Nuxt, Vue, TypeScript",
+      shot: "/shots/orce.webp",
     },
   ],
 
@@ -140,8 +151,8 @@ export const en: Dictionary = {
       title: "Projects by stellift",
       cta: "View project",
       footnote:
-        "LumniHub, BloxHarbor and PDV are stellift projects. Names and brands " +
-        "mentioned are the property of their respective owners.",
+        "LumniHub, BloxHarbor, PDV and orce.me are stellift projects. Names and " +
+        "brands mentioned are the property of their respective owners.",
     },
     about: { title: "About stellift" },
     contact: { title: "Let's get the idea off the ground" },

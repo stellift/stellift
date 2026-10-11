@@ -31,6 +31,7 @@ export type Dictionary = {
     text: string;
     stack?: string;
     href?: string;
+    shot?: string;
   }>;
   about: { text: string };
   contact: {

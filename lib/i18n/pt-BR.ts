@@ -63,6 +63,7 @@ export const ptBR: Dictionary = {
         "para o produtor.",
       stack: "React, Vite, React Router, React Aria, Supabase, Zod",
       href: "https://app.lumnihub.com",
+      shot: "/shots/lumnihub.webp",
     },
     {
       name: "BloxHarbor",
@@ -79,6 +80,16 @@ export const ptBR: Dictionary = {
         "cobrança de Pix na tela ou na maquininha.",
       stack: "C++20, Qt6, SQLite, Go, Spring Boot, React Native, Next.js",
       href: "https://stellift.dev/pivenda",
+      shot: "/shots/pdv.webp",
+    },
+    {
+      name: "orce.me",
+      text:
+        "Sistema de orçamentos para pequenos negócios. Reúne produtos, " +
+        "serviços e dados do cliente em uma proposta em PDF com a marca de " +
+        "quem envia, sem refazer planilha a cada pedido.",
+      stack: "Nuxt, Vue, TypeScript",
+      shot: "/shots/orce.webp",
     },
   ],
 
@@ -138,8 +149,8 @@ export const ptBR: Dictionary = {
       title: "Projetos da stellift",
       cta: "Ver projeto",
       footnote:
-        "LumniHub, BloxHarbor e o PDV são projetos da stellift. Nomes e marcas " +
-        "citados são de seus respectivos proprietários.",
+        "LumniHub, BloxHarbor, o PDV e o orce.me são projetos da stellift. Nomes " +
+        "e marcas citados são de seus respectivos proprietários.",
     },
     about: { title: "A stellift" },
     contact: { title: "Vamos tirar a ideia do solo" },
