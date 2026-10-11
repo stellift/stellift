@@ -7,7 +7,7 @@ export default function Clients({ dict }: { dict: Dictionary }) {
   return (
     <section id="clients" aria-labelledby="clients-title" className="border-b-2 border-rule">
       <div className="mx-auto max-w-[96rem] px-5 pt-14 sm:px-8 sm:pt-20">
-        <SectionHeading id="clients-title" title={dict.ui.clients.title} />
+        <SectionHeading id="clients-title" code="02" title={dict.ui.clients.title} />
       </div>
 
       {/* Células de largura fixa em malha: a célula encolhe, o campo não reflui. */}

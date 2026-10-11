@@ -6,7 +6,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
   return (
     <section id="contact" aria-labelledby="contact-title">
       <div className="mx-auto max-w-[96rem] px-5 pt-14 sm:px-8 sm:pt-20">
-        <SectionHeading id="contact-title" title={dict.ui.contact.title} />
+        <SectionHeading id="contact-title" code="05" title={dict.ui.contact.title} />
       </div>
 
       <div className="mx-auto field max-w-[96rem] gap-x-4">
@@ -30,7 +30,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
                     {...(channel.kind !== "email"
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
-                    className="break-words text-[15px] font-bold text-ink underline decoration-red decoration-2 underline-offset-4 transition-colors duration-100 hover:text-red"
+                    className="break-words text-[15px] font-bold text-ink underline decoration-blue decoration-2 underline-offset-4 transition-colors duration-100 hover:text-blue"
                   >
                     {channel.value}
                   </a>

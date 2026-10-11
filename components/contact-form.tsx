@@ -79,7 +79,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
     return (
       <div className="h-full border-rule bg-wash p-5 sm:p-8 lg:border-l-2">
         <p>
-          <span className="inline-flex bg-red px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.14em] text-white">
+          <span className="inline-flex bg-navy px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.14em] text-white">
             {t.readyBadge}
           </span>
         </p>
@@ -109,7 +109,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
               setComposed(null);
               setErrors({});
             }}
-            className="text-[14px] font-bold uppercase tracking-[0.06em] text-ink underline decoration-red decoration-2 underline-offset-4 hover:text-red"
+            className="text-[14px] font-bold uppercase tracking-[0.06em] text-ink underline decoration-blue decoration-2 underline-offset-4 hover:text-blue"
           >
             {t.edit}
           </button>
@@ -165,7 +165,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
 
       <button
         type="submit"
-        className="mt-7 inline-flex h-14 w-full items-center justify-between gap-6 bg-ink px-6 text-[14px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-red"
+        className="mt-7 inline-flex h-14 w-full items-center justify-between gap-6 bg-ink px-6 text-[14px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-blue"
       >
         {t.submit}
         <ChevronIcon className="h-3.5 w-3.5" />

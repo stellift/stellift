@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Poesia concreta: fundo branco, tinta preta, e duas tintas saturadas que
-     carregam regiões inteiras em vez de pontuar o neutro. */
+  /* Plano Piloto: branco de papel vegetal, tinta navy, setores preenchidos.
+     Sem raio, sem sombra, sem gradiente: uma planta não tem profundidade. */
   --color-paper: #ffffff;
-  --color-wash: #f0efec;
+  --color-wash: #eef1f5;
 
-  --color-ink: #101010;
-  --color-ink-2: #4a4a4a;
-  --color-ink-3: #6e6e6e;
+  /* Tinta de planta: uma família navy em três valores, mais um vermelho que
+     só assina. Todos medidos contra branco acima de 4.5:1. */
+  --color-ink: #0b162b;
+  --color-ink-2: #3d4a5c;
+  --color-ink-3: #5a6878;
 
-  --color-red: #d62d14;
-  --color-blue: #1b32c8;
-  --color-rule: #101010;
+  --color-navy: #162e51;
+  --color-blue: #005ea2;
+  --color-red: #c8352f;
+  --color-rule: #0b162b;
 
   /* Campo chapado, sem raio e sem sombra: o mundo não tem profundidade. */
   --radius-card: 0px;
@@ -44,10 +47,25 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
+/* A faixa de legenda que abre toda planta: escala, local, setor. */
+@utility legend-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 2rem;
+  border-bottom: 2px solid var(--color-rule);
+  padding: 0.625rem 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+}
+
 @layer base {
   :root {
     color-scheme: light;
-    caret-color: var(--color-red);
+    caret-color: var(--color-navy);
   }
 
   html {
@@ -69,7 +87,7 @@
   }
 
   ::selection {
-    background: var(--color-red);
+    background: var(--color-navy);
     color: #ffffff;
   }
 

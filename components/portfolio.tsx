@@ -5,7 +5,7 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
   return (
     <section id="portfolio" aria-labelledby="portfolio-title" className="border-b-2 border-rule">
       <div className="mx-auto max-w-[96rem] px-5 pt-14 sm:px-8 sm:pt-20">
-        <SectionHeading id="portfolio-title" title={dict.ui.portfolio.title} />
+        <SectionHeading id="portfolio-title" code="03" title={dict.ui.portfolio.title} />
       </div>
 
       <ul>
@@ -32,7 +32,7 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[13px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-blue"
+                    className="mt-5 inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[13px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-navy"
                   >
                     {dict.ui.portfolio.cta}
                   </a>

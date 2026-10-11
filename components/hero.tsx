@@ -1,50 +1,82 @@
 import type { Dictionary } from "@/lib/i18n/types";
 
+/** Os setores da planta, na ordem em que a página os desenha. */
+export const sectors = ["01", "02", "03", "04", "05"] as const;
+
 export default function Hero({ dict }: { dict: Dictionary }) {
   return (
     <section id="top" className="border-b-2 border-rule">
       <div className="mx-auto max-w-[96rem] px-5 sm:px-8">
-        <div className="field gap-x-4 gap-y-6 py-10 sm:py-14">
-          {/* IDEIA: a primeira palavra ocupa o campo antes de qualquer frase. */}
-          <h1 className="col-span-12 lg:col-span-7">
-            <span className="sr-only">
-              {dict.ui.hero.title} {dict.ui.hero.titleAccent}
-            </span>
-            <span
-              aria-hidden
-              className="block font-sans text-[22vw] font-extrabold uppercase leading-[0.78] tracking-[-0.045em] text-ink sm:text-[16vw] lg:text-[11.5vw]"
-            >
-              {dict.ui.hero.fieldStart}
-            </span>
-          </h1>
+        <p className="legend-strip">
+          <span>escala 1:1</span>
+          <span>{dict.site.name}</span>
+          <span className="ml-auto">{dict.site.tagline}</span>
+        </p>
 
-          {/* A oferta dita uma vez, dentro de um campo vermelho chapado. */}
-          <p className="col-span-12 self-start bg-red px-6 py-7 text-[1.0625rem] font-medium leading-[1.4] text-white sm:text-[1.25rem] lg:col-span-5 lg:col-start-8">
-            {dict.site.description}
-          </p>
+        <div className="field">
+          {/* O eixo: o assunto da planta ocupa a esquerda, rente à margem. */}
+          <div className="col-span-12 py-10 pr-0 sm:py-14 lg:col-span-8 lg:border-r-2 lg:border-rule lg:pr-10">
+            <h1 className="max-w-[16ch] font-sans text-[2.75rem] font-extrabold uppercase leading-[0.9] tracking-[-0.035em] text-ink sm:text-[4.5rem] lg:text-[6rem]">
+              {dict.ui.hero.title}{" "}
+              <span className="text-blue">{dict.ui.hero.titleAccent}</span>
+            </h1>
 
-          <p
-            aria-hidden
-            className="col-span-12 self-end text-right font-sans text-[22vw] font-extrabold uppercase leading-[0.78] tracking-[-0.045em] text-blue sm:text-[16vw] lg:col-span-9 lg:col-start-4 lg:text-[11.5vw]"
-          >
-            {dict.ui.hero.fieldEnd}
-          </p>
+            <p className="mt-8 max-w-[52ch] text-[1.0625rem] leading-[1.6] text-ink-2 sm:text-[1.1875rem]">
+              {dict.site.description}
+            </p>
 
-          {/* A ação é um bloco sólido, não uma pílula. */}
-          <div className="col-span-12 flex flex-col sm:flex-row lg:col-span-7">
+            <div className="mt-10 flex flex-col sm:flex-row">
+              <a
+                href="#contact"
+                className="flex min-h-14 items-center justify-between gap-8 bg-navy px-6 text-[14px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-100 hover:bg-ink"
+              >
+                {dict.ui.hero.primary}
+                <Arrow />
+              </a>
+              <a
+                href="#services"
+                className="flex min-h-14 items-center justify-between gap-8 border-2 border-rule px-6 text-[14px] font-bold uppercase tracking-[0.08em] text-ink transition-colors duration-100 hover:bg-ink hover:text-white sm:border-l-0"
+              >
+                {dict.ui.hero.secondary}
+                <Arrow />
+              </a>
+            </div>
+          </div>
+
+          {/* O quadro de legenda: toda planta tem um, e ele endereça os setores. */}
+          <div className="col-span-12 flex flex-col border-t-2 border-rule lg:col-span-4 lg:border-t-0">
+            <p className="border-b-2 border-rule py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-ink-3 lg:pl-10">
+              legenda
+            </p>
+            <ul>
+              {dict.nav.map((item, i) => (
+                <li key={item.href} className="border-b-2 border-rule">
+                  <a
+                    href={item.href}
+                    className="group flex items-baseline gap-4 py-3.5 transition-colors duration-100 hover:bg-wash lg:pl-10"
+                  >
+                    <span className="text-[11px] font-bold tracking-[0.14em] text-blue">
+                      {sectors[i]}
+                    </span>
+                    <span className="text-[15px] font-bold uppercase tracking-[0.04em] text-ink">
+                      {item.label}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* O rodapé do quadro de legenda: para onde a planta aponta. */}
             <a
-              href="#contact"
-              className="flex min-h-14 flex-1 items-center justify-between gap-6 bg-blue px-6 text-[15px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-ink"
+              href={`mailto:${dict.site.email}`}
+              className="mt-auto flex items-baseline gap-4 border-t-2 border-rule py-4 transition-colors duration-100 hover:bg-wash lg:pl-10"
             >
-              {dict.ui.hero.primary}
-              <Arrow />
-            </a>
-            <a
-              href="#services"
-              className="flex min-h-14 flex-1 items-center justify-between gap-6 border-2 border-rule px-6 text-[15px] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-100 hover:bg-ink hover:text-white sm:border-l-0"
-            >
-              {dict.ui.hero.secondary}
-              <Arrow />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-ink-3">
+                contato
+              </span>
+              <span className="break-all text-[14px] font-bold text-blue underline decoration-2 underline-offset-4">
+                {dict.site.email}
+              </span>
             </a>
           </div>
         </div>

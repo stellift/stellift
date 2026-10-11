@@ -1,23 +1,27 @@
 import type { ReactNode } from "react";
 
 /**
- * O título de seção é um campo: a palavra ocupa a largura, não paira sobre
- * ela. A marca é um bloco vermelho, não um número — numerar seções é um
- * padrão da categoria que a sequência aqui não justifica.
+ * Cabeçalho de setor. O código não é numeração decorativa de seção: numa
+ * planta o código é como a região é endereçada, e é por ele que a legenda do
+ * hero aponta para cá.
  */
 export default function SectionHeading({
   id,
   title,
+  code,
 }: {
   id?: string;
   title: ReactNode;
+  code: string;
 }) {
   return (
-    <div className="flex items-start gap-4 border-b-2 border-rule pb-4 sm:gap-6">
-      <span aria-hidden className="mt-3 h-4 w-4 shrink-0 bg-red sm:mt-5 sm:h-6 sm:w-6" />
+    <div className="border-b-2 border-rule pb-4">
+      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue">
+        setor {code}
+      </p>
       <h2
         id={id}
-        className="font-sans text-[2.5rem] font-extrabold uppercase leading-[0.9] tracking-[-0.035em] text-ink sm:text-[4rem] lg:text-[5.5rem]"
+        className="mt-2 font-sans text-[2.25rem] font-extrabold uppercase leading-[0.92] tracking-[-0.03em] text-ink sm:text-[3.25rem] lg:text-[4.25rem]"
       >
         {title}
       </h2>

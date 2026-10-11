@@ -48,7 +48,7 @@ export default function Footer({
             aria-label={dict.ui.footer.ariaLabel}
             className="col-span-6 lg:col-span-3 lg:col-start-7"
           >
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.14em] text-red">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/55">
               {dict.ui.footer.navigate}
             </h2>
             <ul className="mt-5">
@@ -56,7 +56,7 @@ export default function Footer({
                 <li key={item.href} className="border-b border-white/15">
                   <a
                     href={item.href}
-                    className="block py-2.5 text-[14px] font-bold uppercase tracking-[0.04em] text-white/85 transition-colors duration-100 hover:text-red"
+                    className="block py-2.5 text-[14px] font-bold uppercase tracking-[0.04em] text-white/85 transition-colors duration-100 hover:text-white"
                   >
                     {item.label}
                   </a>
@@ -66,7 +66,7 @@ export default function Footer({
           </nav>
 
           <div className="col-span-6 lg:col-span-3">
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.14em] text-red">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/55">
               {dict.ui.footer.contact}
             </h2>
             <ul className="mt-5">
@@ -79,7 +79,7 @@ export default function Footer({
                   <a
                     href={item.href}
                     {...(item.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="block break-words py-2.5 text-[14px] font-bold uppercase tracking-[0.04em] text-white/85 transition-colors duration-100 hover:text-red"
+                    className="block break-words py-2.5 text-[14px] font-bold uppercase tracking-[0.04em] text-white/85 transition-colors duration-100 hover:text-white"
                   >
                     {item.label}
                   </a>

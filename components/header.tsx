@@ -107,7 +107,7 @@ export default function Header({
 
           <a
             href="#contact"
-            className="hidden whitespace-nowrap bg-red px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-ink lg:inline-flex"
+            className="hidden whitespace-nowrap bg-navy px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-100 hover:bg-ink lg:inline-flex"
           >
             {dict.ui.header.cta}
           </a>
@@ -187,7 +187,7 @@ export default function Header({
                     >
                       {localeNames[code]}
                       {code === lang ? (
-                        <span aria-hidden className="h-2.5 w-2.5 shrink-0 bg-red" />
+                        <span aria-hidden className="h-2.5 w-2.5 shrink-0 bg-blue" />
                       ) : null}
                     </a>
                   </li>
@@ -198,7 +198,7 @@ export default function Header({
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center bg-red px-5 py-4 text-[14px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-ink"
+              className="flex items-center justify-center bg-navy px-5 py-4 text-[14px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-100 hover:bg-ink"
             >
               {dict.ui.header.cta}
             </a>

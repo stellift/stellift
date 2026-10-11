@@ -66,7 +66,7 @@ export default function LanguageSwitcher({
               >
                 {localeNames[code]}
                 {code === lang ? (
-                  <span aria-hidden className="h-2 w-2 shrink-0 bg-red" />
+                  <span aria-hidden className="h-2 w-2 shrink-0 bg-blue" />
                 ) : null}
               </a>
             </li>
