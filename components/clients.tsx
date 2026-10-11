@@ -17,15 +17,13 @@ export default function Clients({ dict }: { dict: Dictionary }) {
             <li key={client.name} className="cell flex flex-col gap-5 p-6">
               <div className="flex h-9 items-center">
                 <ClientLogo client={client} />
+                <span className="sr-only">{client.name}</span>
               </div>
-              <div>
-                <h3 className="text-sm font-semibold text-ink">{client.name}</h3>
-                {client.note ? (
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
-                    {client.note}
-                  </p>
-                ) : null}
-              </div>
+              {client.note ? (
+                <p className="text-sm leading-relaxed text-ink-muted">
+                  {client.note}
+                </p>
+              ) : null}
             </li>
           ))}
         </ul>
@@ -48,13 +46,22 @@ function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
       return <WooviLogo className="h-6 w-auto max-w-full text-ink" />;
     case "floprobux":
       return (
-        <Image
-          src="/logos/floprobux-icon.webp"
-          alt=""
-          width={192}
-          height={179}
-          className="h-8 w-auto"
-        />
+        <>
+          <Image
+            src="/logos/floprobux-icon.webp"
+            alt=""
+            width={192}
+            height={179}
+            className="h-8 w-auto dark:hidden"
+          />
+          <Image
+            src="/logos/floprobux.webp"
+            alt=""
+            width={560}
+            height={213}
+            className="hidden h-7 w-auto dark:block"
+          />
+        </>
       );
     default:
       return null;
