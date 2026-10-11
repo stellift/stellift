@@ -118,9 +118,8 @@ export const ptBR: Dictionary = {
       primary: "Vamos conversar",
       secondary: "Ver serviços",
     },
-    services: { label: "Serviços", title: "O que fazemos" },
+    services: { title: "O que fazemos" },
     clients: {
-      label: "Onde contribuiu",
       title: "Empresas que contribuímos",
       hint: "Deslize para ver mais empresas.",
       footnote:
@@ -132,15 +131,14 @@ export const ptBR: Dictionary = {
       next: "Próxima empresa",
     },
     portfolio: {
-      label: "Portfólio",
       title: "Projetos da stellift",
       cta: "Ver projeto",
       footnote:
         "LumniHub, BloxHarbor e o PDV são projetos da stellift. Nomes e marcas " +
         "citados são de seus respectivos proprietários.",
     },
-    about: { label: "Sobre", title: "A stellift" },
-    contact: { label: "Contato", title: "Vamos tirar a ideia do solo" },
+    about: { title: "A stellift" },
+    contact: { title: "Vamos tirar a ideia do solo" },
     card: { action: "Falar sobre isso" },
     footer: {
       description:

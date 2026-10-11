@@ -1,13 +1,12 @@
 import type { ReactNode } from "react";
+
 export default function SectionHeading({
   id,
-  label,
   title,
   lead,
   align = "left",
 }: {
   id?: string;
-  label: string;
   title: ReactNode;
   lead?: ReactNode;
   align?: "left" | "center";
@@ -16,12 +15,9 @@ export default function SectionHeading({
 
   return (
     <div className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-link">
-        {label}
-      </p>
       <h2
         id={id}
-        className="mt-3 text-balance font-display text-[2rem] font-normal leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.5rem]"
+        className="text-balance font-display text-[2.25rem] font-normal leading-[1.08] tracking-[-0.02em] text-ink sm:text-[3rem]"
       >
         {title}
       </h2>

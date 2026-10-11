@@ -9,7 +9,6 @@ export default function Services({ dict }: { dict: Dictionary }) {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
           id="services-title"
-          label={dict.ui.services.label}
           title={dict.ui.services.title}
         />
 

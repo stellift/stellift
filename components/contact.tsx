@@ -10,7 +10,6 @@ export default function Contact({ dict }: { dict: Dictionary }) {
         <div className="rounded-panel border border-line bg-paper p-8 shadow-panel lg:col-span-5">
           <SectionHeading
             id="contact-title"
-            label={dict.ui.contact.label}
             title={dict.ui.contact.title}
           />
           <p className="mt-5 text-[16px] leading-[1.65] text-ink-2">

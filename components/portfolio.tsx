@@ -6,37 +6,34 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
   return (
     <section id="portfolio" aria-labelledby="portfolio-title" className="pb-20 sm:pb-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading
-          id="portfolio-title"
-          label={dict.ui.portfolio.label}
-          title={dict.ui.portfolio.title}
-        />
+        <SectionHeading id="portfolio-title" title={dict.ui.portfolio.title} />
 
-        <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-14 border-t border-line">
           {dict.portfolio.map((project) => (
-            <li key={project.name} className="h-full">
-              <article className="flex h-full flex-col rounded-card border border-line bg-paper p-7 shadow-card">
-                <h3 className="font-display text-[1.5rem] font-medium leading-tight tracking-[-0.01em] text-ink">
+            <li key={project.name}>
+              <article className="group grid gap-x-10 gap-y-4 border-b border-line py-10 sm:py-12 lg:grid-cols-12">
+                <h3 className="font-display text-[2rem] font-normal leading-[1.1] tracking-[-0.02em] text-ink lg:col-span-4 lg:text-[2.25rem]">
                   {project.name}
                 </h3>
 
-                <p className="mt-4 flex-1 text-[15px] leading-[1.65] text-ink-2">
-                  {project.text}
-                </p>
-
-                {project.stack ? (
-                  <p className="mt-5 text-[14px] leading-[1.5] text-ink-3">
-                    {project.stack}
+                <div className="lg:col-span-6">
+                  <p className="max-w-[62ch] text-[17px] leading-[1.7] text-ink-2">
+                    {project.text}
                   </p>
-                ) : null}
+                  {project.stack ? (
+                    <p className="mt-5 max-w-[62ch] text-[14px] leading-[1.6] text-ink-3">
+                      {project.stack}
+                    </p>
+                  ) : null}
+                </div>
 
                 {project.href ? (
-                  <p className="mt-6">
+                  <p className="lg:col-span-2 lg:justify-self-end">
                     <a
                       href={project.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink transition-colors duration-150 hover:text-link"
+                      className="inline-flex items-center gap-1.5 whitespace-nowrap text-[14px] font-semibold text-ink transition-colors duration-150 hover:text-link"
                     >
                       {dict.ui.portfolio.cta}
                       <ChevronIcon className="h-3.5 w-3.5" />

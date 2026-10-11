@@ -57,9 +57,8 @@ export type Dictionary = {
       primary: string;
       secondary: string;
     };
-    services: { label: string; title: string };
+    services: { title: string };
     clients: {
-      label: string;
       title: string;
       hint: string;
       footnote: string;
@@ -68,9 +67,9 @@ export type Dictionary = {
       previous: string;
       next: string;
     };
-    portfolio: { label: string; title: string; cta: string; footnote: string };
-    about: { label: string; title: string };
-    contact: { label: string; title: string };
+    portfolio: { title: string; cta: string; footnote: string };
+    about: { title: string };
+    contact: { title: string };
     card: { action: string };
     footer: {
       description: string;

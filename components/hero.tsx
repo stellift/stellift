@@ -5,8 +5,10 @@ export default function Hero({ dict }: { dict: Dictionary }) {
     <section id="top" className="pb-20 pt-14 sm:pb-28 sm:pt-20">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         <h1 className="text-balance font-display text-[2.5rem] font-normal leading-[1.05] tracking-[-0.015em] text-ink sm:text-[3.5rem] lg:text-[4rem]">
-          {dict.ui.hero.title}
-          <span className="block text-link">{dict.ui.hero.titleAccent}</span>
+          <span className="animate-rise block">{dict.ui.hero.title}</span>
+          <span className="animate-rise block text-link [animation-delay:110ms]">
+            {dict.ui.hero.titleAccent}
+          </span>
         </h1>
 
         <p className="mx-auto mt-5 max-w-[54ch] text-pretty text-[17px] leading-[1.65] text-ink-2">

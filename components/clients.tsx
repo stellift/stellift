@@ -98,7 +98,6 @@ export default function Clients({ dict }: { dict: Dictionary }) {
         <div className="flex items-end justify-between gap-6">
           <SectionHeading
             id="clients-title"
-            label={dict.ui.clients.label}
             title={dict.ui.clients.title}
           />
 
@@ -114,7 +113,7 @@ export default function Clients({ dict }: { dict: Dictionary }) {
                 aria-label={
                   playing ? dict.ui.clients.pause : dict.ui.clients.play
                 }
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-card transition-colors duration-150 hover:bg-surface"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink transition-colors duration-150 hover:bg-surface"
               >
                 {playing ? <PauseIcon /> : <PlayIcon />}
               </button>
@@ -125,7 +124,7 @@ export default function Clients({ dict }: { dict: Dictionary }) {
               onClick={() => go(-1)}
               disabled={atStart}
               aria-label={dict.ui.clients.previous}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-card transition-colors duration-150 hover:bg-surface disabled:cursor-not-allowed disabled:opacity-35"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink transition-colors duration-150 hover:bg-surface disabled:cursor-not-allowed disabled:opacity-35"
             >
               <ChevronIcon direction="left" />
             </button>
@@ -134,7 +133,7 @@ export default function Clients({ dict }: { dict: Dictionary }) {
               onClick={() => go(1)}
               disabled={atEnd}
               aria-label={dict.ui.clients.next}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-card transition-colors duration-150 hover:bg-surface disabled:cursor-not-allowed disabled:opacity-35"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink transition-colors duration-150 hover:bg-surface disabled:cursor-not-allowed disabled:opacity-35"
             >
               <ChevronIcon direction="right" />
             </button>
@@ -143,14 +142,14 @@ export default function Clients({ dict }: { dict: Dictionary }) {
 
         <ul
           ref={trackRef}
-          className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-3 pt-2 [scrollbar-width:none] lg:grid lg:grid-cols-4 lg:overflow-visible [&::-webkit-scrollbar]:hidden"
+          className="mt-14 flex snap-x snap-mandatory overflow-x-auto border-y border-line [scrollbar-width:none] lg:grid lg:grid-cols-4 lg:overflow-visible [&::-webkit-scrollbar]:hidden"
         >
           {dict.clients.map((client) => (
             <li
               key={client.name}
-              className="w-[15.5rem] shrink-0 snap-start lg:w-auto"
+              className="w-[14rem] shrink-0 snap-start border-l border-line first:border-l-0 lg:w-auto"
             >
-              <div className="flex h-full min-h-[11rem] flex-col items-center justify-center gap-5 rounded-card border border-line bg-paper px-6 py-8 shadow-card transition duration-200 hover:-translate-y-1 hover:shadow-panel">
+              <div className="flex h-full min-h-[10.5rem] flex-col items-center justify-center gap-5 px-6 py-10">
                 <div className="flex h-12 w-full items-center justify-center">
                   <ClientLogo client={client} />
                 </div>
@@ -167,7 +166,7 @@ export default function Clients({ dict }: { dict: Dictionary }) {
           ))}
         </ul>
 
-        <p className="mt-4 text-[13px] text-ink-3 sm:hidden">
+        <p className="mt-5 text-[13px] text-ink-3 sm:hidden">
           {dict.ui.clients.hint}
         </p>
 

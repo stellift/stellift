@@ -7,7 +7,7 @@
 
   --color-ink: #0b1a33;
   --color-ink-2: #4a5568;
-  --color-ink-3: #8a94a3;
+  --color-ink-3: #6b7687;
 
   --color-line: #e4e6ea;
   --color-link: #1f5bd8;
@@ -35,6 +35,25 @@
     opacity: 1;
     transform: none;
   }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* O único momento autoral da página: as duas linhas do título assentam na
+   chegada. Ease-out exponencial, a partir de um estado já visível para quem
+   desligou animação (o bloco de prefers-reduced-motion zera a duração). */
+@utility animate-rise {
+  animation: rise-in 900ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 @utility animate-panel-in {
