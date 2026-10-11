@@ -1,27 +1,74 @@
 @import "tailwindcss";
 
-@theme inline {
-  /* Plano Piloto: branco de papel vegetal, tinta navy, setores preenchidos.
-     Sem raio, sem sombra, sem gradiente: uma planta não tem profundidade. */
-  --color-paper: #ffffff;
-  --color-wash: #eef1f5;
+/* Portado do frontend oficial do pi.venda (web/src/app/globals.css), que por
+   sua vez espelha o src/ui/Theme.h do desktop. Mudou lá, muda aqui. */
+@theme {
+  --color-canvas: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-muted: #141414;
+  --color-line: #262626;
+  --color-line-soft: #1a1a1a;
+  --color-line-strong: #3a3a3a;
+  --color-ink: #ededed;
+  --color-ink-muted: #8f8f8f;
+  --color-ink-faint: #565656;
+  --color-accent: #0a87fc;
+  --color-accent-hover: #389fff;
+  /* Divergência deliberada da referência: branco sobre #0a87fc mede 3.57:1,
+     abaixo do piso de 4.5:1 para texto de 15px. Este tom mede 4.71:1 e é o
+     preenchimento de qualquer botão com texto branco. O #0a87fc continua
+     sendo o acento para texto e marcas sobre preto, onde mede 5.88:1. */
+  --color-accent-strong: #0b73d8;
+  --color-accent-soft: #08223a;
+  --color-danger: #f87171;
 
-  /* Tinta de planta: uma família navy em três valores, mais um vermelho que
-     só assina. Todos medidos contra branco acima de 4.5:1. */
-  --color-ink: #0b162b;
-  --color-ink-2: #3d4a5c;
-  --color-ink-3: #5a6878;
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+}
 
-  --color-navy: #162e51;
-  --color-blue: #005ea2;
-  --color-red: #c8352f;
-  --color-rule: #0b162b;
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
 
-  /* Campo chapado, sem raio e sem sombra: o mundo não tem profundidade. */
-  --radius-card: 0px;
-  --radius-panel: 0px;
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
 
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border: 3px solid var(--color-canvas);
+  background-clip: content-box;
 }
 
 @keyframes panel-in {
@@ -37,71 +84,123 @@
 }
 
 @utility animate-panel-in {
-  animation: panel-in 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  animation: panel-in 140ms ease-out;
 }
 
-/* A malha de células é sagrada (doação do teletexto declinado): em tela
-   estreita a célula encolhe, o campo nunca reflui para uma coluna genérica. */
-@utility field {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-/* A faixa de legenda que abre toda planta: escala, local, setor. */
-@utility legend-strip {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0 2rem;
-  border-bottom: 2px solid var(--color-rule);
-  padding: 0.625rem 0;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-ink-3);
-}
-
-@layer base {
-  :root {
-    color-scheme: light;
-    caret-color: var(--color-navy);
+@layer components {
+  .panel {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 8px;
   }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 4.5rem;
-    scrollbar-color: var(--color-ink) var(--color-wash);
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 6px;
+    padding: 10px 28px;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    white-space: nowrap;
+    transition:
+      background-color 120ms ease,
+      border-color 120ms ease;
   }
 
-  body {
-    overflow-x: clip;
-    font-variant-numeric: tabular-nums;
-  }
-
-  /* Estado é desenhado como marca, nunca como matiz (doação do jackfield
-     declinado): o foco é um bloco, não um halo colorido. */
-  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
-    outline: 3px solid var(--color-blue);
-    outline-offset: 2px;
-  }
-
-  ::selection {
-    background: var(--color-navy);
+  .btn-primary {
+    background-color: var(--color-accent-strong);
+    border: 1px solid transparent;
     color: #ffffff;
+    font-weight: 600;
   }
 
-  ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+  .btn-primary:hover {
+    background-color: var(--color-accent);
   }
 
-  ::-webkit-scrollbar-track {
-    background: var(--color-wash);
+  .btn-ghost {
+    background-color: rgb(255 255 255 / 0.07);
+    border: 1px solid rgb(255 255 255 / 0.2);
+    color: var(--color-ink);
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-ink);
+  .btn-ghost:hover {
+    background-color: rgb(255 255 255 / 0.14);
+    border-color: rgb(255 255 255 / 0.35);
+  }
+
+  /* Quadrado azul + caixa alta + régua embaixo. */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-line);
+    color: var(--color-ink-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .section-label::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+  }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-title::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--color-accent);
+  }
+
+  .field-label {
+    color: var(--color-ink-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .input {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    padding: 10px 16px;
+    color: var(--color-ink);
+    width: 100%;
+  }
+
+  .input::placeholder {
+    color: var(--color-ink-muted);
+  }
+
+  .input:focus {
+    border-color: var(--color-accent);
+    outline: none;
+  }
+
+  /* A grade é o fundo: gap-px sobre bg-line vira filete, e o hover troca o
+     preenchimento da célula. */
+  .cell {
+    background-color: var(--color-surface);
+    transition: background-color 140ms ease;
+  }
+
+  .cell:hover {
+    background-color: var(--color-surface-muted);
   }
 }
 

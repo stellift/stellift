@@ -2,19 +2,18 @@
 
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
-import { ChevronIcon } from "@/components/icons";
+import { ArrowRight } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/types";
 
 type Field = "name" | "email" | "message";
 type Errors = Partial<Record<Field, string>>;
 
-const fieldBase =
-  "w-full border-2 border-rule bg-paper px-4 py-3 text-[16px] text-ink placeholder:text-ink-3 outline-none transition-colors duration-100";
+const fieldBase = "input text-[16px]";
 
 function fieldClass(error?: string) {
   return error
-    ? `${fieldBase} border-red`
-    : `${fieldBase} focus:border-blue`;
+    ? `${fieldBase} border-danger`
+    : fieldBase;
 }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -77,29 +76,29 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
 
   if (composed) {
     return (
-      <div className="h-full border-rule bg-wash p-5 sm:p-8 lg:border-l-2">
+      <div className="panel h-full p-6 sm:p-8">
         <p>
-          <span className="inline-flex bg-navy px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.14em] text-white">
+          <span className="inline-flex rounded-md bg-accent-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
             {t.readyBadge}
           </span>
         </p>
-        <p className="mt-5 max-w-[52ch] text-[16px] leading-[1.65] text-ink-2">
+        <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-ink-muted">
           {t.readyText}
         </p>
-        <pre className="mt-6 max-h-48 overflow-auto whitespace-pre-wrap border-2 border-rule bg-paper p-5 text-[14px] leading-[1.6] text-ink">
+        <pre className="mt-6 max-h-48 overflow-auto whitespace-pre-wrap rounded-md border border-line bg-canvas p-5 text-sm leading-relaxed text-ink">
           {composed.body}
         </pre>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
             href={composed.mailto}
-            className="inline-flex h-12 items-center justify-center bg-blue px-6 text-[14px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-ink"
+            className="btn btn-primary"
           >
             {t.openEmail}
           </a>
           <button
             type="button"
             onClick={copyMessage}
-            className="inline-flex h-12 items-center justify-center border-2 border-rule bg-paper px-6 text-[14px] font-bold uppercase tracking-[0.06em] text-ink transition-colors duration-100 hover:bg-ink hover:text-white"
+            className="btn btn-ghost"
           >
             {copied ? t.copied : t.copy}
           </button>
@@ -109,7 +108,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
               setComposed(null);
               setErrors({});
             }}
-            className="text-[14px] font-bold uppercase tracking-[0.06em] text-ink underline decoration-blue decoration-2 underline-offset-4 hover:text-blue"
+            className="text-sm font-medium text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline"
           >
             {t.edit}
           </button>
@@ -123,7 +122,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
       ref={formRef}
       onSubmit={onSubmit}
       noValidate
-      className="h-full border-rule bg-wash p-5 sm:p-8 lg:border-l-2"
+      className="panel h-full p-6 sm:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field
@@ -144,7 +143,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="mt-5">
-        <label htmlFor="message" className="mb-2 block text-[12px] font-bold uppercase tracking-[0.14em] text-ink">
+        <label htmlFor="message" className="field-label mb-2 block uppercase">
           {t.messageLabel}
         </label>
         <textarea
@@ -157,7 +156,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
           className={`${fieldClass(errors.message)} resize-none`}
         />
         {errors.message ? (
-          <p id="message-error" className="mt-2 text-[13px] font-bold text-red">
+          <p id="message-error" className="mt-2 text-sm text-danger">
             {errors.message}
           </p>
         ) : null}
@@ -165,13 +164,13 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
 
       <button
         type="submit"
-        className="mt-7 inline-flex h-14 w-full items-center justify-between gap-6 bg-ink px-6 text-[14px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-blue"
+        className="btn btn-primary mt-7 w-full sm:w-auto"
       >
         {t.submit}
-        <ChevronIcon className="h-3.5 w-3.5" />
+        <ArrowRight className="size-4" aria-hidden />
       </button>
 
-      <p className="mt-4 max-w-[46ch] text-[13px] leading-[1.6] text-ink-3">
+      <p className="mt-4 max-w-[46ch] text-sm leading-relaxed text-ink-muted">
         {t.note}
       </p>
     </form>
@@ -197,7 +196,7 @@ function Field({
 
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-[12px] font-bold uppercase tracking-[0.14em] text-ink">
+      <label htmlFor={name} className="field-label mb-2 block uppercase">
         {label}
       </label>
       <input
@@ -211,7 +210,7 @@ function Field({
         className={fieldClass(error)}
       />
       {error ? (
-        <p id={errorId} className="mt-2 text-[13px] font-bold text-red">
+        <p id={errorId} className="mt-2 text-sm text-danger">
           {error}
         </p>
       ) : null}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronIcon, GlobeIcon } from "@/components/icons";
+import { ChevronDown, Globe } from "lucide-react";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 
 export default function LanguageSwitcher({
@@ -38,13 +38,15 @@ export default function LanguageSwitcher({
         aria-controls="language-menu"
         aria-label={`${label}: ${localeNames[lang]}`}
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 border-2 border-rule px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.08em] text-ink transition-colors duration-100 hover:bg-ink hover:text-white"
+        className="flex items-center gap-1.5 rounded-md border border-line bg-surface px-2.5 py-1.5 text-xs font-semibold text-ink transition-colors hover:bg-surface-muted"
       >
-        <GlobeIcon className="h-4 w-4 text-ink-2" />
+        <Globe className="size-4 text-ink-muted" aria-hidden />
         {lang.slice(0, 2).toUpperCase()}
-        <ChevronIcon
-          direction={open ? "up" : "down"}
-          className="h-3 w-3 text-ink-3"
+        <ChevronDown
+          aria-hidden
+          className={`size-3.5 text-ink-muted transition-transform duration-150 ${
+            open ? "rotate-180" : ""
+          }`}
         />
       </button>
 
@@ -52,7 +54,7 @@ export default function LanguageSwitcher({
         <ul
           id="language-menu"
           aria-label={label}
-          className="animate-panel-in absolute right-0 top-full z-50 mt-2 w-44 border-2 border-rule bg-paper"
+          className="panel animate-panel-in absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden"
         >
           {locales.map((code) => (
             <li key={code}>
@@ -60,13 +62,15 @@ export default function LanguageSwitcher({
                 href={`/${code}`}
                 hrefLang={code}
                 aria-current={code === lang ? "true" : undefined}
-                className={`flex items-center justify-between gap-3 border-b-2 border-rule px-3 py-2.5 text-[12px] font-bold uppercase tracking-[0.06em] last:border-b-0 transition-colors duration-100 ${
-                  code === lang ? "bg-ink text-white" : "text-ink hover:bg-wash"
+                className={`flex items-center justify-between gap-3 border-b border-line px-3 py-2.5 text-sm transition-colors last:border-b-0 ${
+                  code === lang
+                    ? "bg-surface-muted text-ink"
+                    : "text-ink-muted hover:bg-surface-muted hover:text-ink"
                 }`}
               >
                 {localeNames[code]}
                 {code === lang ? (
-                  <span aria-hidden className="h-2 w-2 shrink-0 bg-blue" />
+                  <span aria-hidden className="size-2 shrink-0 rounded-full bg-accent" />
                 ) : null}
               </a>
             </li>

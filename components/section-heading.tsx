@@ -1,30 +1,31 @@
 import type { ReactNode } from "react";
 
-/**
- * Cabeçalho de setor. O código não é numeração decorativa de seção: numa
- * planta o código é como a região é endereçada, e é por ele que a legenda do
- * hero aponta para cá.
- */
+/** Gramática do pi.venda: rótulo com quadrado azul, serifa, lead apagado. */
 export default function SectionHeading({
   id,
+  eyebrow,
   title,
-  code,
+  children,
 }: {
   id?: string;
+  eyebrow: string;
   title: ReactNode;
-  code: string;
+  children?: ReactNode;
 }) {
   return (
-    <div className="border-b-2 border-rule pb-4">
-      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue">
-        setor {code}
-      </p>
+    <header className="max-w-2xl">
+      <p className="section-label">{eyebrow}</p>
       <h2
         id={id}
-        className="mt-2 font-sans text-[2.25rem] font-extrabold uppercase leading-[0.92] tracking-[-0.03em] text-ink sm:text-[3.25rem] lg:text-[4.25rem]"
+        className="mt-5 text-balance font-serif text-3xl leading-tight text-ink sm:text-[40px]"
       >
         {title}
       </h2>
-    </div>
+      {children ? (
+        <p className="mt-4 text-pretty text-base leading-relaxed text-ink-muted">
+          {children}
+        </p>
+      ) : null}
+    </header>
   );
 }

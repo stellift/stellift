@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/components/language-switcher";
-import { ChevronIcon } from "@/components/icons";
+import { ChevronRight } from "lucide-react";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
@@ -14,15 +14,7 @@ export default function Header({
   lang: Locale;
 }) {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     const ids = dict.nav.map((item) => item.href.slice(1));
@@ -64,21 +56,17 @@ export default function Header({
     };
   }, [open]);
 
-  const raised = scrolled || open;
-
   return (
     <header
-      className={`sticky top-0 z-50 border-b-2 bg-paper ${
-        raised ? "border-rule" : "border-rule"
-      }`}
+      className={"sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md"}
     >
       <div
-        className="mx-auto flex h-16 max-w-[96rem] items-center justify-between gap-6 px-5 sm:px-8"
+        className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-6 px-6"
       >
         <a
           href="#top"
           onClick={() => setOpen(false)}
-          className="text-[22px] font-extrabold uppercase tracking-[-0.03em] text-ink"
+          className="font-serif text-2xl text-ink"
         >
           {dict.site.name}
         </a>
@@ -89,10 +77,8 @@ export default function Header({
               key={item.href}
               href={item.href}
               aria-current={active === item.href ? "true" : undefined}
-              className={`whitespace-nowrap px-2 py-1 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-100 ${
-                active === item.href
-                  ? "bg-ink text-white"
-                  : "text-ink hover:bg-wash"
+              className={`whitespace-nowrap text-sm transition-colors ${
+                active === item.href ? "text-ink" : "text-ink-muted hover:text-ink"
               }`}
             >
               {item.label}
@@ -107,7 +93,7 @@ export default function Header({
 
           <a
             href="#contact"
-            className="hidden whitespace-nowrap bg-navy px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-100 hover:bg-ink lg:inline-flex"
+            className="btn btn-primary hidden px-5 py-2 text-sm lg:inline-flex"
           >
             {dict.ui.header.cta}
           </a>
@@ -118,7 +104,7 @@ export default function Header({
             aria-controls="mobile-nav"
             aria-label={open ? dict.ui.header.closeMenu : dict.ui.header.openMenu}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center border-2 border-rule bg-paper text-ink transition-colors duration-100 hover:bg-ink hover:text-white lg:hidden"
+            className="flex size-10 items-center justify-center rounded-md border border-line bg-surface text-ink transition-colors hover:bg-surface-muted lg:hidden"
           >
             <span aria-hidden className="relative block h-[14px] w-[18px]">
               <span
@@ -145,9 +131,9 @@ export default function Header({
         <nav
           id="mobile-nav"
           aria-label={dict.ui.header.menu}
-          className="mx-auto max-w-6xl px-5 pb-4 sm:px-8 lg:hidden"
+          className="mx-auto w-full max-w-6xl px-6 pb-4 lg:hidden"
         >
-          <div className="animate-panel-in border-2 border-rule bg-paper">
+          <div className="panel animate-panel-in overflow-hidden">
             <ul>
               {dict.nav.map((item) => (
                 <li key={item.href}>
@@ -155,21 +141,21 @@ export default function Header({
                     href={item.href}
                     onClick={() => setOpen(false)}
                     aria-current={active === item.href ? "true" : undefined}
-                    className={`flex items-center justify-between gap-3 border-b-2 border-rule px-4 py-3 text-[14px] font-bold uppercase tracking-[0.06em] transition-colors duration-100 ${
+                    className={`flex items-center justify-between gap-3 border-b border-line px-4 py-3 text-sm transition-colors ${
                       active === item.href
-                        ? "bg-ink text-white"
-                        : "text-ink hover:bg-wash"
+                        ? "bg-surface-muted text-ink"
+                        : "text-ink-muted hover:bg-surface-muted hover:text-ink"
                     }`}
                   >
                     {item.label}
-                    <ChevronIcon className="h-3.5 w-3.5 shrink-0 text-ink-3" />
+                    <ChevronRight className="size-4 shrink-0 text-ink-muted" aria-hidden />
                   </a>
                 </li>
               ))}
             </ul>
 
             <div>
-              <p className="px-4 pb-2 pt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-ink-3">
+              <p className="field-label px-4 pb-2 pt-4 uppercase">
                 {dict.ui.header.switchLabel}
               </p>
               <ul>
@@ -179,15 +165,15 @@ export default function Header({
                       href={`/${code}`}
                       hrefLang={code}
                       aria-current={code === lang ? "true" : undefined}
-                      className={`flex items-center justify-between gap-3 px-4 py-3 text-[14px] font-bold uppercase tracking-[0.06em] transition-colors duration-100 ${
+                      className={`flex items-center justify-between gap-3 px-4 py-3 text-sm transition-colors ${
                         code === lang
-                          ? "bg-wash text-ink"
-                          : "text-ink hover:bg-wash"
+                          ? "bg-surface-muted text-ink"
+                          : "text-ink-muted hover:bg-surface-muted hover:text-ink"
                       }`}
                     >
                       {localeNames[code]}
                       {code === lang ? (
-                        <span aria-hidden className="h-2.5 w-2.5 shrink-0 bg-blue" />
+                        <span aria-hidden className="size-2 shrink-0 rounded-full bg-accent" />
                       ) : null}
                     </a>
                   </li>
@@ -198,7 +184,7 @@ export default function Header({
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center bg-navy px-5 py-4 text-[14px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-100 hover:bg-ink"
+              className="btn btn-primary m-3 flex"
             >
               {dict.ui.header.cta}
             </a>

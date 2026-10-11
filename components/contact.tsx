@@ -1,47 +1,58 @@
+import { Code2, Mail, Users, type LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/section-heading";
 import ContactForm from "@/components/contact-form";
-import type { Dictionary } from "@/lib/i18n/types";
+import type { ChannelKind, Dictionary } from "@/lib/i18n/types";
+
+const icons: Record<ChannelKind, LucideIcon> = {
+  email: Mail,
+  linkedin: Users,
+  code: Code2,
+};
 
 export default function Contact({ dict }: { dict: Dictionary }) {
   return (
     <section id="contact" aria-labelledby="contact-title">
-      <div className="mx-auto max-w-[96rem] px-5 pt-14 sm:px-8 sm:pt-20">
-        <SectionHeading id="contact-title" code="05" title={dict.ui.contact.title} />
-      </div>
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
+        <SectionHeading
+          id="contact-title"
+          eyebrow={dict.ui.contact.eyebrow}
+          title={dict.ui.contact.title}
+        >
+          {dict.contact.lead}
+        </SectionHeading>
 
-      <div className="mx-auto field max-w-[96rem] gap-x-4">
-        <div className="col-span-12 px-5 py-10 sm:px-8 lg:col-span-5 lg:pl-5">
-          <p className="max-w-[34ch] text-[1.0625rem] leading-[1.55] text-ink">
-            {dict.contact.lead}
-          </p>
-
-          <dl className="mt-10 border-t-2 border-rule">
-            {dict.contact.channels.map((channel) => (
-              <div
-                key={channel.kind}
-                className="flex flex-wrap items-baseline gap-x-6 gap-y-1 border-b-2 border-rule py-4"
-              >
-                <dt className="w-24 shrink-0 text-[12px] font-bold uppercase tracking-[0.14em] text-ink-3">
-                  {channel.label}
-                </dt>
-                <dd className="min-w-0">
+        <div className="mt-14 grid gap-6 lg:grid-cols-12">
+          <ul className="flex flex-col gap-px overflow-hidden rounded-lg border border-line bg-line lg:col-span-5">
+            {dict.contact.channels.map((channel) => {
+              const Icon = icons[channel.kind];
+              const external = channel.kind !== "email";
+              return (
+                <li key={channel.kind} className="cell flex-1">
                   <a
                     href={channel.href}
-                    {...(channel.kind !== "email"
+                    {...(external
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
-                    className="break-words text-[15px] font-bold text-ink underline decoration-blue decoration-2 underline-offset-4 transition-colors duration-100 hover:text-blue"
+                    className="flex h-full items-start gap-3 p-6"
                   >
-                    {channel.value}
+                    <Icon className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
+                    <span className="min-w-0">
+                      <span className="field-label block uppercase">
+                        {channel.label}
+                      </span>
+                      <span className="mt-1 block break-words text-sm text-ink">
+                        {channel.value}
+                      </span>
+                    </span>
                   </a>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+                </li>
+              );
+            })}
+          </ul>
 
-        <div className="col-span-12 lg:col-span-7">
-          <ContactForm dict={dict} />
+          <div className="lg:col-span-7">
+            <ContactForm dict={dict} />
+          </div>
         </div>
       </div>
     </section>

@@ -120,9 +120,9 @@ export const ptBR: Dictionary = {
       primary: "Vamos conversar",
       secondary: "Ver serviços",
     },
-    services: { title: "O que fazemos" },
+    services: { eyebrow: "Serviços", title: "O que fazemos" },
     clients: {
-      title: "Empresas que contribuímos",
+      eyebrow: "Onde contribuiu", title: "Empresas que contribuímos",
       hint: "Deslize para ver mais empresas.",
       footnote:
         "Google, Mozilla e demais nomes citados são marcas de seus respectivos " +
@@ -133,14 +133,14 @@ export const ptBR: Dictionary = {
       next: "Próxima empresa",
     },
     portfolio: {
-      title: "Projetos da stellift",
+      eyebrow: "Portfólio", title: "Projetos da stellift",
       cta: "Ver projeto",
       footnote:
         "LumniHub, BloxHarbor e o PDV são projetos da stellift. Nomes e marcas " +
         "citados são de seus respectivos proprietários.",
     },
-    about: { title: "A stellift" },
-    contact: { title: "Vamos tirar a ideia do solo" },
+    about: { eyebrow: "Sobre", title: "A stellift" },
+    contact: { eyebrow: "Contato", title: "Vamos tirar a ideia do solo" },
     card: { action: "Falar sobre isso" },
     footer: {
       description:

@@ -5,36 +5,36 @@ import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Clients({ dict }: { dict: Dictionary }) {
   return (
-    <section id="clients" aria-labelledby="clients-title" className="border-b-2 border-rule">
-      <div className="mx-auto max-w-[96rem] px-5 pt-14 sm:px-8 sm:pt-20">
-        <SectionHeading id="clients-title" code="02" title={dict.ui.clients.title} />
+    <section id="clients" aria-labelledby="clients-title" className="border-b border-line">
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
+        <SectionHeading
+          id="clients-title"
+          eyebrow={dict.ui.clients.eyebrow}
+          title={dict.ui.clients.title}
+        />
+
+        <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          {dict.clients.map((client) => (
+            <li key={client.name} className="cell flex flex-col gap-5 p-6">
+              <div className="flex h-9 items-center">
+                <ClientLogo client={client} />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-ink">{client.name}</h3>
+                {client.note ? (
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+                    {client.note}
+                  </p>
+                ) : null}
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-8 max-w-2xl text-xs leading-relaxed text-ink-muted">
+          {dict.ui.clients.footnote}
+        </p>
       </div>
-
-      {/* Células de largura fixa em malha: a célula encolhe, o campo não reflui. */}
-      <ul className="mt-10 field border-t-2 border-rule sm:mt-14">
-        {dict.clients.map((client) => (
-          <li
-            key={client.name}
-            className="col-span-6 flex min-h-[13rem] flex-col justify-between border-b-2 border-rule p-5 even:border-r-0 sm:p-6 lg:col-span-3 lg:border-r-2 lg:even:border-r-2 lg:[&:nth-child(4n)]:border-r-0 [&:nth-child(odd)]:border-r-2"
-          >
-            <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-ink-3">
-              {client.name}
-            </p>
-
-            <div className="flex h-12 items-center">
-              <ClientLogo client={client} />
-            </div>
-
-            <p className="min-h-[2.5rem] text-[13px] leading-[1.45] text-ink-2">
-              {client.note}
-            </p>
-          </li>
-        ))}
-      </ul>
-
-      <p className="mx-auto max-w-[96rem] px-5 py-6 text-[12px] leading-[1.6] text-ink-3 sm:px-8">
-        {dict.ui.clients.footnote}
-      </p>
     </section>
   );
 }
@@ -42,11 +42,11 @@ export default function Clients({ dict }: { dict: Dictionary }) {
 function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
   switch (client.logo) {
     case "google":
-      return <GoogleLogo className="h-7 w-auto max-w-full" />;
+      return <GoogleLogo className="h-6 w-auto max-w-full" />;
     case "mozilla":
-      return <MozillaLogo className="h-7 w-auto max-w-full text-ink" />;
+      return <MozillaLogo className="h-6 w-auto max-w-full text-ink" />;
     case "woovi":
-      return <WooviLogo className="h-7 w-auto max-w-full text-ink" />;
+      return <WooviLogo className="h-6 w-auto max-w-full text-ink" />;
     case "floprobux":
       return (
         <Image
@@ -54,7 +54,7 @@ function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
           alt=""
           width={192}
           height={179}
-          className="h-9 w-auto"
+          className="h-8 w-auto"
         />
       );
     default:
