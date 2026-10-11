@@ -117,6 +117,8 @@ export const en: Dictionary = {
     hero: {
       title: "Software built to measure,",
       titleAccent: "from the idea to orbit.",
+      fieldStart: "IDEA",
+      fieldEnd: "ORBIT",
       primary: "Let's talk",
       secondary: "See services",
     },

@@ -54,6 +54,9 @@ export type Dictionary = {
     hero: {
       title: string;
       titleAccent: string;
+      /** As duas palavras postas no campo do hero. */
+      fieldStart: string;
+      fieldEnd: string;
       primary: string;
       secondary: string;
     };

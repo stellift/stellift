@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/components/language-switcher";
-import { CheckIcon, ChevronIcon } from "@/components/icons";
+import { ChevronIcon } from "@/components/icons";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
@@ -68,21 +68,17 @@ export default function Header({
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-200 ${
-        raised
-          ? "border-line bg-canvas shadow-[0_10px_30px_-24px_rgb(11_26_51/0.55)] backdrop-blur-xl supports-[backdrop-filter]:bg-canvas/80"
-          : "border-transparent bg-canvas"
+      className={`sticky top-0 z-50 border-b-2 bg-paper ${
+        raised ? "border-rule" : "border-rule"
       }`}
     >
       <div
-        className={`mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 transition-[height] duration-200 sm:px-8 ${
-          scrolled ? "h-16" : "h-[4.5rem]"
-        }`}
+        className="mx-auto flex h-16 max-w-[96rem] items-center justify-between gap-6 px-5 sm:px-8"
       >
         <a
           href="#top"
           onClick={() => setOpen(false)}
-          className="text-[21px] font-semibold tracking-[-0.01em] text-ink"
+          className="text-[22px] font-extrabold uppercase tracking-[-0.03em] text-ink"
         >
           {dict.site.name}
         </a>
@@ -93,10 +89,10 @@ export default function Header({
               key={item.href}
               href={item.href}
               aria-current={active === item.href ? "true" : undefined}
-              className={`relative whitespace-nowrap text-[15px] transition-colors duration-150 after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-full after:rounded-full after:bg-navy after:transition-transform after:duration-200 hover:text-ink hover:after:scale-x-100 ${
+              className={`whitespace-nowrap px-2 py-1 text-[13px] font-bold uppercase tracking-[0.08em] transition-colors duration-100 ${
                 active === item.href
-                  ? "text-ink after:scale-x-100"
-                  : "text-ink-2 after:scale-x-0"
+                  ? "bg-ink text-white"
+                  : "text-ink hover:bg-wash"
               }`}
             >
               {item.label}
@@ -111,7 +107,7 @@ export default function Header({
 
           <a
             href="#contact"
-            className="hidden whitespace-nowrap rounded-full bg-navy px-5 py-2.5 text-[14px] font-semibold text-white shadow-card transition duration-150 hover:-translate-y-px hover:bg-ink lg:inline-flex"
+            className="hidden whitespace-nowrap bg-red px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-ink lg:inline-flex"
           >
             {dict.ui.header.cta}
           </a>
@@ -122,21 +118,21 @@ export default function Header({
             aria-controls="mobile-nav"
             aria-label={open ? dict.ui.header.closeMenu : dict.ui.header.openMenu}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-card transition-colors duration-150 hover:bg-surface lg:hidden"
+            className="flex h-10 w-10 items-center justify-center border-2 border-rule bg-paper text-ink transition-colors duration-100 hover:bg-ink hover:text-white lg:hidden"
           >
             <span aria-hidden className="relative block h-[14px] w-[18px]">
               <span
-                className={`absolute left-0 h-[2px] w-full rounded-full bg-current transition-all duration-200 ${
+                className={`absolute left-0 h-[2px] w-full bg-current transition-all duration-200 ${
                   open ? "top-1.5 rotate-45" : "top-0"
                 }`}
               />
               <span
-                className={`absolute left-0 top-1.5 h-[2px] w-full rounded-full bg-current transition-opacity duration-200 ${
+                className={`absolute left-0 top-1.5 h-[2px] w-full bg-current transition-opacity duration-200 ${
                   open ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span
-                className={`absolute left-0 h-[2px] w-full rounded-full bg-current transition-all duration-200 ${
+                className={`absolute left-0 h-[2px] w-full bg-current transition-all duration-200 ${
                   open ? "top-1.5 -rotate-45" : "top-3"
                 }`}
               />
@@ -145,18 +141,13 @@ export default function Header({
         </div>
       </div>
 
-      <span
-        aria-hidden
-        className="scroll-measure absolute inset-x-0 bottom-0 h-px origin-left bg-link"
-      />
-
       {open && (
         <nav
           id="mobile-nav"
           aria-label={dict.ui.header.menu}
           className="mx-auto max-w-6xl px-5 pb-4 sm:px-8 lg:hidden"
         >
-          <div className="animate-panel-in rounded-card border border-line bg-paper p-2 shadow-panel">
+          <div className="animate-panel-in border-2 border-rule bg-paper">
             <ul>
               {dict.nav.map((item) => (
                 <li key={item.href}>
@@ -164,10 +155,10 @@ export default function Header({
                     href={item.href}
                     onClick={() => setOpen(false)}
                     aria-current={active === item.href ? "true" : undefined}
-                    className={`flex items-center justify-between gap-3 rounded-[14px] px-4 py-3 text-[15px] transition-colors duration-150 ${
+                    className={`flex items-center justify-between gap-3 border-b-2 border-rule px-4 py-3 text-[14px] font-bold uppercase tracking-[0.06em] transition-colors duration-100 ${
                       active === item.href
-                        ? "bg-surface font-semibold text-ink"
-                        : "text-ink hover:bg-surface"
+                        ? "bg-ink text-white"
+                        : "text-ink hover:bg-wash"
                     }`}
                   >
                     {item.label}
@@ -177,8 +168,8 @@ export default function Header({
               ))}
             </ul>
 
-            <div className="mt-2 border-t border-line pt-2">
-              <p className="px-4 pb-1 pt-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-3">
+            <div>
+              <p className="px-4 pb-2 pt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-ink-3">
                 {dict.ui.header.switchLabel}
               </p>
               <ul>
@@ -188,15 +179,15 @@ export default function Header({
                       href={`/${code}`}
                       hrefLang={code}
                       aria-current={code === lang ? "true" : undefined}
-                      className={`flex items-center justify-between gap-3 rounded-[14px] px-4 py-3 text-[15px] transition-colors duration-150 ${
+                      className={`flex items-center justify-between gap-3 px-4 py-3 text-[14px] font-bold uppercase tracking-[0.06em] transition-colors duration-100 ${
                         code === lang
-                          ? "bg-surface font-semibold text-ink"
-                          : "text-ink hover:bg-surface"
+                          ? "bg-wash text-ink"
+                          : "text-ink hover:bg-wash"
                       }`}
                     >
                       {localeNames[code]}
                       {code === lang ? (
-                        <CheckIcon className="h-3.5 w-3.5 shrink-0 text-link" />
+                        <span aria-hidden className="h-2.5 w-2.5 shrink-0 bg-red" />
                       ) : null}
                     </a>
                   </li>
@@ -207,7 +198,7 @@ export default function Header({
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-3 flex items-center justify-center rounded-full bg-navy px-5 py-3 text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-ink"
+              className="flex items-center justify-center bg-red px-5 py-4 text-[14px] font-bold uppercase tracking-[0.06em] text-white transition-colors duration-100 hover:bg-ink"
             >
               {dict.ui.header.cta}
             </a>

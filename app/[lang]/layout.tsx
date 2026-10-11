@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Newsreader } from "next/font/google";
+import { Archivo } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import Header from "@/components/header";
@@ -7,14 +7,12 @@ import Footer from "@/components/footer";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { altLanguages, getDictionary } from "@/lib/i18n/server";
 
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
+// Uma face só é todo o sistema tipográfico, variada por escala, peso e
+// largura do jeito que um poema concreto varia um alfabeto.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-});
-
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
+  axes: ["wdth"],
 });
 
 export function generateStaticParams() {
@@ -74,9 +72,9 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   return (
     <html
       lang={dict.htmlLang}
-      className={`${interTight.variable} ${newsreader.variable} h-full antialiased`}
+      className={`${archivo.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-canvas font-sans text-ink">
+      <body className="flex min-h-full flex-col bg-paper font-sans text-ink">
         <Header dict={dict} lang={lang} />
         <main className="flex-1">{children}</main>
         <Footer dict={dict} lang={lang} />

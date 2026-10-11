@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheckIcon, ChevronIcon, GlobeIcon } from "@/components/icons";
+import { ChevronIcon, GlobeIcon } from "@/components/icons";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 
 export default function LanguageSwitcher({
@@ -38,7 +38,7 @@ export default function LanguageSwitcher({
         aria-controls="language-menu"
         aria-label={`${label}: ${localeNames[lang]}`}
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 rounded-full border border-line py-2 pl-3 pr-2.5 text-[13px] font-semibold text-ink transition-colors duration-150 hover:bg-surface"
+        className="flex items-center gap-1.5 border-2 border-rule px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.08em] text-ink transition-colors duration-100 hover:bg-ink hover:text-white"
       >
         <GlobeIcon className="h-4 w-4 text-ink-2" />
         {lang.slice(0, 2).toUpperCase()}
@@ -52,7 +52,7 @@ export default function LanguageSwitcher({
         <ul
           id="language-menu"
           aria-label={label}
-          className="animate-panel-in absolute right-0 top-full z-50 mt-2 w-44 rounded-[16px] border border-line bg-paper p-1.5 shadow-panel"
+          className="animate-panel-in absolute right-0 top-full z-50 mt-2 w-44 border-2 border-rule bg-paper"
         >
           {locales.map((code) => (
             <li key={code}>
@@ -60,15 +60,13 @@ export default function LanguageSwitcher({
                 href={`/${code}`}
                 hrefLang={code}
                 aria-current={code === lang ? "true" : undefined}
-                className={`flex items-center justify-between gap-3 rounded-[11px] px-3 py-2 text-[14px] transition-colors duration-150 ${
-                  code === lang
-                    ? "bg-surface font-semibold text-ink"
-                    : "text-ink-2 hover:bg-surface hover:text-ink"
+                className={`flex items-center justify-between gap-3 border-b-2 border-rule px-3 py-2.5 text-[12px] font-bold uppercase tracking-[0.06em] last:border-b-0 transition-colors duration-100 ${
+                  code === lang ? "bg-ink text-white" : "text-ink hover:bg-wash"
                 }`}
               >
                 {localeNames[code]}
                 {code === lang ? (
-                  <CheckIcon className="h-3.5 w-3.5 shrink-0 text-link" />
+                  <span aria-hidden className="h-2 w-2 shrink-0 bg-red" />
                 ) : null}
               </a>
             </li>

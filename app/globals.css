@@ -1,178 +1,89 @@
 @import "tailwindcss";
+
 @theme inline {
-  --color-canvas: #ffffff;
+  /* Poesia concreta: fundo branco, tinta preta, e duas tintas saturadas que
+     carregam regiões inteiras em vez de pontuar o neutro. */
   --color-paper: #ffffff;
-  /* Subtle wash for hover and pressed states on a white page. */
-  --color-surface: #f2f4f7;
+  --color-wash: #f0efec;
 
-  --color-ink: #0b1a33;
-  --color-ink-2: #4a5568;
-  --color-ink-3: #6b7687;
+  --color-ink: #101010;
+  --color-ink-2: #4a4a4a;
+  --color-ink-3: #6e6e6e;
 
-  --color-line: #e4e6ea;
-  --color-link: #1f5bd8;
-  --color-green: #009c3b;
-  --color-yellow: #ffdf00;
-  --color-navy: #0b1f4d;
+  --color-red: #d62d14;
+  --color-blue: #1b32c8;
+  --color-rule: #101010;
 
-  --radius-card: 20px;
-  --radius-panel: 24px;
+  /* Campo chapado, sem raio e sem sombra: o mundo não tem profundidade. */
+  --radius-card: 0px;
+  --radius-panel: 0px;
 
-  --shadow-card: 0 1px 2px rgb(11 26 51 / 0.04), 0 8px 20px -12px rgb(11 26 51 / 0.16);
-  --shadow-panel: 0 2px 6px rgb(11 26 51 / 0.05), 0 28px 60px -28px rgb(11 26 51 / 0.26);
-
-  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 }
 
 @keyframes panel-in {
   from {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-4px);
   }
 
   to {
     opacity: 1;
     transform: none;
   }
-}
-
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(0.5em);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* O único momento autoral da página: as duas linhas do título assentam na
-   chegada. Ease-out exponencial, a partir de um estado já visível para quem
-   desligou animação (o bloco de prefers-reduced-motion zera a duração). */
-@utility animate-rise {
-  animation: rise-in 900ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 @utility animate-panel-in {
-  animation: panel-in 180ms ease-out;
+  animation: panel-in 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Motion thesis: the page is a specification being read, so scroll position is
-   reading position. The header carries a hairline that measures how far through
-   the document the reader is, and each spec row draws its own rule as the
-   reader reaches it. Movement here means measurement, never decoration.
-   `animate.md` forbids reinterpreting every section as a staggered reveal, so
-   nothing else moves on scroll.
-
-   Everything is gated behind @supports and prefers-reduced-motion:
-   no-preference. Firefox and anyone who asked for less motion gets the page
-   fully drawn and static, never a hidden element waiting on a timeline. */
-
-@keyframes measure-grow {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes settle-in {
-  from {
-    opacity: 0;
-    transform: translateY(0.75rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Reading progress. Invisible without support: it is feedback, not content. */
-@utility scroll-measure {
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-@utility spec-rule {
-  transform-origin: left;
-}
-
-@supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .scroll-measure {
-      animation: measure-grow linear;
-      animation-timeline: scroll(root block);
-    }
-  }
-}
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .spec-rule {
-      animation: measure-grow linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 70%;
-    }
-
-    .spec-body {
-      animation: settle-in linear both;
-      animation-timeline: view();
-      animation-range: entry 10% entry 80%;
-    }
-  }
+/* A malha de células é sagrada (doação do teletexto declinado): em tela
+   estreita a célula encolhe, o campo nunca reflui para uma coluna genérica. */
+@utility field {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 @layer base {
   :root {
     color-scheme: light;
-    caret-color: var(--color-navy);
+    caret-color: var(--color-red);
   }
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-    scrollbar-color: rgb(74 85 104 / 0.4) transparent;
+    scroll-padding-top: 4.5rem;
+    scrollbar-color: var(--color-ink) var(--color-wash);
   }
 
   body {
     overflow-x: clip;
+    font-variant-numeric: tabular-nums;
   }
 
-  :where(a, button, input, textarea, [tabindex]):focus-visible {
-    outline: 3px solid var(--color-link);
-    outline-offset: 3px;
-    border-radius: 4px;
+  /* Estado é desenhado como marca, nunca como matiz (doação do jackfield
+     declinado): o foco é um bloco, não um halo colorido. */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 2px;
   }
 
   ::selection {
-    background: #d9e8f6;
-    color: var(--color-ink);
+    background: var(--color-red);
+    color: #ffffff;
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-canvas);
+    background: var(--color-wash);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-ink-3);
-    border: 3px solid transparent;
-    background-clip: content-box;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-ink-2);
-    background-clip: content-box;
+    background: var(--color-ink);
   }
 }
 

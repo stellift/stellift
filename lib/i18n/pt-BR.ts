@@ -115,6 +115,8 @@ export const ptBR: Dictionary = {
     hero: {
       title: "Software sob medida,",
       titleAccent: "da ideia à órbita.",
+      fieldStart: "IDEIA",
+      fieldEnd: "ÓRBITA",
       primary: "Vamos conversar",
       secondary: "Ver serviços",
     },
