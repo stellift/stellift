@@ -14,8 +14,13 @@ export default function Clients({ dict }: { dict: Dictionary }) {
 
         <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {dict.clients.map((client) => (
-            <li key={client.name} className="cell flex flex-col gap-5 p-6">
-              <div className="flex h-9 items-center">
+            <li
+              key={client.name}
+              className={`cell flex flex-col gap-5 p-6 ${
+                client.note ? "" : "justify-center"
+              }`}
+            >
+              <div className="flex h-12 items-center">
                 <ClientLogo client={client} />
                 <span className="sr-only">{client.name}</span>
               </div>
@@ -43,7 +48,7 @@ function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
     case "mozilla":
       return <MozillaLogo className="h-6 w-auto max-w-full text-ink" />;
     case "woovi":
-      return <WooviLogo className="h-6 w-auto max-w-full text-ink" />;
+      return <WooviLogo className="h-9 w-auto max-w-full text-ink" />;
     case "floprobux":
       return (
         <>
@@ -52,14 +57,14 @@ function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
             alt=""
             width={192}
             height={179}
-            className="h-8 w-auto dark:hidden"
+            className="h-11 w-auto dark:hidden"
           />
           <Image
             src="/logos/floprobux.webp"
             alt=""
             width={560}
             height={213}
-            className="hidden h-7 w-auto dark:block"
+            className="hidden h-9 w-auto dark:block"
           />
         </>
       );
