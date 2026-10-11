@@ -122,9 +122,9 @@ export const en: Dictionary = {
       primary: "Let's talk",
       secondary: "See services",
     },
-    services: { eyebrow: "Services", title: "What we do" },
+    services: { title: "What we do" },
     clients: {
-      eyebrow: "Contributions", title: "Companies we contributed to",
+      title: "Companies we contributed to",
       hint: "Swipe to see more companies.",
       footnote:
         "Google, Mozilla and other names mentioned are trademarks of their " +
@@ -135,14 +135,14 @@ export const en: Dictionary = {
       next: "Next company",
     },
     portfolio: {
-      eyebrow: "Portfolio", title: "Projects by stellift",
+      title: "Projects by stellift",
       cta: "View project",
       footnote:
         "LumniHub, BloxHarbor and PDV are stellift projects. Names and brands " +
         "mentioned are the property of their respective owners.",
     },
-    about: { eyebrow: "About", title: "About stellift" },
-    contact: { eyebrow: "Contact", title: "Let's get the idea off the ground" },
+    about: { title: "About stellift" },
+    contact: { title: "Let's get the idea off the ground" },
     card: { action: "Talk about this" },
     footer: {
       description:

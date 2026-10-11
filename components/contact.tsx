@@ -15,7 +15,6 @@ export default function Contact({ dict }: { dict: Dictionary }) {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
         <SectionHeading
           id="contact-title"
-          eyebrow={dict.ui.contact.eyebrow}
           title={dict.ui.contact.title}
         >
           {dict.contact.lead}

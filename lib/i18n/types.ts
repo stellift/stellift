@@ -60,9 +60,8 @@ export type Dictionary = {
       primary: string;
       secondary: string;
     };
-    services: { eyebrow: string; title: string };
+    services: { title: string };
     clients: {
-      eyebrow: string;
       title: string;
       hint: string;
       footnote: string;
@@ -71,9 +70,9 @@ export type Dictionary = {
       previous: string;
       next: string;
     };
-    portfolio: { eyebrow: string; title: string; cta: string; footnote: string };
-    about: { eyebrow: string; title: string };
-    contact: { eyebrow: string; title: string };
+    portfolio: { title: string; cta: string; footnote: string };
+    about: { title: string };
+    contact: { title: string };
     card: { action: string };
     footer: {
       description: string;

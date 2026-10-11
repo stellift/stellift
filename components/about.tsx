@@ -7,7 +7,6 @@ export default function About({ dict }: { dict: Dictionary }) {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
         <SectionHeading
           id="about-title"
-          eyebrow={dict.ui.about.eyebrow}
           title={dict.ui.about.title}
         >
           {dict.about.text}

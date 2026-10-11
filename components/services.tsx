@@ -14,7 +14,6 @@ export default function Services({ dict }: { dict: Dictionary }) {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
         <SectionHeading
           id="services-title"
-          eyebrow={dict.ui.services.eyebrow}
           title={dict.ui.services.title}
         />
 

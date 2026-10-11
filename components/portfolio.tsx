@@ -8,7 +8,6 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
         <SectionHeading
           id="portfolio-title"
-          eyebrow={dict.ui.portfolio.eyebrow}
           title={dict.ui.portfolio.title}
         />
 
