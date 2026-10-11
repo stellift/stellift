@@ -60,6 +60,74 @@
   animation: panel-in 180ms ease-out;
 }
 
+/* Motion thesis: the page is a specification being read, so scroll position is
+   reading position. The header carries a hairline that measures how far through
+   the document the reader is, and each spec row draws its own rule as the
+   reader reaches it. Movement here means measurement, never decoration.
+   `animate.md` forbids reinterpreting every section as a staggered reveal, so
+   nothing else moves on scroll.
+
+   Everything is gated behind @supports and prefers-reduced-motion:
+   no-preference. Firefox and anyone who asked for less motion gets the page
+   fully drawn and static, never a hidden element waiting on a timeline. */
+
+@keyframes measure-grow {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes settle-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reading progress. Invisible without support: it is feedback, not content. */
+@utility scroll-measure {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@utility spec-rule {
+  transform-origin: left;
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-measure {
+      animation: measure-grow linear;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .spec-rule {
+      animation: measure-grow linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    .spec-body {
+      animation: settle-in linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 80%;
+    }
+  }
+}
+
 @layer base {
   :root {
     color-scheme: light;

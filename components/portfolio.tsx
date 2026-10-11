@@ -11,7 +11,12 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
         <ul className="mt-14 border-t border-line">
           {dict.portfolio.map((project) => (
             <li key={project.name}>
-              <article className="group grid gap-x-10 gap-y-4 border-b border-line py-10 sm:py-12 lg:grid-cols-12">
+              <article className="spec-body group relative grid gap-x-10 gap-y-4 py-10 sm:py-12 lg:grid-cols-12">
+                <span
+                  aria-hidden
+                  className="spec-rule absolute inset-x-0 bottom-0 h-px bg-line"
+                />
+
                 <h3 className="font-display text-[2rem] font-normal leading-[1.1] tracking-[-0.02em] text-ink lg:col-span-4 lg:text-[2.25rem]">
                   {project.name}
                 </h3>

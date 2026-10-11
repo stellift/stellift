@@ -145,6 +145,11 @@ export default function Header({
         </div>
       </div>
 
+      <span
+        aria-hidden
+        className="scroll-measure absolute inset-x-0 bottom-0 h-px origin-left bg-link"
+      />
+
       {open && (
         <nav
           id="mobile-nav"
