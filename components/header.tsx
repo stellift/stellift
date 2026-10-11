@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/components/language-switcher";
+import ThemeToggle from "@/components/theme-toggle";
 import { ChevronRight } from "lucide-react";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
@@ -87,6 +88,11 @@ export default function Header({
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle
+            toLightTheme={dict.ui.header.toLightTheme}
+            toDarkTheme={dict.ui.header.toDarkTheme}
+          />
+
           <div className="hidden lg:block">
             <LanguageSwitcher lang={lang} label={dict.ui.header.switchLabel} />
           </div>

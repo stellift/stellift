@@ -107,6 +107,8 @@ export const ptBR: Dictionary = {
   ui: {
     header: {
       cta: "Iniciar conversa",
+      toLightTheme: "Mudar para o tema claro",
+      toDarkTheme: "Mudar para o tema escuro",
       menu: "Menu",
       openMenu: "Abrir menu",
       closeMenu: "Fechar menu",

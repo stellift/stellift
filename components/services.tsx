@@ -17,7 +17,7 @@ export default function Services({ dict }: { dict: Dictionary }) {
           title={dict.ui.services.title}
         />
 
-        {/* A grade é o fundo: o gap de 1px sobre bg-line vira o filete. */}
+        {}
         <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {dict.services.map((service) => {
             const Icon = icons[service.code];

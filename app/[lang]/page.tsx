@@ -14,9 +14,6 @@ export default async function Home() {
 
   const organizationId = `${siteUrl}/#organization`;
 
-  // Um @graph com nós identificáveis: o buscador liga a página à organização
-  // em vez de ler duas entidades soltas. O `url` sai de `siteUrl`, que resolve
-  // do ambiente — fixo no código ele apontava para um domínio que não responde.
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [

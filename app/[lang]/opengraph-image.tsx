@@ -8,9 +8,6 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "stellift";
 
-// Sem isto a rota sai como ƒ (dinâmica): o [lang] é dinâmico e o
-// generateStaticParams do layout não alcança este arquivo. Scrapers de rede
-// social têm timeout curto — a imagem precisa já estar pronta.
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }

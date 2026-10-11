@@ -7,6 +7,8 @@ import Footer from "@/components/footer";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { altLanguages, getDictionary } from "@/lib/i18n/server";
 
+const themeScript = `(function(){try{var s=localStorage.getItem("theme");document.documentElement.dataset.theme=s==="light"||s==="dark"?s:(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")}catch(e){}})()`;
+
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
   subsets: ["latin"],
@@ -75,8 +77,12 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   return (
     <html
       lang={dict.htmlLang}
+      suppressHydrationWarning
       className={`${instrumentSans.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="flex min-h-full flex-col">
         <Header dict={dict} lang={lang} />
         <main className="flex-1">{children}</main>

@@ -1,8 +1,28 @@
 @import "tailwindcss";
 
-/* Portado do frontend oficial do pi.venda (web/src/app/globals.css), que por
-   sua vez espelha o src/ui/Theme.h do desktop. Mudou lá, muda aqui. */
 @theme {
+  --color-canvas: initial;
+  --color-surface: initial;
+  --color-surface-muted: initial;
+  --color-line: initial;
+  --color-line-soft: initial;
+  --color-line-strong: initial;
+  --color-ink: initial;
+  --color-ink-muted: initial;
+  --color-ink-faint: initial;
+  --color-accent: initial;
+  --color-accent-hover: initial;
+  --color-accent-strong: initial;
+  --color-accent-soft: initial;
+  --color-danger: initial;
+
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+}
+
+:root {
+  color-scheme: dark;
+
   --color-canvas: #000000;
   --color-surface: #0a0a0a;
   --color-surface-muted: #141414;
@@ -14,20 +34,52 @@
   --color-ink-faint: #565656;
   --color-accent: #0a87fc;
   --color-accent-hover: #389fff;
-  /* Divergência deliberada da referência: branco sobre #0a87fc mede 3.57:1,
-     abaixo do piso de 4.5:1 para texto de 15px. Este tom mede 4.71:1 e é o
-     preenchimento de qualquer botão com texto branco. O #0a87fc continua
-     sendo o acento para texto e marcas sobre preto, onde mede 5.88:1. */
   --color-accent-strong: #0b73d8;
   --color-accent-soft: #08223a;
   --color-danger: #f87171;
+}
 
-  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-canvas: #ffffff;
+  --color-surface: #fafafa;
+  --color-surface-muted: #f2f3f5;
+  --color-line: #e4e4e7;
+  --color-line-soft: #efeff1;
+  --color-line-strong: #d4d4d8;
+  --color-ink: #18181b;
+  --color-ink-muted: #5f6368;
+  --color-ink-faint: #8a8d93;
+  --color-accent: #0b63b8;
+  --color-accent-hover: #0a5ca8;
+  --color-accent-strong: #0b63b8;
+  --color-accent-soft: #e8f1fd;
+  --color-danger: #c62828;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+  color-scheme: light;
+
+  --color-canvas: #ffffff;
+  --color-surface: #fafafa;
+  --color-surface-muted: #f2f3f5;
+  --color-line: #e4e4e7;
+  --color-line-soft: #efeff1;
+  --color-line-strong: #d4d4d8;
+  --color-ink: #18181b;
+  --color-ink-muted: #5f6368;
+  --color-ink-faint: #8a8d93;
+  --color-accent: #0b63b8;
+  --color-accent-hover: #0a5ca8;
+  --color-accent-strong: #0b63b8;
+  --color-accent-soft: #e8f1fd;
+  --color-danger: #c62828;
+  }
 }
 
 html {
-  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
@@ -69,6 +121,33 @@ section[id] {
   background: var(--color-line-strong);
   border: 3px solid var(--color-canvas);
   background-clip: content-box;
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0px at var(--theme-x, 50%) var(--theme-y, 50%));
+  }
+
+  to {
+    clip-path: circle(var(--theme-radius, 150vmax) at var(--theme-x, 50%) var(--theme-y, 50%));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-theme-animating]::view-transition-old(root),
+  :root[data-theme-animating]::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  :root[data-theme-animating]::view-transition-old(root) {
+    z-index: 1;
+  }
+
+  :root[data-theme-animating]::view-transition-new(root) {
+    z-index: 2;
+    animation: theme-reveal 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
 }
 
 @keyframes panel-in {
@@ -171,8 +250,6 @@ section[id] {
     outline: none;
   }
 
-  /* A grade é o fundo: gap-px sobre bg-line vira filete, e o hover troca o
-     preenchimento da célula. */
   .cell {
     background-color: var(--color-surface);
     transition: background-color 140ms ease;

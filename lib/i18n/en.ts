@@ -109,6 +109,8 @@ export const en: Dictionary = {
   ui: {
     header: {
       cta: "Start a conversation",
+      toLightTheme: "Switch to the light theme",
+      toDarkTheme: "Switch to the dark theme",
       menu: "Menu",
       openMenu: "Open menu",
       closeMenu: "Close menu",

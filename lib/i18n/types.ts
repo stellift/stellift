@@ -10,9 +10,9 @@ export type Dictionary = {
   site: {
     name: string;
     tagline: string;
-    /** Subtítulo do hero: curto. */
+
     description: string;
-    /** Meta description: ~155 caracteres, é o snippet do buscador. */
+
     metaDescription: string;
     email: string;
     linkedin: string;
@@ -46,6 +46,8 @@ export type Dictionary = {
   ui: {
     header: {
       cta: string;
+      toLightTheme: string;
+      toDarkTheme: string;
       menu: string;
       openMenu: string;
       closeMenu: string;
@@ -54,7 +56,7 @@ export type Dictionary = {
     hero: {
       title: string;
       titleAccent: string;
-      /** As duas palavras postas no campo do hero. */
+
       fieldStart: string;
       fieldEnd: string;
       primary: string;
