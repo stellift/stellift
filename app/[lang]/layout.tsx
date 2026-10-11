@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { altLanguages, getDictionary } from "@/lib/i18n/server";
 
-const themeScript = `(function(){try{var s=localStorage.getItem("theme");document.documentElement.dataset.theme=s==="light"||s==="dark"?s:(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")}catch(e){}})()`;
+const themeScript = `(function(){try{document.documentElement.dataset.theme=localStorage.getItem("theme")==="dark"?"dark":"light"}catch(e){}})()`;
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
