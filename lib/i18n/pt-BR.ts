@@ -55,17 +55,6 @@ export const ptBR: Dictionary = {
 
   portfolio: [
     {
-      name: "LumniHub",
-      text:
-        "Plataforma para criar, vender e afiliar cursos e ebooks. Tem loja, " +
-        "construtor de checkout, módulos com aulas e quizzes, programa de " +
-        "afiliados com split de pagamento, e painel de financeiro e relatórios " +
-        "para o produtor.",
-      stack: "React, Vite, React Router, React Aria, Supabase, Zod",
-      href: "https://app.lumnihub.com",
-      shot: "/shots/lumnihub.webp",
-    },
-    {
       name: "BloxHarbor",
       text: "Ecommerce de contas de Roblox, com entrega rápida e compra protegida.",
       stack: "Next.js",
@@ -150,8 +139,8 @@ export const ptBR: Dictionary = {
       title: "Projetos da stellift",
       cta: "Ver projeto",
       footnote:
-        "LumniHub, BloxHarbor, o PDV e o orce.me são projetos da stellift. Nomes " +
-        "e marcas citados são de seus respectivos proprietários.",
+        "BloxHarbor, o PDV e o orce.me são projetos da stellift. Nomes e marcas " +
+        "citados são de seus respectivos proprietários.",
     },
     about: { title: "A stellift" },
     contact: { title: "Vamos tirar a ideia do solo" },

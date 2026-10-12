@@ -9,7 +9,7 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
         <SectionHeading id="portfolio-title" title={dict.ui.portfolio.title} />
 
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {dict.portfolio.map((project) => (
             <li key={project.name} className="cell flex flex-col">
               {project.shot ? (
@@ -18,7 +18,7 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
                     src={project.shot}
                     alt=""
                     fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover object-top"
                   />
                 </div>
