@@ -1,34 +1,56 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import JsonLd from "@/components/json-ld";
+import { siteUrl, type Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/server";
+import { acceleratorsPath } from "@/lib/lists/metadata";
 import {
   entryCount,
-  intro,
+  metaDescription,
   sections,
   sourceNote,
   sourceRepo,
   title,
 } from "@/lib/lists/startup-accelerators";
 
-export default function Accelerators({ backLabel }: { backLabel: string }) {
+export default async function Accelerators({ lang }: { lang: Locale }) {
+  const dict = await getDictionary(lang);
+
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: title,
+          description: metaDescription,
+          url: `${siteUrl}${acceleratorsPath()}`,
+          inLanguage: "pt-BR",
+          numberOfItems: entryCount,
+          itemListElement: sections.flatMap((section) =>
+            section.entries.map((entry) => ({
+              "@type": "ListItem",
+              name: entry.name,
+              ...(entry.url ? { url: entry.url } : {}),
+            })),
+          ),
+        }}
+      />
+
       <section className="border-b border-line">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-24">
           <Link
-            href="/pt-BR"
+            href={`/${lang}`}
             className="inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
           >
             <ArrowLeft className="size-4" aria-hidden />
-            {backLabel}
+            {dict.tools.backLabel}
           </Link>
 
           <h1 className="mt-8 max-w-3xl text-balance font-serif text-4xl leading-tight text-ink sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-ink-muted">
-            {intro}
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted">
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-muted">
             {sourceNote}
           </p>
 

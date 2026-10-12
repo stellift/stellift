@@ -5,6 +5,7 @@ import Clients from "@/components/clients";
 import Contact from "@/components/contact";
 import Hero from "@/components/hero";
 import Portfolio from "@/components/portfolio";
+import JsonLd from "@/components/json-ld";
 import Services from "@/components/services";
 import ToolsSection from "@/components/tools-section";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
@@ -65,10 +66,7 @@ export default async function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <JsonLd data={structuredData} />
       <Hero dict={dict} />
       <Services dict={dict} />
       <Clients dict={dict} />

@@ -11,12 +11,6 @@ export const metaDescription =
 
 export const title = "Aceleradoras de startups no Brasil";
 
-export const intro =
-  "Quem está levantando a primeira rodada perde semanas só descobrindo quem " +
-  "existe. Esta é a lista que a gente consulta: aceleradoras, fundos, redes de " +
-  "anjo e programas públicos que investem em startup brasileira, com o que cada " +
-  "um faz e onde fica.";
-
 export type ListEntry = {
   name: string;
   url: string | null;
