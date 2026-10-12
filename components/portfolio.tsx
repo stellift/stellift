@@ -16,8 +16,8 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
         <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {dict.portfolio.map((project) => (
             <li key={project.name} className="cell flex flex-col">
-              {project.shot ? (
-                <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-canvas">
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-canvas">
+                {project.shot ? (
                   <Image
                     src={project.shot}
                     alt=""
@@ -25,14 +25,10 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover object-top"
                   />
-                </div>
-              ) : null}
+                ) : null}
+              </div>
 
-              <div
-                className={`flex flex-1 flex-col p-6 ${
-                  project.shot ? "" : "justify-center"
-                }`}
-              >
+              <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-serif text-2xl text-ink">
                   {project.name}
                 </h3>

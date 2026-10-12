@@ -107,6 +107,17 @@ export const ptBR: Dictionary = {
       shot: "/shots/heartbit.webp",
     },
     {
+      name: "ZapZap",
+      role: "Experimento pessoal",
+      text:
+        "Cliente alternativo do WhatsApp Desktop em Rust, com a meta de caber em " +
+        "10 MB. A interface desenha direto no X11 por chamadas de sistema, sem " +
+        "toolkit gráfico, e o escopo é estreito de propósito: só Brasil, só o " +
+        "lado do cliente.",
+      stack: "Rust, X11 por syscalls, whatsapp-rust",
+      href: "https://github.com/criskell/zapzap",
+    },
+    {
       name: "LumniHub",
       role: "Desenvolvimento de boa parte do produto",
       text:
