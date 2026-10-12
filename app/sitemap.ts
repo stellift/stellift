@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales, siteUrl } from "@/lib/i18n/config";
-import { toolIds, toolPath } from "@/lib/tools/config";
-import * as list from "@/lib/lists/startup-accelerators";
+import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
+import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
 
 export const dynamic = "force-static";
 

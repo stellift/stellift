@@ -1,19 +1,7 @@
-export function downtimeMinutes(uptimePercent: number, days: number) {
-  const ratio = Math.min(Math.max(uptimePercent, 0), 100) / 100;
-  return days * 24 * 60 * (1 - ratio);
-}
-
-export function hourlyCost(monthly: number, chargesPercent: number, hours: number) {
-  if (hours <= 0) return 0;
-  return (monthly * (1 + chargesPercent / 100)) / hours;
-}
-
-export function formatDuration(totalMinutes: number, unitNames: {
-  day: string;
-  hour: string;
-  minute: string;
-  second: string;
-}) {
+export function formatDuration(
+  totalMinutes: number,
+  unitNames: { day: string; hour: string; minute: string; second: string },
+) {
   if (totalMinutes <= 0) return `0 ${unitNames.minute}`;
   const totalSeconds = Math.round(totalMinutes * 60);
   const days = Math.floor(totalSeconds / 86400);
@@ -35,12 +23,6 @@ export function formatMoney(value: number, locale: string, currency: string) {
     currency,
     maximumFractionDigits: 2,
   }).format(Number.isFinite(value) ? value : 0);
-}
-
-export function pert(optimistic: number, likely: number, pessimistic: number) {
-  const expected = (optimistic + 4 * likely + pessimistic) / 6;
-  const deviation = Math.max((pessimistic - optimistic) / 6, 0);
-  return { expected, deviation };
 }
 
 export function formatNumber(value: number, locale: string, digits = 1) {

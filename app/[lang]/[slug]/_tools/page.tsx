@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import Calculator from "@/components/tools/calculator";
-import JsonLd from "@/components/json-ld";
+import { calculators } from "@/app/[lang]/[slug]/_tools/registry";
+import JsonLd from "@/app/[lang]/_components/json-ld";
 import { siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
-import { toolIds, toolPath, type ToolId } from "@/lib/tools/config";
-import { currencies } from "@/lib/tools/metadata";
+import { toolIds, toolPath, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
+import { currencies } from "@/app/[lang]/[slug]/_tools/metadata";
 
 export default async function ToolPage({
   lang,
@@ -17,6 +17,7 @@ export default async function ToolPage({
   const dict = await getDictionary(lang);
   const copy = dict.tools.items[id];
   const others = toolIds.filter((other) => other !== id);
+  const Calculator = calculators[id];
 
   return (
     <>
@@ -54,7 +55,7 @@ export default async function ToolPage({
           </p>
 
           <div className="mt-12">
-            <Calculator id={id} dict={dict} currency={currencies[lang]} />
+            <Calculator dict={dict} currency={currencies[lang]} />
           </div>
 
           <p className="mt-6 max-w-2xl text-xs leading-relaxed text-ink-muted">

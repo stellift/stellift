@@ -1,13 +1,13 @@
 import { locales, type Locale } from "@/lib/i18n/config";
-import { toolFromSlug, toolIds, toolSlugs } from "@/lib/tools/config";
-import * as accelerators from "@/lib/lists/startup-accelerators";
+import { toolFromSlug, toolIds, toolSlugs, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
+import * as accelerators from "@/app/[lang]/[slug]/_lists/accelerators/data";
 
-export type Route = { kind: "tool"; id: (typeof toolIds)[number] } | { kind: "list" };
+export type Route = { kind: "tool"; id: ToolId } | { kind: "list" };
 
 export function routeParams() {
   return [
     ...locales.flatMap((lang) =>
-      toolIds.map((id) => ({ lang, slug: toolSlugs[lang][id] })),
+      toolIds.map((id) => ({ lang, slug: toolSlugs[id][lang] })),
     ),
     { lang: accelerators.locale, slug: accelerators.slug },
   ];

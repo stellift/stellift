@@ -5,7 +5,7 @@ export type ServiceCode = "WEB" | "MOB" | "CLD";
 export type ChannelKind = "email" | "linkedin" | "code";
 
 
-type ToolCopy = {
+export type ToolCopy = {
   name: string;
   tagline: string;
   metaTitle: string;

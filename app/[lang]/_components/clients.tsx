@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SectionHeading from "@/components/section-heading";
-import { GoogleLogo, MozillaLogo, WooviLogo } from "@/components/brand-logos";
+import SectionHeading from "@/app/[lang]/_components/section-heading";
+import { GoogleLogo, MozillaLogo, WooviLogo } from "@/app/[lang]/_components/brand-logos";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Clients({ dict }: { dict: Dictionary }) {

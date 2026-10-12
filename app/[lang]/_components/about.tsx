@@ -1,4 +1,4 @@
-import SectionHeading from "@/components/section-heading";
+import SectionHeading from "@/app/[lang]/_components/section-heading";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function About({ dict }: { dict: Dictionary }) {

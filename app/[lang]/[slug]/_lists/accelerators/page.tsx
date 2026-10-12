@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import JsonLd from "@/components/json-ld";
+import JsonLd from "@/app/[lang]/_components/json-ld";
 import { siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
-import { acceleratorsPath } from "@/lib/lists/metadata";
+import { acceleratorsPath } from "@/app/[lang]/[slug]/_lists/accelerators/metadata";
 import {
   entryCount,
   metaDescription,
@@ -11,7 +11,7 @@ import {
   sourceNote,
   sourceRepo,
   title,
-} from "@/lib/lists/startup-accelerators";
+} from "@/app/[lang]/[slug]/_lists/accelerators/data";
 
 export default async function Accelerators({ lang }: { lang: Locale }) {
   const dict = await getDictionary(lang);

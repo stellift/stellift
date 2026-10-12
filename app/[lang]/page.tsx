@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
-import About from "@/components/about";
-import Clients from "@/components/clients";
-import Contact from "@/components/contact";
-import Hero from "@/components/hero";
-import Portfolio from "@/components/portfolio";
-import JsonLd from "@/components/json-ld";
-import Services from "@/components/services";
-import ToolsSection from "@/components/tools-section";
+import About from "@/app/[lang]/_components/about";
+import Clients from "@/app/[lang]/_components/clients";
+import Contact from "@/app/[lang]/_components/contact";
+import Hero from "@/app/[lang]/_components/hero";
+import Portfolio from "@/app/[lang]/_components/portfolio";
+import JsonLd from "@/app/[lang]/_components/json-ld";
+import Services from "@/app/[lang]/_components/services";
+import ToolsSection from "@/app/[lang]/_components/tools-section";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
 

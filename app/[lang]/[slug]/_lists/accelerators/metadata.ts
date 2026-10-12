@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { siteUrl } from "@/lib/i18n/config";
-import * as accelerators from "@/lib/lists/startup-accelerators";
+import * as accelerators from "@/app/[lang]/[slug]/_lists/accelerators/data";
 
 export function acceleratorsPath() {
   return `/${accelerators.locale}/${accelerators.slug}`;

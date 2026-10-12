@@ -1,6 +1,6 @@
 import { Code2, Mail, Users, type LucideIcon } from "lucide-react";
-import SectionHeading from "@/components/section-heading";
-import ContactForm from "@/components/contact-form";
+import SectionHeading from "@/app/[lang]/_components/section-heading";
+import ContactForm from "@/app/[lang]/_components/contact-form";
 import type { ChannelKind, Dictionary } from "@/lib/i18n/types";
 
 const icons: Record<ChannelKind, LucideIcon> = {

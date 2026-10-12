@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locales, siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
-import { toolPath, type ToolId } from "@/lib/tools/config";
+import { toolPath, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
 
 export const currencies: Record<Locale, string> = { "pt-BR": "BRL", en: "USD" };
 

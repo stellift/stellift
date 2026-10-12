@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Accelerators from "@/components/lists/accelerators";
-import ToolPage from "@/components/tools/tool-page";
+import Accelerators from "@/app/[lang]/[slug]/_lists/accelerators/page";
+import ToolPage from "@/app/[lang]/[slug]/_tools/page";
 import { isLocale } from "@/lib/i18n/config";
-import { acceleratorsMetadata } from "@/lib/lists/metadata";
-import { resolveRoute, routeParams } from "@/lib/routes";
-import { toolMetadata } from "@/lib/tools/metadata";
+import { acceleratorsMetadata } from "@/app/[lang]/[slug]/_lists/accelerators/metadata";
+import { resolveRoute, routeParams } from "@/app/[lang]/[slug]/_lib/routes";
+import { toolMetadata } from "@/app/[lang]/[slug]/_tools/metadata";
 
 export function generateStaticParams() {
   return routeParams();

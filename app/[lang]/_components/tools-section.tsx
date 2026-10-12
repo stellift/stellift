@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { toolIds, toolPath } from "@/lib/tools/config";
+import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
 

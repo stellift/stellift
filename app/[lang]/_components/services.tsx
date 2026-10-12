@@ -1,5 +1,5 @@
 import { Cloud, Smartphone, Globe, type LucideIcon } from "lucide-react";
-import SectionHeading from "@/components/section-heading";
+import SectionHeading from "@/app/[lang]/_components/section-heading";
 import type { Dictionary, ServiceCode } from "@/lib/i18n/types";
 
 const icons: Record<ServiceCode, LucideIcon> = {

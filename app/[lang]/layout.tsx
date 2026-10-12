@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/app/[lang]/_components/header";
+import Footer from "@/app/[lang]/_components/footer";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { altLanguages, getDictionary } from "@/lib/i18n/server";
 

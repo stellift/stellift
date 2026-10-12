@@ -1,5 +1,5 @@
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
-import * as list from "@/lib/lists/startup-accelerators";
+import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Footer({
