@@ -4,6 +4,18 @@ export type ServiceCode = "WEB" | "MOB" | "CLD";
 
 export type ChannelKind = "email" | "linkedin" | "code";
 
+
+type ToolCopy = {
+  name: string;
+  tagline: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  fields: ReadonlyArray<{ key: string; label: string; hint?: string }>;
+  results: ReadonlyArray<{ key: string; label: string }>;
+  note: string;
+};
+
 export type Dictionary = {
   htmlLang: string;
   ogLocale: string;
@@ -44,6 +56,19 @@ export type Dictionary = {
       value: string;
       href: string;
     }>;
+  };
+  tools: {
+    title: string;
+    lead: string;
+    cta: string;
+    backLabel: string;
+    allLabel: string;
+    units: { day: string; hour: string; minute: string; second: string };
+    items: {
+      sla: ToolCopy;
+      "hourly-cost": ToolCopy;
+      automation: ToolCopy;
+    };
   };
   ui: {
     header: {

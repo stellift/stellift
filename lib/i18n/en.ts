@@ -21,6 +21,7 @@ export const en: Dictionary = {
     { label: "Services", href: "#services" },
     { label: "Contributions", href: "#clients" },
     { label: "Portfolio", href: "#portfolio" },
+    { label: "Tools", href: "#tools" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ],
@@ -129,6 +130,88 @@ export const en: Dictionary = {
       },
       { kind: "code", label: "Code", value: "github.com/stellift", href: "https://github.com/stellift" },
     ],
+  },
+
+  tools: {
+    title: "Free tools",
+    lead:
+      "Sums we run every week, open for anyone to use. Nothing is sent " +
+      "anywhere: the maths runs in your browser.",
+    cta: "Open tool",
+    backLabel: "Back to stellift",
+    allLabel: "All tools",
+    units: { day: "d", hour: "h", minute: "min", second: "s" },
+    items: {
+      sla: {
+        name: "SLA uptime calculator",
+        tagline: "How much downtime each uptime level actually allows.",
+        metaTitle: "SLA calculator: how much downtime fits in 99.9% uptime",
+        metaDescription:
+          "Turn an uptime SLA into real downtime per day, week, month and year. " +
+          "See what 99%, 99.9% or 99.99% actually allow.",
+        intro:
+          "A percentage hides the thing that matters: how long the system may be " +
+          "down before the agreement breaks. Enter the uptime you committed to.",
+        fields: [{ key: "uptime", label: "Committed uptime (%)", hint: "e.g. 99.9" }],
+        results: [
+          { key: "day", label: "Per day" },
+          { key: "week", label: "Per week" },
+          { key: "month", label: "Per month (30 days)" },
+          { key: "year", label: "Per year (365 days)" },
+        ],
+        note:
+          "The monthly window uses a 30-day month and the yearly one 365 days. Real " +
+          "contracts usually measure calendar months and exclude maintenance windows.",
+      },
+      "hourly-cost": {
+        name: "Developer hourly cost calculator",
+        tagline: "What an hour of engineering really costs.",
+        metaTitle: "Developer hourly cost calculator",
+        metaDescription:
+          "Work out the real cost of an hour of development from monthly cost, " +
+          "charges and productive hours. The maths runs in your browser.",
+        intro:
+          "Salary is not cost. Add charges and divide by the hours that actually " +
+          "turn into delivered work, not the hours on the contract.",
+        fields: [
+          { key: "monthly", label: "Monthly cost", hint: "Salary or contract value" },
+          { key: "charges", label: "Charges and benefits (%)", hint: "On the monthly value" },
+          { key: "hours", label: "Productive hours per month", hint: "Net of meetings and leave" },
+        ],
+        results: [
+          { key: "hour", label: "Cost per hour" },
+          { key: "day", label: "Cost per 6-hour day" },
+          { key: "month", label: "Monthly cost with charges" },
+        ],
+        note:
+          "Charge rates vary by contract type and jurisdiction. Use the numbers from " +
+          "your own case, not a market average.",
+      },
+      automation: {
+        name: "Automation savings calculator",
+        tagline: "What a manual process costs per year.",
+        metaTitle: "Automation savings calculator",
+        metaDescription:
+          "Estimate what a manual process costs per month and per year from the " +
+          "hours it takes and your team hourly cost, and what automating it frees up.",
+        intro:
+          "Before automating, it helps to size the problem. Enter the hours the " +
+          "process takes and the hourly cost of whoever runs it.",
+        fields: [
+          { key: "hours", label: "Hours per month on the process" },
+          { key: "cost", label: "Cost per hour" },
+          { key: "reduction", label: "Expected reduction (%)", hint: "How much of the work disappears" },
+        ],
+        results: [
+          { key: "month", label: "Current cost per month" },
+          { key: "saveMonth", label: "Saved per month" },
+          { key: "saveYear", label: "Saved per year" },
+        ],
+        note:
+          "The expected reduction is your own assumption. This does not estimate the " +
+          "cost of building or maintaining the automation.",
+      },
+    },
   },
 
   ui: {

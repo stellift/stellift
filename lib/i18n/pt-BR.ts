@@ -21,6 +21,7 @@ export const ptBR: Dictionary = {
     { label: "Serviços", href: "#services" },
     { label: "Onde contribuiu", href: "#clients" },
     { label: "Portfólio", href: "#portfolio" },
+    { label: "Ferramentas", href: "#tools" },
     { label: "Sobre", href: "#about" },
     { label: "Contato", href: "#contact" },
   ],
@@ -128,6 +129,91 @@ export const ptBR: Dictionary = {
       },
       { kind: "code", label: "Código", value: "github.com/stellift", href: "https://github.com/stellift" },
     ],
+  },
+
+  tools: {
+    title: "Ferramentas livres",
+    lead:
+      "Contas que a gente faz toda semana, abertas para qualquer pessoa usar. " +
+      "Nada é enviado: o cálculo roda no seu navegador.",
+    cta: "Abrir ferramenta",
+    backLabel: "Voltar para a stellift",
+    allLabel: "Todas as ferramentas",
+    units: { day: "dias", hour: "h", minute: "min", second: "s" },
+    items: {
+      sla: {
+        name: "Calculadora de SLA",
+        tagline: "Quanto tempo fora do ar cabe em cada nível de uptime.",
+        metaTitle: "Calculadora de SLA: quanto de queda cabe em 99,9% de uptime",
+        metaDescription:
+          "Converta um SLA de uptime em tempo real de indisponibilidade por dia, " +
+          "semana, mês e ano. Descubra quanto 99%, 99,9% ou 99,99% permitem de queda.",
+        intro:
+          "Um SLA em porcentagem esconde o que importa: quanto tempo o sistema " +
+          "pode ficar fora antes de furar o acordo. Digite o uptime contratado e " +
+          "veja a janela de queda em cada período.",
+        fields: [
+          { key: "uptime", label: "Uptime contratado (%)", hint: "Ex.: 99,9" },
+        ],
+        results: [
+          { key: "day", label: "Por dia" },
+          { key: "week", label: "Por semana" },
+          { key: "month", label: "Por mês (30 dias)" },
+          { key: "year", label: "Por ano (365 dias)" },
+        ],
+        note:
+          "A janela mensal usa mês de 30 dias e a anual, 365 dias. Contratos reais " +
+          "costumam medir por mês civil e descontar janelas de manutenção.",
+      },
+      "hourly-cost": {
+        name: "Custo-hora de desenvolvedor",
+        tagline: "O que uma hora de engenharia custa de verdade.",
+        metaTitle: "Calculadora de custo-hora de desenvolvedor",
+        metaDescription:
+          "Calcule o custo real de uma hora de desenvolvimento a partir do salário " +
+          "mensal, dos encargos e das horas produtivas no mês. O cálculo roda no navegador.",
+        intro:
+          "O salário não é o custo. Some encargos e divida pelas horas que " +
+          "realmente viram trabalho entregue, não pelas horas de contrato.",
+        fields: [
+          { key: "monthly", label: "Custo mensal (R$)", hint: "Salário ou valor do contrato" },
+          { key: "charges", label: "Encargos e benefícios (%)", hint: "Sobre o valor mensal" },
+          { key: "hours", label: "Horas produtivas por mês", hint: "Descontando reuniões e férias" },
+        ],
+        results: [
+          { key: "hour", label: "Custo por hora" },
+          { key: "day", label: "Custo por dia de 6h" },
+          { key: "month", label: "Custo mensal com encargos" },
+        ],
+        note:
+          "Os percentuais de encargo variam por regime de contratação e por acordo " +
+          "coletivo. Use os números do seu caso, não uma média de mercado.",
+      },
+      automation: {
+        name: "Economia com automação",
+        tagline: "Quanto um trabalho manual custa por ano.",
+        metaTitle: "Calculadora de economia com automação de processos",
+        metaDescription:
+          "Estime quanto um processo manual custa por mês e por ano a partir das " +
+          "horas gastas e do custo-hora da equipe, e quanto sobra ao automatizá-lo.",
+        intro:
+          "Antes de automatizar, vale saber o tamanho do problema. Informe as horas " +
+          "gastas no processo e o custo-hora de quem o executa.",
+        fields: [
+          { key: "hours", label: "Horas por mês no processo" },
+          { key: "cost", label: "Custo por hora (R$)" },
+          { key: "reduction", label: "Redução esperada (%)", hint: "Quanto do trabalho some" },
+        ],
+        results: [
+          { key: "month", label: "Custo atual por mês" },
+          { key: "saveMonth", label: "Economia por mês" },
+          { key: "saveYear", label: "Economia por ano" },
+        ],
+        note:
+          "A redução esperada é uma hipótese sua. A conta não estima custo de " +
+          "construção nem de manutenção da automação.",
+      },
+    },
   },
 
   ui: {

@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
 import About from "@/components/about";
 import Clients from "@/components/clients";
@@ -5,11 +6,13 @@ import Contact from "@/components/contact";
 import Hero from "@/components/hero";
 import Portfolio from "@/components/portfolio";
 import Services from "@/components/services";
-import { locales, siteUrl } from "@/lib/i18n/config";
+import ToolsSection from "@/components/tools-section";
+import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
 
 export default async function Home() {
   const locale = await lang();
+  if (!isLocale(locale)) notFound();
   const dict = await getDictionary(locale);
 
   const organizationId = `${siteUrl}/#organization`;
@@ -70,6 +73,7 @@ export default async function Home() {
       <Services dict={dict} />
       <Clients dict={dict} />
       <Portfolio dict={dict} />
+      <ToolsSection dict={dict} lang={locale} />
       <About dict={dict} />
       <Contact dict={dict} />
     </>
