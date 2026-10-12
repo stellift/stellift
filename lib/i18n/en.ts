@@ -87,6 +87,16 @@ export const en: Dictionary = {
       shot: "/shots/orce.webp",
     },
     {
+      name: "Strellis",
+      role: "stellift project",
+      text:
+        "A marketplace where developers build a profile, sell digital products " +
+        "and take on freelance projects. Money for each milestone sits in escrow " +
+        "until the delivery is approved.",
+      stack: "Elixir, Phoenix, Next.js, PostgreSQL, React Native, Rust",
+      shot: "/shots/strellis.webp",
+    },
+    {
       name: "LumniHub",
       role: "Built a large part of the product",
       text:
