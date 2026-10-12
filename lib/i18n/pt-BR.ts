@@ -141,6 +141,7 @@ export const ptBR: Dictionary = {
     cta: "Abrir ferramenta",
     backLabel: "Voltar para a stellift",
     allLabel: "Todas as ferramentas",
+    rangeJoin: "a",
     units: { day: "dias", hour: "h", minute: "min", second: "s" },
     items: {
       sla: {
@@ -166,6 +167,79 @@ export const ptBR: Dictionary = {
         note:
           "A janela mensal usa mês de 30 dias e a anual, 365 dias. Contratos reais " +
           "costumam medir por mês civil e descontar janelas de manutenção.",
+      },
+      "downtime-cost": {
+        name: "Quanto custa ficar fora do ar",
+        tagline: "O preço de uma queda, em reais.",
+        metaTitle: "Quanto custa ficar fora do ar: calculadora de prejuízo por downtime",
+        metaDescription:
+          "Transforme minutos de indisponibilidade em prejuízo. Informe o faturamento " +
+          "do mês, as horas em que a operação roda e a duração da queda.",
+        intro:
+          "Discutir uptime em porcentagem adia a pergunta que o financeiro faz. " +
+          "Esta conta traduz a queda para a moeda em que a decisão é tomada.",
+        fields: [
+          { key: "revenue", label: "Faturamento no mês (R$)" },
+          { key: "openHours", label: "Horas de operação por mês", hint: "24x7 dá 720" },
+          { key: "minutes", label: "Duração da queda (minutos)" },
+        ],
+        results: [
+          { key: "minute", label: "Por minuto parado" },
+          { key: "hour", label: "Por hora parada" },
+          { key: "total", label: "Nessa queda" },
+        ],
+        note:
+          "A conta assume faturamento distribuído por igual nas horas de operação. " +
+          "Pico de venda e multa contratual ficam de fora e costumam pesar mais.",
+      },
+      "team-cost": {
+        name: "Custo de um time de projeto",
+        tagline: "O que um time custa do começo ao fim.",
+        metaTitle: "Calculadora de custo de time de projeto de software",
+        metaDescription:
+          "Some o custo de um time de projeto por semana, por pessoa e no total, a " +
+          "partir do tamanho do time, do custo-hora e da duração prevista.",
+        intro:
+          "Orçamento de software some em dois lugares: no tamanho do time e na " +
+          "duração. Mexa nos dois aqui antes de prometer uma data.",
+        fields: [
+          { key: "people", label: "Pessoas no time" },
+          { key: "cost", label: "Custo por hora (R$)", hint: "Use o resultado da outra calculadora" },
+          { key: "hours", label: "Horas por semana, por pessoa" },
+          { key: "weeks", label: "Semanas de projeto" },
+        ],
+        results: [
+          { key: "total", label: "Custo total" },
+          { key: "week", label: "Por semana" },
+          { key: "person", label: "Por pessoa, no projeto" },
+        ],
+        note:
+          "Só mão de obra. Licença, infraestrutura e o tempo de quem acompanha do " +
+          "lado do cliente entram por fora.",
+      },
+      estimate: {
+        name: "Estimativa de prazo (PERT)",
+        tagline: "Três palpites viram uma faixa defensável.",
+        metaTitle: "Calculadora de estimativa PERT de três pontos",
+        metaDescription:
+          "Converta cenário otimista, provável e pessimista em uma estimativa PERT " +
+          "com desvio padrão e faixa de confiança. Fórmula clássica de três pontos.",
+        intro:
+          "Um número só esconde o risco. A estimativa de três pontos pesa o cenário " +
+          "provável quatro vezes mais que os extremos e devolve o desvio junto.",
+        fields: [
+          { key: "optimistic", label: "Otimista", hint: "Dias, se tudo der certo" },
+          { key: "likely", label: "Provável" },
+          { key: "pessimistic", label: "Pessimista" },
+        ],
+        results: [
+          { key: "expected", label: "Estimativa PERT" },
+          { key: "range", label: "Faixa de 68%" },
+          { key: "safe", label: "Faixa de 95%" },
+        ],
+        note:
+          "Fórmula: (otimista + 4 × provável + pessimista) ÷ 6, com desvio padrão " +
+          "(pessimista − otimista) ÷ 6. Vale por tarefa, não pelo projeto inteiro.",
       },
       "hourly-cost": {
         name: "Custo-hora de desenvolvedor",

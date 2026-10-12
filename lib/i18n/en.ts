@@ -142,6 +142,7 @@ export const en: Dictionary = {
     cta: "Open tool",
     backLabel: "Back to stellift",
     allLabel: "All tools",
+    rangeJoin: "to",
     units: { day: "d", hour: "h", minute: "min", second: "s" },
     items: {
       sla: {
@@ -165,6 +166,79 @@ export const en: Dictionary = {
         note:
           "The monthly window uses a 30-day month and the yearly one 365 days. Real " +
           "contracts usually measure calendar months and exclude maintenance windows.",
+      },
+      "downtime-cost": {
+        name: "Cost of downtime calculator",
+        tagline: "What an outage costs, in money.",
+        metaTitle: "Cost of downtime calculator: what an outage really costs",
+        metaDescription:
+          "Turn minutes of downtime into money lost. Enter monthly revenue, the hours " +
+          "your operation runs and how long the outage lasted.",
+        intro:
+          "Arguing about uptime in percentages postpones the question finance asks. " +
+          "This turns the outage into the currency the decision is made in.",
+        fields: [
+          { key: "revenue", label: "Revenue in the month" },
+          { key: "openHours", label: "Operating hours per month", hint: "24x7 is 720" },
+          { key: "minutes", label: "Outage length (minutes)" },
+        ],
+        results: [
+          { key: "minute", label: "Per minute down" },
+          { key: "hour", label: "Per hour down" },
+          { key: "total", label: "This outage" },
+        ],
+        note:
+          "This assumes revenue spread evenly across operating hours. Peak trading and " +
+          "contractual penalties sit outside it and usually weigh more.",
+      },
+      "team-cost": {
+        name: "Project team cost calculator",
+        tagline: "What a team costs from start to finish.",
+        metaTitle: "Project team cost calculator for software work",
+        metaDescription:
+          "Add up what a project team costs per week, per person and in total, from " +
+          "team size, hourly cost and the planned duration.",
+        intro:
+          "Software budgets disappear in two places, team size and duration. Move both " +
+          "here before you promise a date.",
+        fields: [
+          { key: "people", label: "People on the team" },
+          { key: "cost", label: "Cost per hour", hint: "Use the result from the other calculator" },
+          { key: "hours", label: "Hours per week, per person" },
+          { key: "weeks", label: "Project weeks" },
+        ],
+        results: [
+          { key: "total", label: "Total cost" },
+          { key: "week", label: "Per week" },
+          { key: "person", label: "Per person, over the project" },
+        ],
+        note:
+          "Labour only. Licences, infrastructure and the client-side time spent " +
+          "following the work sit outside this.",
+      },
+      estimate: {
+        name: "PERT estimate calculator",
+        tagline: "Three guesses become a defensible range.",
+        metaTitle: "Three-point PERT estimate calculator",
+        metaDescription:
+          "Turn optimistic, likely and pessimistic cases into a PERT estimate with " +
+          "standard deviation and confidence ranges. The classic three-point formula.",
+        intro:
+          "A single number hides the risk. Three-point estimation weighs the likely " +
+          "case four times heavier than the extremes and hands back the deviation.",
+        fields: [
+          { key: "optimistic", label: "Optimistic", hint: "Days, if everything goes right" },
+          { key: "likely", label: "Likely" },
+          { key: "pessimistic", label: "Pessimistic" },
+        ],
+        results: [
+          { key: "expected", label: "PERT estimate" },
+          { key: "range", label: "68% range" },
+          { key: "safe", label: "95% range" },
+        ],
+        note:
+          "Formula: (optimistic + 4 x likely + pessimistic) / 6, with a standard " +
+          "deviation of (pessimistic - optimistic) / 6. Use it per task, not per project.",
       },
       "hourly-cost": {
         name: "Developer hourly cost calculator",

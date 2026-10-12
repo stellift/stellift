@@ -5,14 +5,19 @@ import {
   downtimeMinutes,
   formatDuration,
   formatMoney,
+  formatNumber,
   hourlyCost,
+  pert,
 } from "@/lib/tools/math";
 import type { ToolId } from "@/lib/tools/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
 const defaults: Record<ToolId, Record<string, string>> = {
   sla: { uptime: "99.9" },
+  "downtime-cost": { revenue: "250000", openHours: "720", minutes: "45" },
   "hourly-cost": { monthly: "12000", charges: "80", hours: "120" },
+  "team-cost": { people: "3", cost: "180", hours: "30", weeks: "12" },
+  estimate: { optimistic: "5", likely: "8", pessimistic: "20" },
   automation: { hours: "40", cost: "150", reduction: "80" },
 };
 
@@ -103,6 +108,40 @@ function compute(
       week: duration(downtimeMinutes(uptime, 7)),
       month: duration(downtimeMinutes(uptime, 30)),
       year: duration(downtimeMinutes(uptime, 365)),
+    };
+  }
+
+  if (id === "downtime-cost") {
+    const perHour = num("openHours") > 0 ? num("revenue") / num("openHours") : 0;
+    return {
+      minute: money(perHour / 60),
+      hour: money(perHour),
+      total: money((perHour / 60) * num("minutes")),
+    };
+  }
+
+  if (id === "team-cost") {
+    const week = num("people") * num("cost") * num("hours");
+    const total = week * num("weeks");
+    return {
+      total: money(total),
+      week: money(week),
+      person: money(num("people") > 0 ? total / num("people") : 0),
+    };
+  }
+
+  if (id === "estimate") {
+    const { expected, deviation } = pert(
+      num("optimistic"),
+      num("likely"),
+      num("pessimistic"),
+    );
+    const span = (factor: number) =>
+      `${formatNumber(Math.max(expected - factor * deviation, 0), locale)} ${dict.tools.rangeJoin} ${formatNumber(expected + factor * deviation, locale)}`;
+    return {
+      expected: formatNumber(expected, locale),
+      range: span(1),
+      safe: span(2),
     };
   }
 

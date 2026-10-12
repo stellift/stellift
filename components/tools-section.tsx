@@ -26,7 +26,7 @@ export default function ToolsSection({
           </p>
         </header>
 
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-3">
+        <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {toolIds.map((id) => (
             <li key={id}>
               <Link href={toolPath(lang, id)} className="cell flex h-full flex-col p-6">

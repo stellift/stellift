@@ -63,10 +63,14 @@ export type Dictionary = {
     cta: string;
     backLabel: string;
     allLabel: string;
+    rangeJoin: string;
     units: { day: string; hour: string; minute: string; second: string };
     items: {
       sla: ToolCopy;
+      "downtime-cost": ToolCopy;
       "hourly-cost": ToolCopy;
+      "team-cost": ToolCopy;
+      estimate: ToolCopy;
       automation: ToolCopy;
     };
   };

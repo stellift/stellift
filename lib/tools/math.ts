@@ -36,3 +36,15 @@ export function formatMoney(value: number, locale: string, currency: string) {
     maximumFractionDigits: 2,
   }).format(Number.isFinite(value) ? value : 0);
 }
+
+export function pert(optimistic: number, likely: number, pessimistic: number) {
+  const expected = (optimistic + 4 * likely + pessimistic) / 6;
+  const deviation = Math.max((pessimistic - optimistic) / 6, 0);
+  return { expected, deviation };
+}
+
+export function formatNumber(value: number, locale: string, digits = 1) {
+  return new Intl.NumberFormat(locale, {
+    maximumFractionDigits: digits,
+  }).format(Number.isFinite(value) ? value : 0);
+}

@@ -123,7 +123,7 @@ export default async function ToolPage({ params }: PageProps<"/[lang]/[slug]">) 
       <section className="border-b border-line">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <h2 className="font-serif text-2xl text-ink">{dict.tools.allLabel}</h2>
-          <ul className="mt-8 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2">
+          <ul className="mt-8 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {others.map((other) => (
               <li key={other}>
                 <Link href={toolPath(lang, other)} className="cell block h-full p-6">
@@ -135,6 +135,16 @@ export default async function ToolPage({ params }: PageProps<"/[lang]/[slug]">) 
                   </p>
                 </Link>
               </li>
+            ))}
+            {Array.from({ length: (3 - (others.length % 3)) % 3 }, (_, i) => (
+              <li key={`wide-${i}`} aria-hidden className="cell hidden lg:block" />
+            ))}
+            {Array.from({ length: (2 - (others.length % 2)) % 2 }, (_, i) => (
+              <li
+                key={`medium-${i}`}
+                aria-hidden
+                className="cell hidden sm:block lg:hidden"
+              />
             ))}
           </ul>
         </div>
