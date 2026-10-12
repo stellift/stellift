@@ -135,8 +135,8 @@ export const en: Dictionary = {
   tools: {
     title: "Free tools",
     lead:
-      "Sums we run every week, open for anyone to use. Nothing is sent " +
-      "anywhere: the maths runs in your browser.",
+      "We redo these sums on almost every proposal. They are here now, no " +
+      "sign-up, and whatever you type stays in your browser.",
     cta: "Open tool",
     backLabel: "Back to stellift",
     allLabel: "All tools",
@@ -150,8 +150,9 @@ export const en: Dictionary = {
           "Turn an uptime SLA into real downtime per day, week, month and year. " +
           "See what 99%, 99.9% or 99.99% actually allow.",
         intro:
-          "A percentage hides the thing that matters: how long the system may be " +
-          "down before the agreement breaks. Enter the uptime you committed to.",
+          "Nobody signs a contract thinking in percentages. They think in how long " +
+          "the system can be down before the agreement breaks, which is the number " +
+          "this page gives back.",
         fields: [{ key: "uptime", label: "Committed uptime (%)", hint: "e.g. 99.9" }],
         results: [
           { key: "day", label: "Per day" },
@@ -171,8 +172,9 @@ export const en: Dictionary = {
           "Work out the real cost of an hour of development from monthly cost, " +
           "charges and productive hours. The maths runs in your browser.",
         intro:
-          "Salary is not cost. Add charges and divide by the hours that actually " +
-          "turn into delivered work, not the hours on the contract.",
+          "Charges, leave and meetings land on the bill the same way. Divide the " +
+          "full monthly cost by the hours that became delivered work last month " +
+          "and you get the number that matters when you quote.",
         fields: [
           { key: "monthly", label: "Monthly cost", hint: "Salary or contract value" },
           { key: "charges", label: "Charges and benefits (%)", hint: "On the monthly value" },
@@ -195,8 +197,9 @@ export const en: Dictionary = {
           "Estimate what a manual process costs per month and per year from the " +
           "hours it takes and your team hourly cost, and what automating it frees up.",
         intro:
-          "Before automating, it helps to size the problem. Enter the hours the " +
-          "process takes and the hourly cost of whoever runs it.",
+          "Every manual process has a yearly price, and almost nobody has worked " +
+          "theirs out. Add up the hours it eats each month and multiply by the " +
+          "hourly cost of whoever sits down to do it.",
         fields: [
           { key: "hours", label: "Hours per month on the process" },
           { key: "cost", label: "Cost per hour" },

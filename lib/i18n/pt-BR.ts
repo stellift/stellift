@@ -134,8 +134,8 @@ export const ptBR: Dictionary = {
   tools: {
     title: "Ferramentas livres",
     lead:
-      "Contas que a gente faz toda semana, abertas para qualquer pessoa usar. " +
-      "Nada é enviado: o cálculo roda no seu navegador.",
+      "A gente refaz essas contas em quase toda proposta. Ficam aqui, sem " +
+      "cadastro, e o que você digitar não sai do navegador.",
     cta: "Abrir ferramenta",
     backLabel: "Voltar para a stellift",
     allLabel: "Todas as ferramentas",
@@ -149,9 +149,9 @@ export const ptBR: Dictionary = {
           "Converta um SLA de uptime em tempo real de indisponibilidade por dia, " +
           "semana, mês e ano. Descubra quanto 99%, 99,9% ou 99,99% permitem de queda.",
         intro:
-          "Um SLA em porcentagem esconde o que importa: quanto tempo o sistema " +
-          "pode ficar fora antes de furar o acordo. Digite o uptime contratado e " +
-          "veja a janela de queda em cada período.",
+          "Ninguém assina um contrato pensando em porcentagem. Pensa em quanto " +
+          "tempo o sistema pode passar fora do ar antes de o acordo furar, que é " +
+          "o número que esta página devolve.",
         fields: [
           { key: "uptime", label: "Uptime contratado (%)", hint: "Ex.: 99,9" },
         ],
@@ -173,8 +173,9 @@ export const ptBR: Dictionary = {
           "Calcule o custo real de uma hora de desenvolvimento a partir do salário " +
           "mensal, dos encargos e das horas produtivas no mês. O cálculo roda no navegador.",
         intro:
-          "O salário não é o custo. Some encargos e divida pelas horas que " +
-          "realmente viram trabalho entregue, não pelas horas de contrato.",
+          "Encargos, férias e reunião entram na conta do mesmo jeito. Divida o " +
+          "custo mensal cheio pelas horas que viraram trabalho entregue no mês " +
+          "passado e você chega no número que importa na hora de orçar.",
         fields: [
           { key: "monthly", label: "Custo mensal (R$)", hint: "Salário ou valor do contrato" },
           { key: "charges", label: "Encargos e benefícios (%)", hint: "Sobre o valor mensal" },
@@ -197,8 +198,9 @@ export const ptBR: Dictionary = {
           "Estime quanto um processo manual custa por mês e por ano a partir das " +
           "horas gastas e do custo-hora da equipe, e quanto sobra ao automatizá-lo.",
         intro:
-          "Antes de automatizar, vale saber o tamanho do problema. Informe as horas " +
-          "gastas no processo e o custo-hora de quem o executa.",
+          "Todo processo manual tem um preço anual, e quase ninguém calculou o " +
+          "dele. Some as horas que ele consome por mês e multiplique pelo " +
+          "custo-hora de quem senta para fazer.",
         fields: [
           { key: "hours", label: "Horas por mês no processo" },
           { key: "cost", label: "Custo por hora (R$)" },
