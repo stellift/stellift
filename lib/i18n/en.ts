@@ -119,7 +119,7 @@ export const en: Dictionary = {
     },
     {
       name: "Neohor",
-      role: "Personal project",
+      role: "stellift project",
       text:
         "A store for game accounts, with search, cart, orders and delivery. " +
         "Pix and card payments, social login and real-time updates over " +

@@ -120,7 +120,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "Neohor",
-      role: "Projeto pessoal",
+      role: "Projeto da stellift",
       text:
         "Loja de contas de jogos, com busca, carrinho, pedidos e entrega. " +
         "Cobrança por Pix e cartão, login social e atualização em tempo real " +
