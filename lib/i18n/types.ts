@@ -28,6 +28,7 @@ export type Dictionary = {
   clients: ReadonlyArray<{ name: string; logo?: BrandLogoKey; note?: string }>;
   portfolio: ReadonlyArray<{
     name: string;
+    role: string;
     text: string;
     stack?: string;
     href?: string;

@@ -56,6 +56,7 @@ export const en: Dictionary = {
   portfolio: [
     {
       name: "BloxHarbor",
+      role: "stellift project",
       text: "An online store for Roblox accounts, with fast delivery and protected purchases.",
       stack: "Next.js",
       href: "https://bloxharbor.com",
@@ -63,6 +64,7 @@ export const en: Dictionary = {
     },
     {
       name: "PDV",
+      role: "stellift project",
       text:
         "A desktop point of sale for building supply stores, with a companion " +
         "scanning app. The catalogue is priced in the units the trade uses, " +
@@ -75,12 +77,34 @@ export const en: Dictionary = {
     },
     {
       name: "orce.me",
+      role: "stellift project",
       text:
         "Quoting system for small businesses. Gathers products, services and " +
         "client details into a branded PDF proposal, without rebuilding a " +
         "spreadsheet for every request.",
       stack: "Nuxt, Vue, TypeScript",
       shot: "/shots/orce.webp",
+    },
+    {
+      name: "LumniHub",
+      role: "Built a large part of the product",
+      text:
+        "A platform to create, sell and affiliate courses and ebooks. It has a " +
+        "store, a checkout builder, modules with lessons and quizzes, an " +
+        "affiliate program with payment split, and financial and reporting " +
+        "dashboards for the producer.",
+      stack: "React, Vite, React Router, React Aria, Supabase, Zod",
+      href: "https://app.lumnihub.com",
+      shot: "/shots/lumnihub.webp",
+    },
+    {
+      name: "ServeCommand",
+      role: "Product development",
+      text:
+        "Business software for contractors. Pricing rules, connected job " +
+        "records, memberships and payments in a single flow.",
+      href: "https://servecommand.com",
+      shot: "/shots/servecommand.webp",
     },
   ],
 
@@ -138,11 +162,11 @@ export const en: Dictionary = {
       next: "Next company",
     },
     portfolio: {
-      title: "Projects by stellift",
+      title: "Projects and experience",
       cta: "View project",
       footnote:
-        "BloxHarbor, PDV and orce.me are stellift projects. Names and brands " +
-        "mentioned are the property of their respective owners.",
+        "Each card states the role on that project. Names and brands mentioned " +
+        "are the property of their respective owners.",
     },
     about: { title: "About stellift" },
     contact: { title: "Let's get the idea off the ground" },

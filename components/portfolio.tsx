@@ -4,6 +4,10 @@ import SectionHeading from "@/components/section-heading";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Portfolio({ dict }: { dict: Dictionary }) {
+  const count = dict.portfolio.length;
+  const wide = (3 - (count % 3)) % 3;
+  const medium = (2 - (count % 2)) % 2;
+
   return (
     <section id="portfolio" aria-labelledby="portfolio-title" className="border-b border-line">
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
@@ -33,6 +37,8 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
                   {project.name}
                 </h3>
 
+                <p className="field-label mt-2 uppercase">{project.role}</p>
+
                 <p className="mt-4 flex-1 text-pretty text-sm leading-relaxed text-ink-muted">
                   {project.text}
                 </p>
@@ -56,6 +62,17 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
                 ) : null}
               </div>
             </li>
+          ))}
+
+          {Array.from({ length: wide }, (_, i) => (
+            <li key={`wide-${i}`} aria-hidden className="cell hidden lg:block" />
+          ))}
+          {Array.from({ length: medium }, (_, i) => (
+            <li
+              key={`medium-${i}`}
+              aria-hidden
+              className="cell hidden sm:block lg:hidden"
+            />
           ))}
         </ul>
 
