@@ -116,6 +116,7 @@ export const ptBR: Dictionary = {
         "lado do cliente.",
       stack: "Rust, X11 por syscalls, whatsapp-rust",
       href: "https://github.com/criskell/zapzap",
+      shot: "/shots/zapzap.webp",
     },
     {
       name: "LumniHub",

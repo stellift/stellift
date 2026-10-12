@@ -115,6 +115,7 @@ export const en: Dictionary = {
         "toolkit, and the scope is narrow on purpose: Brazil only, client side only.",
       stack: "Rust, X11 via syscalls, whatsapp-rust",
       href: "https://github.com/criskell/zapzap",
+      shot: "/shots/zapzap.webp",
     },
     {
       name: "LumniHub",
