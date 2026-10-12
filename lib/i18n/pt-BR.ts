@@ -122,10 +122,11 @@ export const ptBR: Dictionary = {
       name: "Neohor",
       role: "Projeto pessoal",
       text:
-        "Loja de itens digitais, com venda pelo próprio usuário planejada para " +
-        "depois. Catálogo, carrinho, pedidos e entrega, com cobrança por Pix e " +
-        "cartão, login social e atualização em tempo real.",
-      stack: "Next.js, NestJS, Prisma, TurboRepo, Terraform, AWS",
+        "Loja de contas de jogos, com busca, carrinho, pedidos e entrega. " +
+        "Cobrança por Pix e cartão, login social e atualização em tempo real " +
+        "por WebSocket.",
+      stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
+      shot: "/shots/neohor.webp",
     },
     {
       name: "LumniHub",

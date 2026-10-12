@@ -121,10 +121,11 @@ export const en: Dictionary = {
       name: "Neohor",
       role: "Personal project",
       text:
-        "A store for digital items, with user selling planned for later. " +
-        "Catalogue, cart, orders and delivery, with Pix and card payments, " +
-        "social login and real-time updates.",
-      stack: "Next.js, NestJS, Prisma, TurboRepo, Terraform, AWS",
+        "A store for game accounts, with search, cart, orders and delivery. " +
+        "Pix and card payments, social login and real-time updates over " +
+        "WebSocket.",
+      stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
+      shot: "/shots/neohor.webp",
     },
     {
       name: "LumniHub",
