@@ -133,10 +133,12 @@ export const en: Dictionary = {
   },
 
   tools: {
-    title: "Free tools",
+    title: "The sums that come before the quote",
     lead:
-      "We redo these sums on almost every proposal. They are here now, no " +
-      "sign-up, and whatever you type stays in your browser.",
+      "None of them is hard, and it is rare to meet anyone who ran them " +
+      "before signing. Then the SLA becomes a surprise, the hour costs more " +
+      "than agreed and the manual process keeps billing all year. They run " +
+      "in your browser, no sign-up.",
     cta: "Open tool",
     backLabel: "Back to stellift",
     allLabel: "All tools",

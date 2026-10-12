@@ -132,10 +132,12 @@ export const ptBR: Dictionary = {
   },
 
   tools: {
-    title: "Ferramentas livres",
+    title: "As contas que vêm antes do orçamento",
     lead:
-      "A gente refaz essas contas em quase toda proposta. Ficam aqui, sem " +
-      "cadastro, e o que você digitar não sai do navegador.",
+      "Nenhuma delas é difícil, e é raro alguém ter feito antes de assinar. " +
+      "Aí o SLA vira surpresa, a hora sai mais cara que o combinado e o " +
+      "processo manual continua cobrando o ano inteiro. Rodam no seu " +
+      "navegador, sem cadastro.",
     cta: "Abrir ferramenta",
     backLabel: "Voltar para a stellift",
     allLabel: "Todas as ferramentas",
