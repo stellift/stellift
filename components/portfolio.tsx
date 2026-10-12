@@ -33,7 +33,7 @@ export default function Portfolio({ dict }: { dict: Dictionary }) {
                   project.shot ? "" : "justify-center"
                 }`}
               >
-                <h3 className="card-title font-serif text-2xl text-ink">
+                <h3 className="font-serif text-2xl text-ink">
                   {project.name}
                 </h3>
 
