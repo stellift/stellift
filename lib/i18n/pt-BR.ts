@@ -86,14 +86,14 @@ export const ptBR: Dictionary = {
       shot: "/shots/orce.webp",
     },
     {
-      name: "Strellis",
+      name: "Craftance",
       role: "Projeto da stellift",
       text:
         "Marketplace onde o desenvolvedor monta perfil, vende produto digital e " +
         "pega projeto como freelancer. O dinheiro de cada etapa fica em escrow " +
         "até a entrega ser aprovada.",
       stack: "Elixir, Phoenix, Next.js, PostgreSQL, React Native, Rust",
-      shot: "/shots/strellis.webp",
+      shot: "/shots/craftance.webp",
     },
     {
       name: "LumniHub",
