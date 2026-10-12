@@ -97,6 +97,16 @@ export const en: Dictionary = {
       shot: "/shots/craftance.webp",
     },
     {
+      name: "HeartBit",
+      role: "stellift project",
+      text:
+        "A dating app for Brazilian Christians, verified by the person's own " +
+        "church. Eight profiles a day, three open conversations at most, and " +
+        "someone from the community sees that you are talking, never what you say.",
+      stack: "Elixir, Phoenix, React, TanStack Router, Vue 3, PostgreSQL",
+      shot: "/shots/heartbit.webp",
+    },
+    {
       name: "LumniHub",
       role: "Built a large part of the product",
       text:

@@ -96,6 +96,17 @@ export const ptBR: Dictionary = {
       shot: "/shots/craftance.webp",
     },
     {
+      name: "HeartBit",
+      role: "Projeto da stellift",
+      text:
+        "App de relacionamento para cristãos brasileiros, com verificação feita " +
+        "pela própria igreja. Oito perfis por dia, três conversas abertas no " +
+        "máximo, e um padrinho da comunidade vê que você está conversando, nunca " +
+        "o conteúdo.",
+      stack: "Elixir, Phoenix, React, TanStack Router, Vue 3, PostgreSQL",
+      shot: "/shots/heartbit.webp",
+    },
+    {
       name: "LumniHub",
       role: "Desenvolvimento de boa parte do produto",
       text:
