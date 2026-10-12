@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import Accelerators from "@/components/lists/accelerators";
 import Calculator from "@/components/tools/calculator";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
 import { toolFromSlug, toolIds, toolPath, toolSlugs } from "@/lib/tools/config";
+import * as list from "@/lib/lists/startup-accelerators";
 
 const currencies: Record<string, string> = { "pt-BR": "BRL", en: "USD" };
 
 export function generateStaticParams() {
-  return locales.flatMap((lang) =>
-    toolIds.map((id) => ({ lang, slug: toolSlugs[lang][id] })),
-  );
+  return [
+    ...locales.flatMap((lang) =>
+      toolIds.map((id) => ({ lang, slug: toolSlugs[lang][id] })),
+    ),
+    { lang: list.locale, slug: list.slug },
+  ];
 }
 
 export async function generateMetadata({
@@ -20,6 +25,30 @@ export async function generateMetadata({
 }: PageProps<"/[lang]/[slug]">): Promise<Metadata> {
   const { lang, slug } = await params;
   if (!isLocale(lang)) return {};
+
+  if (lang === list.locale && slug === list.slug) {
+    const path = `/${list.locale}/${list.slug}`;
+    return {
+      metadataBase: new URL(siteUrl),
+      title: list.metaTitle,
+      description: list.metaDescription,
+      robots: { index: true, follow: true },
+      alternates: { canonical: path, languages: { [list.locale]: path } },
+      openGraph: {
+        title: list.metaTitle,
+        description: list.metaDescription,
+        type: "article",
+        url: path,
+        locale: "pt_BR",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: list.metaTitle,
+        description: list.metaDescription,
+      },
+    };
+  }
+
   const id = toolFromSlug(lang, slug);
   if (!id) return {};
   const dict = await getDictionary(lang);
@@ -65,6 +94,37 @@ export async function generateMetadata({
 export default async function ToolPage({ params }: PageProps<"/[lang]/[slug]">) {
   const { lang, slug } = await params;
   if (!isLocale(lang)) notFound();
+
+  if (lang === list.locale && slug === list.slug) {
+    const dict = await getDictionary(lang);
+    const itemList = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: list.title,
+      description: list.metaDescription,
+      url: `${siteUrl}/${list.locale}/${list.slug}`,
+      inLanguage: "pt-BR",
+      numberOfItems: list.entryCount,
+      itemListElement: list.sections.flatMap((section) =>
+        section.entries.map((entry) => ({
+          "@type": "ListItem",
+          name: entry.name,
+          ...(entry.url ? { url: entry.url } : {}),
+        })),
+      ),
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }}
+        />
+        <Accelerators backLabel={dict.tools.backLabel} />
+      </>
+    );
+  }
+
   const id = toolFromSlug(lang, slug);
   if (!id) notFound();
 

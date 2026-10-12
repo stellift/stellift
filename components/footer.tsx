@@ -1,4 +1,5 @@
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
+import * as list from "@/lib/lists/startup-accelerators";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Footer({
@@ -54,6 +55,16 @@ export default function Footer({
                   </a>
                 </li>
               ))}
+              {lang === list.locale ? (
+                <li>
+                  <a
+                    href={`/${list.locale}/${list.slug}`}
+                    className="text-sm text-ink-muted transition-colors hover:text-ink"
+                  >
+                    {list.title}
+                  </a>
+                </li>
+              ) : null}
             </ul>
           </nav>
 

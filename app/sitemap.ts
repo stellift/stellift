@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales, siteUrl } from "@/lib/i18n/config";
 import { toolIds, toolPath } from "@/lib/tools/config";
+import * as list from "@/lib/lists/startup-accelerators";
 
 export const dynamic = "force-static";
 
@@ -34,5 +35,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...home, ...tools];
+  return [
+    ...home,
+    ...tools,
+    {
+      url: `${siteUrl}/${list.locale}/${list.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+  ];
 }
