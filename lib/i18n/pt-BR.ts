@@ -119,6 +119,15 @@ export const ptBR: Dictionary = {
       shot: "/shots/zapzap.webp",
     },
     {
+      name: "Neohor",
+      role: "Projeto pessoal",
+      text:
+        "Loja de itens digitais, com venda pelo próprio usuário planejada para " +
+        "depois. Catálogo, carrinho, pedidos e entrega, com cobrança por Pix e " +
+        "cartão, login social e atualização em tempo real.",
+      stack: "Next.js, NestJS, Prisma, TurboRepo, Terraform, AWS",
+    },
+    {
       name: "LumniHub",
       role: "Desenvolvimento de boa parte do produto",
       text:

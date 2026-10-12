@@ -118,6 +118,15 @@ export const en: Dictionary = {
       shot: "/shots/zapzap.webp",
     },
     {
+      name: "Neohor",
+      role: "Personal project",
+      text:
+        "A store for digital items, with user selling planned for later. " +
+        "Catalogue, cart, orders and delivery, with Pix and card payments, " +
+        "social login and real-time updates.",
+      stack: "Next.js, NestJS, Prisma, TurboRepo, Terraform, AWS",
+    },
+    {
       name: "LumniHub",
       role: "Built a large part of the product",
       text:
