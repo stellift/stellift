@@ -70,6 +70,7 @@ export const en: Dictionary = {
       text: "An online store for Roblox accounts, with fast delivery and protected purchases.",
       stack: "Next.js",
       href: "https://bloxharbor.com",
+      shot: "/shots/bloxharbor.webp",
     },
     {
       name: "PDV",

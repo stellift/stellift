@@ -70,6 +70,7 @@ export const ptBR: Dictionary = {
       text: "Ecommerce de contas de Roblox, com entrega rápida e compra protegida.",
       stack: "Next.js",
       href: "https://bloxharbor.com",
+      shot: "/shots/bloxharbor.webp",
     },
     {
       name: "PDV",
