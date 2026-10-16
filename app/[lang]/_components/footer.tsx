@@ -10,13 +10,14 @@ export default function Footer({
   lang: Locale;
 }) {
   const year = new Date().getFullYear();
+  const home = `/${lang}`;
 
   return (
     <footer className="border-t border-line">
       <div className="mx-auto w-full max-w-6xl px-6 py-16">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <a href="#top" className="font-serif text-2xl text-ink">
+            <a href={`${home}#top`} className="font-serif text-2xl text-ink">
               {dict.site.name}
             </a>
             <p className="mt-4 max-w-[42ch] text-sm leading-relaxed text-ink-muted">
@@ -48,7 +49,7 @@ export default function Footer({
               {dict.nav.map((item) => (
                 <li key={item.href}>
                   <a
-                    href={item.href}
+                    href={`${home}${item.href}`}
                     className="text-sm text-ink-muted transition-colors hover:text-ink"
                   >
                     {item.label}

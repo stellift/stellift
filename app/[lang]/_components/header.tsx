@@ -16,6 +16,7 @@ export default function Header({
 }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const home = `/${lang}`;
 
   useEffect(() => {
     const ids = dict.nav.map((item) => item.href.slice(1));
@@ -65,7 +66,7 @@ export default function Header({
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-6 px-6"
       >
         <a
-          href="#top"
+          href={`${home}#top`}
           onClick={() => setOpen(false)}
           className="font-serif text-2xl text-ink"
         >
@@ -76,7 +77,7 @@ export default function Header({
           {dict.nav.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={`${home}${item.href}`}
               aria-current={active === item.href ? "true" : undefined}
               className={`whitespace-nowrap text-sm transition-colors ${
                 active === item.href ? "text-ink" : "text-ink-muted hover:text-ink"
@@ -98,7 +99,7 @@ export default function Header({
           </div>
 
           <a
-            href="#contact"
+            href={`${home}#contact`}
             className="btn btn-primary hidden px-5 py-2 text-sm lg:inline-flex"
           >
             {dict.ui.header.cta}
@@ -144,7 +145,7 @@ export default function Header({
               {dict.nav.map((item) => (
                 <li key={item.href}>
                   <a
-                    href={item.href}
+                    href={`${home}${item.href}`}
                     onClick={() => setOpen(false)}
                     aria-current={active === item.href ? "true" : undefined}
                     className={`flex items-center justify-between gap-3 border-b border-line px-4 py-3 text-sm transition-colors ${
@@ -188,7 +189,7 @@ export default function Header({
             </div>
 
             <a
-              href="#contact"
+              href={`${home}#contact`}
               onClick={() => setOpen(false)}
               className="btn btn-primary m-3 flex"
             >
