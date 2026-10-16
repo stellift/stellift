@@ -52,6 +52,7 @@ export const en: Dictionary = {
     { name: "Mozilla", logo: "mozilla", note: "Contributions to Servo" },
     { name: "Woovi", logo: "woovi" },
     { name: "Flop Robux", logo: "floprobux" },
+    { name: "ServeCommand", logo: "servecommand" },
   ],
 
   portfolio: [

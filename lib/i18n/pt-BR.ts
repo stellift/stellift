@@ -52,6 +52,7 @@ export const ptBR: Dictionary = {
     { name: "Mozilla", logo: "mozilla", note: "Contribuições para o Servo" },
     { name: "Woovi", logo: "woovi" },
     { name: "Flop Robux", logo: "floprobux" },
+    { name: "ServeCommand", logo: "servecommand" },
   ],
 
   portfolio: [

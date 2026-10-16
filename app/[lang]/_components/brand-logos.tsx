@@ -30,8 +30,21 @@ export function WooviLogo({ className }: LogoProps) {
   );
 }
 
+export function ServeCommandLogo({ className }: LogoProps) {
+  return (
+    <svg aria-hidden viewBox="0 0 64 64" role="img" aria-label="ServeCommand" className={className}>
+      <rect width="64" height="64" rx="6" fill="#E1FF00" />
+      <path
+        fill="#11190C"
+        d="M12 13 32 23.5 52 13v8L32 31 12 21Zm0 10.5L32 34 52 23.5v8L32 41.5 12 31.5Zm0 10.5L32 44.5 52 34v8L32 52 12 42Z"
+      />
+    </svg>
+  );
+}
+
 export const brandLogos = {
   google: GoogleLogo,
   mozilla: MozillaLogo,
   woovi: WooviLogo,
+  servecommand: ServeCommandLogo,
 } as const;

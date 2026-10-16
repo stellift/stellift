@@ -1,9 +1,18 @@
 import Image from "next/image";
 import SectionHeading from "@/app/[lang]/_components/section-heading";
-import { GoogleLogo, MozillaLogo, WooviLogo } from "@/app/[lang]/_components/brand-logos";
+import {
+  GoogleLogo,
+  MozillaLogo,
+  ServeCommandLogo,
+  WooviLogo,
+} from "@/app/[lang]/_components/brand-logos";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Clients({ dict }: { dict: Dictionary }) {
+  const count = dict.clients.length;
+  const wide = (4 - (count % 4)) % 4;
+  const medium = (2 - (count % 2)) % 2;
+
   return (
     <section id="clients" aria-labelledby="clients-title" className="border-b border-line">
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
@@ -31,6 +40,17 @@ export default function Clients({ dict }: { dict: Dictionary }) {
               ) : null}
             </li>
           ))}
+
+          {Array.from({ length: wide }, (_, i) => (
+            <li key={`wide-${i}`} aria-hidden className="cell hidden lg:block" />
+          ))}
+          {Array.from({ length: medium }, (_, i) => (
+            <li
+              key={`medium-${i}`}
+              aria-hidden
+              className="cell hidden sm:block lg:hidden"
+            />
+          ))}
         </ul>
 
         <p className="mt-8 max-w-2xl text-xs leading-relaxed text-ink-muted">
@@ -49,6 +69,15 @@ function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
       return <MozillaLogo className="h-6 w-auto max-w-full text-ink" />;
     case "woovi":
       return <WooviLogo className="h-9 w-auto max-w-full text-ink" />;
+    case "servecommand":
+      return (
+        <span aria-hidden className="flex items-center gap-2">
+          <ServeCommandLogo className="size-8 shrink-0" />
+          <span className="truncate text-xl font-semibold tracking-tight text-ink">
+            {client.name}
+          </span>
+        </span>
+      );
     case "floprobux":
       return (
         <>

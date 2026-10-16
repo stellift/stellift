@@ -1,4 +1,9 @@
-export type BrandLogoKey = "google" | "mozilla" | "woovi" | "floprobux";
+export type BrandLogoKey =
+  | "google"
+  | "mozilla"
+  | "woovi"
+  | "floprobux"
+  | "servecommand";
 
 export type ServiceCode = "WEB" | "MOB" | "CLD";
 
