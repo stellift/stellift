@@ -216,8 +216,9 @@ export const en: Dictionary = {
           "Turn minutes of downtime into money lost. Enter monthly revenue, the hours " +
           "your operation runs and how long the outage lasted.",
         intro:
-          "Arguing about uptime in percentages postpones the question finance asks. " +
-          "This turns the outage into the currency the decision is made in.",
+          "Every system outage ends in the same question: how much did we stop " +
+          "earning? With the month's revenue and the hours the operation sells in, " +
+          "the answer comes out in money, not guesswork.",
         fields: [
           { key: "revenue", label: "Revenue in the month" },
           { key: "openHours", label: "Operating hours per month", hint: "24x7 is 720" },

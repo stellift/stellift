@@ -219,8 +219,9 @@ export const ptBR: Dictionary = {
           "Transforme minutos de indisponibilidade em prejuízo. Informe o faturamento " +
           "do mês, as horas em que a operação roda e a duração da queda.",
         intro:
-          "Discutir uptime em porcentagem adia a pergunta que o financeiro faz. " +
-          "Esta conta traduz a queda para a moeda em que a decisão é tomada.",
+          "Toda queda de sistema termina na mesma pergunta: quanto a gente " +
+          "deixou de faturar? Com o faturamento do mês e as horas em que a operação " +
+          "vende, a resposta sai em reais, não em palpite.",
         fields: [
           { key: "revenue", label: "Faturamento no mês (R$)" },
           { key: "openHours", label: "Horas de operação por mês", hint: "24x7 dá 720" },
