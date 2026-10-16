@@ -53,11 +53,11 @@ function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
       return (
         <>
           <Image
-            src="/logos/floprobux-icon.webp"
+            src="/logos/floprobux-light.webp"
             alt=""
-            width={192}
-            height={179}
-            className="h-11 w-auto dark:hidden"
+            width={560}
+            height={213}
+            className="h-9 w-auto dark:hidden"
           />
           <Image
             src="/logos/floprobux.webp"
