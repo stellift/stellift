@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import SectionHeading from "@/app/[lang]/_components/section-heading";
+import Slate from "@/app/[lang]/_components/slate";
 import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
@@ -17,39 +17,44 @@ export default function ToolsSection({
   eyebrow: string;
 }) {
   return (
-    <section id="tools" aria-labelledby="tools-title" className="border-b border-line">
-      <div className="shell py-20 sm:py-28">
-        <SectionHeading
+    <section
+      id="tools"
+      aria-labelledby="tools-title"
+      data-tone="canvas"
+      className="scene border-b border-line"
+    >
+      <div className="shell">
+        <Slate
           id="tools-title"
           index={index}
-          eyebrow={eyebrow}
+          label={eyebrow}
           title={dict.tools.title}
         >
           {dict.tools.lead}
-        </SectionHeading>
+        </Slate>
 
-        <ul className="grid-ruled reveal mt-14 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="reveal mt-14 border-t border-line">
           {toolIds.map((id, i) => (
-            <li key={id} className="cell cell-link group">
-              <span aria-hidden className="cell-mark" />
-              <Link href={toolPath(lang, id)} className="flex h-full flex-col p-7">
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="font-serif text-xl leading-tight text-ink">
-                    {dict.tools.items[id].name}
-                  </h3>
-                  <span className="index shrink-0 text-ink-faint">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
+            <li key={id} className="border-b border-line">
+              <Link
+                href={toolPath(lang, id)}
+                className="row-link group grid items-baseline gap-x-10 gap-y-3 py-6 lg:grid-cols-12"
+              >
+                <span className="index row-shift lg:col-span-1 lg:pl-6">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
 
-                <p className="mt-3 flex-1 text-pretty text-sm leading-relaxed text-ink-muted">
+                <h3 className="row-shift font-serif text-2xl leading-tight text-ink lg:col-span-5 lg:text-3xl">
+                  {dict.tools.items[id].name}
+                </h3>
+
+                <p className="text-pretty text-sm leading-relaxed text-ink-muted lg:col-span-5">
                   {dict.tools.items[id].tagline}
                 </p>
 
-                <span className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
-                  {dict.tools.cta}
+                <span className="self-center lg:col-span-1 lg:justify-self-end lg:pr-6">
                   <ArrowUpRight
-                    className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    className="size-4 text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                     aria-hidden
                   />
                 </span>

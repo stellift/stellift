@@ -1,5 +1,5 @@
 import { Cloud, Smartphone, Globe, ArrowRight, type LucideIcon } from "lucide-react";
-import SectionHeading from "@/app/[lang]/_components/section-heading";
+import Slate from "@/app/[lang]/_components/slate";
 import type { Dictionary, ServiceCode } from "@/lib/i18n/types";
 
 const icons: Record<ServiceCode, LucideIcon> = {
@@ -18,16 +18,21 @@ export default function Services({
   eyebrow: string;
 }) {
   return (
-    <section id="services" aria-labelledby="services-title" className="border-b border-line">
-      <div className="shell py-20 sm:py-28">
-        <SectionHeading
+    <section
+      id="services"
+      aria-labelledby="services-title"
+      data-tone="canvas"
+      className="scene border-b border-line"
+    >
+      <div className="shell">
+        <Slate
           id="services-title"
           index={index}
-          eyebrow={eyebrow}
+          label={eyebrow}
           title={dict.ui.services.title}
         />
 
-        <ul className="reveal mt-14 border-t border-line">
+        <ul className="reveal mt-16 border-t border-line">
           {dict.services.map((service, i) => {
             const Icon = icons[service.code];
             return (
@@ -35,23 +40,23 @@ export default function Services({
                 <a
                   href="#contact"
                   aria-label={`${service.title}: ${dict.ui.card.action}`}
-                  className="row-link group grid items-baseline gap-x-8 gap-y-5 py-9 sm:py-11 lg:grid-cols-12"
+                  className="row-link group grid items-baseline gap-x-10 gap-y-5 py-10 sm:py-14 lg:grid-cols-12"
                 >
-                  <span className="index row-shift lg:col-span-1 lg:pl-5">
+                  <span className="index row-shift lg:col-span-1 lg:pl-6">
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
-                  <h3 className="row-shift font-serif text-[clamp(1.875rem,3.8vw,3.25rem)] leading-[0.98] tracking-[-0.025em] text-ink lg:col-span-4">
+                  <h3 className="row-shift font-serif text-[clamp(2rem,4.4vw,4rem)] leading-[0.98] tracking-[-0.03em] text-ink lg:col-span-5">
                     {service.title}
                   </h3>
 
                   <p className="eyebrow lg:col-span-2">{service.category}</p>
 
-                  <p className="text-pretty text-sm leading-relaxed text-ink-muted lg:col-span-4">
+                  <p className="text-pretty text-sm leading-relaxed text-ink-muted lg:col-span-3">
                     {service.text}
                   </p>
 
-                  <span className="flex items-center gap-4 self-center lg:col-span-1 lg:justify-self-end lg:pr-5">
+                  <span className="flex items-center gap-4 self-center lg:col-span-1 lg:justify-self-end lg:pr-6">
                     <Icon
                       className="size-5 text-ink-faint transition-colors duration-300 group-hover:text-accent"
                       aria-hidden

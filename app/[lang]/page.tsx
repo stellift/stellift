@@ -5,6 +5,7 @@ import Clients from "@/app/[lang]/_components/clients";
 import Contact from "@/app/[lang]/_components/contact";
 import Hero from "@/app/[lang]/_components/hero";
 import Portfolio from "@/app/[lang]/_components/portfolio";
+import Hud from "@/app/[lang]/_components/hud";
 import JsonLd from "@/app/[lang]/_components/json-ld";
 import Services from "@/app/[lang]/_components/services";
 import ToolsSection from "@/app/[lang]/_components/tools-section";
@@ -67,9 +68,15 @@ export default async function Home() {
   const label = (href: string) =>
     dict.nav.find((item) => item.href === href)?.label ?? "";
 
+  const scenes = [
+    { id: "top", label: dict.site.name },
+    ...dict.nav.map((item) => ({ id: item.href.slice(1), label: item.label })),
+  ];
+
   return (
     <>
       <JsonLd data={structuredData} />
+      <Hud scenes={scenes} />
       <Hero dict={dict} />
       <Services dict={dict} index="01" eyebrow={label("#services")} />
       <Clients dict={dict} index="02" eyebrow={label("#clients")} />

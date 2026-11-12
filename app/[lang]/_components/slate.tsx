@@ -1,31 +1,29 @@
 import type { ReactNode } from "react";
-import Star from "@/app/[lang]/_components/star";
 
-export default function SectionHeading({
-  id,
+export default function Slate({
   index,
-  eyebrow,
+  label,
   title,
+  id,
   children,
 }: {
-  id?: string;
   index: string;
-  eyebrow: string;
+  label: string;
   title: ReactNode;
+  id?: string;
   children?: ReactNode;
 }) {
   return (
     <header className="reveal">
-      <div className="flex items-center gap-4">
+      <div className="slate">
         <span className="index">{index}</span>
-        <span className="eyebrow">{eyebrow}</span>
+        <span className="eyebrow">{label}</span>
         <span aria-hidden className="h-px flex-1 bg-line" />
-        <Star className="size-2.5 shrink-0 text-line-strong" />
       </div>
 
       <h2
         id={id}
-        className="reveal-line mt-8 max-w-3xl font-serif text-[clamp(2.1rem,4.6vw,3.75rem)] leading-[1.02] tracking-[-0.025em] text-ink"
+        className="reveal-line mt-10 max-w-[16ch] font-serif text-[clamp(2.25rem,5.6vw,5.5rem)] leading-[0.98] tracking-[-0.03em] text-ink"
       >
         <span>{title}</span>
       </h2>

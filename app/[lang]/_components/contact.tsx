@@ -1,5 +1,5 @@
 import { Code2, Mail, Users, ArrowUpRight, type LucideIcon } from "lucide-react";
-import SectionHeading from "@/app/[lang]/_components/section-heading";
+import Slate from "@/app/[lang]/_components/slate";
 import ContactForm from "@/app/[lang]/_components/contact-form";
 import type { ChannelKind, Dictionary } from "@/lib/i18n/types";
 
@@ -19,16 +19,16 @@ export default function Contact({
   eyebrow: string;
 }) {
   return (
-    <section id="contact" aria-labelledby="contact-title">
-      <div className="shell py-20 sm:py-28">
-        <SectionHeading
+    <section id="contact" aria-labelledby="contact-title" data-tone="canvas" className="scene">
+      <div className="shell">
+        <Slate
           id="contact-title"
           index={index}
-          eyebrow={eyebrow}
+          label={eyebrow}
           title={dict.ui.contact.title}
         >
           {dict.contact.lead}
-        </SectionHeading>
+        </Slate>
 
         <div className="reveal mt-14 grid gap-px border border-line bg-line lg:grid-cols-12">
           <ul className="grid gap-px bg-line sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
@@ -43,7 +43,7 @@ export default function Contact({
                     {...(external
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
-                    className="flex h-full flex-col justify-between gap-6 p-7"
+                    className="flex h-full flex-col justify-between gap-8 p-8"
                   >
                     <Icon className="size-5 shrink-0 text-accent" aria-hidden />
                     <span className="min-w-0">

@@ -10,7 +10,8 @@ export default function Wordmark({
   return (
     <span className="inline-flex items-center gap-2.5">
       <LogoMark
-        className={`shrink-0 ${size === "lg" ? "size-9" : "size-7"}`}
+        variant="mono"
+        className={`shrink-0 text-accent ${size === "lg" ? "size-8" : "size-6"}`}
       />
       <span
         className={`font-serif leading-none text-ink ${

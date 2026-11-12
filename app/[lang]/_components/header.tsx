@@ -60,7 +60,7 @@ export default function Header({
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md">
+    <header className="tone-sync sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md">
       <div className="shell flex h-16 items-center justify-between gap-6">
         <a href={`${home}#top`} onClick={() => setOpen(false)}>
           <Wordmark name={dict.site.name} />

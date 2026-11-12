@@ -4,20 +4,17 @@ import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Hero({ dict }: { dict: Dictionary }) {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden border-b border-line"
-    >
-      <Orbit className="pointer-events-none absolute left-1/2 top-1/2 h-[200vw] w-[200vw] -translate-x-1/2 -translate-y-1/2 sm:left-[30%] sm:h-[180vh] sm:w-[180vh]" />
+    <section id="top" data-tone="canvas" className="scene min-h-[calc(100svh-4rem)] justify-end overflow-hidden border-b border-line">
+      <Orbit className="pointer-events-none absolute left-1/2 top-1/2 h-[210vw] w-[210vw] -translate-x-1/2 -translate-y-1/2 sm:left-[32%] sm:h-[200vh] sm:w-[200vh]" />
 
       <LogoMark
         variant="duo"
         fold="#2a7fcb"
-        className="monument pointer-events-none absolute left-1/2 top-[50%] h-[40vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-8%] sm:top-1/2 sm:h-[62vh] sm:translate-x-0 lg:right-[-6%] lg:h-[74vh]"
+        className="monument pointer-events-none absolute left-1/2 top-[30%] h-[30vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-7%] sm:top-1/2 sm:h-[64vh] sm:translate-x-0 lg:right-[-5%] lg:h-[78vh]"
       />
 
-      <div className="shell relative flex min-h-[calc(100svh-4rem)] flex-col justify-between pb-14 pt-20 sm:pb-20 sm:pt-32">
-        <h1 className="max-w-[18ch] font-serif text-[clamp(2.6rem,6.6vw,5.75rem)] leading-[0.97] tracking-[-0.03em] text-ink sm:max-w-[11ch]">
+      <div className="shell relative">
+        <h1 className="font-serif text-[clamp(2.75rem,8.2vw,9rem)] leading-[0.92] tracking-[-0.035em] text-ink">
           <span
             className="hero-line line-mask"
             style={{ "--line": 0 } as React.CSSProperties}
@@ -32,9 +29,9 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           </span>
         </h1>
 
-        <div className="flex max-w-xl flex-col gap-8">
+        <div className="mt-12 flex flex-col gap-8 border-t border-line pt-8 sm:flex-row sm:items-center sm:gap-14">
           <p
-            className="hero-line line-mask max-w-sm"
+            className="hero-line line-mask max-w-md"
             style={{ "--line": 2 } as React.CSSProperties}
           >
             <span className="text-pretty text-lg leading-relaxed text-ink-muted">
