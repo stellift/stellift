@@ -8,28 +8,33 @@ import {
 } from "@/app/[lang]/_components/brand-logos";
 import type { Dictionary } from "@/lib/i18n/types";
 
-export default function Clients({ dict }: { dict: Dictionary }) {
+export default function Clients({
+  dict,
+  index,
+  eyebrow,
+}: {
+  dict: Dictionary;
+  index: string;
+  eyebrow: string;
+}) {
   const count = dict.clients.length;
-  const wide = (4 - (count % 4)) % 4;
+  const wide = (5 - (count % 5)) % 5;
   const medium = (2 - (count % 2)) % 2;
 
   return (
     <section id="clients" aria-labelledby="clients-title" className="border-b border-line">
-      <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
+      <div className="shell py-20 sm:py-28">
         <SectionHeading
           id="clients-title"
+          index={index}
+          eyebrow={eyebrow}
           title={dict.ui.clients.title}
         />
 
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid-ruled mt-12 sm:grid-cols-2 lg:grid-cols-5">
           {dict.clients.map((client) => (
-            <li
-              key={client.name}
-              className={`cell flex flex-col gap-5 p-6 ${
-                client.note ? "" : "justify-center"
-              }`}
-            >
-              <div className="flex h-12 items-center">
+            <li key={client.name} className="cell flex flex-col justify-between gap-6 p-7">
+              <div className="flex h-10 items-center">
                 <ClientLogo client={client} />
                 <span className="sr-only">{client.name}</span>
               </div>
@@ -42,18 +47,18 @@ export default function Clients({ dict }: { dict: Dictionary }) {
           ))}
 
           {Array.from({ length: wide }, (_, i) => (
-            <li key={`wide-${i}`} aria-hidden className="cell hidden lg:block" />
+            <li key={`wide-${i}`} aria-hidden className="hidden bg-canvas lg:block" />
           ))}
           {Array.from({ length: medium }, (_, i) => (
             <li
               key={`medium-${i}`}
               aria-hidden
-              className="cell hidden sm:block lg:hidden"
+              className="hidden bg-canvas sm:block lg:hidden"
             />
           ))}
         </ul>
 
-        <p className="mt-8 max-w-2xl text-xs leading-relaxed text-ink-muted">
+        <p className="mt-6 max-w-2xl text-xs leading-relaxed text-ink-faint">
           {dict.ui.clients.footnote}
         </p>
       </div>
@@ -64,16 +69,16 @@ export default function Clients({ dict }: { dict: Dictionary }) {
 function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
   switch (client.logo) {
     case "google":
-      return <GoogleLogo className="h-6 w-auto max-w-full" />;
+      return <GoogleLogo className="h-5 w-auto max-w-full" />;
     case "mozilla":
-      return <MozillaLogo className="h-6 w-auto max-w-full text-ink" />;
+      return <MozillaLogo className="h-5 w-auto max-w-full text-ink" />;
     case "woovi":
-      return <WooviLogo className="h-9 w-auto max-w-full text-ink" />;
+      return <WooviLogo className="h-7 w-auto max-w-full text-ink" />;
     case "servecommand":
       return (
         <span aria-hidden className="flex items-center gap-2">
-          <ServeCommandLogo className="size-8 shrink-0" />
-          <span className="truncate text-xl font-semibold tracking-tight text-ink">
+          <ServeCommandLogo className="size-7 shrink-0" />
+          <span className="truncate text-base font-semibold tracking-tight text-ink">
             {client.name}
           </span>
         </span>
@@ -86,14 +91,14 @@ function ClientLogo({ client }: { client: Dictionary["clients"][number] }) {
             alt=""
             width={560}
             height={213}
-            className="h-9 w-auto dark:hidden"
+            className="h-7 w-auto dark:hidden"
           />
           <Image
             src="/logos/floprobux.webp"
             alt=""
             width={560}
             height={213}
-            className="hidden h-9 w-auto dark:block"
+            className="hidden h-7 w-auto dark:block"
           />
         </>
       );

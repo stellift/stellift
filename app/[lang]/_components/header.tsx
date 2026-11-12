@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/app/[lang]/_components/language-switcher";
 import ThemeToggle from "@/app/[lang]/_components/theme-toggle";
+import Wordmark from "@/app/[lang]/_components/wordmark";
 import { ChevronRight } from "lucide-react";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
@@ -59,18 +60,10 @@ export default function Header({
   }, [open]);
 
   return (
-    <header
-      className={"sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md"}
-    >
-      <div
-        className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-6 px-6"
-      >
-        <a
-          href={`${home}#top`}
-          onClick={() => setOpen(false)}
-          className="font-serif text-2xl text-ink"
-        >
-          {dict.site.name}
+    <header className="sticky top-0 z-50 border-b border-line bg-canvas/90 backdrop-blur-md">
+      <div className="shell flex h-16 items-center justify-between gap-6">
+        <a href={`${home}#top`} onClick={() => setOpen(false)}>
+          <Wordmark name={dict.site.name} />
         </a>
 
         <nav className="hidden flex-1 items-center justify-center gap-7 lg:flex">
@@ -79,9 +72,7 @@ export default function Header({
               key={item.href}
               href={`${home}${item.href}`}
               aria-current={active === item.href ? "true" : undefined}
-              className={`whitespace-nowrap text-sm transition-colors ${
-                active === item.href ? "text-ink" : "text-ink-muted hover:text-ink"
-              }`}
+              className="nav-link"
             >
               {item.label}
             </a>
@@ -100,7 +91,7 @@ export default function Header({
 
           <a
             href={`${home}#contact`}
-            className="btn btn-primary hidden px-5 py-2 text-sm lg:inline-flex"
+            className="btn btn-primary hidden px-5 py-2.5 text-sm lg:inline-flex"
           >
             {dict.ui.header.cta}
           </a>
@@ -111,21 +102,21 @@ export default function Header({
             aria-controls="mobile-nav"
             aria-label={open ? dict.ui.header.closeMenu : dict.ui.header.openMenu}
             onClick={() => setOpen((v) => !v)}
-            className="flex size-10 items-center justify-center rounded-md border border-line bg-surface text-ink transition-colors hover:bg-surface-muted lg:hidden"
+            className="flex size-9 items-center justify-center border border-line bg-canvas text-ink transition-colors hover:bg-surface lg:hidden"
           >
-            <span aria-hidden className="relative block h-[14px] w-[18px]">
+            <span aria-hidden className="relative block h-[13px] w-[17px]">
               <span
-                className={`absolute left-0 h-[2px] w-full bg-current transition-all duration-200 ${
+                className={`absolute left-0 h-[1.5px] w-full bg-current transition-all duration-200 ${
                   open ? "top-1.5 rotate-45" : "top-0"
                 }`}
               />
               <span
-                className={`absolute left-0 top-1.5 h-[2px] w-full bg-current transition-opacity duration-200 ${
+                className={`absolute left-0 top-1.5 h-[1.5px] w-full bg-current transition-opacity duration-200 ${
                   open ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span
-                className={`absolute left-0 h-[2px] w-full bg-current transition-all duration-200 ${
+                className={`absolute left-0 h-[1.5px] w-full bg-current transition-all duration-200 ${
                   open ? "top-1.5 -rotate-45" : "top-3"
                 }`}
               />
@@ -138,7 +129,7 @@ export default function Header({
         <nav
           id="mobile-nav"
           aria-label={dict.ui.header.menu}
-          className="mx-auto w-full max-w-6xl px-6 pb-4 lg:hidden"
+          className="shell pb-4 lg:hidden"
         >
           <div className="panel animate-panel-in overflow-hidden">
             <ul>
@@ -150,19 +141,19 @@ export default function Header({
                     aria-current={active === item.href ? "true" : undefined}
                     className={`flex items-center justify-between gap-3 border-b border-line px-4 py-3 text-sm transition-colors ${
                       active === item.href
-                        ? "bg-surface-muted text-ink"
-                        : "text-ink-muted hover:bg-surface-muted hover:text-ink"
+                        ? "bg-surface text-ink"
+                        : "text-ink-muted hover:bg-surface hover:text-ink"
                     }`}
                   >
                     {item.label}
-                    <ChevronRight className="size-4 shrink-0 text-ink-muted" aria-hidden />
+                    <ChevronRight className="size-4 shrink-0 text-ink-faint" aria-hidden />
                   </a>
                 </li>
               ))}
             </ul>
 
             <div>
-              <p className="field-label px-4 pb-2 pt-4 uppercase">
+              <p className="eyebrow px-4 pb-2.5 pt-4">
                 {dict.ui.header.switchLabel}
               </p>
               <ul>
@@ -174,13 +165,13 @@ export default function Header({
                       aria-current={code === lang ? "true" : undefined}
                       className={`flex items-center justify-between gap-3 px-4 py-3 text-sm transition-colors ${
                         code === lang
-                          ? "bg-surface-muted text-ink"
-                          : "text-ink-muted hover:bg-surface-muted hover:text-ink"
+                          ? "bg-surface text-ink"
+                          : "text-ink-muted hover:bg-surface hover:text-ink"
                       }`}
                     >
                       {localeNames[code]}
                       {code === lang ? (
-                        <span aria-hidden className="size-2 shrink-0 rounded-full bg-accent" />
+                        <span aria-hidden className="size-1.5 shrink-0 bg-accent" />
                       ) : null}
                     </a>
                   </li>

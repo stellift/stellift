@@ -57,6 +57,8 @@ the action with a `POST` to an endpoint.
 [MIT](LICENSE).
 
 Third party logos in `components/brand-logos.tsx` and `public/logos/` are
-trademarks of their owners and are not covered by the license. Replace them
-with your own if you reuse this project. Fonts in `assets/` are under the
+trademarks of their owners and are not covered by the license. The stellift
+mark in `public/logos/stellift.png`, `app/icon.png` and `app/apple-icon.png`
+is ours and is not covered either. Replace them with your own if you reuse
+this project. Fonts in `assets/` are under the
 [SIL Open Font License 1.1](https://openfontlicense.org).

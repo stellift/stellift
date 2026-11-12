@@ -4,19 +4,18 @@
 
 @theme {
   --color-canvas: #ffffff;
-  --color-surface: #fafafa;
-  --color-surface-muted: #f2f3f5;
-  --color-line: #e4e4e7;
-  --color-line-soft: #efeff1;
-  --color-line-strong: #d4d4d8;
-  --color-ink: #18181b;
-  --color-ink-muted: #5f6368;
-  --color-ink-faint: #8a8d93;
-  --color-accent: #0b63b8;
-  --color-accent-hover: #0a5ca8;
-  --color-accent-strong: #0b63b8;
-  --color-accent-soft: #e8f1fd;
-  --color-danger: #c62828;
+  --color-surface: #f4f6fa;
+  --color-surface-muted: #e9edf4;
+  --color-line: #d5dbe4;
+  --color-line-soft: #e6eaf1;
+  --color-line-strong: #aab3c1;
+  --color-ink: #0b1018;
+  --color-ink-muted: #4f5968;
+  --color-ink-faint: #868f9e;
+  --color-accent: #0b4ea2;
+  --color-accent-hover: #093f82;
+  --color-accent-soft: #e8eefa;
+  --color-danger: #b42318;
 
   --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
@@ -29,19 +28,18 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --color-canvas: #000000;
-  --color-surface: #0a0a0a;
-  --color-surface-muted: #141414;
-  --color-line: #262626;
-  --color-line-soft: #1a1a1a;
-  --color-line-strong: #3a3a3a;
-  --color-ink: #ededed;
-  --color-ink-muted: #8f8f8f;
-  --color-ink-faint: #565656;
-  --color-accent: #0a87fc;
-  --color-accent-hover: #389fff;
-  --color-accent-strong: #0b73d8;
-  --color-accent-soft: #08223a;
+  --color-canvas: #080a0e;
+  --color-surface: #11151c;
+  --color-surface-muted: #181d26;
+  --color-line: #242b36;
+  --color-line-soft: #171c24;
+  --color-line-strong: #3b4553;
+  --color-ink: #eef1f6;
+  --color-ink-muted: #949daa;
+  --color-ink-faint: #5c6573;
+  --color-accent: #5aa6ff;
+  --color-accent-hover: #8ac1ff;
+  --color-accent-soft: #0e2340;
   --color-danger: #f87171;
 }
 
@@ -56,13 +54,17 @@ body {
   overflow-x: clip;
 }
 
+.font-serif {
+  letter-spacing: -0.015em;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
-  border-radius: 6px;
+  border-radius: 2px;
 }
 
 section[id] {
@@ -70,8 +72,8 @@ section[id] {
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: #ffffff;
+  background-color: var(--color-ink);
+  color: var(--color-canvas);
 }
 
 ::-webkit-scrollbar {
@@ -128,15 +130,54 @@ section[id] {
   }
 }
 
+@keyframes trajectory-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
 @utility animate-panel-in {
   animation: panel-in 140ms ease-out;
 }
 
+@utility animate-trajectory {
+  animation: trajectory-in 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @layer components {
+  .shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 72rem;
+    padding-inline: 1.5rem;
+    border-inline: 1px solid var(--color-line-soft);
+  }
+
   .panel {
-    background-color: var(--color-surface);
+    background-color: var(--color-canvas);
     border: 1px solid var(--color-line);
-    border-radius: 8px;
+  }
+
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+
+  .index {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-accent);
   }
 
   .btn {
@@ -144,70 +185,145 @@ section[id] {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 6px;
-    padding: 10px 28px;
+    border-radius: 2px;
+    padding: 12px 26px;
     font-size: 0.9375rem;
     line-height: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
     white-space: nowrap;
     transition:
-      background-color 120ms ease,
-      border-color 120ms ease;
+      background-color 140ms ease,
+      border-color 140ms ease,
+      color 140ms ease;
   }
 
   .btn-primary {
-    background-color: var(--color-accent-strong);
-    border: 1px solid transparent;
-    color: #ffffff;
-    font-weight: 600;
+    background-color: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    color: var(--color-canvas);
   }
 
   .btn-primary:hover {
     background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
   }
 
-  .btn-ghost {
-    background-color: rgb(255 255 255 / 0.07);
-    border: 1px solid rgb(255 255 255 / 0.2);
+  :root[data-theme="dark"] .btn-primary:hover {
+    color: var(--color-canvas);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-line-strong);
     color: var(--color-ink);
   }
 
-  .btn-ghost:hover {
-    background-color: rgb(255 255 255 / 0.14);
-    border-color: rgb(255 255 255 / 0.35);
+  .btn-outline:hover {
+    border-color: var(--color-ink);
+    background-color: var(--color-surface);
   }
 
   .field-label {
-    color: var(--color-ink-muted);
-    font-size: 0.75rem;
+    display: block;
+    font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
   }
 
   .input {
-    background-color: var(--color-surface);
+    background-color: var(--color-canvas);
     border: 1px solid var(--color-line);
-    border-radius: 6px;
-    padding: 10px 16px;
+    border-radius: 2px;
+    padding: 11px 14px;
     color: var(--color-ink);
     width: 100%;
+    transition:
+      border-color 140ms ease,
+      background-color 140ms ease;
   }
 
   .input::placeholder {
-    color: var(--color-ink-muted);
+    color: var(--color-ink-faint);
+  }
+
+  .input:hover {
+    border-color: var(--color-line-strong);
   }
 
   .input:focus {
-    border-color: var(--color-accent);
+    border-color: var(--color-ink);
     outline: none;
   }
 
-  .cell {
-    background-color: var(--color-surface);
-    transition: background-color 140ms ease;
+  .grid-ruled {
+    display: grid;
+    gap: 1px;
+    background-color: var(--color-line);
+    border: 1px solid var(--color-line);
   }
 
-  .cell:hover {
-    background-color: var(--color-surface-muted);
+  .cell {
+    position: relative;
+    background-color: var(--color-canvas);
+    transition: background-color 160ms ease;
+  }
+
+  .cell-link:hover {
+    background-color: var(--color-surface);
+  }
+
+  .cell-mark {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .cell-link:hover .cell-mark,
+  .cell-link:focus-within .cell-mark {
+    transform: scaleX(1);
+  }
+
+  .nav-link {
+    position: relative;
+    padding-block: 0.25rem;
+    white-space: nowrap;
+    font-size: 0.8125rem;
+    letter-spacing: 0.01em;
+    color: var(--color-ink-muted);
+    transition: color 140ms ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background-color: var(--color-ink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-link:hover,
+  .nav-link[aria-current] {
+    color: var(--color-ink);
+  }
+
+  .nav-link:hover::after,
+  .nav-link[aria-current]::after {
+    transform: scaleX(1);
   }
 }
 

@@ -38,7 +38,7 @@ export default async function Accelerators({ lang }: { lang: Locale }) {
       />
 
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-24">
+        <div className="shell py-16 sm:py-24">
           <Link
             href={`/${lang}`}
             className="inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
@@ -50,7 +50,7 @@ export default async function Accelerators({ lang }: { lang: Locale }) {
           <h1 className="mt-8 max-w-3xl text-balance font-serif text-4xl leading-tight text-ink sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-muted">
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-faint">
             {sourceNote}
           </p>
 
@@ -59,7 +59,7 @@ export default async function Accelerators({ lang }: { lang: Locale }) {
               <a
                 key={section.title}
                 href={`#${anchor(section.title)}`}
-                className="rounded-md border border-line bg-surface px-3 py-1.5 text-xs font-semibold text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink"
+                className="border border-line px-3 py-1.5 text-xs font-medium text-ink-muted transition-colors hover:border-ink hover:text-ink"
               >
                 {section.title}
               </a>
@@ -75,7 +75,7 @@ export default async function Accelerators({ lang }: { lang: Locale }) {
           aria-labelledby={`${anchor(section.title)}-title`}
           className="border-b border-line"
         >
-          <div className="mx-auto w-full max-w-6xl px-6 py-14">
+          <div className="shell py-14">
             <h2
               id={`${anchor(section.title)}-title`}
               className="font-serif text-2xl text-ink sm:text-3xl"
@@ -88,9 +88,9 @@ export default async function Accelerators({ lang }: { lang: Locale }) {
               </p>
             ) : null}
 
-            <ul className="mt-8 grid gap-px overflow-hidden rounded-lg border border-line bg-line">
+            <ul className="grid-ruled mt-8">
               {section.entries.map((entry) => (
-                <li key={entry.name} className="cell grid gap-x-8 gap-y-2 p-6 lg:grid-cols-12">
+                <li key={entry.name} className="cell cell-link grid gap-x-8 gap-y-2 p-6 lg:grid-cols-12">
                   <h3 className="font-semibold text-ink lg:col-span-3">
                     {entry.url ? (
                       <a
@@ -127,7 +127,7 @@ export default async function Accelerators({ lang }: { lang: Locale }) {
       ))}
 
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-6xl px-6 py-14">
+        <div className="shell py-14">
           <p className="max-w-2xl text-sm leading-relaxed text-ink-muted">
             {entryCount} entradas. A lista é aberta e vive em{" "}
             <a

@@ -76,16 +76,16 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
 
   if (composed) {
     return (
-      <div className="panel h-full p-6 sm:p-8">
+      <div className="h-full p-7 sm:p-10">
         <p>
-          <span className="inline-flex rounded-md bg-accent-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+          <span className="inline-flex items-center gap-2 border border-accent px-3 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-accent">
             {t.readyBadge}
           </span>
         </p>
         <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-ink-muted">
           {t.readyText}
         </p>
-        <pre className="mt-6 max-h-48 overflow-auto whitespace-pre-wrap rounded-md border border-line bg-canvas p-5 text-sm leading-relaxed text-ink">
+        <pre className="mt-6 max-h-48 overflow-auto whitespace-pre-wrap border border-line bg-surface p-5 font-sans text-sm leading-relaxed text-ink">
           {composed.body}
         </pre>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -98,7 +98,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
           <button
             type="button"
             onClick={copyMessage}
-            className="btn btn-ghost"
+            className="btn btn-outline"
           >
             {copied ? t.copied : t.copy}
           </button>
@@ -122,7 +122,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
       ref={formRef}
       onSubmit={onSubmit}
       noValidate
-      className="panel h-full p-6 sm:p-8"
+      className="h-full p-7 sm:p-10"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field

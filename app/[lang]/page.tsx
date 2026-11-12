@@ -27,7 +27,7 @@ export default async function Home() {
         name: dict.site.name,
         description: dict.site.metaDescription,
         url: siteUrl,
-        logo: `${siteUrl}/icon.svg`,
+        logo: `${siteUrl}/logos/stellift.png`,
         image: `${siteUrl}/${locale}/opengraph-image`,
         email: dict.site.email,
         sameAs: [dict.site.linkedin, dict.site.github],
@@ -64,16 +64,24 @@ export default async function Home() {
     ],
   };
 
+  const label = (href: string) =>
+    dict.nav.find((item) => item.href === href)?.label ?? "";
+
   return (
     <>
       <JsonLd data={structuredData} />
       <Hero dict={dict} />
-      <Services dict={dict} />
-      <Clients dict={dict} />
-      <Portfolio dict={dict} />
-      <ToolsSection dict={dict} lang={locale} />
-      <About dict={dict} />
-      <Contact dict={dict} />
+      <Services dict={dict} index="01" eyebrow={label("#services")} />
+      <Clients dict={dict} index="02" eyebrow={label("#clients")} />
+      <Portfolio dict={dict} index="03" eyebrow={label("#portfolio")} />
+      <ToolsSection
+        dict={dict}
+        lang={locale}
+        index="04"
+        eyebrow={label("#tools")}
+      />
+      <About dict={dict} index="05" eyebrow={label("#about")} />
+      <Contact dict={dict} index="06" eyebrow={label("#contact")} />
     </>
   );
 }

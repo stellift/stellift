@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { calculators } from "@/app/[lang]/[slug]/_tools/registry";
 import JsonLd from "@/app/[lang]/_components/json-ld";
+import Star from "@/app/[lang]/_components/star";
 import { siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
 import { toolIds, toolPath, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
@@ -18,6 +19,8 @@ export default async function ToolPage({
   const copy = dict.tools.items[id];
   const others = toolIds.filter((other) => other !== id);
   const Calculator = calculators[id];
+  const toolsLabel =
+    dict.nav.find((item) => item.href === "#tools")?.label ?? dict.tools.allLabel;
 
   return (
     <>
@@ -38,7 +41,7 @@ export default async function ToolPage({
       />
 
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-24">
+        <div className="shell py-16 sm:py-24">
           <Link
             href={`/${lang}`}
             className="inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
@@ -47,10 +50,17 @@ export default async function ToolPage({
             {dict.tools.backLabel}
           </Link>
 
-          <h1 className="mt-8 max-w-3xl text-balance font-serif text-4xl leading-tight text-ink sm:text-5xl">
+          <div className="mt-10 flex items-center gap-4">
+            <span className="index">{String(toolIds.indexOf(id) + 1).padStart(2, "0")}</span>
+            <span className="eyebrow">{toolsLabel}</span>
+            <span aria-hidden className="h-px flex-1 bg-line" />
+            <Star className="size-2.5 shrink-0 text-line-strong" />
+          </div>
+
+          <h1 className="mt-7 max-w-3xl text-balance font-serif text-[2.25rem] leading-[1.05] text-ink sm:text-[3.25rem]">
             {copy.name}
           </h1>
-          <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-ink-muted">
+          <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-ink-muted">
             {copy.intro}
           </p>
 
@@ -58,36 +68,39 @@ export default async function ToolPage({
             <Calculator dict={dict} currency={currencies[lang]} />
           </div>
 
-          <p className="mt-6 max-w-2xl text-xs leading-relaxed text-ink-muted">
+          <p className="mt-6 max-w-2xl text-xs leading-relaxed text-ink-faint">
             {copy.note}
           </p>
         </div>
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-6xl px-6 py-16">
-          <h2 className="font-serif text-2xl text-ink">{dict.tools.allLabel}</h2>
-          <ul className="mt-8 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+        <div className="shell py-16">
+          <h2 className="font-serif text-3xl leading-tight text-ink">
+            {dict.tools.allLabel}
+          </h2>
+          <ul className="grid-ruled mt-8 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((other) => (
-              <li key={other}>
-                <Link href={toolPath(lang, other)} className="cell block h-full p-6">
-                  <h3 className="font-serif text-xl text-ink">
+              <li key={other} className="cell cell-link group">
+                <span aria-hidden className="cell-mark" />
+                <Link href={toolPath(lang, other)} className="block h-full p-7">
+                  <h3 className="font-serif text-xl leading-tight text-ink">
                     {dict.tools.items[other].name}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                     {dict.tools.items[other].tagline}
                   </p>
                 </Link>
               </li>
             ))}
             {Array.from({ length: (3 - (others.length % 3)) % 3 }, (_, i) => (
-              <li key={`wide-${i}`} aria-hidden className="cell hidden lg:block" />
+              <li key={`wide-${i}`} aria-hidden className="hidden bg-canvas lg:block" />
             ))}
             {Array.from({ length: (2 - (others.length % 2)) % 2 }, (_, i) => (
               <li
                 key={`medium-${i}`}
                 aria-hidden
-                className="cell hidden sm:block lg:hidden"
+                className="hidden bg-canvas sm:block lg:hidden"
               />
             ))}
           </ul>
