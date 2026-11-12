@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant dark (&:where(html:not([data-theme="light"]), html:not([data-theme="light"]) *));
 
 @theme {
+  --color-canvas: #06080b;
+  --color-surface: #0d1117;
+  --color-surface-muted: #151b24;
+  --color-line: #1f2733;
+  --color-line-soft: #131921;
+  --color-line-strong: #3a4553;
+  --color-ink: #f1f4f9;
+  --color-ink-muted: #96a1b0;
+  --color-ink-faint: #5c6675;
+  --color-accent: #4eaefd;
+  --color-accent-hover: #8cc8ff;
+  --color-accent-soft: #0d2135;
+  --color-danger: #f87171;
+
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
   --color-canvas: #ffffff;
   --color-surface: #f4f6fa;
   --color-surface-muted: #e9edf4;
@@ -12,35 +37,10 @@
   --color-ink: #0b1018;
   --color-ink-muted: #4f5968;
   --color-ink-faint: #868f9e;
-  --color-accent: #0b4ea2;
-  --color-accent-hover: #093f82;
-  --color-accent-soft: #e8eefa;
+  --color-accent: #0b63c6;
+  --color-accent-hover: #084f9f;
+  --color-accent-soft: #e8f1fd;
   --color-danger: #b42318;
-
-  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
-}
-
-:root {
-  color-scheme: light;
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-
-  --color-canvas: #080a0e;
-  --color-surface: #11151c;
-  --color-surface-muted: #181d26;
-  --color-line: #242b36;
-  --color-line-soft: #171c24;
-  --color-line-strong: #3b4553;
-  --color-ink: #eef1f6;
-  --color-ink-muted: #949daa;
-  --color-ink-faint: #5c6573;
-  --color-accent: #5aa6ff;
-  --color-accent-hover: #8ac1ff;
-  --color-accent-soft: #0e2340;
-  --color-danger: #f87171;
 }
 
 html {
@@ -443,23 +443,6 @@ section[id] {
 
 @layer components {
   .band {
-    --color-canvas: #0b1018;
-    --color-surface: #11151c;
-    --color-surface-muted: #181d26;
-    --color-line: #242b36;
-    --color-line-soft: #1b2029;
-    --color-line-strong: #3b4553;
-    --color-ink: #eef1f6;
-    --color-ink-muted: #949daa;
-    --color-ink-faint: #5c6573;
-    --color-accent: #5aa6ff;
-    --color-accent-hover: #8ac1ff;
-
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
-  }
-
-  :root[data-theme="dark"] .band {
     --color-canvas: #ffffff;
     --color-surface: #f4f6fa;
     --color-surface-muted: #e9edf4;
@@ -469,8 +452,25 @@ section[id] {
     --color-ink: #0b1018;
     --color-ink-muted: #4f5968;
     --color-ink-faint: #868f9e;
-    --color-accent: #0b4ea2;
-    --color-accent-hover: #093f82;
+    --color-accent: #0b63c6;
+    --color-accent-hover: #084f9f;
+
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  :root[data-theme="light"] .band {
+    --color-canvas: #06080b;
+    --color-surface: #0d1117;
+    --color-surface-muted: #151b24;
+    --color-line: #1f2733;
+    --color-line-soft: #131921;
+    --color-line-strong: #3a4553;
+    --color-ink: #f1f4f9;
+    --color-ink-muted: #96a1b0;
+    --color-ink-faint: #5c6675;
+    --color-accent: #4eaefd;
+    --color-accent-hover: #8cc8ff;
   }
 
   .line-mask {
@@ -520,9 +520,39 @@ section[id] {
     offset-rotate: 0deg;
     offset-distance: 0%;
   }
+
+  .monument {
+    opacity: 0;
+  }
+}
+
+@keyframes monument-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .monument {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .monument {
+    animation: monument-reveal 1400ms cubic-bezier(0.22, 1, 0.36, 1) 2000ms both;
+  }
+
+  :root[data-intro="skip"] .monument {
+    animation-delay: 120ms;
+  }
+
   .intro {
     animation: intro-lift 700ms cubic-bezier(0.76, 0, 0.24, 1) 1500ms both;
   }

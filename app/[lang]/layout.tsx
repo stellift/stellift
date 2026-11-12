@@ -8,7 +8,7 @@ import Intro from "@/app/[lang]/_components/intro";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { altLanguages, getDictionary } from "@/lib/i18n/server";
 
-const bootScript = `(function(){var r=document.documentElement;try{r.dataset.theme=localStorage.getItem("theme")==="dark"?"dark":"light"}catch(e){}try{if(sessionStorage.getItem("seen"))r.dataset.intro="skip";else sessionStorage.setItem("seen","1")}catch(e){}})()`;
+const bootScript = `(function(){var r=document.documentElement;try{r.dataset.theme=localStorage.getItem("theme")==="light"?"light":"dark"}catch(e){}try{if(sessionStorage.getItem("seen"))r.dataset.intro="skip";else sessionStorage.setItem("seen","1")}catch(e){}})()`;
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",

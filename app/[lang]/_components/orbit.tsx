@@ -35,20 +35,6 @@ export default function Orbit({ className }: { className?: string }) {
         </g>
       </g>
 
-      <circle
-        cx="450"
-        cy="450"
-        r="3"
-        fill="var(--color-ink-faint)"
-      />
-      <circle
-        cx="450"
-        cy="450"
-        r="26"
-        stroke="var(--color-line)"
-        strokeWidth="1"
-        vectorEffect="non-scaling-stroke"
-      />
     </svg>
   );
 }

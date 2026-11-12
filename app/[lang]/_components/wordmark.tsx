@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LogoMark from "@/app/[lang]/_components/logo-mark";
 
 export default function Wordmark({
   name,
@@ -7,18 +7,10 @@ export default function Wordmark({
   name: string;
   size?: "sm" | "lg";
 }) {
-  const box = size === "lg" ? 36 : 28;
-
   return (
     <span className="inline-flex items-center gap-2.5">
-      <Image
-        src="/logos/stellift.png"
-        alt=""
-        width={256}
-        height={256}
-        priority
-        style={{ width: box, height: box }}
-        className={`shrink-0 ${size === "lg" ? "rounded-[5px]" : "rounded-[4px]"}`}
+      <LogoMark
+        className={`shrink-0 ${size === "lg" ? "size-9" : "size-7"}`}
       />
       <span
         className={`font-serif leading-none text-ink ${

@@ -27,7 +27,7 @@ export default async function Home() {
         name: dict.site.name,
         description: dict.site.metaDescription,
         url: siteUrl,
-        logo: `${siteUrl}/logos/stellift.png`,
+        logo: `${siteUrl}/logos/stellift.svg`,
         image: `${siteUrl}/${locale}/opengraph-image`,
         email: dict.site.email,
         sameAs: [dict.site.linkedin, dict.site.github],
