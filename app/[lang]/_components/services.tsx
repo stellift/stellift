@@ -27,37 +27,40 @@ export default function Services({
           title={dict.ui.services.title}
         />
 
-        <ul className="grid-ruled mt-12 sm:grid-cols-2 lg:grid-cols-3">
-          {dict.services.map((service) => {
+        <ul className="reveal mt-14 border-t border-line">
+          {dict.services.map((service, i) => {
             const Icon = icons[service.code];
             return (
-              <li key={service.code} className="cell cell-link group flex flex-col p-7">
-                <span aria-hidden className="cell-mark" />
-
-                <div className="flex items-center justify-between gap-4">
-                  <Icon className="size-5 text-accent" aria-hidden />
-                  <span className="index text-ink-faint">{service.code}</span>
-                </div>
-
-                <p className="eyebrow mt-7">{service.category}</p>
-
-                <h3 className="mt-3 font-serif text-2xl leading-tight text-ink">
-                  {service.title}
-                </h3>
-
-                <p className="mt-3 flex-1 text-pretty text-sm leading-relaxed text-ink-muted">
-                  {service.text}
-                </p>
-
+              <li key={service.code} className="border-b border-line">
                 <a
                   href="#contact"
-                  className="mt-7 inline-flex items-center gap-1.5 self-start text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                  aria-label={`${service.title}: ${dict.ui.card.action}`}
+                  className="row-link group grid items-baseline gap-x-8 gap-y-5 py-9 sm:py-11 lg:grid-cols-12"
                 >
-                  {dict.ui.card.action}
-                  <ArrowRight
-                    className="size-3.5 transition-transform duration-200 group-hover:translate-x-1"
-                    aria-hidden
-                  />
+                  <span className="index row-shift lg:col-span-1 lg:pl-5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <h3 className="row-shift font-serif text-[clamp(1.875rem,3.8vw,3.25rem)] leading-[0.98] tracking-[-0.025em] text-ink lg:col-span-4">
+                    {service.title}
+                  </h3>
+
+                  <p className="eyebrow lg:col-span-2">{service.category}</p>
+
+                  <p className="text-pretty text-sm leading-relaxed text-ink-muted lg:col-span-4">
+                    {service.text}
+                  </p>
+
+                  <span className="flex items-center gap-4 self-center lg:col-span-1 lg:justify-self-end lg:pr-5">
+                    <Icon
+                      className="size-5 text-ink-faint transition-colors duration-300 group-hover:text-accent"
+                      aria-hidden
+                    />
+                    <ArrowRight
+                      className="size-4 text-accent transition-transform duration-300 group-hover:translate-x-1"
+                      aria-hidden
+                    />
+                  </span>
                 </a>
               </li>
             );

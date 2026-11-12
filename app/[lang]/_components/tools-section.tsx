@@ -28,7 +28,7 @@ export default function ToolsSection({
           {dict.tools.lead}
         </SectionHeading>
 
-        <ul className="grid-ruled mt-12 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid-ruled reveal mt-14 sm:grid-cols-2 lg:grid-cols-3">
           {toolIds.map((id, i) => (
             <li key={id} className="cell cell-link group">
               <span aria-hidden className="cell-mark" />

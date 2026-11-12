@@ -130,22 +130,8 @@ section[id] {
   }
 }
 
-@keyframes trajectory-in {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
 @utility animate-panel-in {
   animation: panel-in 140ms ease-out;
-}
-
-@utility animate-trajectory {
-  animation: trajectory-in 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @layer components {
@@ -181,6 +167,9 @@ section[id] {
   }
 
   .btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -204,14 +193,38 @@ section[id] {
     color: var(--color-canvas);
   }
 
-  .btn-primary:hover {
+  .btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateY(101%);
+    transition: transform 460ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .btn-primary::after {
     background-color: var(--color-accent);
+  }
+
+  .btn-primary:hover::after {
+    transform: translateY(0);
+  }
+
+  .btn-primary:hover {
     border-color: var(--color-accent);
     color: #ffffff;
   }
 
   :root[data-theme="dark"] .btn-primary:hover {
     color: var(--color-canvas);
+  }
+
+  .btn-outline::after {
+    background-color: var(--color-ink);
+  }
+
+  .btn-outline:hover::after {
+    transform: translateY(0);
   }
 
   .btn-outline {
@@ -222,7 +235,7 @@ section[id] {
 
   .btn-outline:hover {
     border-color: var(--color-ink);
-    background-color: var(--color-surface);
+    color: var(--color-canvas);
   }
 
   .field-label {
@@ -293,6 +306,36 @@ section[id] {
     transform: scaleX(1);
   }
 
+  .row-link {
+    position: relative;
+    isolation: isolate;
+    display: block;
+  }
+
+  .row-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--color-surface);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 560ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .row-link:hover::before,
+  .row-link:focus-visible::before {
+    transform: scaleX(1);
+  }
+
+  .row-shift {
+    transition: transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .row-link:hover .row-shift {
+    transform: translateX(0.75rem);
+  }
+
   .nav-link {
     position: relative;
     padding-block: 0.25rem;
@@ -324,6 +367,218 @@ section[id] {
   .nav-link:hover::after,
   .nav-link[aria-current]::after {
     transform: scaleX(1);
+  }
+}
+
+
+@property --count {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes count-up {
+  to {
+    --count: 100;
+  }
+}
+
+@keyframes intro-fill {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes intro-lift {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-101%);
+  }
+}
+
+@keyframes line-rise {
+  from {
+    transform: translateY(105%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rail-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes orbit-run {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@layer components {
+  .band {
+    --color-canvas: #0b1018;
+    --color-surface: #11151c;
+    --color-surface-muted: #181d26;
+    --color-line: #242b36;
+    --color-line-soft: #1b2029;
+    --color-line-strong: #3b4553;
+    --color-ink: #eef1f6;
+    --color-ink-muted: #949daa;
+    --color-ink-faint: #5c6573;
+    --color-accent: #5aa6ff;
+    --color-accent-hover: #8ac1ff;
+
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  :root[data-theme="dark"] .band {
+    --color-canvas: #ffffff;
+    --color-surface: #f4f6fa;
+    --color-surface-muted: #e9edf4;
+    --color-line: #d5dbe4;
+    --color-line-soft: #e6eaf1;
+    --color-line-strong: #aab3c1;
+    --color-ink: #0b1018;
+    --color-ink-muted: #4f5968;
+    --color-ink-faint: #868f9e;
+    --color-accent: #0b4ea2;
+    --color-accent-hover: #093f82;
+  }
+
+  .line-mask {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+  }
+
+  .line-mask > * {
+    display: block;
+  }
+
+  .rail {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 40;
+    pointer-events: none;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .intro {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-canvas);
+    padding: 1.5rem;
+  }
+
+  :root[data-intro="skip"] .intro {
+    display: none;
+  }
+
+  .intro-count::after {
+    content: counter(count);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .orbiter {
+    offset-rotate: 0deg;
+    offset-distance: 0%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .intro {
+    animation: intro-lift 700ms cubic-bezier(0.76, 0, 0.24, 1) 1500ms both;
+  }
+
+  .intro-fill {
+    transform-origin: left;
+    animation: intro-fill 1400ms cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+
+  .intro-count {
+    counter-reset: count var(--count);
+    animation: count-up 1400ms linear both;
+  }
+
+  .hero-line > * {
+    animation: line-rise 1000ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(2050ms + var(--line, 0) * 110ms);
+  }
+
+  :root[data-intro="skip"] .hero-line > * {
+    animation-delay: calc(var(--line, 0) * 90ms);
+  }
+
+  .orbiter {
+    animation: orbit-run var(--orbit-duration, 26s) linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro {
+    display: none;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rail {
+      animation: rail-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 4% entry 46%;
+    }
+
+    .reveal-line > * {
+      animation: line-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 4% entry 44%;
+    }
   }
 }
 

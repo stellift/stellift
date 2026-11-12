@@ -1,54 +1,50 @@
-import Star from "@/app/[lang]/_components/star";
+import Orbit from "@/app/[lang]/_components/orbit";
 import type { Dictionary } from "@/lib/i18n/types";
-
-const ticks = Array.from({ length: 33 }, (_, i) => i);
 
 export default function Hero({ dict }: { dict: Dictionary }) {
   return (
-    <section id="top" className="border-b border-line">
-      <div className="shell pb-14 pt-16 sm:pb-20 sm:pt-28">
-        <p className="flex items-center gap-3">
-          <Star className="size-2.5 shrink-0 text-accent" />
-          <span className="eyebrow">{dict.site.tagline}</span>
-        </p>
+    <section id="top" className="relative overflow-hidden border-b border-line">
+      <Orbit className="pointer-events-none absolute left-1/2 top-1/2 h-[190vw] w-[190vw] -translate-x-1/2 -translate-y-1/2 sm:h-[150vh] sm:w-[150vh] lg:h-[165vh] lg:w-[165vh]" />
 
-        <h1 className="mt-8 max-w-4xl text-balance font-serif text-[2.5rem] leading-[1.03] text-ink sm:text-6xl lg:text-[4.75rem]">
-          {dict.ui.hero.title} {dict.ui.hero.titleAccent}
+      <div className="shell relative flex min-h-[calc(100svh-4rem)] flex-col justify-between pb-14 pt-20 sm:pb-20 sm:pt-32">
+        <h1 className="font-serif text-[clamp(2.6rem,7.7vw,6.75rem)] leading-[0.97] tracking-[-0.03em] text-ink">
+          <span
+            className="hero-line line-mask"
+            style={{ "--line": 0 } as React.CSSProperties}
+          >
+            <span>{dict.ui.hero.title}</span>
+          </span>
+          <span
+            className="hero-line line-mask"
+            style={{ "--line": 1 } as React.CSSProperties}
+          >
+            <span>{dict.ui.hero.titleAccent}</span>
+          </span>
         </h1>
 
-        <p className="mt-8 max-w-lg text-pretty text-lg leading-relaxed text-ink-muted">
-          {dict.site.description}
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center gap-3">
-          <a href="#contact" className="btn btn-primary">
-            {dict.ui.hero.primary}
-          </a>
-          <a href="#services" className="btn btn-outline">
-            {dict.ui.hero.secondary}
-          </a>
-        </div>
-
-        <div
-          aria-hidden
-          className="animate-trajectory mt-16 flex items-center gap-3 sm:mt-24 sm:gap-5"
-        >
-          <span className="eyebrow shrink-0">{dict.ui.hero.fieldStart}</span>
-
-          <span className="relative flex h-3 flex-1 items-center">
-            <span className="h-px w-full bg-line" />
-            <span className="absolute inset-x-0 flex items-center justify-between">
-              {ticks.map((tick) => (
-                <span
-                  key={tick}
-                  className={`w-px bg-line ${tick % 4 === 0 ? "h-2.5" : "h-1.5"}`}
-                />
-              ))}
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <p
+            className="hero-line line-mask max-w-sm"
+            style={{ "--line": 2 } as React.CSSProperties}
+          >
+            <span className="text-pretty text-lg leading-relaxed text-ink-muted">
+              {dict.site.description}
             </span>
-          </span>
+          </p>
 
-          <Star className="size-3.5 shrink-0 text-accent" />
-          <span className="eyebrow shrink-0 text-ink">{dict.ui.hero.fieldEnd}</span>
+          <div
+            className="hero-line line-mask"
+            style={{ "--line": 3 } as React.CSSProperties}
+          >
+            <span className="flex flex-wrap items-center gap-3">
+              <a href="#contact" className="btn btn-primary">
+                {dict.ui.hero.primary}
+              </a>
+              <a href="#services" className="btn btn-outline">
+                {dict.ui.hero.secondary}
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </section>

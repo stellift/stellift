@@ -15,7 +15,7 @@ export default function SectionHeading({
   children?: ReactNode;
 }) {
   return (
-    <header>
+    <header className="reveal">
       <div className="flex items-center gap-4">
         <span className="index">{index}</span>
         <span className="eyebrow">{eyebrow}</span>
@@ -25,13 +25,13 @@ export default function SectionHeading({
 
       <h2
         id={id}
-        className="mt-7 max-w-3xl text-balance font-serif text-[2rem] leading-[1.08] text-ink sm:text-5xl"
+        className="reveal-line mt-8 max-w-3xl font-serif text-[clamp(2.1rem,4.6vw,3.75rem)] leading-[1.02] tracking-[-0.025em] text-ink"
       >
-        {title}
+        <span>{title}</span>
       </h2>
 
       {children ? (
-        <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-ink-muted">
+        <p className="reveal mt-6 max-w-xl text-pretty text-base leading-relaxed text-ink-muted">
           {children}
         </p>
       ) : null}

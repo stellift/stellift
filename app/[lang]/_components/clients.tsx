@@ -31,7 +31,7 @@ export default function Clients({
           title={dict.ui.clients.title}
         />
 
-        <ul className="grid-ruled mt-12 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="grid-ruled reveal mt-14 sm:grid-cols-2 lg:grid-cols-5">
           {dict.clients.map((client) => (
             <li key={client.name} className="cell flex flex-col justify-between gap-6 p-7">
               <div className="flex h-10 items-center">
