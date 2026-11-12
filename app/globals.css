@@ -209,17 +209,21 @@ section[id] {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     scroll-snap-align: center;
     background-color: var(--color-canvas);
-    width: 86vw;
-    max-width: 1240px;
-    height: 80svh;
+    width: min(78vw, 560px);
+    flex: none;
   }
 
-  @media (min-width: 1024px) {
+  @media (max-height: 860px) {
     .frame {
-      width: 62vw;
+      width: min(72vw, 470px);
+    }
+  }
+
+  @media (max-height: 720px) {
+    .frame {
+      width: min(66vw, 400px);
     }
   }
 
@@ -686,7 +690,7 @@ section[id] {
       view-timeline-name: --reel;
       view-timeline-axis: block;
       position: relative;
-      height: 320svh;
+      height: 460svh;
     }
 
     .reel-pin {

@@ -22,7 +22,7 @@ export default function Portfolio({
       data-tone="canvas"
       className="border-b border-line"
     >
-      <div className="shell pt-28 sm:pt-36">
+      <div className="shell pt-24 sm:pt-28">
         <Slate
           id="portfolio-title"
           index={index}
@@ -31,24 +31,27 @@ export default function Portfolio({
         />
       </div>
 
-      <div className="reel-track mt-14">
+      <div className="reel-track mt-12">
         <div className="reel-pin">
-          <div className="reel-wrap w-full pb-6">
+          <div className="reel-wrap w-full pb-5">
             <ul className="reel border-y border-line">
               {projects.map((project, i) => (
                 <li key={project.name} className="frame group">
-                  {project.shot ? (
-                    <Image
-                      src={project.shot}
-                      alt=""
-                      fill
-                      priority={i === 0}
-                      sizes="(min-width: 1024px) 62vw, 86vw"
-                      className="object-cover object-top"
-                    />
-                  ) : null}
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-surface">
+                    {project.shot ? (
+                      <Image
+                        src={project.shot}
+                        alt=""
+                        fill
+                        priority={i < 2}
+                        quality={92}
+                        sizes="(min-width: 1024px) 560px, 78vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    ) : null}
+                  </div>
 
-                  <div className="relative m-4 border border-line bg-canvas/90 p-6 backdrop-blur-md sm:m-7 sm:max-w-md sm:p-8">
+                  <div className="flex flex-1 flex-col p-6">
                     <div className="slate">
                       <span className="index">
                         {String(i + 1).padStart(2, "0")}
@@ -57,18 +60,18 @@ export default function Portfolio({
                       <span className="index text-ink-faint">{total}</span>
                     </div>
 
-                    <h3 className="mt-5 font-serif text-3xl leading-tight text-ink sm:text-4xl">
+                    <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">
                       {project.name}
                     </h3>
 
-                    <p className="eyebrow mt-3">{project.role}</p>
+                    <p className="eyebrow mt-2.5">{project.role}</p>
 
-                    <p className="mt-4 text-pretty text-sm leading-relaxed text-ink-muted">
+                    <p className="mt-4 flex-1 text-pretty text-sm leading-relaxed text-ink-muted">
                       {project.text}
                     </p>
 
                     {project.stack ? (
-                      <p className="mt-5 border-t border-line pt-4 text-xs leading-relaxed text-ink-faint">
+                      <p className="mt-5 border-t border-line pt-3.5 text-xs leading-relaxed text-ink-faint">
                         {project.stack}
                       </p>
                     ) : null}
@@ -78,10 +81,13 @@ export default function Portfolio({
                         href={project.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                        className="mt-4 inline-flex items-center gap-1.5 self-start text-sm font-medium text-accent transition-colors hover:text-accent-hover"
                       >
                         {dict.ui.portfolio.cta}
-                        <ArrowUpRight className="size-4" aria-hidden />
+                        <ArrowUpRight
+                          className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                          aria-hidden
+                        />
                       </a>
                     ) : null}
                   </div>
@@ -92,7 +98,7 @@ export default function Portfolio({
         </div>
       </div>
 
-      <div className="shell pb-20">
+      <div className="shell pb-16">
         <p className="max-w-2xl text-xs leading-relaxed text-ink-faint">
           {dict.ui.portfolio.footnote}
         </p>
