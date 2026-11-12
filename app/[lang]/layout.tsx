@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import Header from "@/app/[lang]/_components/header";
+import Frame from "@/app/[lang]/_components/frame";
 import Footer from "@/app/[lang]/_components/footer";
 import Intro from "@/app/[lang]/_components/intro";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
@@ -86,8 +86,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       </head>
       <body className="flex min-h-full flex-col">
         <Intro dict={dict} />
-        <Header dict={dict} lang={lang} />
-        <div aria-hidden className="rail" />
+        <Frame dict={dict} lang={lang} />
         <main className="flex-1">{children}</main>
         <Footer dict={dict} lang={lang} />
       </body>

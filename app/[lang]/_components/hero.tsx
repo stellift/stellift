@@ -4,8 +4,8 @@ import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Hero({ dict }: { dict: Dictionary }) {
   return (
-    <section id="top" data-tone="canvas" className="scene min-h-[calc(100svh-4rem)] justify-end overflow-hidden border-b border-line">
-      <Orbit className="pointer-events-none absolute left-1/2 top-1/2 h-[210vw] w-[210vw] -translate-x-1/2 -translate-y-1/2 sm:left-[32%] sm:h-[200vh] sm:w-[200vh]" />
+    <section id="top" data-tone="canvas" className="scene justify-end overflow-hidden border-b border-line">
+      <Orbit className="drift-out pointer-events-none absolute left-1/2 top-1/2 h-[210vw] w-[210vw] -translate-x-1/2 -translate-y-1/2 sm:left-[32%] sm:h-[200vh] sm:w-[200vh]" />
 
       <LogoMark
         variant="duo"
@@ -13,7 +13,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         className="monument pointer-events-none absolute left-1/2 top-[30%] h-[30vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-7%] sm:top-1/2 sm:h-[64vh] sm:translate-x-0 lg:right-[-5%] lg:h-[78vh]"
       />
 
-      <div className="shell relative">
+      <div className="hero-push shell relative">
         <h1 className="font-serif text-[clamp(2.75rem,8.2vw,9rem)] leading-[0.92] tracking-[-0.035em] text-ink">
           <span
             className="hero-line line-mask"

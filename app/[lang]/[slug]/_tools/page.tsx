@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { calculators } from "@/app/[lang]/[slug]/_tools/registry";
 import JsonLd from "@/app/[lang]/_components/json-ld";
 import Star from "@/app/[lang]/_components/star";
@@ -42,14 +41,6 @@ export default async function ToolPage({
 
       <section className="border-b border-line">
         <div className="shell py-16 sm:py-24">
-          <Link
-            href={`/${lang}`}
-            className="inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
-          >
-            <ArrowLeft className="size-4" aria-hidden />
-            {dict.tools.backLabel}
-          </Link>
-
           <div className="mt-10 flex items-center gap-4">
             <span className="index">{String(toolIds.indexOf(id) + 1).padStart(2, "0")}</span>
             <span className="eyebrow">{toolsLabel}</span>

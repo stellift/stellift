@@ -33,12 +33,12 @@ export default function ToolsSection({
           {dict.tools.lead}
         </Slate>
 
-        <ul className="reveal mt-14 border-t border-line">
+        <ul className="reveal mt-10 border-t border-line">
           {toolIds.map((id, i) => (
             <li key={id} className="border-b border-line">
               <Link
                 href={toolPath(lang, id)}
-                className="row-link group grid items-baseline gap-x-10 gap-y-3 py-6 lg:grid-cols-12"
+                className="row-link group grid items-baseline gap-x-10 gap-y-3 py-5 lg:grid-cols-12"
               >
                 <span className="index row-shift lg:col-span-1 lg:pl-6">
                   {String(i + 1).padStart(2, "0")}

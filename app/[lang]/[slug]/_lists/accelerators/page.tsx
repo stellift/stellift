@@ -1,8 +1,6 @@
-import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import JsonLd from "@/app/[lang]/_components/json-ld";
-import { siteUrl, type Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/server";
+import { siteUrl } from "@/lib/i18n/config";
 import { acceleratorsPath } from "@/app/[lang]/[slug]/_lists/accelerators/metadata";
 import {
   entryCount,
@@ -13,9 +11,7 @@ import {
   title,
 } from "@/app/[lang]/[slug]/_lists/accelerators/data";
 
-export default async function Accelerators({ lang }: { lang: Locale }) {
-  const dict = await getDictionary(lang);
-
+export default async function Accelerators() {
   return (
     <>
       <JsonLd
@@ -39,14 +35,6 @@ export default async function Accelerators({ lang }: { lang: Locale }) {
 
       <section className="border-b border-line">
         <div className="shell py-16 sm:py-24">
-          <Link
-            href={`/${lang}`}
-            className="inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
-          >
-            <ArrowLeft className="size-4" aria-hidden />
-            {dict.tools.backLabel}
-          </Link>
-
           <h1 className="mt-8 max-w-3xl text-balance font-serif text-4xl leading-tight text-ink sm:text-5xl">
             {title}
           </h1>

@@ -23,6 +23,20 @@
 
 :root {
   color-scheme: dark;
+
+  --frame: clamp(0.5rem, 1.2vw, 1.15rem);
+  --chrome-top: 3.25rem;
+  --chrome-bottom: 3.5rem;
+  --stage-top: calc(var(--frame) + var(--chrome-top));
+  --stage-bottom: calc(var(--frame) + var(--chrome-bottom));
+  --stage-h: calc(100svh - var(--stage-top) - var(--stage-bottom));
+}
+
+@media (min-width: 768px) {
+  :root {
+    --chrome-top: 3.5rem;
+    --chrome-bottom: 4rem;
+  }
 }
 
 :root[data-theme="light"] {
@@ -52,6 +66,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   overflow-x: clip;
+  padding: var(--stage-top) var(--frame) var(--stage-bottom);
 }
 
 .font-serif {
@@ -68,7 +83,7 @@ textarea:focus-visible {
 }
 
 section[id] {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: var(--stage-top);
 }
 
 ::selection {
@@ -138,17 +153,18 @@ section[id] {
   .shell {
     margin-inline: auto;
     width: 100%;
-    max-width: 110rem;
-    padding-inline: clamp(1.5rem, 5vw, 6rem);
+    max-width: 112rem;
+    padding-inline: clamp(1.25rem, 3.4vw, 3.5rem);
   }
 
   .scene {
     position: relative;
     display: flex;
-    min-height: 100svh;
+    min-height: var(--stage-h);
     flex-direction: column;
     justify-content: center;
-    padding-block: 8rem 6rem;
+    justify-content: safe center;
+    padding-block: 4.5rem;
     background-color: var(--color-canvas);
   }
 
@@ -489,16 +505,6 @@ section[id] {
   }
 }
 
-@keyframes rail-progress {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
-
 @keyframes orbit-run {
   to {
     offset-distance: 100%;
@@ -545,19 +551,6 @@ section[id] {
 
   .line-mask > * {
     display: block;
-  }
-
-  .rail {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    z-index: 40;
-    pointer-events: none;
-    background-color: var(--color-accent);
-    transform: scaleX(0);
-    transform-origin: left;
   }
 
   .intro {
@@ -651,15 +644,6 @@ section[id] {
   }
 }
 
-@supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .rail {
-      animation: rail-progress linear both;
-      animation-timeline: scroll(root block);
-    }
-  }
-}
-
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
@@ -707,9 +691,9 @@ section[id] {
 
     .reel-pin {
       position: sticky;
-      top: 0;
+      top: var(--stage-top);
       display: flex;
-      height: 100svh;
+      height: var(--stage-h);
       align-items: center;
       overflow: hidden;
     }
@@ -729,26 +713,6 @@ section[id] {
 }
 
 @layer components {
-  .hud {
-    position: fixed;
-    right: clamp(1rem, 3vw, 2rem);
-    bottom: clamp(1rem, 3vw, 2rem);
-    z-index: 45;
-    display: none;
-    align-items: center;
-    gap: 0.875rem;
-    border: 1px solid var(--color-line);
-    background-color: var(--color-canvas);
-    padding: 0.625rem 1rem;
-    pointer-events: none;
-  }
-
-  @media (min-width: 768px) {
-    .hud {
-      display: flex;
-    }
-  }
-
   :root[data-tone="accent"] .tone-sync {
     --color-canvas: #4eaefd;
     --color-surface: #3ba2fb;
@@ -760,5 +724,152 @@ section[id] {
     --color-ink-faint: #0f4e83;
     --color-accent: #04121f;
     --color-accent-hover: #0a3a63;
+  }
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0.16;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-push {
+  to {
+    transform: scale(1.09) translateY(-5%);
+    opacity: 0.2;
+  }
+}
+
+@keyframes drift-out {
+  to {
+    transform: translateY(-14%) scale(1.14);
+  }
+}
+
+@layer components {
+  .statement-word {
+    opacity: 1;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .statement-track {
+      view-timeline-name: --statement;
+      view-timeline-axis: block;
+    }
+
+    .statement-word {
+      animation: word-in linear both;
+      animation-timeline: --statement;
+    }
+
+    .hero-push {
+      animation: hero-push linear both;
+      animation-timeline: view();
+      animation-range: exit 10% exit 95%;
+    }
+
+    .drift-out {
+      animation: drift-out linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
+@layer components {
+  .frame-edge {
+    position: fixed;
+    inset: var(--frame);
+    z-index: 60;
+    border: 1px solid var(--color-line);
+    pointer-events: none;
+  }
+
+  .chrome {
+    position: fixed;
+    left: var(--frame);
+    right: var(--frame);
+    z-index: 61;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-canvas);
+    padding-inline: clamp(0.75rem, 1.6vw, 1.5rem);
+  }
+
+  .chrome-top {
+    top: var(--frame);
+    height: var(--chrome-top);
+    border-bottom: 1px solid var(--color-line);
+    justify-content: space-between;
+  }
+
+  .chrome-bottom {
+    bottom: var(--frame);
+    height: var(--chrome-bottom);
+    border-top: 1px solid var(--color-line);
+    justify-content: space-between;
+  }
+
+  .chapter {
+    display: block;
+    width: 100%;
+    height: 2px;
+    flex: none;
+    background-color: var(--color-line);
+    transition: background-color 260ms ease;
+  }
+
+  .chapter[aria-current] {
+    background-color: var(--color-accent);
+  }
+
+  .chapter-link {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .chapter-label {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-ink-faint);
+    transition: color 260ms ease;
+  }
+
+  .chapter-link:hover .chapter-label,
+  .chapter-link[data-active] .chapter-label {
+    color: var(--color-ink);
+  }
+
+  .chapter-link:hover .chapter {
+    background-color: var(--color-line-strong);
+  }
+
+  .menu-sheet {
+    position: fixed;
+    inset: var(--frame);
+    z-index: 62;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    overflow-y: auto;
+    background-color: var(--color-canvas);
+    padding: 5rem clamp(1.25rem, 5vw, 3rem);
   }
 }

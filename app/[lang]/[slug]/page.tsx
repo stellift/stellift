@@ -33,7 +33,7 @@ export default async function Page({ params }: PageProps<"/[lang]/[slug]">) {
   if (!route) notFound();
 
   return route.kind === "list" ? (
-    <Accelerators lang={lang} />
+    <Accelerators />
   ) : (
     <ToolPage lang={lang} id={route.id} />
   );
