@@ -105,14 +105,16 @@ export const en: Dictionary = {
       logo: "google",
       featured: true,
       note:
-        "Contributions to V8, the JavaScript engine behind Chrome, and to " +
-        "Flutter.",
+        "Contributions to [[v8]], the JavaScript engine behind [[chrome]], " +
+        "and to Flutter.",
     },
     {
       name: "Mozilla",
       logo: "mozilla",
       featured: true,
-      note: "Contributions to Servo, a browser engine written in Rust.",
+      note:
+        "Contributions to [[servo]] (Servo), a browser engine written in " +
+        "Rust.",
     },
     {
       name: "Woovi",
@@ -147,85 +149,76 @@ export const en: Dictionary = {
       shot: "/shots/pivenda.webp",
       detail: {
         summary:
-          "A builder's merchant sells by the bag, the square metre and the " +
-          "kilo, gives credit to regulars, and cannot stop when the line " +
-          "goes down. Pivenda runs on the shop machine, keeps everything in " +
-          "SQLite and uses the network only when there is one.",
+          "A builder's merchant sells by the bag, by the square metre and by " +
+          "the kilo, and gives credit to regulars. Pivenda runs on the till " +
+          "machine and keeps everything there. If the line drops, the shop " +
+          "keeps selling.",
         ctaLabel: "Open the demo",
         gallery: [
           {
             src: "/shots/pivenda/01.webp",
-            caption:
-              "A sale in progress: search by name, SKU or barcode, with " +
-              "fractional quantities in each product's own unit.",
+            caption: "A sale in progress: search by name, SKU or barcode.",
           },
           {
             src: "/shots/pivenda/02.webp",
-            caption:
-              "Checkout with more than one payment method on the same sale, " +
-              "and the balance left to pay on screen.",
+            caption: "Checkout with more than one payment method on one sale.",
           },
           {
             src: "/shots/pivenda/03.webp",
-            caption:
-              "Period report: net revenue, breakdown by payment method and " +
-              "the best selling products.",
+            caption: "Period report, broken down by payment method.",
           },
           {
             src: "/shots/pivenda/04.webp",
-            caption:
-              "Product records with the trade's units, price, stock and " +
-              "minimum stock.",
+            caption: "A product filed in the trade's unit, with minimum stock.",
           },
         ],
         facts: [
           { label: "Runs on", value: "Linux, Windows, macOS and FreeBSD" },
-          { label: "Built on", value: "C++20, Qt6 and SQLite on the machine" },
-          { label: "Network", value: "Optional; the shop sells offline" },
+          { label: "Built on", value: "C++20, Qt6 and SQLite on the shop machine" },
+          { label: "Network", value: "Optional. The shop sells offline" },
           { label: "Tax documents", value: "NFC-e, NFS-e and CT-e via Focus NFe" },
         ],
         highlights: [
           {
-            title: "Charging without leaving the screen",
+            title: "It charges on the same screen",
             text:
-              "A Pix QR code drawn at the till, a Stone card machine called " +
-              "by its serial number, and bank slips through Asaas. If the " +
-              "sale does not close, the refund fires on its own.",
+              "A Pix QR code at the till, a Stone card machine called by its " +
+              "serial number, bank slips through Asaas. A sale that does not " +
+              "close refunds itself.",
           },
           {
             title: "Orders that arrive by WhatsApp",
             text:
-              "The customer's message becomes line items matched against " +
-              "the catalogue, each with a confidence level, and the cashier " +
-              "reviews them before accepting.",
+              "The customer's message reaches the till already turned into " +
+              "catalogue items, with the doubtful ones flagged. The cashier " +
+              "is the one who accepts.",
           },
           {
             title: "Building assistant",
             text:
-              "Typing \"tile 20 square metres of floor\" returns a product " +
-              "and a quantity, from a local engine, with no internet and no " +
-              "cost per query.",
+              "Type \"tile 20 square metres of floor\" and it suggests the " +
+              "product and the quantity. A local engine: no internet, no cost " +
+              "per query.",
           },
           {
             title: "The phone becomes a scanner",
             text:
-              "The app talks to the till's local API over the shop Wi-Fi: " +
-              "scan the barcode and the item lands on the sale that is open " +
-              "at the counter.",
+              "The app scans the barcode and the item lands on the sale that " +
+              "is open at the till, over the shop Wi-Fi.",
           },
           {
             title: "Pix confirmed in 12 ms",
             text:
-              "With the backend running, payment arrives by webhook and " +
-              "SSE. Twelve milliseconds between the webhook landing and the " +
-              "till confirming, measured end to end.",
+              "With the backend running, confirmation arrives by webhook. " +
+              "Twelve milliseconds from the alert to the cashier's screen, " +
+              "measured end to end.",
           },
           {
             title: "Scales on the serial port",
             text:
-              "It reads the weight straight off the device, with a " +
-              "configurable pattern because Toledo, Filizola, Urano and " +
-              "Micheletti do not speak the same protocol.",
+              "It reads the weight straight off the device. The pattern is " +
+              "configurable because Toledo, Filizola, Urano and Micheletti do " +
+              "not speak alike.",
           },
         ],
       },

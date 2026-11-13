@@ -58,9 +58,11 @@ the action with a `POST` to an endpoint.
 
 Third party logos in `components/brand-logos.tsx`, `public/logos/` and
 `lib/tech.ts` are trademarks of their owners and are not covered by the
-license. The technology icon paths in `lib/tech.ts` come from
+license. The technology icon paths in `lib/tech.ts`, and the V8 and Chrome
+marks in `components/brand-logos.tsx`, come from
 [Simple Icons](https://simpleicons.org) (CC0), except the TanStack mark, which
-comes from the TanStack brand assets. They identify each stack and nothing
+comes from the TanStack brand assets, and the Servo symbol, which comes from
+[servo.org](https://servo.org). They identify each stack and nothing
 more. The stellift
 mark in `public/logos/stellift.png`, `app/icon.png` and `app/apple-icon.png`
 is ours and is not covered either. Replace them with your own if you reuse

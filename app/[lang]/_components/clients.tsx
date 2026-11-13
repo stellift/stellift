@@ -3,6 +3,7 @@ import Slate from "@/app/[lang]/_components/slate";
 import {
   GoogleLogo,
   HaskellLogo,
+  inlineMarks,
   MozillaLogo,
   ServeCommandLogo,
   WooviLogo,
@@ -50,7 +51,7 @@ export default function Clients({
               </span>
 
               <p className="max-w-[32ch] text-pretty text-sm leading-relaxed text-ink-muted">
-                {client.note}
+                <Note text={client.note ?? ""} />
               </p>
             </li>
           ))}
@@ -66,7 +67,7 @@ export default function Clients({
 
               {client.note ? (
                 <span className="max-w-[30ch] text-pretty text-xs leading-relaxed text-ink-faint">
-                  {client.note}
+                  <Note text={client.note} />
                 </span>
               ) : null}
             </li>
@@ -78,6 +79,26 @@ export default function Clients({
         </p>
       </div>
     </section>
+  );
+}
+
+function Note({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(\[\[[a-z0-9]+\]\])/).map((part, i) => {
+        const key = part.slice(2, -2) as keyof typeof inlineMarks;
+        const mark = part.startsWith("[[") ? inlineMarks[key] : undefined;
+        if (!mark) return part;
+
+        const Logo = mark.Logo;
+        return (
+          <span key={`${key}-${i}`} className="mark" title={mark.label}>
+            <Logo />
+            <span className="sr-only">{mark.label}</span>
+          </span>
+        );
+      })}
+    </>
   );
 }
 

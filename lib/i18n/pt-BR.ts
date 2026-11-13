@@ -103,14 +103,16 @@ export const ptBR: Dictionary = {
       logo: "google",
       featured: true,
       note:
-        "Contribuições para o V8, o motor de JavaScript do Chrome, e para " +
-        "o Flutter.",
+        "Contribuições para o [[v8]], o motor de JavaScript do [[chrome]], " +
+        "e para o Flutter.",
     },
     {
       name: "Mozilla",
       logo: "mozilla",
       featured: true,
-      note: "Contribuições para o Servo, motor de navegador escrito em Rust.",
+      note:
+        "Contribuições para o [[servo]] (Servo), motor de navegador escrito " +
+        "em Rust.",
     },
     {
       name: "Woovi",
@@ -145,85 +147,77 @@ export const ptBR: Dictionary = {
       shot: "/shots/pivenda.webp",
       detail: {
         summary:
-          "Um caixa de loja de material de construção vende saco, metro " +
-          "quadrado e quilo, fia para cliente conhecido e não pode parar " +
-          "quando a internet cai. O Pivenda roda na máquina da loja, guarda " +
-          "tudo em SQLite e só usa a rede quando ela existe.",
+          "Loja de material de construção vende por saco, por metro quadrado " +
+          "e por quilo, e fia para cliente conhecido. O Pivenda roda na " +
+          "máquina do caixa e guarda tudo lá. Se a internet cair, a loja " +
+          "continua vendendo.",
         ctaLabel: "Abrir a demonstração",
         gallery: [
           {
             src: "/shots/pivenda/01.webp",
-            caption:
-              "Venda aberta: busca por nome, SKU ou código de barras, e " +
-              "carrinho com quantidade fracionada na unidade do produto.",
+            caption: "Venda aberta: busca por nome, SKU ou código de barras.",
           },
           {
             src: "/shots/pivenda/02.webp",
             caption:
-              "Fechamento com mais de uma forma de pagamento na mesma " +
-              "venda, com o que falta pagar na tela.",
+              "Fechamento com mais de uma forma de pagamento na mesma venda.",
           },
           {
             src: "/shots/pivenda/03.webp",
             caption:
-              "Relatório do período: líquido, quebra por forma de pagamento " +
-              "e ranking dos produtos mais vendidos.",
+              "Relatório do período, com quebra por forma de pagamento.",
           },
           {
             src: "/shots/pivenda/04.webp",
-            caption:
-              "Cadastro de produtos com unidade do setor, preço, estoque e " +
-              "estoque mínimo.",
+            caption: "Produto cadastrado na unidade do setor, com estoque mínimo.",
           },
         ],
         facts: [
           { label: "Onde roda", value: "Linux, Windows, macOS e FreeBSD" },
-          { label: "Base", value: "C++20, Qt6 e SQLite na própria máquina" },
-          { label: "Internet", value: "Opcional; a loja vende offline" },
+          { label: "Base", value: "C++20, Qt6 e SQLite na máquina da loja" },
+          { label: "Internet", value: "Opcional. A loja vende offline" },
           { label: "Fiscal", value: "NFC-e, NFS-e e CT-e pela Focus NFe" },
         ],
         highlights: [
           {
-            title: "Cobrança sem sair da tela",
+            title: "Cobra na própria tela",
             text:
-              "Pix com QR gerado no caixa, maquininha Stone chamada pelo " +
-              "serial do aparelho e boleto pelo Asaas. Se a venda não " +
-              "fecha, o estorno dispara sozinho.",
+              "QR do Pix no caixa, maquininha Stone chamada pelo serial do " +
+              "aparelho, boleto pelo Asaas. Venda que não fecha estorna " +
+              "sozinha.",
           },
           {
             title: "Pedido que chega pelo WhatsApp",
             text:
-              "A mensagem do cliente vira itens casados com o catálogo, " +
-              "cada um com um nível de confiança, e o caixa revisa antes " +
-              "de aceitar.",
+              "A mensagem do cliente chega no caixa já virada em itens do " +
+              "catálogo, com o que ficou duvidoso marcado. Quem aceita é o " +
+              "caixa.",
           },
           {
             title: "Assistente de obra",
             text:
-              "Quem digita \"revestir 20m² de piso\" recebe produto e " +
-              "quantidade sugeridos por um motor local, sem internet e sem " +
-              "custo por consulta.",
+              "Digite \"revestir 20m² de piso\" e ele sugere produto e " +
+              "quantidade. É um motor local: não usa internet nem cobra por " +
+              "consulta.",
           },
           {
             title: "O celular vira leitor",
             text:
-              "O app fala com a API local do PDV pela Wi-Fi da loja: " +
-              "escaneia o código de barras e o item entra na venda que " +
-              "está aberta no caixa.",
+              "O app escaneia o código de barras e o item entra na venda que " +
+              "está aberta no caixa, pela Wi-Fi da loja.",
           },
           {
-            title: "Confirmação do Pix em 12 ms",
+            title: "Pix confirmado em 12 ms",
             text:
-              "Com o backend ligado, o pagamento chega por webhook e SSE. " +
-              "Doze milissegundos entre o webhook chegar e o PDV confirmar, " +
-              "medido ponta a ponta.",
+              "Com o backend ligado, a confirmação chega por webhook. Doze " +
+              "milissegundos do aviso até a tela do caixa, medido ponta a " +
+              "ponta.",
           },
           {
             title: "Balança na porta serial",
             text:
-              "Lê o peso direto do equipamento, com padrão configurável " +
-              "porque Toledo, Filizola, Urano e Micheletti não falam o " +
-              "mesmo protocolo.",
+              "Lê o peso direto do equipamento. O padrão é configurável " +
+              "porque Toledo, Filizola, Urano e Micheletti não falam igual.",
           },
         ],
       },
