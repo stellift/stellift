@@ -67,6 +67,30 @@ export default function Services({
             );
           })}
         </ul>
+
+        <div className="reveal mt-20 sm:mt-24">
+          <div className="flex items-center gap-4">
+            <h3 className="eyebrow shrink-0">{dict.servicesExtra.label}</h3>
+            <span aria-hidden className="h-px flex-1 bg-line-soft" />
+          </div>
+
+          <ul className="mt-7 grid-ruled sm:grid-cols-2 lg:grid-cols-3">
+            {dict.servicesExtra.items.map((item) => (
+              <li key={item.title} className="cell p-6 sm:p-7">
+                <h4 className="text-[0.9375rem] font-medium leading-snug text-ink">
+                  {item.title}
+                </h4>
+                <p className="mt-2.5 max-w-[40ch] text-pretty text-sm leading-relaxed text-ink-muted">
+                  {item.text}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-6 text-xs text-ink-faint">
+            {dict.servicesExtra.note}
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -57,6 +57,45 @@ export const ptBR: Dictionary = {
     },
   ],
 
+  servicesExtra: {
+    label: "Também fazemos",
+    note: "Normalmente entra junto com um projeto, mas dá para contratar à parte.",
+    items: [
+      {
+        title: "Documentação técnica",
+        text:
+          "Manual de API, documento de arquitetura e aquele README que " +
+          "ninguém nunca escreveu.",
+      },
+      {
+        title: "Revisão de código",
+        text: "A gente lê o código que já existe e diz o que está perigoso.",
+      },
+      {
+        title: "Performance",
+        text:
+          "Sistema lento. A gente mede onde ele trava antes de mexer em " +
+          "qualquer coisa.",
+      },
+      {
+        title: "Migração de legado",
+        text:
+          "Tirar o sistema da versão que ninguém atualiza há anos, sem " +
+          "parar a operação.",
+      },
+      {
+        title: "Automação",
+        text:
+          "Tarefa repetitiva virando script, e sistema que não conversa " +
+          "virando integração.",
+      },
+      {
+        title: "Consultoria técnica",
+        text: "Segunda opinião antes de você fechar com alguém.",
+      },
+    ],
+  },
+
   clients: [
     { name: "Google", logo: "google", note: "Contribuições para o V8" },
     { name: "Mozilla", logo: "mozilla", note: "Contribuições para o Servo" },

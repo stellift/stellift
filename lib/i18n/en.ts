@@ -58,6 +58,46 @@ export const en: Dictionary = {
     },
   ],
 
+  servicesExtra: {
+    label: "We also do",
+    note: "Usually bundled with a project, but you can hire it on its own.",
+    items: [
+      {
+        title: "Technical writing",
+        text:
+          "API docs, architecture notes and the README nobody ever got " +
+          "around to.",
+      },
+      {
+        title: "Code review",
+        text:
+          "We read the code you already have and tell you what is risky.",
+      },
+      {
+        title: "Performance",
+        text:
+          "Slow system. We measure where it stalls before touching " +
+          "anything.",
+      },
+      {
+        title: "Legacy migration",
+        text:
+          "Getting the system off the version nobody has updated in years, " +
+          "without stopping the business.",
+      },
+      {
+        title: "Automation",
+        text:
+          "Repetitive work turned into a script, and systems that do not " +
+          "talk turned into an integration.",
+      },
+      {
+        title: "Technical consulting",
+        text: "A second opinion before you sign with someone.",
+      },
+    ],
+  },
+
   clients: [
     { name: "Google", logo: "google", note: "Contributions to V8" },
     { name: "Mozilla", logo: "mozilla", note: "Contributions to Servo" },
