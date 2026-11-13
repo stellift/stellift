@@ -340,6 +340,7 @@ export const ptBR: Dictionary = {
   },
 
   ui: {
+    a11y: { skipToContent: "Pular para o conteúdo" },
     header: {
       cta: "Iniciar conversa",
       toLightTheme: "Mudar para o tema claro",

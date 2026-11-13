@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, X } from "lucide-react";
 import LanguageSwitcher from "@/app/[lang]/_components/language-switcher";
 import ThemeToggle from "@/app/[lang]/_components/theme-toggle";
-import Wordmark from "@/app/[lang]/_components/wordmark";
+import LogoMark from "@/app/[lang]/_components/logo-mark";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
@@ -66,8 +66,13 @@ export default function Frame({
       <div aria-hidden className="frame-edge tone-sync" />
 
       <div className="chrome chrome-top tone-sync">
-        <a href={`${home}#top`} onClick={() => setOpen(false)}>
-          <Wordmark name={dict.site.name} />
+        <a
+          href={`${home}#top`}
+          onClick={() => setOpen(false)}
+          aria-label={dict.site.name}
+          className="flex items-center"
+        >
+          <LogoMark variant="mono" className="size-6 shrink-0 text-accent" />
         </a>
 
         <div className="flex items-center gap-2">

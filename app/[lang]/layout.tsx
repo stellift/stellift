@@ -86,8 +86,13 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       </head>
       <body className="flex min-h-full flex-col">
         <Intro dict={dict} />
+        <a href="#main" className="skip-link">
+          {dict.ui.a11y.skipToContent}
+        </a>
         <Frame dict={dict} lang={lang} />
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
         <Footer dict={dict} lang={lang} />
       </body>
     </html>

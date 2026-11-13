@@ -80,6 +80,7 @@ export type Dictionary = {
     };
   };
   ui: {
+    a11y: { skipToContent: string };
     header: {
       cta: string;
       toLightTheme: string;

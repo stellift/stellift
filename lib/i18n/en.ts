@@ -337,6 +337,7 @@ export const en: Dictionary = {
   },
 
   ui: {
+    a11y: { skipToContent: "Skip to content" },
     header: {
       cta: "Start a conversation",
       toLightTheme: "Switch to the light theme",
