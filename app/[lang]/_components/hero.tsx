@@ -14,7 +14,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       />
 
       <div className="hero-push shell relative">
-        <h1 className="max-w-[min(100%,15ch)] font-serif text-[clamp(2.5rem,7vw,7.5rem)] leading-[0.94] tracking-[-0.03em] text-ink lg:max-w-[min(62%,900px)]">
+        <h1 className="max-w-[min(100%,15ch)] font-serif text-[clamp(2.25rem,6.2vw,6.5rem)] leading-[0.96] tracking-[-0.03em] text-ink lg:max-w-[min(70%,980px)]">
           <span
             className="hero-line line-mask"
             style={{ "--line": 0 } as React.CSSProperties}

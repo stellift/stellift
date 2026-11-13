@@ -10,9 +10,13 @@ export const ptBR: Dictionary = {
       "Software sob medida para web, mobile e cloud | stellift",
     tagline: "Software sob medida",
     description: 
-      "Software sob medida para web, mobile e cloud. Quem desenha o " +
-      "sistema é quem escreve o código e continua com ele depois que " +
-      "entra no ar.",
+      
+      
+      
+      
+      "Software sob medida para web, mobile e cloud. Nosso quer dizer " +
+      "cuidar do detalhe que ninguém pediu e, daqui a um ano, ainda " +
+      "lembrar por que foi feito assim.",
     metaDescription:
       "Desenvolvimento de software sob medida: web, mobile, cloud e " +
       "dados. Time pequeno, com contribuições ao V8 do Chrome e ao " +
@@ -370,8 +374,8 @@ export const ptBR: Dictionary = {
       themeLabel: "Tema",
     },
     hero: {
-      title: "Software sob medida,",
-      titleAccent: "da ideia à órbita.",
+      title: "A gente faz software",
+      titleAccent: "como se fosse nosso.",
       fieldStart: "IDEIA",
       fieldEnd: "ÓRBITA",
       primary: "Vamos conversar",

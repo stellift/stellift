@@ -10,9 +10,13 @@ export const en: Dictionary = {
       "Custom software for web, mobile and cloud | stellift",
     tagline: "Custom software",
     description: 
-      "Custom software for web, mobile and cloud. The person who " +
-      "designs the system writes the code and stays with it after it " +
-      "ships.",
+      
+      
+      
+      
+      "Custom software for web, mobile and cloud. Ours means caring " +
+      "about the detail nobody asked for, and still remembering a year " +
+      "later why it was built that way.",
     metaDescription:
       "Custom software development: web, mobile, cloud and data. A " +
       "small team, with contributions to Chrome's V8 and Mozilla's " +
@@ -366,8 +370,8 @@ export const en: Dictionary = {
       themeLabel: "Theme",
     },
     hero: {
-      title: "Software built to measure,",
-      titleAccent: "from the idea to orbit.",
+      title: "We build software",
+      titleAccent: "like it is our own.",
       fieldStart: "IDEA",
       fieldEnd: "ORBIT",
       primary: "Let's talk",
