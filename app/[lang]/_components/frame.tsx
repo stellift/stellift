@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, X } from "lucide-react";
+import { X } from "lucide-react";
 import LangSwitch from "@/app/[lang]/_components/lang-switch";
 import ThemeToggle from "@/app/[lang]/_components/theme-toggle";
 import LogoMark from "@/app/[lang]/_components/logo-mark";
@@ -187,7 +187,6 @@ export default function Frame({
             className="btn btn-primary mt-4 flex"
           >
             {dict.ui.header.cta}
-            <ArrowUpRight className="size-4" aria-hidden />
           </a>
         </div>
       ) : null}

@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import JsonLd from "@/app/[lang]/_components/json-ld";
 import { siteUrl } from "@/lib/i18n/config";
 import { acceleratorsPath } from "@/app/[lang]/[slug]/_lists/accelerators/metadata";
@@ -85,10 +84,9 @@ export default async function Accelerators() {
                         href={entry.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-accent transition-colors hover:text-accent-hover"
+                        className="link"
                       >
                         {entry.name}
-                        <ArrowUpRight className="size-4 shrink-0" aria-hidden />
                       </a>
                     ) : (
                       entry.name

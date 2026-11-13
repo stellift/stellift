@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Slate from "@/app/[lang]/_components/slate";
 import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
 import type { Locale } from "@/lib/i18n/config";
@@ -48,16 +47,9 @@ export default function ToolsSection({
                   {dict.tools.items[id].name}
                 </h3>
 
-                <p className="text-pretty text-sm leading-relaxed text-ink-muted lg:col-span-5">
+                <p className="text-pretty text-sm leading-relaxed text-ink-muted lg:col-span-6 lg:pr-6">
                   {dict.tools.items[id].tagline}
                 </p>
-
-                <span className="self-center lg:col-span-1 lg:justify-self-end lg:pr-6">
-                  <ArrowUpRight
-                    className="size-4 text-accent transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                    aria-hidden
-                  />
-                </span>
               </Link>
             </li>
           ))}

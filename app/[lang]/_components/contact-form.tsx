@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
-import { ArrowRight } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/types";
 
 type Field = "name" | "email" | "message";
@@ -167,7 +166,6 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
         className="btn btn-primary mt-7 w-full sm:w-auto"
       >
         {t.submit}
-        <ArrowRight className="size-4" aria-hidden />
       </button>
 
       <p className="mt-4 max-w-[46ch] text-sm leading-relaxed text-ink-muted">

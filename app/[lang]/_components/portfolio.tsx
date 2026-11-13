@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import Slate from "@/app/[lang]/_components/slate";
 import TechStack, {
   TechSprite,
@@ -82,13 +81,9 @@ export default function Portfolio({
                         href={project.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-flex items-center gap-1.5 self-start text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                        className="link mt-4 self-start text-sm font-medium"
                       >
                         {dict.ui.portfolio.cta}
-                        <ArrowUpRight
-                          className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                          aria-hidden
-                        />
                       </a>
                     ) : null}
                   </div>

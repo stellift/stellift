@@ -1,4 +1,4 @@
-import { Cloud, Smartphone, Globe, ArrowRight, type LucideIcon } from "lucide-react";
+import { Cloud, Smartphone, Globe, type LucideIcon } from "lucide-react";
 import Slate from "@/app/[lang]/_components/slate";
 import type { Dictionary, ServiceCode } from "@/lib/i18n/types";
 
@@ -59,10 +59,6 @@ export default function Services({
                   <span className="flex items-center gap-4 self-center lg:col-span-1 lg:justify-self-end lg:pr-6">
                     <Icon
                       className="size-5 text-ink-faint transition-colors duration-300 group-hover:text-accent"
-                      aria-hidden
-                    />
-                    <ArrowRight
-                      className="size-4 text-accent transition-transform duration-300 group-hover:translate-x-1"
                       aria-hidden
                     />
                   </span>

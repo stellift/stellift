@@ -1,4 +1,4 @@
-import { Code2, Mail, Users, ArrowUpRight, type LucideIcon } from "lucide-react";
+import { Code2, Mail, Users, type LucideIcon } from "lucide-react";
 import Slate from "@/app/[lang]/_components/slate";
 import ContactForm from "@/app/[lang]/_components/contact-form";
 import type { ChannelKind, Dictionary } from "@/lib/i18n/types";
@@ -48,12 +48,8 @@ export default function Contact({
                     <Icon className="size-5 shrink-0 text-accent" aria-hidden />
                     <span className="min-w-0">
                       <span className="eyebrow block">{channel.label}</span>
-                      <span className="mt-2.5 flex items-center gap-1.5 break-words text-sm text-ink">
+                      <span className="mt-2.5 block break-words text-sm text-ink">
                         {channel.value}
-                        <ArrowUpRight
-                          className="size-3.5 shrink-0 text-ink-faint transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                          aria-hidden
-                        />
                       </span>
                     </span>
                   </a>
