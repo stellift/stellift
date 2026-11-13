@@ -65,7 +65,7 @@ export default function Clients({
               </span>
 
               {client.note ? (
-                <span className="text-xs leading-relaxed text-ink-faint">
+                <span className="max-w-[30ch] text-pretty text-xs leading-relaxed text-ink-faint">
                   {client.note}
                 </span>
               ) : null}

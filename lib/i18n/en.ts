@@ -104,7 +104,9 @@ export const en: Dictionary = {
       name: "Google",
       logo: "google",
       featured: true,
-      note: "Contributions to V8, the JavaScript engine behind Chrome.",
+      note:
+        "Contributions to V8, the JavaScript engine behind Chrome, and to " +
+        "Flutter.",
     },
     {
       name: "Mozilla",
@@ -118,7 +120,13 @@ export const en: Dictionary = {
       featured: true,
       note: "People on our team have worked there.",
     },
-    { name: "Haskell", logo: "haskell", note: "Contributions to GHC." },
+    {
+      name: "Haskell",
+      logo: "haskell",
+      note:
+        "Contributions to GHC, the compiler for Haskell, the language used " +
+        "by Meta/Facebook.",
+    },
     { name: "Flop Robux", logo: "floprobux" },
     { name: "ServeCommand", logo: "servecommand" },
   ],

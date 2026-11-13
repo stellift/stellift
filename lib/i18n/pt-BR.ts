@@ -102,7 +102,9 @@ export const ptBR: Dictionary = {
       name: "Google",
       logo: "google",
       featured: true,
-      note: "Contribuições para o V8, o motor de JavaScript do Chrome.",
+      note:
+        "Contribuições para o V8, o motor de JavaScript do Chrome, e para " +
+        "o Flutter.",
     },
     {
       name: "Mozilla",
@@ -116,7 +118,13 @@ export const ptBR: Dictionary = {
       featured: true,
       note: "Gente do nosso time já trabalhou lá.",
     },
-    { name: "Haskell", logo: "haskell", note: "Contribuições para o GHC." },
+    {
+      name: "Haskell",
+      logo: "haskell",
+      note:
+        "Contribuições para o compilador GHC, da linguagem Haskell, usada " +
+        "pela Meta/Facebook.",
+    },
     { name: "Flop Robux", logo: "floprobux" },
     { name: "ServeCommand", logo: "servecommand" },
   ],
