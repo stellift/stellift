@@ -211,19 +211,47 @@ section[id] {
     flex-direction: column;
     scroll-snap-align: center;
     background-color: var(--color-canvas);
-    width: min(78vw, 560px);
+    width: min(82vw, 600px);
     flex: none;
+    transition: background-color 420ms ease;
   }
 
-  @media (max-height: 860px) {
+  .frame:hover {
+    background-color: var(--color-surface);
+  }
+
+  .mount {
+    position: relative;
+    margin: 1.25rem 1.25rem 0;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-surface);
+    aspect-ratio: 16 / 10;
+    transition: border-color 420ms ease;
+  }
+
+  .frame:hover .mount {
+    border-color: var(--color-line-strong);
+  }
+
+  .stack {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+
+  @media (max-height: 880px) {
     .frame {
-      width: min(72vw, 470px);
+      width: min(76vw, 520px);
     }
   }
 
-  @media (max-height: 720px) {
+  @media (max-height: 760px) {
     .frame {
-      width: min(66vw, 400px);
+      width: min(70vw, 450px);
     }
   }
 

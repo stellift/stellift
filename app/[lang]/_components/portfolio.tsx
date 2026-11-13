@@ -13,7 +13,6 @@ export default function Portfolio({
   eyebrow: string;
 }) {
   const projects = dict.portfolio;
-  const total = String(projects.length).padStart(2, "0");
 
   return (
     <section
@@ -37,7 +36,7 @@ export default function Portfolio({
             <ul className="reel border-y border-line">
               {projects.map((project, i) => (
                 <li key={project.name} className="frame group">
-                  <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-surface">
+                  <div className="mount">
                     {project.shot ? (
                       <Image
                         src={project.shot}
@@ -46,33 +45,30 @@ export default function Portfolio({
                         priority={i < 2}
                         quality={92}
                         sizes="(min-width: 1024px) 560px, 78vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                        className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
                       />
                     ) : null}
                   </div>
 
-                  <div className="flex flex-1 flex-col p-6">
-                    <div className="slate">
-                      <span className="index">
+                  <div className="flex flex-col px-5 pb-5 pt-6">
+                    <div className="flex items-baseline gap-4">
+                      <span className="index shrink-0 translate-y-[-0.35rem]">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span aria-hidden className="h-px flex-1 bg-line" />
-                      <span className="index text-ink-faint">{total}</span>
+                      <h3 className="font-serif text-[2.125rem] leading-none text-ink">
+                        {project.name}
+                      </h3>
                     </div>
 
-                    <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">
-                      {project.name}
-                    </h3>
+                    <p className="eyebrow mt-3.5">{project.role}</p>
 
-                    <p className="eyebrow mt-2.5">{project.role}</p>
-
-                    <p className="mt-4 flex-1 text-pretty text-sm leading-relaxed text-ink-muted">
+                    <p className="mt-4 text-pretty text-[0.8125rem] leading-[1.65] text-ink-muted">
                       {project.text}
                     </p>
 
                     {project.stack ? (
-                      <p className="mt-5 border-t border-line pt-3.5 text-xs leading-relaxed text-ink-faint">
-                        {project.stack}
+                      <p className="stack mt-5 pt-4">
+                        {project.stack.split(/,\s*/).join(" · ")}
                       </p>
                     ) : null}
 
