@@ -55,7 +55,7 @@ export default async function Home() {
         "@type": "WebPage",
         "@id": `${siteUrl}/${locale}#webpage`,
         url: `${siteUrl}/${locale}`,
-        name: `${dict.site.name} · ${dict.site.tagline}`,
+        name: dict.site.metaTitle,
         description: dict.site.metaDescription,
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": organizationId },

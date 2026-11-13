@@ -7,7 +7,7 @@ export const en: Dictionary = {
   site: {
     name: "stellift",
     metaTitle:
-      "stellift · Custom software for web, mobile and cloud",
+      "Custom software for web, mobile and cloud | stellift",
     tagline: "Custom software",
     description: 
       "Custom software for web, mobile and cloud. The person who " +
@@ -123,13 +123,13 @@ export const en: Dictionary = {
     },
     {
       name: "ZapZap",
-      role: "Personal experiment",
+      role: "Experiment, no client",
       text:
         "An alternative WhatsApp Desktop client in Rust, aiming to fit in 10 MB. " +
         "The interface draws straight to X11 through syscalls, with no graphics " +
         "toolkit, and the scope is narrow on purpose: Brazil only, client side only.",
       stack: "Rust, X11 via syscalls, whatsapp-rust",
-      href: "https://github.com/criskell/zapzap",
+      href: "https://github.com/stellift/zapzap",
       shot: "/shots/zapzap.webp",
     },
     {
