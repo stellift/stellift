@@ -2,6 +2,7 @@ import Image from "next/image";
 import Slate from "@/app/[lang]/_components/slate";
 import {
   GoogleLogo,
+  HaskellLogo,
   MozillaLogo,
   ServeCommandLogo,
   WooviLogo,
@@ -79,6 +80,12 @@ function ClientLogo({ client, size }: { client: Client; size: "sm" | "lg" }) {
       return <GoogleLogo className={`${h} w-auto max-w-full`} />;
     case "mozilla":
       return <MozillaLogo className={`${h} w-auto max-w-full text-ink`} />;
+    case "haskell":
+      return (
+        <HaskellLogo
+          className={`${size === "lg" ? "h-11" : "h-8"} w-auto max-w-full text-ink`}
+        />
+      );
     case "woovi":
       return <WooviLogo className={`${h} w-auto max-w-full text-ink`} />;
     case "servecommand":

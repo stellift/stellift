@@ -2,6 +2,7 @@ export type BrandLogoKey =
   | "google"
   | "mozilla"
   | "woovi"
+  | "haskell"
   | "floprobux"
   | "servecommand";
 

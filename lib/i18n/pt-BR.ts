@@ -65,6 +65,7 @@ export const ptBR: Dictionary = {
   clients: [
     { name: "Google", logo: "google", note: "Contribuições para o V8" },
     { name: "Mozilla", logo: "mozilla", note: "Contribuições para o Servo" },
+    { name: "Haskell", logo: "haskell", note: "Contribuições para o GHC" },
     { name: "Woovi", logo: "woovi" },
     { name: "Flop Robux", logo: "floprobux" },
     { name: "ServeCommand", logo: "servecommand" },

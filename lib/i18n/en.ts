@@ -66,6 +66,7 @@ export const en: Dictionary = {
   clients: [
     { name: "Google", logo: "google", note: "Contributions to V8" },
     { name: "Mozilla", logo: "mozilla", note: "Contributions to Servo" },
+    { name: "Haskell", logo: "haskell", note: "Contributions to GHC" },
     { name: "Woovi", logo: "woovi" },
     { name: "Flop Robux", logo: "floprobux" },
     { name: "ServeCommand", logo: "servecommand" },
