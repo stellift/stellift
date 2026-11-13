@@ -54,9 +54,26 @@ export type Dictionary = {
     shot?: string;
   }>;
   about: { text: string };
+  mission: {
+    title: string;
+    lead: string;
+    values: ReadonlyArray<{ title: string; text: string }>;
+  };
+  talent: {
+    title: string;
+    lead: string;
+    hiring: {
+      eyebrow: string;
+      title: string;
+      text: string;
+      cta: string;
+      subject: string;
+    };
+  };
   contact: {
     heading: string;
     lead: string;
+    scarcity: string;
     channels: ReadonlyArray<{
       kind: ChannelKind;
       label: string;

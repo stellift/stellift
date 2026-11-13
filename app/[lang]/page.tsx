@@ -6,7 +6,9 @@ import Contact from "@/app/[lang]/_components/contact";
 import Hero from "@/app/[lang]/_components/hero";
 import Portfolio from "@/app/[lang]/_components/portfolio";
 import JsonLd from "@/app/[lang]/_components/json-ld";
+import Mission from "@/app/[lang]/_components/mission";
 import Services from "@/app/[lang]/_components/services";
+import Talent from "@/app/[lang]/_components/talent";
 import ToolsSection from "@/app/[lang]/_components/tools-section";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
@@ -26,6 +28,7 @@ export default async function Home() {
         "@id": organizationId,
         name: dict.site.name,
         description: dict.site.metaDescription,
+        slogan: dict.mission.title,
         url: siteUrl,
         logo: `${siteUrl}/logos/stellift.svg`,
         image: `${siteUrl}/${locale}/opengraph-image`,
@@ -73,15 +76,17 @@ export default async function Home() {
       <Hero dict={dict} />
       <Services dict={dict} index="01" eyebrow={label("#services")} />
       <Clients dict={dict} index="02" eyebrow={label("#clients")} />
-      <Portfolio dict={dict} index="03" eyebrow={label("#portfolio")} />
+      <Talent dict={dict} index="03" eyebrow={label("#talent")} />
+      <Portfolio dict={dict} index="04" eyebrow={label("#portfolio")} />
       <ToolsSection
         dict={dict}
         lang={locale}
-        index="04"
+        index="05"
         eyebrow={label("#tools")}
       />
-      <Statement dict={dict} index="05" eyebrow={label("#about")} />
-      <Contact dict={dict} index="06" eyebrow={label("#contact")} />
+      <Statement dict={dict} index="06" eyebrow={label("#about")} />
+      <Mission dict={dict} index="07" eyebrow={label("#mission")} />
+      <Contact dict={dict} index="08" eyebrow={label("#contact")} />
     </>
   );
 }

@@ -22,9 +22,11 @@ export const ptBR: Dictionary = {
   nav: [
     { label: "Serviços", href: "#services" },
     { label: "Contribuições", href: "#clients" },
+    { label: "Talento", href: "#talent" },
     { label: "Portfólio", href: "#portfolio" },
     { label: "Ferramentas", href: "#tools" },
     { label: "Sobre", href: "#about" },
+    { label: "Missão", href: "#mission" },
     { label: "Contato", href: "#contact" },
   ],
 
@@ -176,9 +178,55 @@ export const ptBR: Dictionary = {
       "responsabilidade, não de tamanho de equipe.",
   },
 
+  mission: {
+    title: "Fazer software com amor",
+    lead: "Quatro coisas que a gente leva a sério.",
+    values: [
+      {
+        title: "Honestidade",
+        text: "Se o prazo não dá, a gente fala antes de começar.",
+      },
+      {
+        title: "Qualidade",
+        text:
+          "Nada entra em produção sem outra pessoa ter olhado o código.",
+      },
+      {
+        title: "Compromisso",
+        text:
+          "A gente só pega projeto que cabe na agenda. E entrega o que " +
+          "combinou.",
+      },
+      {
+        title: "Respeito",
+        text:
+          "A gente explica o que está fazendo em português, sem enrolação.",
+      },
+    ],
+  },
+
+  talent: {
+    title: "A gente entende o que a IA escreveu",
+    lead:
+      "Os melhores talentos para dirigir IA são os que conseguem ler o que " +
+      "ela escreve. Os nossos têm contribuição aceita no V8 do Chrome, no " +
+      "Servo da Mozilla e no GHC de Haskell, e são eles que revisam o código " +
+      "antes de ele virar o seu sistema.",
+    hiring: {
+      eyebrow: "Trabalhe com a gente",
+      title: "Procuramos gente assim",
+      text:
+        "Se você mexe com compilador, runtime, banco ou sistema que não pode " +
+        "cair, manda o seu GitHub e conta no que você trabalhou.",
+      cta: "Enviar meu GitHub",
+      subject: "Quero trabalhar na stellift",
+    },
+  },
+
   contact: {
     heading: "Vamos tirar a ideia do solo",
     lead: "Escreva contando o que você quer construir.",
+    scarcity: "Poucos projetos por vez",
     channels: [
       { kind: "email", label: "E-mail", value: "ola@stellift.dev", href: "mailto:ola@stellift.dev" },
       {

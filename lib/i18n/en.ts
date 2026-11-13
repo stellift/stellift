@@ -22,9 +22,11 @@ export const en: Dictionary = {
   nav: [
     { label: "Services", href: "#services" },
     { label: "Contributions", href: "#clients" },
+    { label: "Talent", href: "#talent" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Tools", href: "#tools" },
     { label: "About", href: "#about" },
+    { label: "Mission", href: "#mission" },
     { label: "Contact", href: "#contact" },
   ],
 
@@ -174,9 +176,55 @@ export const en: Dictionary = {
       "accountability, not headcount.",
   },
 
+  mission: {
+    title: "Building software with love",
+    lead: "Four things we take seriously.",
+    values: [
+      {
+        title: "Honesty",
+        text: "If the deadline is not realistic, we say so before we start.",
+      },
+      {
+        title: "Quality",
+        text:
+          "Nothing reaches production without someone else reading the code.",
+      },
+      {
+        title: "Commitment",
+        text:
+          "We only take work that fits the calendar. And we deliver what we " +
+          "agreed on.",
+      },
+      {
+        title: "Respect",
+        text:
+          "We explain what we are doing in plain words, without the jargon.",
+      },
+    ],
+  },
+
+  talent: {
+    title: "We understand what the AI wrote",
+    lead:
+      "The best people to steer AI are the ones who can read what it writes. " +
+      "Ours have landed contributions in Chrome's V8, Mozilla's Servo and " +
+      "Haskell's GHC, and they are the ones reviewing the code before it " +
+      "becomes your system.",
+    hiring: {
+      eyebrow: "Work with us",
+      title: "We are looking for people like that",
+      text:
+        "If you work on compilers, runtimes, databases or systems that cannot " +
+        "go down, send us your GitHub and tell us what you have worked on.",
+      cta: "Send my GitHub",
+      subject: "I want to work at stellift",
+    },
+  },
+
   contact: {
     heading: "Let's get the idea off the ground",
     lead: "Write telling us what you want to build.",
+    scarcity: "Few projects at a time",
     channels: [
       { kind: "email", label: "Email", value: "ola@stellift.dev", href: "mailto:ola@stellift.dev" },
       {

@@ -30,6 +30,10 @@ export default function Contact({
           {dict.contact.lead}
         </Slate>
 
+        <p className="reveal eyebrow mt-7 text-accent">
+          {dict.contact.scarcity}
+        </p>
+
         <div className="reveal mt-14 grid gap-px border border-line bg-line lg:grid-cols-12">
           <ul className="grid gap-px bg-line sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
             {dict.contact.channels.map((channel) => {
