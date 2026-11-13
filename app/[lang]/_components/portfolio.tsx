@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import Slate from "@/app/[lang]/_components/slate";
+import TechStack, {
+  TechSprite,
+} from "@/app/[lang]/_components/tech-stack";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Portfolio({
@@ -29,6 +32,8 @@ export default function Portfolio({
           title={dict.ui.portfolio.title}
         />
       </div>
+
+      <TechSprite stacks={projects.map((p) => p.stack)} />
 
       <div className="reel-track mt-12">
         <div className="reel-pin">
@@ -67,9 +72,9 @@ export default function Portfolio({
                     </p>
 
                     {project.stack ? (
-                      <p className="stack mt-5 pt-4">
-                        {project.stack.split(/,\s*/).join(" · ")}
-                      </p>
+                      <div className="mt-6 border-t border-line pt-4">
+                        <TechStack stack={project.stack} />
+                      </div>
                     ) : null}
 
                     {project.href ? (

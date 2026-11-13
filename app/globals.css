@@ -234,12 +234,30 @@ section[id] {
     border-color: var(--color-line-strong);
   }
 
-  .stack {
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    line-height: 1.6;
+  .tech {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.625rem 1rem;
+    color: var(--color-ink-muted);
+    transition: color 420ms ease;
+  }
+
+  .frame:hover .tech {
+    color: var(--color-ink);
+  }
+
+  .tech-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .tech-label {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    white-space: nowrap;
     color: var(--color-ink-faint);
   }
 
