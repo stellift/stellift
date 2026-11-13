@@ -131,17 +131,6 @@ export const ptBR: Dictionary = {
 
   portfolio: [
     {
-      name: "BloxHarbor",
-      tags: ["web", "ecommerce"],
-      role: "Projeto, código e operação",
-      text:
-        "Ecommerce de contas de Roblox. A conta cai na hora e a compra " +
-        "é protegida.",
-      stack: "Next.js",
-      href: "https://bloxharbor.com",
-      shot: "/shots/bloxharbor.webp",
-    },
-    {
       name: "Pivenda",
       tags: ["desktop", "mobile"],
       role: "Projeto, código e operação",
@@ -240,15 +229,18 @@ export const ptBR: Dictionary = {
       },
     },
     {
-      name: "orce.me",
-      tags: ["web"],
-      role: "Projeto, código e operação",
+      name: "LumniHub",
+      tags: ["web", "ecommerce"],
+      role: "Boa parte do produto",
       text:
-        "Sistema de orçamentos para pequenos negócios. Reúne produtos, " +
-        "serviços e dados do cliente em uma proposta em PDF com a marca de " +
-        "quem envia, sem refazer planilha a cada pedido.",
-      stack: "Nuxt, Vue, TypeScript",
-      shot: "/shots/orce.webp",
+        "Plataforma para criar, vender e afiliar cursos e ebooks. O " +
+        "produtor monta o curso em módulos com aulas e quizzes, desenha " +
+        "o próprio checkout e abre a loja. Os afiliados que ele recruta " +
+        "recebem por split no pagamento, e o financeiro e os relatórios " +
+        "ficam num painel só.",
+      stack: "React, Vite, React Router, React Aria, Supabase, Zod",
+      href: "https://app.lumnihub.com",
+      shot: "/shots/lumnihub.webp",
     },
     {
       name: "Craftance",
@@ -262,6 +254,18 @@ export const ptBR: Dictionary = {
       shot: "/shots/craftance.webp",
     },
     {
+      name: "Neohor",
+      tags: ["web", "ecommerce"],
+      role: "Projeto, código e operação",
+      text:
+        "Loja de contas de jogos. O comprador busca, põe no carrinho e " +
+        "paga no Pix ou no cartão, e acompanha o pedido até a entrega " +
+        "com a tela atualizando sozinha por WebSocket. Entra com login " +
+        "social, sem inventar senha.",
+      stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
+      shot: "/shots/neohor.webp",
+    },
+    {
       name: "HeartBit",
       tags: ["web", "mobile"],
       role: "Projeto, código e operação",
@@ -272,6 +276,17 @@ export const ptBR: Dictionary = {
         "o conteúdo.",
       stack: "Elixir, Phoenix, React, TanStack Router, Vue 3, PostgreSQL",
       shot: "/shots/heartbit.webp",
+    },
+    {
+      name: "BloxHarbor",
+      tags: ["web", "ecommerce"],
+      role: "Projeto, código e operação",
+      text:
+        "Ecommerce de contas de Roblox. A conta cai na hora e a compra " +
+        "é protegida.",
+      stack: "Next.js",
+      href: "https://bloxharbor.com",
+      shot: "/shots/bloxharbor.webp",
     },
     {
       name: "ZapZap",
@@ -287,32 +302,6 @@ export const ptBR: Dictionary = {
       shot: "/shots/zapzap.webp",
     },
     {
-      name: "Neohor",
-      tags: ["web", "ecommerce"],
-      role: "Projeto, código e operação",
-      text:
-        "Loja de contas de jogos. O comprador busca, põe no carrinho e " +
-        "paga no Pix ou no cartão, e acompanha o pedido até a entrega " +
-        "com a tela atualizando sozinha por WebSocket. Entra com login " +
-        "social, sem inventar senha.",
-      stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
-      shot: "/shots/neohor.webp",
-    },
-    {
-      name: "LumniHub",
-      tags: ["web", "ecommerce"],
-      role: "Boa parte do produto",
-      text:
-        "Plataforma para criar, vender e afiliar cursos e ebooks. O " +
-        "produtor monta o curso em módulos com aulas e quizzes, desenha " +
-        "o próprio checkout e abre a loja. Os afiliados que ele recruta " +
-        "recebem por split no pagamento, e o financeiro e os relatórios " +
-        "ficam num painel só.",
-      stack: "React, Vite, React Router, React Aria, Supabase, Zod",
-      href: "https://app.lumnihub.com",
-      shot: "/shots/lumnihub.webp",
-    },
-    {
       name: "ServeCommand",
       tags: ["web"],
       role: "Construção do produto",
@@ -323,6 +312,17 @@ export const ptBR: Dictionary = {
         "no mesmo fluxo.",
       href: "https://servecommand.com",
       shot: "/shots/servecommand.webp",
+    },
+    {
+      name: "orce.me",
+      tags: ["web"],
+      role: "Projeto, código e operação",
+      text:
+        "Sistema de orçamentos para pequenos negócios. Reúne produtos, " +
+        "serviços e dados do cliente em uma proposta em PDF com a marca de " +
+        "quem envia, sem refazer planilha a cada pedido.",
+      stack: "Nuxt, Vue, TypeScript",
+      shot: "/shots/orce.webp",
     },
   ],
 

@@ -133,17 +133,6 @@ export const en: Dictionary = {
 
   portfolio: [
     {
-      name: "BloxHarbor",
-      tags: ["web", "ecommerce"],
-      role: "Design, code and operation",
-      text:
-        "An online store for Roblox accounts. The account lands right " +
-        "away and the purchase is protected.",
-      stack: "Next.js",
-      href: "https://bloxharbor.com",
-      shot: "/shots/bloxharbor.webp",
-    },
-    {
       name: "Pivenda",
       tags: ["desktop", "mobile"],
       role: "Design, code and operation",
@@ -242,63 +231,6 @@ export const en: Dictionary = {
       },
     },
     {
-      name: "orce.me",
-      tags: ["web"],
-      role: "Design, code and operation",
-      text:
-        "Quoting system for small businesses. Gathers products, services and " +
-        "client details into a branded PDF proposal, without rebuilding a " +
-        "spreadsheet for every request.",
-      stack: "Nuxt, Vue, TypeScript",
-      shot: "/shots/orce.webp",
-    },
-    {
-      name: "Craftance",
-      tags: ["web", "mobile", "ecommerce"],
-      role: "Design, code and operation",
-      text:
-        "A marketplace where developers build a profile, sell digital products " +
-        "and take on freelance projects. Money for each milestone sits in escrow " +
-        "until the delivery is approved.",
-      stack: "Elixir, Phoenix, Next.js, PostgreSQL, React Native, Rust",
-      shot: "/shots/craftance.webp",
-    },
-    {
-      name: "HeartBit",
-      tags: ["web", "mobile"],
-      role: "Design, code and operation",
-      text:
-        "A dating app for Brazilian Christians, verified by the person's own " +
-        "church. Eight profiles a day, three open conversations at most, and " +
-        "someone from the community sees that you are talking, never what you say.",
-      stack: "Elixir, Phoenix, React, TanStack Router, Vue 3, PostgreSQL",
-      shot: "/shots/heartbit.webp",
-    },
-    {
-      name: "ZapZap",
-      tags: ["desktop"],
-      role: "Experiment, no client",
-      text:
-        "An alternative WhatsApp Desktop client in Rust, aiming to fit in 10 MB. " +
-        "The interface draws straight to X11 through syscalls, with no graphics " +
-        "toolkit, and the scope is narrow on purpose: Brazil only, client side only.",
-      stack: "Rust, X11 via syscalls, whatsapp-rust",
-      href: "https://github.com/stellift/zapzap",
-      shot: "/shots/zapzap.webp",
-    },
-    {
-      name: "Neohor",
-      tags: ["web", "ecommerce"],
-      role: "Design, code and operation",
-      text:
-        "A store for game accounts. The buyer searches, fills a cart " +
-        "and pays by Pix or card, then follows the order to delivery " +
-        "while the screen updates itself over WebSocket. Signing in is " +
-        "social, no password to invent.",
-      stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
-      shot: "/shots/neohor.webp",
-    },
-    {
       name: "LumniHub",
       tags: ["web", "ecommerce"],
       role: "A large part of the product",
@@ -313,6 +245,63 @@ export const en: Dictionary = {
       shot: "/shots/lumnihub.webp",
     },
     {
+      name: "Craftance",
+      tags: ["web", "mobile", "ecommerce"],
+      role: "Design, code and operation",
+      text:
+        "A marketplace where developers build a profile, sell digital products " +
+        "and take on freelance projects. Money for each milestone sits in escrow " +
+        "until the delivery is approved.",
+      stack: "Elixir, Phoenix, Next.js, PostgreSQL, React Native, Rust",
+      shot: "/shots/craftance.webp",
+    },
+    {
+      name: "Neohor",
+      tags: ["web", "ecommerce"],
+      role: "Design, code and operation",
+      text:
+        "A store for game accounts. The buyer searches, fills a cart " +
+        "and pays by Pix or card, then follows the order to delivery " +
+        "while the screen updates itself over WebSocket. Signing in is " +
+        "social, no password to invent.",
+      stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
+      shot: "/shots/neohor.webp",
+    },
+    {
+      name: "HeartBit",
+      tags: ["web", "mobile"],
+      role: "Design, code and operation",
+      text:
+        "A dating app for Brazilian Christians, verified by the person's own " +
+        "church. Eight profiles a day, three open conversations at most, and " +
+        "someone from the community sees that you are talking, never what you say.",
+      stack: "Elixir, Phoenix, React, TanStack Router, Vue 3, PostgreSQL",
+      shot: "/shots/heartbit.webp",
+    },
+    {
+      name: "BloxHarbor",
+      tags: ["web", "ecommerce"],
+      role: "Design, code and operation",
+      text:
+        "An online store for Roblox accounts. The account lands right " +
+        "away and the purchase is protected.",
+      stack: "Next.js",
+      href: "https://bloxharbor.com",
+      shot: "/shots/bloxharbor.webp",
+    },
+    {
+      name: "ZapZap",
+      tags: ["desktop"],
+      role: "Experiment, no client",
+      text:
+        "An alternative WhatsApp Desktop client in Rust, aiming to fit in 10 MB. " +
+        "The interface draws straight to X11 through syscalls, with no graphics " +
+        "toolkit, and the scope is narrow on purpose: Brazil only, client side only.",
+      stack: "Rust, X11 via syscalls, whatsapp-rust",
+      href: "https://github.com/stellift/zapzap",
+      shot: "/shots/zapzap.webp",
+    },
+    {
       name: "ServeCommand",
       tags: ["web"],
       role: "Building the product",
@@ -322,6 +311,17 @@ export const en: Dictionary = {
         "next. Memberships and payments run in the same flow.",
       href: "https://servecommand.com",
       shot: "/shots/servecommand.webp",
+    },
+    {
+      name: "orce.me",
+      tags: ["web"],
+      role: "Design, code and operation",
+      text:
+        "Quoting system for small businesses. Gathers products, services and " +
+        "client details into a branded PDF proposal, without rebuilding a " +
+        "spreadsheet for every request.",
+      stack: "Nuxt, Vue, TypeScript",
+      shot: "/shots/orce.webp",
     },
   ],
 
