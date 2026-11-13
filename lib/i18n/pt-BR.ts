@@ -355,6 +355,24 @@ export const ptBR: Dictionary = {
     },
   },
 
+  blog: {
+    eyebrow: "Blog",
+    title: "Notas técnicas",
+    lead:
+      "Problemas que apareceram em projetos da stellift, com o código que resolveu.",
+    metaTitle: "Notas técnicas | stellift",
+    metaDescription:
+      "Notas técnicas da stellift sobre CSS, geometria computacional e " +
+      "ferramentas de desenvolvimento.",
+    feedLabel: "Assinar o RSS",
+    publishedLabel: "Publicado em",
+    updatedLabel: "Atualizado em",
+    backLabel: "Todas as notas",
+    moreLabel: "Outras notas",
+    empty: "Nada publicado ainda.",
+    navLabel: "Notas técnicas",
+  },
+
   ui: {
     a11y: { skipToContent: "Pular para o conteúdo" },
     header: {

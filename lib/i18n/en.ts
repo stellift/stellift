@@ -351,6 +351,24 @@ export const en: Dictionary = {
     },
   },
 
+  blog: {
+    eyebrow: "Blog",
+    title: "Technical notes",
+    lead:
+      "Problems that came up in stellift projects, with the code that fixed them.",
+    metaTitle: "Technical notes | stellift",
+    metaDescription:
+      "Technical notes from stellift on CSS, computational geometry and " +
+      "development tooling.",
+    feedLabel: "Subscribe via RSS",
+    publishedLabel: "Published",
+    updatedLabel: "Updated",
+    backLabel: "All notes",
+    moreLabel: "More notes",
+    empty: "Nothing published yet.",
+    navLabel: "Technical notes",
+  },
+
   ui: {
     a11y: { skipToContent: "Skip to content" },
     header: {

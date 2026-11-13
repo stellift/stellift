@@ -2,6 +2,7 @@ import Star from "@/app/[lang]/_components/star";
 import Wordmark from "@/app/[lang]/_components/wordmark";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
+import { blogPath } from "@/app/[lang]/blog/_content/posts";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Footer({
@@ -59,6 +60,14 @@ export default function Footer({
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href={blogPath(lang)}
+                  className="text-sm text-ink-muted transition-colors hover:text-ink"
+                >
+                  {dict.blog.navLabel}
+                </a>
+              </li>
               {lang === list.locale ? (
                 <li>
                   <a

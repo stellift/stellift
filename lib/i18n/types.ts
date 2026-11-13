@@ -81,6 +81,21 @@ export type Dictionary = {
       automation: ToolCopy;
     };
   };
+  blog: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    metaTitle: string;
+    metaDescription: string;
+    feedLabel: string;
+    publishedLabel: string;
+    updatedLabel: string;
+    backLabel: string;
+    moreLabel: string;
+    empty: string;
+    navLabel: string;
+  };
+
   ui: {
     a11y: { skipToContent: string };
     header: {

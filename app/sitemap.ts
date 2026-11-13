@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales, siteUrl } from "@/lib/i18n/config";
 import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
 import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
+import { blogPath, entries, postPath } from "@/app/[lang]/blog/_content/posts";
 
 export const dynamic = "force-static";
 
@@ -35,9 +36,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
+  const blog = locales.map((lang) => ({
+    url: `${siteUrl}${blogPath(lang)}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: lang === "pt-BR" ? 0.8 : 0.7,
+    alternates: alternates((l) => blogPath(l)),
+  }));
+
+  const articles = locales.flatMap((lang) =>
+    entries(lang).map(({ post, content }) => ({
+      url: `${siteUrl}${postPath(lang, content.slug)}`,
+      lastModified: new Date(`${post.updated ?? post.date}T12:00:00Z`),
+      changeFrequency: "yearly" as const,
+      priority: lang === "pt-BR" ? 0.7 : 0.6,
+      alternates: {
+        languages: Object.fromEntries(
+          locales
+            .filter((l) => post.content[l])
+            .map((l) => [l, `${siteUrl}${postPath(l, post.content[l]!.slug)}`]),
+        ),
+      },
+    })),
+  );
+
   return [
     ...home,
     ...tools,
+    ...blog,
+    ...articles,
     {
       url: `${siteUrl}/${list.locale}/${list.slug}`,
       lastModified,
