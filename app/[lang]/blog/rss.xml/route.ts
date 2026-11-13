@@ -1,8 +1,8 @@
 import {
   blogPath,
-  entries,
   feedPath,
   postPath,
+  publicEntries,
 } from "@/app/[lang]/blog/_content/posts";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
@@ -29,7 +29,7 @@ export async function GET(
   if (!isLocale(lang)) return new Response("Not found", { status: 404 });
 
   const dict = await getDictionary(lang);
-  const list = entries(lang);
+  const list = publicEntries(lang);
 
   const items = list
     .map(({ post, content }) => {

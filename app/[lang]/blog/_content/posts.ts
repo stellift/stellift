@@ -1,4 +1,4 @@
-import type { ComponentType } from "react";
+import type { MDXContent } from "mdx/types";
 import { locales, type Locale } from "@/lib/i18n/config";
 
 export type PostContent = {
@@ -6,17 +6,42 @@ export type PostContent = {
   title: string;
   description: string;
   topic: string;
-  body: () => Promise<{ default: ComponentType }>;
+  body: () => Promise<{ default: MDXContent }>;
 };
 
 export type Post = {
   id: string;
   date: string;
   updated?: string;
+  draft?: boolean;
   content: Partial<Record<Locale, PostContent>>;
 };
 
-export const posts: readonly Post[] = [];
+export const posts: readonly Post[] = [
+  {
+    id: "amostra",
+    date: "2026-11-13",
+    draft: true,
+    content: {
+      "pt-BR": {
+        slug: "amostra-de-codigo",
+        title: "Amostra de código",
+        description:
+          "Página de teste do estilo de bloco de código: cores, numeração de linha e botão de copiar.",
+        topic: "Interno",
+        body: () => import("./amostra/pt-BR.mdx"),
+      },
+      en: {
+        slug: "code-sample",
+        title: "Code sample",
+        description:
+          "Test page for the code block style: colors, line numbers and the copy button.",
+        topic: "Internal",
+        body: () => import("./amostra/en.mdx"),
+      },
+    },
+  },
+];
 
 export const blogSlug: Record<Locale, string> = { "pt-BR": "blog", en: "blog" };
 
@@ -41,6 +66,10 @@ export function entries(lang: Locale): Entry[] {
       return content ? [{ post, content }] : [];
     })
     .sort((a, b) => b.post.date.localeCompare(a.post.date));
+}
+
+export function publicEntries(lang: Locale): Entry[] {
+  return entries(lang).filter(({ post }) => !post.draft);
 }
 
 export function findEntry(lang: Locale, slug: string): Entry | null {

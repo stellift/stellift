@@ -92,6 +92,9 @@ export type Dictionary = {
     updatedLabel: string;
     backLabel: string;
     moreLabel: string;
+    copyLabel: string;
+    copiedLabel: string;
+    draftLabel: string;
     empty: string;
     navLabel: string;
   };

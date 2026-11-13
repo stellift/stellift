@@ -1,0 +1,67 @@
+Sample page for the code style. It is here to check colors, line numbers, horizontal scrolling and the copy button. Delete it whenever you want.
+
+## CSS
+
+```css
+.reveal {
+  animation: reveal-in linear both;
+  animation-timeline: view();
+  animation-range: entry 4% entry 46%;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+```
+
+## TypeScript
+
+```ts
+export function entries(lang: Locale): Entry[] {
+  return posts
+    .flatMap((post) => {
+      const content = post.content[lang];
+      return content ? [{ post, content }] : [];
+    })
+    .sort((a, b) => b.post.date.localeCompare(a.post.date));
+}
+```
+
+## Python
+
+```python
+def perpendicular(point, start, end):
+    (px, py), (ax, ay), (bx, by) = point, start, end
+    dx, dy = bx - ax, by - ay
+    length = math.hypot(dx, dy)
+    if length == 0:
+        return 0.0
+    return abs(dx * (ay - py) - dy * (ax - px)) / length
+```
+
+Inline code shows up too: `animation-timeline`, `npm run build`, `Intl.DateTimeFormat`.
+
+## Long line
+
+This one tests horizontal scrolling with the line number column pinned:
+
+```json
+{
+  "name": "stellift",
+  "scripts": { "dev": "next dev", "build": "next build", "start": "next start", "lint": "eslint --max-warnings 0 --cache --cache-location .next/cache/eslint" },
+  "private": true
+}
+```
+
+## Single line
+
+```bash
+pnpm build
+```

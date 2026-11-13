@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import JsonLd from "@/app/[lang]/_components/json-ld";
+import CodeBlock from "@/app/[lang]/blog/_components/code-block";
 import Star from "@/app/[lang]/_components/star";
 import {
   blogPath,
@@ -37,16 +39,18 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: `${entry.content.title} | ${dict.site.name}`,
     description: entry.content.description,
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
+    robots: entry.post.draft
+      ? { index: false, follow: false }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
     alternates: {
       canonical: path,
       languages: postAlternates(entry.post),
@@ -80,6 +84,15 @@ export default async function PostPage({
 
   const dict = await getDictionary(lang);
   const { default: Body } = await entry.content.body();
+  const components = {
+    pre: (props: { children?: ReactNode }) => (
+      <CodeBlock
+        copy={dict.blog.copyLabel}
+        copied={dict.blog.copiedLabel}
+        {...props}
+      />
+    ),
+  };
   const others = entries(lang).filter(({ post }) => post.id !== entry.post.id);
   const dates = new Intl.DateTimeFormat(lang, {
     day: "2-digit",
@@ -118,6 +131,9 @@ export default async function PostPage({
           <div className="shell py-16 sm:py-24">
             <div className="mt-10 flex items-center gap-4">
               <span className="eyebrow text-accent">{entry.content.topic}</span>
+              {entry.post.draft ? (
+                <span className="eyebrow">{dict.blog.draftLabel}</span>
+              ) : null}
               <span aria-hidden className="h-px flex-1 bg-line" />
               <Star className="size-2.5 shrink-0 text-line-strong" />
             </div>
@@ -170,27 +186,30 @@ export default async function PostPage({
             </aside>
 
             <div className="prose lg:col-span-7 lg:row-start-1">
-              <Body />
+              <Body components={components} />
             </div>
           </div>
         </div>
       </article>
 
-      <section
-        aria-labelledby="post-more"
-        className="border-b border-line"
-      >
-        <div className="shell py-16">
-          <div className="flex flex-wrap items-baseline justify-between gap-6">
-            <h2 id="post-more" className="font-serif text-3xl leading-tight text-ink">
-              {dict.blog.moreLabel}
-            </h2>
-            <Link href={blogPath(lang)} className="link text-sm font-medium">
-              {dict.blog.backLabel}
-            </Link>
-          </div>
+      {others.length ? (
+        <section
+          aria-labelledby="post-more"
+          className="border-b border-line"
+        >
+          <div className="shell py-16">
+            <div className="flex flex-wrap items-baseline justify-between gap-6">
+              <h2
+                id="post-more"
+                className="font-serif text-3xl leading-tight text-ink"
+              >
+                {dict.blog.moreLabel}
+              </h2>
+              <Link href={blogPath(lang)} className="link text-sm font-medium">
+                {dict.blog.backLabel}
+              </Link>
+            </div>
 
-          {others.length ? (
             <ul className="grid-ruled mt-8 sm:grid-cols-2">
               {others.map(({ post, content }) => (
                 <li key={post.id} className="cell cell-link group">
@@ -220,9 +239,17 @@ export default async function PostPage({
                 ),
               )}
             </ul>
-          ) : null}
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : (
+        <section className="border-b border-line">
+          <div className="shell py-10">
+            <Link href={blogPath(lang)} className="link text-sm font-medium">
+              {dict.blog.backLabel}
+            </Link>
+          </div>
+        </section>
+      )}
     </>
   );
 }

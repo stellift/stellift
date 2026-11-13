@@ -2,7 +2,11 @@ import type { MetadataRoute } from "next";
 import { locales, siteUrl } from "@/lib/i18n/config";
 import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
 import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
-import { blogPath, entries, postPath } from "@/app/[lang]/blog/_content/posts";
+import {
+  blogPath,
+  postPath,
+  publicEntries,
+} from "@/app/[lang]/blog/_content/posts";
 
 export const dynamic = "force-static";
 
@@ -45,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const articles = locales.flatMap((lang) =>
-    entries(lang).map(({ post, content }) => ({
+    publicEntries(lang).map(({ post, content }) => ({
       url: `${siteUrl}${postPath(lang, content.slug)}`,
       lastModified: new Date(`${post.updated ?? post.date}T12:00:00Z`),
       changeFrequency: "yearly" as const,

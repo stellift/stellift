@@ -8,6 +8,7 @@ import {
   entries,
   feedPath,
   postPath,
+  publicEntries,
 } from "@/app/[lang]/blog/_content/posts";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { altLanguages, getDictionary } from "@/lib/i18n/server";
@@ -67,6 +68,7 @@ export default async function BlogIndex({
 
   const dict = await getDictionary(lang);
   const list = entries(lang);
+  const indexed = publicEntries(lang);
   const dates = new Intl.DateTimeFormat(lang, {
     day: "2-digit",
     month: "short",
@@ -85,7 +87,7 @@ export default async function BlogIndex({
           url: `${siteUrl}${blogPath(lang)}`,
           inLanguage: dict.htmlLang,
           publisher: { "@id": `${siteUrl}/#organization` },
-          blogPost: list.map(({ post, content }) => ({
+          blogPost: indexed.map(({ post, content }) => ({
             "@type": "BlogPosting",
             headline: content.title,
             description: content.description,
@@ -148,6 +150,11 @@ export default async function BlogIndex({
                         </time>
                         <span aria-hidden className="h-px w-5 bg-line-strong" />
                         {content.topic}
+                        {post.draft ? (
+                          <span className="text-accent">
+                            {dict.blog.draftLabel}
+                          </span>
+                        ) : null}
                       </p>
                       <p className="mt-4 max-w-[52ch] text-pretty text-sm leading-relaxed text-ink-muted">
                         {content.description}
