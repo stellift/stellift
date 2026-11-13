@@ -23,8 +23,8 @@ function readTheme(): Theme {
   return document.documentElement.dataset.theme === "light" ? "light" : "dark";
 }
 
-function noTheme(): Theme | null {
-  return null;
+function serverTheme(): Theme {
+  return "dark";
 }
 
 function apply(next: Theme) {
@@ -37,16 +37,19 @@ function apply(next: Theme) {
 }
 
 export default function ThemeToggle({
-  toLightTheme,
-  toDarkTheme,
+  lightTheme,
+  darkTheme,
+  label,
 }: {
-  toLightTheme: string;
-  toDarkTheme: string;
+  lightTheme: string;
+  darkTheme: string;
+  label: string;
 }) {
-  const theme = useSyncExternalStore<Theme | null>(subscribe, readTheme, noTheme);
+  const theme = useSyncExternalStore<Theme>(subscribe, readTheme, serverTheme);
 
-  function onClick(event: MouseEvent<HTMLButtonElement>) {
-    const next: Theme = theme === "light" ? "dark" : "light";
+  function select(next: Theme, event: MouseEvent<HTMLButtonElement>) {
+    if (next === theme) return;
+
     const doc = document as ViewTransitionDocument;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -65,25 +68,41 @@ export default function ThemeToggle({
       "--theme-radius",
       `${Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))}px`,
     );
-    root.dataset.themeAnimating = "";
+    root.setAttribute("data-theme-animating", "");
 
     const transition = doc.startViewTransition(() => apply(next));
     transition.finished.finally(() => {
-      delete root.dataset.themeAnimating;
+      root.removeAttribute("data-theme-animating");
     });
   }
 
-  const dark = theme !== "light";
-  const Icon = dark ? Sun : Moon;
+  const options: ReadonlyArray<{ value: Theme; icon: typeof Sun; title: string }> = [
+    { value: "light", icon: Sun, title: lightTheme },
+    { value: "dark", icon: Moon, title: darkTheme },
+  ];
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={dark ? toLightTheme : toDarkTheme}
-      className="flex size-9 items-center justify-center rounded-md border border-line bg-surface text-ink-muted transition-colors hover:bg-surface-muted hover:text-ink"
+    <div
+      className="seg"
+      role="group"
+      aria-label={label}
+      style={{ "--seg-i": theme === "dark" ? 1 : 0 } as React.CSSProperties}
     >
-      <Icon className={`size-4 ${theme ? "" : "opacity-0"}`} aria-hidden />
-    </button>
+      <span aria-hidden className="seg-thumb" />
+      {options.map(({ value, icon: Icon, title }) => (
+        <button
+          key={value}
+          type="button"
+          onClick={(event) => select(value, event)}
+          aria-pressed={theme === value}
+          aria-label={title}
+          title={title}
+          {...(theme === value ? { "data-on": "true" } : {})}
+          className="seg-item"
+        >
+          <Icon className="size-3.5" aria-hidden />
+        </button>
+      ))}
+    </div>
   );
 }

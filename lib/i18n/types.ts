@@ -83,12 +83,13 @@ export type Dictionary = {
     a11y: { skipToContent: string };
     header: {
       cta: string;
-      toLightTheme: string;
-      toDarkTheme: string;
+      lightTheme: string;
+      darkTheme: string;
       menu: string;
       openMenu: string;
       closeMenu: string;
       switchLabel: string;
+      themeLabel: string;
     };
     hero: {
       title: string;

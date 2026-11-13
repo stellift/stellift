@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, X } from "lucide-react";
-import LanguageSwitcher from "@/app/[lang]/_components/language-switcher";
+import LangSwitch from "@/app/[lang]/_components/lang-switch";
 import ThemeToggle from "@/app/[lang]/_components/theme-toggle";
 import LogoMark from "@/app/[lang]/_components/logo-mark";
-import { locales, localeNames, type Locale } from "@/lib/i18n/config";
+import { type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Frame({
@@ -85,10 +85,11 @@ export default function Frame({
             </>
           ) : null}
           <ThemeToggle
-            toLightTheme={dict.ui.header.toLightTheme}
-            toDarkTheme={dict.ui.header.toDarkTheme}
+            lightTheme={dict.ui.header.lightTheme}
+            darkTheme={dict.ui.header.darkTheme}
+            label={dict.ui.header.themeLabel}
           />
-          <LanguageSwitcher lang={lang} label={dict.ui.header.switchLabel} />
+          <LangSwitch lang={lang} label={dict.ui.header.switchLabel} />
         </div>
       </div>
 
@@ -176,21 +177,8 @@ export default function Frame({
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            {locales.map((code) => (
-              <a
-                key={code}
-                href={`/${code}`}
-                hrefLang={code}
-                className={`border px-3 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] ${
-                  code === lang
-                    ? "border-ink bg-ink text-canvas"
-                    : "border-line text-ink-muted"
-                }`}
-              >
-                {localeNames[code]}
-              </a>
-            ))}
+          <div className="mt-8 flex items-center gap-3">
+            <LangSwitch lang={lang} label={dict.ui.header.switchLabel} />
           </div>
 
           <a

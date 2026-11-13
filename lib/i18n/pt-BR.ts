@@ -19,7 +19,7 @@ export const ptBR: Dictionary = {
 
   nav: [
     { label: "Serviços", href: "#services" },
-    { label: "Onde contribuiu", href: "#clients" },
+    { label: "Contribuições", href: "#clients" },
     { label: "Portfólio", href: "#portfolio" },
     { label: "Ferramentas", href: "#tools" },
     { label: "Sobre", href: "#about" },
@@ -349,12 +349,13 @@ export const ptBR: Dictionary = {
     a11y: { skipToContent: "Pular para o conteúdo" },
     header: {
       cta: "Iniciar conversa",
-      toLightTheme: "Mudar para o tema claro",
-      toDarkTheme: "Mudar para o tema escuro",
+      lightTheme: "Tema claro",
+      darkTheme: "Tema escuro",
       menu: "Menu",
       openMenu: "Abrir menu",
       closeMenu: "Fechar menu",
       switchLabel: "Idioma",
+      themeLabel: "Tema",
     },
     hero: {
       title: "Software sob medida,",
@@ -366,7 +367,7 @@ export const ptBR: Dictionary = {
     },
     services: { title: "O que fazemos" },
     clients: {
-      title: "Empresas que contribuímos",
+      title: "Onde contribuímos",
       hint: "Deslize para ver mais empresas.",
       footnote:
         "Google, Mozilla e demais nomes citados são marcas de seus respectivos " +

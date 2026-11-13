@@ -345,12 +345,13 @@ export const en: Dictionary = {
     a11y: { skipToContent: "Skip to content" },
     header: {
       cta: "Start a conversation",
-      toLightTheme: "Switch to the light theme",
-      toDarkTheme: "Switch to the dark theme",
+      lightTheme: "Light theme",
+      darkTheme: "Dark theme",
       menu: "Menu",
       openMenu: "Open menu",
       closeMenu: "Close menu",
       switchLabel: "Language",
+      themeLabel: "Theme",
     },
     hero: {
       title: "Software built to measure,",
