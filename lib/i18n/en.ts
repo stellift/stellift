@@ -22,7 +22,7 @@ export const en: Dictionary = {
   nav: [
     { label: "Services", href: "#services" },
     { label: "Contributions", href: "#clients" },
-    { label: "Talent", href: "#talent" },
+    { label: "Our talent", href: "#talent" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Tools", href: "#tools" },
     { label: "About", href: "#about" },
@@ -86,10 +86,11 @@ export const en: Dictionary = {
           "without stopping the business.",
       },
       {
-        title: "Automation",
+        title: "Automation and WhatsApp",
         text:
-          "Repetitive work turned into a script, and systems that do not " +
-          "talk turned into an integration.",
+          "A WhatsApp bot that answers customers and tells them when the " +
+          "order moves. And systems that start talking to each other with " +
+          "nobody in between.",
       },
       {
         title: "Technical consulting",
@@ -99,10 +100,25 @@ export const en: Dictionary = {
   },
 
   clients: [
-    { name: "Google", logo: "google", note: "Contributions to V8" },
-    { name: "Mozilla", logo: "mozilla", note: "Contributions to Servo" },
-    { name: "Haskell", logo: "haskell", note: "Contributions to GHC" },
-    { name: "Woovi", logo: "woovi" },
+    {
+      name: "Google",
+      logo: "google",
+      featured: true,
+      note: "Contributions to V8, the JavaScript engine behind Chrome.",
+    },
+    {
+      name: "Mozilla",
+      logo: "mozilla",
+      featured: true,
+      note: "Contributions to Servo, a browser engine written in Rust.",
+    },
+    {
+      name: "Woovi",
+      logo: "woovi",
+      featured: true,
+      note: "People on our team have worked there.",
+    },
+    { name: "Haskell", logo: "haskell", note: "Contributions to GHC." },
     { name: "Flop Robux", logo: "floprobux" },
     { name: "ServeCommand", logo: "servecommand" },
   ],

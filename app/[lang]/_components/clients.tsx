@@ -20,8 +20,8 @@ export default function Clients({
   index: string;
   eyebrow: string;
 }) {
-  const engines = dict.clients.filter((client) => client.note);
-  const rest = dict.clients.filter((client) => !client.note);
+  const featured = dict.clients.filter((client) => client.featured);
+  const rest = dict.clients.filter((client) => !client.featured);
 
   return (
     <section
@@ -38,28 +38,37 @@ export default function Clients({
           title={dict.ui.clients.title}
         />
 
-        <ul className="reveal mt-14 border-t border-line">
-          {engines.map((client) => (
-            <li key={client.name} className="group border-b border-line">
-              <div className="row-link grid items-center gap-x-10 gap-y-5 py-9 sm:py-12 lg:grid-cols-12">
-                <div className="row-shift flex h-9 items-center lg:col-span-3 lg:pl-6">
-                  <ClientLogo client={client} size="lg" />
-                  <span className="sr-only">{client.name}</span>
-                </div>
+        <ul className="reveal mt-14 grid-ruled sm:grid-cols-3">
+          {featured.map((client) => (
+            <li
+              key={client.name}
+              className="cell flex flex-col gap-7 p-8 sm:p-10"
+            >
+              <span className="flex h-9 items-center">
+                <ClientLogo client={client} size="lg" />
+                <span className="sr-only">{client.name}</span>
+              </span>
 
-                <p className="row-shift font-serif text-[clamp(1.5rem,3.2vw,2.75rem)] leading-[1.05] tracking-[-0.02em] text-ink lg:col-span-9">
-                  {client.note}
-                </p>
-              </div>
+              <p className="max-w-[32ch] text-pretty text-sm leading-relaxed text-ink-muted">
+                {client.note}
+              </p>
             </li>
           ))}
         </ul>
 
-        <ul className="reveal mt-10 flex flex-wrap items-center gap-x-12 gap-y-6">
+        <ul className="reveal mt-12 flex flex-wrap items-start gap-x-14 gap-y-8">
           {rest.map((client) => (
-            <li key={client.name} className="flex h-7 items-center opacity-70">
-              <ClientLogo client={client} size="sm" />
-              <span className="sr-only">{client.name}</span>
+            <li key={client.name} className="flex flex-col gap-2.5">
+              <span className="flex h-7 items-center opacity-70">
+                <ClientLogo client={client} size="sm" />
+                <span className="sr-only">{client.name}</span>
+              </span>
+
+              {client.note ? (
+                <span className="text-xs leading-relaxed text-ink-faint">
+                  {client.note}
+                </span>
+              ) : null}
             </li>
           ))}
         </ul>

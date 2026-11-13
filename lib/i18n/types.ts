@@ -44,7 +44,12 @@ export type Dictionary = {
     title: string;
     text: string;
   }>;
-  clients: ReadonlyArray<{ name: string; logo?: BrandLogoKey; note?: string }>;
+  clients: ReadonlyArray<{
+    name: string;
+    logo?: BrandLogoKey;
+    note?: string;
+    featured?: boolean;
+  }>;
   servicesExtra: {
     label: string;
     note: string;

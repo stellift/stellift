@@ -22,7 +22,7 @@ export const ptBR: Dictionary = {
   nav: [
     { label: "Serviços", href: "#services" },
     { label: "Contribuições", href: "#clients" },
-    { label: "Talento", href: "#talent" },
+    { label: "Nossos talentos", href: "#talent" },
     { label: "Portfólio", href: "#portfolio" },
     { label: "Ferramentas", href: "#tools" },
     { label: "Sobre", href: "#about" },
@@ -84,10 +84,11 @@ export const ptBR: Dictionary = {
           "parar a operação.",
       },
       {
-        title: "Automação",
+        title: "Automação e WhatsApp",
         text:
-          "Tarefa repetitiva virando script, e sistema que não conversa " +
-          "virando integração.",
+          "Bot de WhatsApp que responde cliente e avisa quando o pedido " +
+          "anda. E sistema que passa a conversar com o outro sem ninguém " +
+          "no meio.",
       },
       {
         title: "Consultoria técnica",
@@ -97,10 +98,25 @@ export const ptBR: Dictionary = {
   },
 
   clients: [
-    { name: "Google", logo: "google", note: "Contribuições para o V8" },
-    { name: "Mozilla", logo: "mozilla", note: "Contribuições para o Servo" },
-    { name: "Haskell", logo: "haskell", note: "Contribuições para o GHC" },
-    { name: "Woovi", logo: "woovi" },
+    {
+      name: "Google",
+      logo: "google",
+      featured: true,
+      note: "Contribuições para o V8, o motor de JavaScript do Chrome.",
+    },
+    {
+      name: "Mozilla",
+      logo: "mozilla",
+      featured: true,
+      note: "Contribuições para o Servo, motor de navegador escrito em Rust.",
+    },
+    {
+      name: "Woovi",
+      logo: "woovi",
+      featured: true,
+      note: "Gente do nosso time já trabalhou lá.",
+    },
+    { name: "Haskell", logo: "haskell", note: "Contribuições para o GHC." },
     { name: "Flop Robux", logo: "floprobux" },
     { name: "ServeCommand", logo: "servecommand" },
   ],
