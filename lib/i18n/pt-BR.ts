@@ -8,7 +8,7 @@ export const ptBR: Dictionary = {
     name: "stellift",
     metaTitle:
       "stellift · Software sob medida para web, mobile e cloud",
-    tagline: "Boutique de software",
+    tagline: "Software sob medida",
     description: 
       "Software sob medida para web, mobile e cloud. Quem desenha o " +
       "sistema é quem escreve o código e continua com ele depois que " +
@@ -69,7 +69,7 @@ export const ptBR: Dictionary = {
   portfolio: [
     {
       name: "BloxHarbor",
-      role: "Projeto da stellift",
+      role: "Projeto, código e operação",
       text:
         "Ecommerce de contas de Roblox. A conta cai na hora e a compra " +
         "é protegida.",
@@ -79,7 +79,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "PDV",
-      role: "Projeto da stellift",
+      role: "Projeto, código e operação",
       text:
         "PDV de desktop para loja de material de construção, com app de " +
         "escaneamento no celular. O catálogo trabalha nas unidades que o " +
@@ -92,7 +92,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "orce.me",
-      role: "Projeto da stellift",
+      role: "Projeto, código e operação",
       text:
         "Sistema de orçamentos para pequenos negócios. Reúne produtos, " +
         "serviços e dados do cliente em uma proposta em PDF com a marca de " +
@@ -102,7 +102,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "Craftance",
-      role: "Projeto da stellift",
+      role: "Projeto, código e operação",
       text:
         "Marketplace onde o desenvolvedor monta perfil, vende produto digital e " +
         "pega projeto como freelancer. O dinheiro de cada etapa fica em escrow " +
@@ -112,7 +112,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "HeartBit",
-      role: "Projeto da stellift",
+      role: "Projeto, código e operação",
       text:
         "App de relacionamento para cristãos brasileiros, com verificação feita " +
         "pela própria igreja. Oito perfis por dia, três conversas abertas no " +
@@ -135,7 +135,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "Neohor",
-      role: "Projeto da stellift",
+      role: "Projeto, código e operação",
       text:
         "Loja de contas de jogos. O comprador busca, põe no carrinho e " +
         "paga no Pix ou no cartão, e acompanha o pedido até a entrega " +
@@ -146,7 +146,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "LumniHub",
-      role: "Desenvolvimento de boa parte do produto",
+      role: "Boa parte do produto",
       text:
         "Plataforma para criar, vender e afiliar cursos e ebooks. O " +
         "produtor monta o curso em módulos com aulas e quizzes, desenha " +
@@ -159,7 +159,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "ServeCommand",
-      role: "Desenvolvimento do produto",
+      role: "Construção do produto",
       text:
         "Software de gestão para prestadores de serviço. O prestador " +
         "define as regras de preço e registra cada serviço prestado, " +
@@ -401,8 +401,8 @@ export const ptBR: Dictionary = {
     card: { action: "Falar sobre isso" },
     footer: {
       description:
-        "Boutique de software: projetamos, construímos e sustentamos produtos " +
-        "digitais ambiciosos.",
+        "Projetamos, construímos e operamos software sob medida para web, " +
+        "mobile e cloud.",
       ariaLabel: "Rodapé",
       navigate: "Navegar",
       contact: "Contato",

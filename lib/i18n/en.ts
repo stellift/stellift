@@ -8,7 +8,7 @@ export const en: Dictionary = {
     name: "stellift",
     metaTitle:
       "stellift · Custom software for web, mobile and cloud",
-    tagline: "Software boutique",
+    tagline: "Custom software",
     description: 
       "Custom software for web, mobile and cloud. The person who " +
       "designs the system writes the code and stays with it after it " +
@@ -69,7 +69,7 @@ export const en: Dictionary = {
   portfolio: [
     {
       name: "BloxHarbor",
-      role: "stellift project",
+      role: "Design, code and operation",
       text:
         "An online store for Roblox accounts. The account lands right " +
         "away and the purchase is protected.",
@@ -79,7 +79,7 @@ export const en: Dictionary = {
     },
     {
       name: "PDV",
-      role: "stellift project",
+      role: "Design, code and operation",
       text:
         "A desktop point of sale for building supply stores, with a scanning " +
         "app on the phone. The catalogue prices things in the units the trade " +
@@ -92,7 +92,7 @@ export const en: Dictionary = {
     },
     {
       name: "orce.me",
-      role: "stellift project",
+      role: "Design, code and operation",
       text:
         "Quoting system for small businesses. Gathers products, services and " +
         "client details into a branded PDF proposal, without rebuilding a " +
@@ -102,7 +102,7 @@ export const en: Dictionary = {
     },
     {
       name: "Craftance",
-      role: "stellift project",
+      role: "Design, code and operation",
       text:
         "A marketplace where developers build a profile, sell digital products " +
         "and take on freelance projects. Money for each milestone sits in escrow " +
@@ -112,7 +112,7 @@ export const en: Dictionary = {
     },
     {
       name: "HeartBit",
-      role: "stellift project",
+      role: "Design, code and operation",
       text:
         "A dating app for Brazilian Christians, verified by the person's own " +
         "church. Eight profiles a day, three open conversations at most, and " +
@@ -133,7 +133,7 @@ export const en: Dictionary = {
     },
     {
       name: "Neohor",
-      role: "stellift project",
+      role: "Design, code and operation",
       text:
         "A store for game accounts. The buyer searches, fills a cart " +
         "and pays by Pix or card, then follows the order to delivery " +
@@ -144,7 +144,7 @@ export const en: Dictionary = {
     },
     {
       name: "LumniHub",
-      role: "Built a large part of the product",
+      role: "A large part of the product",
       text:
         "A platform to create, sell and affiliate courses and ebooks. " +
         "The producer builds the course in modules with lessons and " +
@@ -157,7 +157,7 @@ export const en: Dictionary = {
     },
     {
       name: "ServeCommand",
-      role: "Product development",
+      role: "Building the product",
       text:
         "Business software for contractors. The contractor sets the " +
         "pricing rules and logs each job, with one record pulling the " +
@@ -396,8 +396,8 @@ export const en: Dictionary = {
     card: { action: "Talk about this" },
     footer: {
       description:
-        "Software boutique: we design, build and maintain ambitious digital " +
-        "products.",
+        "We design, build and run custom software for web, mobile and " +
+        "cloud.",
       ariaLabel: "Footer",
       navigate: "Browse",
       contact: "Contact",

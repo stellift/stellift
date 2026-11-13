@@ -40,28 +40,28 @@ export default function Services({
                 <a
                   href="#contact"
                   aria-label={`${service.title}: ${dict.ui.card.action}`}
-                  className="row-link group grid items-baseline gap-x-10 gap-y-5 py-10 sm:py-14 lg:grid-cols-12"
+                  className="row-link group grid items-baseline gap-x-8 gap-y-5 py-10 sm:py-14 lg:grid-cols-12"
                 >
                   <span className="index row-shift lg:col-span-1 lg:pl-6">
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
-                  <h3 className="row-shift font-serif text-[clamp(2rem,4.4vw,4rem)] leading-[0.98] tracking-[-0.03em] text-ink lg:col-span-5">
+                  <h3 className="row-shift font-serif text-[clamp(2rem,4.2vw,3.5rem)] leading-[0.98] tracking-[-0.03em] text-ink lg:col-span-5">
                     {service.title}
                   </h3>
 
-                  <p className="eyebrow lg:col-span-2">{service.category}</p>
-
-                  <p className="text-pretty text-sm leading-relaxed text-ink-muted lg:col-span-3">
-                    {service.text}
-                  </p>
-
-                  <span className="flex items-center gap-4 self-center lg:col-span-1 lg:justify-self-end lg:pr-6">
-                    <Icon
-                      className="size-5 text-ink-faint transition-colors duration-300 group-hover:text-accent"
-                      aria-hidden
-                    />
-                  </span>
+                  <div className="lg:col-span-6 lg:pr-6">
+                    <p className="eyebrow flex items-center gap-2.5">
+                      <Icon
+                        className="size-4 shrink-0 text-ink-faint transition-colors duration-300 group-hover:text-accent"
+                        aria-hidden
+                      />
+                      {service.category}
+                    </p>
+                    <p className="mt-4 max-w-[48ch] text-pretty text-sm leading-relaxed text-ink-muted">
+                      {service.text}
+                    </p>
+                  </div>
                 </a>
               </li>
             );
