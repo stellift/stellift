@@ -59,7 +59,9 @@ export const en: Dictionary = {
     {
       name: "BloxHarbor",
       role: "stellift project",
-      text: "An online store for Roblox accounts, with fast delivery and protected purchases.",
+      text:
+        "An online store for Roblox accounts. The account lands right " +
+        "away and the purchase is protected.",
       stack: "Next.js",
       href: "https://bloxharbor.com",
       shot: "/shots/bloxharbor.webp",
@@ -68,11 +70,11 @@ export const en: Dictionary = {
       name: "PDV",
       role: "stellift project",
       text:
-        "A desktop point of sale for building supply stores, with a companion " +
-        "scanning app. The catalogue is priced in the units the trade uses, " +
-        "sales take fractional quantities, cash is counted per shift, there is " +
-        "customer credit, NFC-e invoicing, and charging by Pix on screen or on " +
-        "the card machine.",
+        "A desktop point of sale for building supply stores, with a scanning " +
+        "app on the phone. The catalogue prices things in the units the trade " +
+        "uses and sells them in fractions. It closes the till per shift, keeps " +
+        "the customer on file with their credit, issues NFC-e receipts and " +
+        "charges by Pix on screen or on the card machine.",
       stack: "C++20, Qt6, SQLite, Go, Spring Boot, React Native, Next.js",
       href: "https://stellift.dev/pivenda",
       shot: "/shots/pdv.webp",
@@ -122,9 +124,10 @@ export const en: Dictionary = {
       name: "Neohor",
       role: "stellift project",
       text:
-        "A store for game accounts, with search, cart, orders and delivery. " +
-        "Pix and card payments, social login and real-time updates over " +
-        "WebSocket.",
+        "A store for game accounts. The buyer searches, fills a cart " +
+        "and pays by Pix or card, then follows the order to delivery " +
+        "while the screen updates itself over WebSocket. Signing in is " +
+        "social, no password to invent.",
       stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
       shot: "/shots/neohor.webp",
     },
@@ -132,10 +135,11 @@ export const en: Dictionary = {
       name: "LumniHub",
       role: "Built a large part of the product",
       text:
-        "A platform to create, sell and affiliate courses and ebooks. It has a " +
-        "store, a checkout builder, modules with lessons and quizzes, an " +
-        "affiliate program with payment split, and financial and reporting " +
-        "dashboards for the producer.",
+        "A platform to create, sell and affiliate courses and ebooks. " +
+        "The producer builds the course in modules with lessons and " +
+        "quizzes, designs their own checkout and opens the store. " +
+        "Affiliates they recruit are paid by a split at checkout, and " +
+        "the finances and reports live in one dashboard.",
       stack: "React, Vite, React Router, React Aria, Supabase, Zod",
       href: "https://app.lumnihub.com",
       shot: "/shots/lumnihub.webp",
@@ -144,8 +148,9 @@ export const en: Dictionary = {
       name: "ServeCommand",
       role: "Product development",
       text:
-        "Business software for contractors. Pricing rules, connected job " +
-        "records, memberships and payments in a single flow.",
+        "Business software for contractors. The contractor sets the " +
+        "pricing rules and logs each job, with one record pulling the " +
+        "next. Memberships and payments run in the same flow.",
       href: "https://servecommand.com",
       shot: "/shots/servecommand.webp",
     },

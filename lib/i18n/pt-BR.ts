@@ -59,7 +59,9 @@ export const ptBR: Dictionary = {
     {
       name: "BloxHarbor",
       role: "Projeto da stellift",
-      text: "Ecommerce de contas de Roblox, com entrega rápida e compra protegida.",
+      text:
+        "Ecommerce de contas de Roblox. A conta cai na hora e a compra " +
+        "é protegida.",
       stack: "Next.js",
       href: "https://bloxharbor.com",
       shot: "/shots/bloxharbor.webp",
@@ -69,9 +71,10 @@ export const ptBR: Dictionary = {
       role: "Projeto da stellift",
       text:
         "PDV de desktop para loja de material de construção, com app de " +
-        "escaneamento no celular. Catálogo nas unidades do setor, venda " +
-        "fracionada, caixa por turno, clientes e fiado, emissão de NFC-e, e " +
-        "cobrança de Pix na tela ou na maquininha.",
+        "escaneamento no celular. O catálogo trabalha nas unidades que o " +
+        "setor usa e aceita venda fracionada. Fecha o caixa por turno, " +
+        "guarda o cadastro do cliente com o fiado no nome dele, emite " +
+        "NFC-e e cobra Pix na tela ou manda para a maquininha.",
       stack: "C++20, Qt6, SQLite, Go, Spring Boot, React Native, Next.js",
       href: "https://stellift.dev/pivenda",
       shot: "/shots/pdv.webp",
@@ -123,9 +126,10 @@ export const ptBR: Dictionary = {
       name: "Neohor",
       role: "Projeto da stellift",
       text:
-        "Loja de contas de jogos, com busca, carrinho, pedidos e entrega. " +
-        "Cobrança por Pix e cartão, login social e atualização em tempo real " +
-        "por WebSocket.",
+        "Loja de contas de jogos. O comprador busca, põe no carrinho e " +
+        "paga no Pix ou no cartão, e acompanha o pedido até a entrega " +
+        "com a tela atualizando sozinha por WebSocket. Entra com login " +
+        "social, sem inventar senha.",
       stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
       shot: "/shots/neohor.webp",
     },
@@ -133,10 +137,11 @@ export const ptBR: Dictionary = {
       name: "LumniHub",
       role: "Desenvolvimento de boa parte do produto",
       text:
-        "Plataforma para criar, vender e afiliar cursos e ebooks. Tem loja, " +
-        "construtor de checkout, módulos com aulas e quizzes, programa de " +
-        "afiliados com split de pagamento, e painel de financeiro e relatórios " +
-        "para o produtor.",
+        "Plataforma para criar, vender e afiliar cursos e ebooks. O " +
+        "produtor monta o curso em módulos com aulas e quizzes, desenha " +
+        "o próprio checkout e abre a loja. Os afiliados que ele recruta " +
+        "recebem por split no pagamento, e o financeiro e os relatórios " +
+        "ficam num painel só.",
       stack: "React, Vite, React Router, React Aria, Supabase, Zod",
       href: "https://app.lumnihub.com",
       shot: "/shots/lumnihub.webp",
@@ -145,9 +150,10 @@ export const ptBR: Dictionary = {
       name: "ServeCommand",
       role: "Desenvolvimento do produto",
       text:
-        "Software de gestão para prestadores de serviço. Regras de preço, " +
-        "registros de serviço conectados, planos de assinatura e pagamentos " +
-        "num fluxo só.",
+        "Software de gestão para prestadores de serviço. O prestador " +
+        "define as regras de preço e registra cada serviço prestado, " +
+        "com um registro puxando o outro. Assinatura e cobrança correm " +
+        "no mesmo fluxo.",
       href: "https://servecommand.com",
       shot: "/shots/servecommand.webp",
     },
