@@ -63,6 +63,13 @@ export type Dictionary = {
     href?: string;
     shot?: string;
     tags?: ReadonlyArray<string>;
+    detail?: {
+      summary: string;
+      ctaLabel?: string;
+      gallery: ReadonlyArray<{ src: string; caption: string }>;
+      facts: ReadonlyArray<{ label: string; value: string }>;
+      highlights: ReadonlyArray<{ title: string; text: string }>;
+    };
   }>;
   about: { text: string };
   mission: {
@@ -165,6 +172,12 @@ export type Dictionary = {
       filterLabel: string;
       allLabel: string;
       filters: ReadonlyArray<{ id: string; label: string }>;
+      openLabel: string;
+      closeLabel: string;
+      dialogLabel: string;
+      galleryLabel: string;
+      prevLabel: string;
+      nextLabel: string;
     };
     about: { title: string };
     contact: { title: string };

@@ -1319,3 +1319,127 @@ section[id] {
     padding-right: 1.25rem;
   }
 }
+
+@layer components {
+  .shot-cue {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-line);
+    opacity: 0;
+    transform: translateY(0.375rem);
+    transition:
+      opacity 320ms ease,
+      transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .frame:hover .shot-cue,
+  .mount:focus-visible .shot-cue {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--color-ink);
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-line);
+    transition:
+      border-color 200ms ease,
+      color 200ms ease;
+  }
+
+  .pill:hover {
+    border-color: var(--color-line-strong);
+    color: var(--color-accent);
+  }
+
+  .sheet {
+    width: min(1180px, 94vw);
+    max-width: none;
+    max-height: 90svh;
+    margin: auto;
+    padding: 0;
+    color: var(--color-ink);
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-line);
+  }
+
+  .sheet::backdrop {
+    background-color: color-mix(in srgb, #04070c 88%, transparent);
+  }
+
+  .sheet-body {
+    position: relative;
+    max-height: 90svh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+
+  .shot-morph {
+    view-transition-name: project-shot;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sheet[data-plain][open] {
+    animation: sheet-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .sheet[data-plain][open]::backdrop {
+    animation: sheet-veil 320ms ease both;
+  }
+
+  .sheet-stagger > * {
+    animation: sheet-rise 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--d, 0) * 1ms);
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem) scale(0.985);
+  }
+}
+
+@keyframes sheet-veil {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.625rem);
+  }
+}
+
+::view-transition-group(project-shot) {
+  animation-duration: 560ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(project-shot),
+::view-transition-new(project-shot) {
+  animation-duration: 560ms;
+}

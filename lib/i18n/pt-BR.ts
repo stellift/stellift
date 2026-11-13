@@ -142,7 +142,7 @@ export const ptBR: Dictionary = {
       shot: "/shots/bloxharbor.webp",
     },
     {
-      name: "PDV",
+      name: "Pivenda",
       tags: ["desktop", "mobile"],
       role: "Projeto, código e operação",
       text:
@@ -152,8 +152,92 @@ export const ptBR: Dictionary = {
         "guarda o cadastro do cliente com o fiado no nome dele, emite " +
         "NFC-e e cobra Pix na tela ou manda para a maquininha.",
       stack: "C++20, Qt6, SQLite, Go, Spring Boot, React Native, Next.js",
-      href: "https://stellift.dev/pivenda",
-      shot: "/shots/pdv.webp",
+      href: "https://pivenda-demo.vercel.app",
+      shot: "/shots/pivenda.webp",
+      detail: {
+        summary:
+          "Um caixa de loja de material de construção vende saco, metro " +
+          "quadrado e quilo, fia para cliente conhecido e não pode parar " +
+          "quando a internet cai. O Pivenda roda na máquina da loja, guarda " +
+          "tudo em SQLite e só usa a rede quando ela existe.",
+        ctaLabel: "Abrir a demonstração",
+        gallery: [
+          {
+            src: "/shots/pivenda/01.webp",
+            caption:
+              "Venda aberta: busca por nome, SKU ou código de barras, e " +
+              "carrinho com quantidade fracionada na unidade do produto.",
+          },
+          {
+            src: "/shots/pivenda/02.webp",
+            caption:
+              "Fechamento com mais de uma forma de pagamento na mesma " +
+              "venda, com o que falta pagar na tela.",
+          },
+          {
+            src: "/shots/pivenda/03.webp",
+            caption:
+              "Relatório do período: líquido, quebra por forma de pagamento " +
+              "e ranking dos produtos mais vendidos.",
+          },
+          {
+            src: "/shots/pivenda/04.webp",
+            caption:
+              "Cadastro de produtos com unidade do setor, preço, estoque e " +
+              "estoque mínimo.",
+          },
+        ],
+        facts: [
+          { label: "Onde roda", value: "Linux, Windows, macOS e FreeBSD" },
+          { label: "Base", value: "C++20, Qt6 e SQLite na própria máquina" },
+          { label: "Internet", value: "Opcional; a loja vende offline" },
+          { label: "Fiscal", value: "NFC-e, NFS-e e CT-e pela Focus NFe" },
+        ],
+        highlights: [
+          {
+            title: "Cobrança sem sair da tela",
+            text:
+              "Pix com QR gerado no caixa, maquininha Stone chamada pelo " +
+              "serial do aparelho e boleto pelo Asaas. Se a venda não " +
+              "fecha, o estorno dispara sozinho.",
+          },
+          {
+            title: "Pedido que chega pelo WhatsApp",
+            text:
+              "A mensagem do cliente vira itens casados com o catálogo, " +
+              "cada um com um nível de confiança, e o caixa revisa antes " +
+              "de aceitar.",
+          },
+          {
+            title: "Assistente de obra",
+            text:
+              "Quem digita \"revestir 20m² de piso\" recebe produto e " +
+              "quantidade sugeridos por um motor local, sem internet e sem " +
+              "custo por consulta.",
+          },
+          {
+            title: "O celular vira leitor",
+            text:
+              "O app fala com a API local do PDV pela Wi-Fi da loja: " +
+              "escaneia o código de barras e o item entra na venda que " +
+              "está aberta no caixa.",
+          },
+          {
+            title: "Confirmação do Pix em 12 ms",
+            text:
+              "Com o backend ligado, o pagamento chega por webhook e SSE. " +
+              "Doze milissegundos entre o webhook chegar e o PDV confirmar, " +
+              "medido ponta a ponta.",
+          },
+          {
+            title: "Balança na porta serial",
+            text:
+              "Lê o peso direto do equipamento, com padrão configurável " +
+              "porque Toledo, Filizola, Urano e Micheletti não falam o " +
+              "mesmo protocolo.",
+          },
+        ],
+      },
     },
     {
       name: "orce.me",
@@ -542,6 +626,12 @@ export const ptBR: Dictionary = {
         { id: "desktop", label: "Desktop" },
         { id: "ecommerce", label: "Ecommerce" },
       ],
+      openLabel: "Ver detalhes",
+      closeLabel: "Fechar",
+      dialogLabel: "detalhes do projeto",
+      galleryLabel: "Telas do projeto",
+      prevLabel: "Tela anterior",
+      nextLabel: "Próxima tela",
     },
     about: { title: "A stellift" },
     contact: { title: "Vamos tirar a ideia do solo" },

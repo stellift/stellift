@@ -144,7 +144,7 @@ export const en: Dictionary = {
       shot: "/shots/bloxharbor.webp",
     },
     {
-      name: "PDV",
+      name: "Pivenda",
       tags: ["desktop", "mobile"],
       role: "Design, code and operation",
       text:
@@ -154,8 +154,92 @@ export const en: Dictionary = {
         "the customer on file with their credit, issues NFC-e receipts and " +
         "charges by Pix on screen or on the card machine.",
       stack: "C++20, Qt6, SQLite, Go, Spring Boot, React Native, Next.js",
-      href: "https://stellift.dev/pivenda",
-      shot: "/shots/pdv.webp",
+      href: "https://pivenda-demo.vercel.app",
+      shot: "/shots/pivenda.webp",
+      detail: {
+        summary:
+          "A builder's merchant sells by the bag, the square metre and the " +
+          "kilo, gives credit to regulars, and cannot stop when the line " +
+          "goes down. Pivenda runs on the shop machine, keeps everything in " +
+          "SQLite and uses the network only when there is one.",
+        ctaLabel: "Open the demo",
+        gallery: [
+          {
+            src: "/shots/pivenda/01.webp",
+            caption:
+              "A sale in progress: search by name, SKU or barcode, with " +
+              "fractional quantities in each product's own unit.",
+          },
+          {
+            src: "/shots/pivenda/02.webp",
+            caption:
+              "Checkout with more than one payment method on the same sale, " +
+              "and the balance left to pay on screen.",
+          },
+          {
+            src: "/shots/pivenda/03.webp",
+            caption:
+              "Period report: net revenue, breakdown by payment method and " +
+              "the best selling products.",
+          },
+          {
+            src: "/shots/pivenda/04.webp",
+            caption:
+              "Product records with the trade's units, price, stock and " +
+              "minimum stock.",
+          },
+        ],
+        facts: [
+          { label: "Runs on", value: "Linux, Windows, macOS and FreeBSD" },
+          { label: "Built on", value: "C++20, Qt6 and SQLite on the machine" },
+          { label: "Network", value: "Optional; the shop sells offline" },
+          { label: "Tax documents", value: "NFC-e, NFS-e and CT-e via Focus NFe" },
+        ],
+        highlights: [
+          {
+            title: "Charging without leaving the screen",
+            text:
+              "A Pix QR code drawn at the till, a Stone card machine called " +
+              "by its serial number, and bank slips through Asaas. If the " +
+              "sale does not close, the refund fires on its own.",
+          },
+          {
+            title: "Orders that arrive by WhatsApp",
+            text:
+              "The customer's message becomes line items matched against " +
+              "the catalogue, each with a confidence level, and the cashier " +
+              "reviews them before accepting.",
+          },
+          {
+            title: "Building assistant",
+            text:
+              "Typing \"tile 20 square metres of floor\" returns a product " +
+              "and a quantity, from a local engine, with no internet and no " +
+              "cost per query.",
+          },
+          {
+            title: "The phone becomes a scanner",
+            text:
+              "The app talks to the till's local API over the shop Wi-Fi: " +
+              "scan the barcode and the item lands on the sale that is open " +
+              "at the counter.",
+          },
+          {
+            title: "Pix confirmed in 12 ms",
+            text:
+              "With the backend running, payment arrives by webhook and " +
+              "SSE. Twelve milliseconds between the webhook landing and the " +
+              "till confirming, measured end to end.",
+          },
+          {
+            title: "Scales on the serial port",
+            text:
+              "It reads the weight straight off the device, with a " +
+              "configurable pattern because Toledo, Filizola, Urano and " +
+              "Micheletti do not speak the same protocol.",
+          },
+        ],
+      },
     },
     {
       name: "orce.me",
@@ -539,6 +623,12 @@ export const en: Dictionary = {
         { id: "desktop", label: "Desktop" },
         { id: "ecommerce", label: "Ecommerce" },
       ],
+      openLabel: "See details",
+      closeLabel: "Close",
+      dialogLabel: "project details",
+      galleryLabel: "Project screens",
+      prevLabel: "Previous screen",
+      nextLabel: "Next screen",
     },
     about: { title: "About stellift" },
     contact: { title: "Let's get the idea off the ground" },
