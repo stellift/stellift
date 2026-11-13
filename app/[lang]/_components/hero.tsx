@@ -10,11 +10,11 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       <LogoMark
         variant="duo"
         fold="#2a7fcb"
-        className="monument pointer-events-none absolute left-1/2 top-[30%] h-[30vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-7%] sm:top-1/2 sm:h-[64vh] sm:translate-x-0 lg:right-[-5%] lg:h-[78vh]"
+        className="monument pointer-events-none absolute left-1/2 top-[30%] h-[30vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-9%] sm:top-1/2 sm:h-[60vh] sm:translate-x-0 lg:right-[-7%] lg:h-[74vh]"
       />
 
       <div className="hero-push shell relative">
-        <h1 className="font-serif text-[clamp(2.75rem,8.2vw,9rem)] leading-[0.92] tracking-[-0.035em] text-ink">
+        <h1 className="max-w-[min(100%,15ch)] font-serif text-[clamp(2.5rem,7vw,7.5rem)] leading-[0.94] tracking-[-0.03em] text-ink lg:max-w-[min(62%,900px)]">
           <span
             className="hero-line line-mask"
             style={{ "--line": 0 } as React.CSSProperties}

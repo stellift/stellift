@@ -23,8 +23,8 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-const [newsreader, interTight] = await Promise.all([
-  readFile(join(process.cwd(), "assets/Newsreader-Medium.ttf")),
+const [fraunces, interTight] = await Promise.all([
+  readFile(join(process.cwd(), "assets/Fraunces-Medium.ttf")),
   readFile(join(process.cwd(), "assets/InterTight-SemiBold.ttf")),
 ]);
 
@@ -77,7 +77,7 @@ export default async function Image({
             <div
               style={{
                 display: "flex",
-                fontFamily: "Newsreader",
+                fontFamily: "Fraunces",
                 fontSize: 38,
                 color: ink,
               }}
@@ -90,7 +90,7 @@ export default async function Image({
             style={{
               display: "flex",
               flexDirection: "column",
-              fontFamily: "Newsreader",
+              fontFamily: "Fraunces",
               fontSize: 76,
               lineHeight: 1.04,
               letterSpacing: "-0.03em",
@@ -117,7 +117,7 @@ export default async function Image({
     {
       ...size,
       fonts: [
-        { name: "Newsreader", data: newsreader, style: "normal", weight: 500 },
+        { name: "Fraunces", data: fraunces, style: "normal", weight: 500 },
         { name: "Inter Tight", data: interTight, style: "normal", weight: 600 },
       ],
     },
