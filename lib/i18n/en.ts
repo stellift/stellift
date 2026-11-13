@@ -134,6 +134,7 @@ export const en: Dictionary = {
   portfolio: [
     {
       name: "BloxHarbor",
+      tags: ["web", "ecommerce"],
       role: "Design, code and operation",
       text:
         "An online store for Roblox accounts. The account lands right " +
@@ -144,6 +145,7 @@ export const en: Dictionary = {
     },
     {
       name: "PDV",
+      tags: ["desktop", "mobile"],
       role: "Design, code and operation",
       text:
         "A desktop point of sale for building supply stores, with a scanning " +
@@ -157,6 +159,7 @@ export const en: Dictionary = {
     },
     {
       name: "orce.me",
+      tags: ["web"],
       role: "Design, code and operation",
       text:
         "Quoting system for small businesses. Gathers products, services and " +
@@ -167,6 +170,7 @@ export const en: Dictionary = {
     },
     {
       name: "Craftance",
+      tags: ["web", "mobile", "ecommerce"],
       role: "Design, code and operation",
       text:
         "A marketplace where developers build a profile, sell digital products " +
@@ -177,6 +181,7 @@ export const en: Dictionary = {
     },
     {
       name: "HeartBit",
+      tags: ["web", "mobile"],
       role: "Design, code and operation",
       text:
         "A dating app for Brazilian Christians, verified by the person's own " +
@@ -187,6 +192,7 @@ export const en: Dictionary = {
     },
     {
       name: "ZapZap",
+      tags: ["desktop"],
       role: "Experiment, no client",
       text:
         "An alternative WhatsApp Desktop client in Rust, aiming to fit in 10 MB. " +
@@ -198,6 +204,7 @@ export const en: Dictionary = {
     },
     {
       name: "Neohor",
+      tags: ["web", "ecommerce"],
       role: "Design, code and operation",
       text:
         "A store for game accounts. The buyer searches, fills a cart " +
@@ -209,6 +216,7 @@ export const en: Dictionary = {
     },
     {
       name: "LumniHub",
+      tags: ["web", "ecommerce"],
       role: "A large part of the product",
       text:
         "A platform to create, sell and affiliate courses and ebooks. " +
@@ -222,6 +230,7 @@ export const en: Dictionary = {
     },
     {
       name: "ServeCommand",
+      tags: ["web"],
       role: "Building the product",
       text:
         "Business software for contractors. The contractor sets the " +
@@ -522,6 +531,14 @@ export const en: Dictionary = {
       footnote:
         "Each card states the role on that project. Names and brands mentioned " +
         "are the property of their respective owners.",
+      filterLabel: "Filter projects by type",
+      allLabel: "All",
+      filters: [
+        { id: "web", label: "Web" },
+        { id: "mobile", label: "Mobile" },
+        { id: "desktop", label: "Desktop" },
+        { id: "ecommerce", label: "Ecommerce" },
+      ],
     },
     about: { title: "About stellift" },
     contact: { title: "Let's get the idea off the ground" },

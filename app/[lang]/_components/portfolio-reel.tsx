@@ -1,0 +1,121 @@
+"use client";
+
+import { useState, type CSSProperties } from "react";
+import Image from "next/image";
+import TechStack from "@/app/[lang]/_components/tech-stack";
+import type { Dictionary } from "@/lib/i18n/types";
+
+export default function PortfolioReel({ dict }: { dict: Dictionary }) {
+  const [active, setActive] = useState("all");
+
+  const matches = (id: string) =>
+    id === "all"
+      ? dict.portfolio
+      : dict.portfolio.filter((project) => project.tags?.includes(id));
+
+  const projects = matches(active);
+
+  const filters = [
+    { id: "all", label: dict.ui.portfolio.allLabel },
+    ...dict.ui.portfolio.filters,
+  ];
+
+  return (
+    <>
+      <div className="shell mt-10">
+        <div
+          role="group"
+          aria-label={dict.ui.portfolio.filterLabel}
+          className="flex flex-wrap gap-2"
+        >
+          {filters.map((filter) => {
+            const on = filter.id === active;
+            return (
+              <button
+                key={filter.id}
+                type="button"
+                onClick={() => setActive(filter.id)}
+                aria-pressed={on}
+                className={`eyebrow border px-3.5 py-2.5 transition-colors ${
+                  on
+                    ? "border-ink bg-ink text-canvas"
+                    : "border-line text-ink-muted hover:border-line-strong hover:text-ink"
+                }`}
+              >
+                {filter.label}
+                <span
+                  className={`ml-2 ${on ? "opacity-60" : "text-ink-faint"}`}
+                >
+                  {matches(filter.id).length}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div
+        className="reel-track mt-10"
+        style={{ "--frames": projects.length } as CSSProperties}
+      >
+        <div className="reel-pin">
+          <div className="reel-wrap w-full pb-5">
+            <ul className="reel border-y border-line">
+              {projects.map((project, i) => (
+                <li key={project.name} className="frame group">
+                  <div className="mount">
+                    {project.shot ? (
+                      <Image
+                        src={project.shot}
+                        alt=""
+                        fill
+                        priority={i < 2}
+                        quality={92}
+                        sizes="(min-width: 1024px) 560px, 78vw"
+                        className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                      />
+                    ) : null}
+                  </div>
+
+                  <div className="flex flex-col px-5 pb-5 pt-6">
+                    <div className="flex items-baseline gap-4">
+                      <span className="index shrink-0 translate-y-[-0.35rem]">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="font-serif text-[2.125rem] leading-none text-ink">
+                        {project.name}
+                      </h3>
+                    </div>
+
+                    <p className="eyebrow mt-3.5">{project.role}</p>
+
+                    <p className="mt-4 text-pretty text-[0.8125rem] leading-[1.65] text-ink-muted">
+                      {project.text}
+                    </p>
+
+                    {project.stack ? (
+                      <div className="mt-6 border-t border-line pt-4">
+                        <TechStack stack={project.stack} />
+                      </div>
+                    ) : null}
+
+                    {project.href ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link mt-4 self-start text-sm font-medium"
+                      >
+                        {dict.ui.portfolio.cta}
+                      </a>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

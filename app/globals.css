@@ -760,7 +760,7 @@ section[id] {
 
 @keyframes reel-run {
   to {
-    transform: translateX(calc(-100% + 100vw));
+    transform: translateX(min(0px, calc(-100% + 100vw)));
   }
 }
 
@@ -770,7 +770,7 @@ section[id] {
       view-timeline-name: --reel;
       view-timeline-axis: block;
       position: relative;
-      height: 460svh;
+      height: max(100svh, calc(var(--frames, 9) * 51svh));
     }
 
     .reel-pin {

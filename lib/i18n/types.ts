@@ -62,6 +62,7 @@ export type Dictionary = {
     stack?: string;
     href?: string;
     shot?: string;
+    tags?: ReadonlyArray<string>;
   }>;
   about: { text: string };
   mission: {
@@ -157,7 +158,14 @@ export type Dictionary = {
       previous: string;
       next: string;
     };
-    portfolio: { title: string; cta: string; footnote: string };
+    portfolio: {
+      title: string;
+      cta: string;
+      footnote: string;
+      filterLabel: string;
+      allLabel: string;
+      filters: ReadonlyArray<{ id: string; label: string }>;
+    };
     about: { title: string };
     contact: { title: string };
     card: { action: string };

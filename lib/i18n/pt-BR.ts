@@ -132,6 +132,7 @@ export const ptBR: Dictionary = {
   portfolio: [
     {
       name: "BloxHarbor",
+      tags: ["web", "ecommerce"],
       role: "Projeto, código e operação",
       text:
         "Ecommerce de contas de Roblox. A conta cai na hora e a compra " +
@@ -142,6 +143,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "PDV",
+      tags: ["desktop", "mobile"],
       role: "Projeto, código e operação",
       text:
         "PDV de desktop para loja de material de construção, com app de " +
@@ -155,6 +157,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "orce.me",
+      tags: ["web"],
       role: "Projeto, código e operação",
       text:
         "Sistema de orçamentos para pequenos negócios. Reúne produtos, " +
@@ -165,6 +168,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "Craftance",
+      tags: ["web", "mobile", "ecommerce"],
       role: "Projeto, código e operação",
       text:
         "Marketplace onde o desenvolvedor monta perfil, vende produto digital e " +
@@ -175,6 +179,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "HeartBit",
+      tags: ["web", "mobile"],
       role: "Projeto, código e operação",
       text:
         "App de relacionamento para cristãos brasileiros, com verificação feita " +
@@ -186,6 +191,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "ZapZap",
+      tags: ["desktop"],
       role: "Experimento, sem cliente",
       text:
         "Cliente alternativo do WhatsApp Desktop em Rust, com a meta de caber em " +
@@ -198,6 +204,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "Neohor",
+      tags: ["web", "ecommerce"],
       role: "Projeto, código e operação",
       text:
         "Loja de contas de jogos. O comprador busca, põe no carrinho e " +
@@ -209,6 +216,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "LumniHub",
+      tags: ["web", "ecommerce"],
       role: "Boa parte do produto",
       text:
         "Plataforma para criar, vender e afiliar cursos e ebooks. O " +
@@ -222,6 +230,7 @@ export const ptBR: Dictionary = {
     },
     {
       name: "ServeCommand",
+      tags: ["web"],
       role: "Construção do produto",
       text:
         "Software de gestão para prestadores de serviço. O prestador " +
@@ -525,6 +534,14 @@ export const ptBR: Dictionary = {
       footnote:
         "O papel em cada projeto está indicado no próprio card. Nomes e marcas " +
         "citados são de seus respectivos proprietários.",
+      filterLabel: "Filtrar projetos por tipo",
+      allLabel: "Todos",
+      filters: [
+        { id: "web", label: "Web" },
+        { id: "mobile", label: "Mobile" },
+        { id: "desktop", label: "Desktop" },
+        { id: "ecommerce", label: "Ecommerce" },
+      ],
     },
     about: { title: "A stellift" },
     contact: { title: "Vamos tirar a ideia do solo" },
