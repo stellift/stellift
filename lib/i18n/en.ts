@@ -9,14 +9,7 @@ export const en: Dictionary = {
     metaTitle:
       "Custom software for web, mobile and cloud | stellift",
     tagline: "Custom software",
-    description: 
-      
-      
-      
-      
-      "Custom software for web, mobile and cloud. Ours means caring " +
-      "about the detail nobody asked for, and still remembering a year " +
-      "later why it was built that way.",
+    description: "Custom software for web, mobile and cloud.",
     metaDescription:
       "Custom software development: web, mobile, cloud and data. A " +
       "small team, with contributions to Chrome's V8 and Mozilla's " +
