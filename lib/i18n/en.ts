@@ -37,8 +37,9 @@ export const en: Dictionary = {
       category: "Development",
       title: "Web products",
       text: 
-        "Store, checkout, dashboard, marketplace. The system a business " +
-        "opens every day, not the brochure nobody visits.",
+        "Store, checkout, dashboard and marketplace. Pix and card " +
+        "payments, orders that update on screen, reports for whoever " +
+        "decides.",
     },
     {
       code: "MOB",
@@ -53,8 +54,8 @@ export const en: Dictionary = {
       category: "Infrastructure and data",
       title: "Cloud and data",
       text: 
-        "AWS with Terraform, database, queue and deploy. The part nobody " +
-        "sees until the day it breaks.",
+        "AWS with Terraform, database, queue and deploy. Infrastructure " +
+        "written as code, so it comes back up the same way.",
     },
   ],
 

@@ -3,11 +3,11 @@ export const slug = "aceleradoras-de-startups-no-brasil";
 export const locale = "pt-BR";
 
 export const metaTitle =
-  "Aceleradoras de startups no Brasil: lista de programas, fundos e investidores";
+  "Aceleradoras de startups no Brasil: fundos e investidores";
 
 export const metaDescription =
-  "Lista de aceleradoras, fundos de venture capital, investidores-anjo e programas " +
-  "públicos que apoiam startups no Brasil, com base, estágio e o que cada um faz.";
+  "Aceleradoras, fundos de venture capital, investidores-anjo e programas " +
+  "públicos que apoiam startups no Brasil, com base, estágio e foco.";
 
 export const title = "Aceleradoras de startups no Brasil";
 

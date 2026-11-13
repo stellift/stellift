@@ -37,8 +37,8 @@ export const ptBR: Dictionary = {
       category: "Desenvolvimento",
       title: "Produtos web",
       text: 
-        "Loja, checkout, painel, marketplace. O sistema que o negócio " +
-        "abre todo dia, não a vitrine que ninguém visita.",
+        "Loja, checkout, painel e marketplace. Pagamento por Pix e " +
+        "cartão, pedido que atualiza na tela, relatório para quem decide.",
     },
     {
       code: "MOB",
@@ -53,8 +53,8 @@ export const ptBR: Dictionary = {
       category: "Infraestrutura e dados",
       title: "Cloud e dados",
       text: 
-        "AWS com Terraform, banco, fila e deploy. A parte que ninguém " +
-        "enxerga até o dia em que ela falha.",
+        "AWS com Terraform, banco, fila e deploy. Infraestrutura descrita " +
+        "em código, para subir de novo igual depois.",
     },
   ],
 
@@ -233,7 +233,7 @@ export const ptBR: Dictionary = {
       "downtime-cost": {
         name: "Quanto custa ficar fora do ar",
         tagline: "O preço de uma queda, em reais.",
-        metaTitle: "Quanto custa ficar fora do ar: calculadora de prejuízo por downtime",
+        metaTitle: "Quanto custa ficar fora do ar: calculadora de downtime",
         metaDescription:
           "Transforme minutos de indisponibilidade em prejuízo. Informe o faturamento " +
           "do mês, as horas em que a operação roda e a duração da queda.",
