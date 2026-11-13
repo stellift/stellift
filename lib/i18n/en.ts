@@ -6,12 +6,17 @@ export const en: Dictionary = {
 
   site: {
     name: "stellift",
+    metaTitle:
+      "stellift · Custom software for web, mobile and cloud",
     tagline: "Software boutique",
-    description: "Software boutique. Web, mobile, infrastructure and data.",
+    description: 
+      "Custom software for web, mobile and cloud. The person who " +
+      "designs the system writes the code and stays with it after it " +
+      "ships.",
     metaDescription:
-      "Software boutique: web products, mobile apps, cloud and data. A "+
-      "ready-made system to start fast, or software built on demand when "+
-      "the case is yours alone.",
+      "Custom software development: web, mobile, cloud and data. A " +
+      "small team, with contributions to Chrome's V8 and Mozilla's " +
+      "Servo.",
     email: "ola@stellift.dev",
     linkedin: "https://www.linkedin.com/company/stellift",
     github: "https://github.com/stellift",
@@ -31,19 +36,25 @@ export const en: Dictionary = {
       code: "WEB",
       category: "Development",
       title: "Web products",
-      text: "Sites, systems and digital products for the web.",
+      text: 
+        "Store, checkout, dashboard, marketplace. The system a business " +
+        "opens every day, not the brochure nobody visits.",
     },
     {
       code: "MOB",
       category: "Mobile",
       title: "Mobile apps",
-      text: "Apps for iOS and Android.",
+      text: 
+        "iOS and Android, and the app that becomes an arm of a bigger " +
+        "system, like the scanner that closes a sale at the counter.",
     },
     {
       code: "CLD",
       category: "Infrastructure and data",
       title: "Cloud and data",
-      text: "Cloud infrastructure and data work.",
+      text: 
+        "AWS with Terraform, database, queue and deploy. The part nobody " +
+        "sees until the day it breaks.",
     },
   ],
 
@@ -158,10 +169,10 @@ export const en: Dictionary = {
 
   about: {
     text:
-      "stellift is a software boutique, and we like building software the right " +
-      "way. There is a ready-made system when you want to start fast without a " +
-      "long project, and there is software built on demand when the case is " +
-      "yours alone.",
+      "The senior who designs the system is the one who writes the code " +
+      "and runs it in production. No approval layer in between, no " +
+      "junior learning on your project. The difference is " +
+      "accountability, not headcount.",
   },
 
   contact: {

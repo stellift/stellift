@@ -141,7 +141,7 @@ export default function Frame({
 
         <a
           href={`${home}#contact`}
-          className="btn btn-primary hidden shrink-0 px-5 py-2 text-[0.8125rem] lg:inline-flex"
+          className="btn btn-primary btn-sm hidden shrink-0 lg:inline-flex"
         >
           {dict.ui.header.cta}
         </a>

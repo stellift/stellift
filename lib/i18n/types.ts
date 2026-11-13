@@ -26,6 +26,7 @@ export type Dictionary = {
   ogLocale: string;
   site: {
     name: string;
+    metaTitle: string;
     tagline: string;
 
     description: string;

@@ -6,12 +6,17 @@ export const ptBR: Dictionary = {
 
   site: {
     name: "stellift",
+    metaTitle:
+      "stellift · Software sob medida para web, mobile e cloud",
     tagline: "Boutique de software",
-    description: "Boutique de software. Web, mobile, infraestrutura e dados.",
+    description: 
+      "Software sob medida para web, mobile e cloud. Quem desenha o " +
+      "sistema é quem escreve o código e continua com ele depois que " +
+      "entra no ar.",
     metaDescription:
-      "Boutique de software: produtos web, aplicativos mobile, cloud e dados. "+
-      "Sistema pronto para começar rápido, ou software sob demanda quando o "+
-      "caso é seu mesmo.",
+      "Desenvolvimento de software sob medida: web, mobile, cloud e " +
+      "dados. Time pequeno, com contribuições ao V8 do Chrome e ao " +
+      "Servo da Mozilla.",
     email: "ola@stellift.dev",
     linkedin: "https://www.linkedin.com/company/stellift",
     github: "https://github.com/stellift",
@@ -31,19 +36,25 @@ export const ptBR: Dictionary = {
       code: "WEB",
       category: "Desenvolvimento",
       title: "Produtos web",
-      text: "Sites, sistemas e produtos digitais para web.",
+      text: 
+        "Loja, checkout, painel, marketplace. O sistema que o negócio " +
+        "abre todo dia, não a vitrine que ninguém visita.",
     },
     {
       code: "MOB",
       category: "Mobile",
       title: "Aplicativos mobile",
-      text: "Aplicativos para iOS e Android.",
+      text: 
+        "iOS e Android, e também o app que vira braço de um sistema " +
+        "maior, como o leitor de código que fecha a venda no balcão.",
     },
     {
       code: "CLD",
       category: "Infraestrutura e dados",
       title: "Cloud e dados",
-      text: "Infraestrutura na nuvem e trabalho com dados.",
+      text: 
+        "AWS com Terraform, banco, fila e deploy. A parte que ninguém " +
+        "enxerga até o dia em que ela falha.",
     },
   ],
 
@@ -161,9 +172,10 @@ export const ptBR: Dictionary = {
 
   about: {
     text:
-      "A stellift é uma boutique de software, e a gente gosta de fazer software " +
-      "do jeito certo. Tem sistema pronto, para começar rápido sem projeto " +
-      "longo, e software sob demanda, quando o caso é seu mesmo.",
+      "O sênior que desenha o sistema é o mesmo que escreve o código e " +
+      "que opera ele em produção. Não tem camada de aprovação no meio, " +
+      "nem júnior aprendendo no seu projeto. A diferença é de " +
+      "responsabilidade, não de tamanho de equipe.",
   },
 
   contact: {
