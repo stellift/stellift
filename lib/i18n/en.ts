@@ -20,9 +20,9 @@ export const en: Dictionary = {
   },
 
   nav: [
+    { label: "Contributions", href: "#clients" },
     { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#portfolio" },
-    { label: "Contributions", href: "#clients" },
     { label: "About", href: "#about" },
     { label: "Tools", href: "#tools" },
     { label: "Our talent", href: "#talent" },

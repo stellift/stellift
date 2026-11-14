@@ -20,9 +20,9 @@ export const ptBR: Dictionary = {
   },
 
   nav: [
+    { label: "Contribuições", href: "#clients" },
     { label: "Serviços", href: "#services" },
     { label: "Portfólio", href: "#portfolio" },
-    { label: "Contribuições", href: "#clients" },
     { label: "Sobre", href: "#about" },
     { label: "Ferramentas", href: "#tools" },
     { label: "Nossos talentos", href: "#talent" },

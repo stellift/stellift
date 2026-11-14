@@ -74,9 +74,9 @@ export default async function Home() {
     <>
       <JsonLd data={structuredData} />
       <Hero dict={dict} />
-      <Services dict={dict} index="01" eyebrow={label("#services")} />
-      <Portfolio dict={dict} index="02" eyebrow={label("#portfolio")} />
-      <Clients dict={dict} index="03" eyebrow={label("#clients")} />
+      <Clients dict={dict} index="01" eyebrow={label("#clients")} />
+      <Services dict={dict} index="02" eyebrow={label("#services")} />
+      <Portfolio dict={dict} index="03" eyebrow={label("#portfolio")} />
       <Statement dict={dict} index="04" eyebrow={label("#about")} />
       <ToolsSection
         dict={dict}
