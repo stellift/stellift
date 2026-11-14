@@ -4,7 +4,15 @@ import { useState } from "react";
 
 type Item = { id: string; text: string; source: string };
 
-export default function Checklist({ items, email }: { items: Item[]; email: string }) {
+export default function Checklist({
+  items,
+  email,
+  subject,
+}: {
+  items: Item[];
+  email: string;
+  subject: string;
+}) {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
   const done = items.filter((item) => checked[item.id]).length;
@@ -14,7 +22,7 @@ export default function Checklist({ items, email }: { items: Item[]; email: stri
     missing.map((item) => `- ${item.text}`).join("\n") +
     "\n\nEndereço da minha página atual: ";
   const mailto =
-    `mailto:${email}?subject=${encodeURIComponent("Ajustar minha página às regras do CFM")}` +
+    `mailto:${email}?subject=${encodeURIComponent(subject)}` +
     `&body=${encodeURIComponent(body)}`;
 
   return (

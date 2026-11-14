@@ -2,7 +2,7 @@ import Star from "@/app/[lang]/_components/star";
 import Wordmark from "@/app/[lang]/_components/wordmark";
 import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
-import * as doctors from "@/app/[lang]/[slug]/_pages/doctors/data";
+import { landingLocale, landingPath, landings } from "@/app/[lang]/_landing/registry";
 import { blogPath } from "@/app/[lang]/blog/_content/posts";
 import type { Dictionary } from "@/lib/i18n/types";
 
@@ -69,16 +69,18 @@ export default function Footer({
                   {dict.blog.navLabel}
                 </a>
               </li>
-              {lang === doctors.locale ? (
-                <li>
-                  <a
-                    href={`/${doctors.locale}/${doctors.slug}`}
-                    className="text-sm text-ink-muted transition-colors hover:text-ink"
-                  >
-                    {doctors.title}
-                  </a>
-                </li>
-              ) : null}
+              {lang === landingLocale
+                ? landings.map((niche) => (
+                    <li key={niche.id}>
+                      <a
+                        href={landingPath(niche)}
+                        className="text-sm text-ink-muted transition-colors hover:text-ink"
+                      >
+                        Sites para {niche.card.name.toLowerCase()}
+                      </a>
+                    </li>
+                  ))
+                : null}
               {lang === list.locale ? (
                 <li>
                   <a
