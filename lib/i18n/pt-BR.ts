@@ -223,6 +223,113 @@ export const ptBR: Dictionary = {
       },
     },
     {
+      name: "Charita",
+      tags: ["web"],
+      role: "Projeto, código e operação",
+      text:
+        "Plataforma de doação com taxa zero para ONGs verificadas. Aceita " +
+        "Pix, cartão e doação mensal em várias moedas, e além de dinheiro " +
+        "recebe livros, computadores e alimentos. Também paga exames e " +
+        "consultas em clínicas parceiras para quem foi encaminhado por uma ONG.",
+      stack: "Elixir, Phoenix, PostgreSQL, Nuxt, Vue, Reka UI, Valibot, Caddy",
+      shot: "/shots/charita.webp",
+      detail: {
+        summary:
+          "A taxa da plataforma não é um campo zerado: é uma conta contábil " +
+          "que nunca recebeu um lançamento. Todo movimento de dinheiro é " +
+          "partida dobrada, e o banco de dados recusa alterar ou apagar " +
+          "qualquer registro. A página de transparência é o livro-caixa lido " +
+          "como está.",
+        gallery: [
+          {
+            src: "/shots/charita/01.webp",
+            caption:
+              "Campanhas abertas, com busca por causa e por quanto você quer doar.",
+          },
+          {
+            src: "/shots/charita/02.webp",
+            caption: "Página da campanha: arrecadado, meta e taxa de 0,00%.",
+          },
+          {
+            src: "/shots/charita/03.webp",
+            caption: "Doação por Pix: QR e copia e cola, confirmação por webhook.",
+          },
+          {
+            src: "/shots/charita/04.webp",
+            caption:
+              "Transparência: o extrato soma zero em cada moeda, por regra do banco.",
+          },
+          {
+            src: "/shots/charita/05.webp",
+            caption: "Números da página inicial, calculados do livro-caixa.",
+          },
+          {
+            src: "/shots/charita/06.webp",
+            caption: "Pedidos de livros por prateleira, país de envio e idioma.",
+          },
+          {
+            src: "/shots/charita/07.webp",
+            caption: "Exames e consultas com preço fechado e código SIGTAP.",
+          },
+          {
+            src: "/shots/charita/08.webp",
+            caption:
+              "Fila do time: organização, campanha e conta de saque esperando decisão.",
+          },
+        ],
+        facts: [
+          { label: "API", value: "Elixir e Phoenix, só JSON" },
+          { label: "Front", value: "Nuxt, que é o único que fala com a API" },
+          { label: "Pagamento", value: "Woovi no Pix, Stripe no cartão, Asaas no repasse" },
+          { label: "Idiomas", value: "Português, inglês e espanhol" },
+        ],
+        highlights: [
+          {
+            title: "Dinheiro só entra, nunca muda",
+            text:
+              "Cada movimento é partida dobrada e soma zero. Um gatilho no " +
+              "Postgres recusa update e delete. Estorno é um lançamento novo " +
+              "de sinal contrário, e o original continua lá.",
+          },
+          {
+            title: "Campanha só por convite",
+            text:
+              "Plataforma de doação aberta a qualquer um vira canal de lavagem. " +
+              "O time verifica a ONG e manda um convite de uso único, guardado " +
+              "só como hash.",
+          },
+          {
+            title: "Conferência de quem recebe",
+            text:
+              "A ONG passa pelo registro de empresas e pelas listas públicas " +
+              "de sanções e de pessoas politicamente expostas, incluindo quem " +
+              "dirige a organização.",
+          },
+          {
+            title: "Gateway é um adaptador",
+            text:
+              "Woovi, Stripe e Asaas ficam atrás de uma porta do domínio e " +
+              "passam pela mesma suíte de contrato. Trocar de gateway é " +
+              "configuração.",
+          },
+          {
+            title: "Livro não é dinheiro",
+            text:
+              "Doação de livro, computador ou alimento tem histórico próprio e " +
+              "nunca entra no livro-caixa. O endereço da ONG só aparece para " +
+              "o doador depois que a oferta é aceita.",
+          },
+          {
+            title: "Paga a conta, não promete a próxima",
+            text:
+              "O módulo de saúde quita uma conta que a clínica já emitiu. O " +
+              "paciente é só um código da ONG que encaminhou, sem nome nem " +
+              "documento.",
+          },
+        ],
+      },
+    },
+    {
       name: "LumniHub",
       tags: ["web", "ecommerce"],
       role: "Boa parte do produto",

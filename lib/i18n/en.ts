@@ -224,6 +224,111 @@ export const en: Dictionary = {
       },
     },
     {
+      name: "Charita",
+      tags: ["web"],
+      role: "Design, code and operation",
+      text:
+        "Donation platform with a zero fee for verified nonprofits. It takes " +
+        "Pix, cards and monthly giving in several currencies, and besides " +
+        "money it collects books, computers and food. It also pays for exams " +
+        "and consultations at partner clinics for people a nonprofit referred.",
+      stack: "Elixir, Phoenix, PostgreSQL, Nuxt, Vue, Reka UI, Valibot, Caddy",
+      shot: "/shots/charita.webp",
+      detail: {
+        summary:
+          "The platform fee is not a column set to zero: it is a ledger " +
+          "account that has never received an entry. Every movement of money " +
+          "is double entry, and the database refuses to update or delete any " +
+          "record. The transparency page is the ledger read as it stands.",
+        gallery: [
+          {
+            src: "/shots/charita/01.webp",
+            caption:
+              "Live campaigns, searchable by cause and by how much you want to give.",
+          },
+          {
+            src: "/shots/charita/02.webp",
+            caption: "Campaign page: raised, goal and a 0.00% fee.",
+          },
+          {
+            src: "/shots/charita/03.webp",
+            caption: "Giving by Pix: QR and copy-paste code, confirmed by webhook.",
+          },
+          {
+            src: "/shots/charita/04.webp",
+            caption:
+              "Transparency: the statement sums to zero in each currency, enforced by the database.",
+          },
+          {
+            src: "/shots/charita/05.webp",
+            caption: "Home page figures, computed from the ledger.",
+          },
+          {
+            src: "/shots/charita/06.webp",
+            caption: "Book requests by shelf, shipping country and language.",
+          },
+          {
+            src: "/shots/charita/07.webp",
+            caption: "Exams and consultations at a fixed price, with a SIGTAP code.",
+          },
+          {
+            src: "/shots/charita/08.webp",
+            caption:
+              "Team queue: a nonprofit, a campaign and a payout account awaiting a decision.",
+          },
+        ],
+        facts: [
+          { label: "API", value: "Elixir and Phoenix, JSON only" },
+          { label: "Front end", value: "Nuxt, the only thing that talks to the API" },
+          { label: "Payments", value: "Woovi for Pix, Stripe for cards, Asaas for payouts" },
+          { label: "Languages", value: "Portuguese, English and Spanish" },
+        ],
+        highlights: [
+          {
+            title: "Money is appended, never changed",
+            text:
+              "Every movement is double entry and sums to zero. A Postgres " +
+              "trigger refuses updates and deletes. A refund is a new entry " +
+              "of the opposite sign, and the original stays.",
+          },
+          {
+            title: "Campaigns by invitation only",
+            text:
+              "A donation platform open to anyone is a laundering channel. " +
+              "The team verifies the nonprofit and sends a single-use " +
+              "invitation, stored only as a hash.",
+          },
+          {
+            title: "Checking who gets paid",
+            text:
+              "Each nonprofit goes through the company register and the public " +
+              "sanctions and politically exposed persons lists, including the " +
+              "people who run it.",
+          },
+          {
+            title: "The gateway is an adapter",
+            text:
+              "Woovi, Stripe and Asaas sit behind a port in the domain and pass " +
+              "the same contract suite. Switching gateways is configuration.",
+          },
+          {
+            title: "A book is not money",
+            text:
+              "Donated books, computers and food have their own history and " +
+              "never touch the ledger. The nonprofit's address reaches a donor " +
+              "only after their offer is accepted.",
+          },
+          {
+            title: "Pays the bill, promises nothing next",
+            text:
+              "The care module settles a bill the clinic already issued. The " +
+              "patient is only a code from the referring nonprofit, with no " +
+              "name or document.",
+          },
+        ],
+      },
+    },
+    {
       name: "LumniHub",
       tags: ["web", "ecommerce"],
       role: "A large part of the product",
