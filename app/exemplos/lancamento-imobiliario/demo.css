@@ -6,11 +6,12 @@
   --color-card: #faf8f4;
   --color-ink: #1a1815;
   --color-ink-soft: #4b4740;
-  --color-ink-faint: #75706a;
+  --color-ink-faint: #66615b;
   --color-line: #d6d0c4;
   --color-coal: #1d1b18;
   --color-coal-soft: #2a2723;
-  --color-clay: #b0623b;
+  --color-clay: #974f2c;
+  --color-clay-light: #d98a62;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument), ui-serif, Georgia, serif;

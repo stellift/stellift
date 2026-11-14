@@ -96,7 +96,7 @@ function BeforeAfterFormat() {
                     <div className={`aspect-[3/4] ${result.tone}`} />
                     <div className={`aspect-[3/4] ${result.tone}`} />
                   </div>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-ink-muted">
                     {result.label}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ function BeforeAfterFormat() {
               <div className="h-2 w-11/12 bg-line" />
               <div className="h-2 w-10/12 bg-line" />
               <div className="h-2 w-8/12 bg-line" />
-              <p className="pt-1 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
+              <p className="pt-1 font-mono text-[10px] uppercase tracking-wider text-ink-muted">
                 Texto educativo: indicações, fatores e complicações
               </p>
             </div>

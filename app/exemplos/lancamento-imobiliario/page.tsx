@@ -126,11 +126,11 @@ export default function LaunchDemo() {
         <section className="bg-coal text-paper">
           <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-20 pt-14 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:pb-24 lg:pt-20">
             <div className="self-center lg:col-span-7">
-              <p className="rise text-xs uppercase tracking-[0.26em] text-clay">
+              <p className="rise text-xs uppercase tracking-[0.26em] text-clay-light">
                 Lançamento · Alto de Pinheiros
               </p>
               <h1 className="rise rise-2 mt-6 font-serif text-[clamp(3rem,7vw,5.75rem)] leading-[0.98] tracking-[-0.01em]">
-                Uma unidade por andar, <em className="text-clay">4 suítes</em> e 280 m².
+                Uma unidade por andar, <em className="text-clay-light">4 suítes</em> e 280 m².
               </h1>
               <p className="rise rise-3 mt-7 max-w-lg text-lg leading-relaxed text-paper/75">
                 Dezoito apartamentos numa rua residencial, com varanda gourmet de

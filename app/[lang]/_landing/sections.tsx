@@ -100,7 +100,7 @@ export function Hero({ niche, mailto }: { niche: Niche; mailto: string }) {
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
-            <span className="ml-3 truncate font-mono text-[11px] text-ink-faint">
+            <span className="ml-3 truncate font-mono text-[11px] text-ink-muted">
               {niche.demo.label}
             </span>
           </div>
@@ -325,7 +325,7 @@ export function Seo({ niche }: { niche: Niche }) {
               {niche.demo.schemaText}
             </p>
           </div>
-          <pre className="max-h-96 overflow-auto border border-line bg-surface p-5 font-mono text-[12px] leading-relaxed text-ink-muted lg:col-span-8">
+          <pre tabIndex={0} aria-label="Dados estruturados da página de exemplo" className="max-h-96 overflow-auto border border-line bg-surface p-5 font-mono text-[12px] leading-relaxed text-ink-muted lg:col-span-8">
             <code>{JSON.stringify(niche.demo.schema, null, 2)}</code>
           </pre>
         </div>

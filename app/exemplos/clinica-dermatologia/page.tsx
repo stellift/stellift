@@ -262,7 +262,7 @@ export default function ClinicDemo() {
               >
                 <div className="absolute inset-x-10 bottom-0 top-16 rounded-t-full bg-pine/15" />
                 <div className="absolute left-1/2 top-[22%] size-28 -translate-x-1/2 rounded-full bg-pine/20" />
-                <p className="absolute inset-x-0 bottom-6 text-center text-xs uppercase tracking-[0.2em] text-pine-deep/70">
+                <p className="absolute inset-x-0 bottom-6 text-center text-xs uppercase tracking-[0.2em] text-pine-deep">
                   Foto da médica
                 </p>
               </div>

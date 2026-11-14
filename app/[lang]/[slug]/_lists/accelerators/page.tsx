@@ -120,7 +120,7 @@ export default async function Accelerators() {
               href={sourceRepo}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline"
+              className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
             >
               um repositório público
             </a>{" "}
