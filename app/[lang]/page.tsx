@@ -28,11 +28,17 @@ export default async function Home() {
         "@id": organizationId,
         name: dict.site.name,
         description: dict.site.metaDescription,
-        slogan: dict.mission.title,
+        slogan: `${dict.ui.hero.title} ${dict.ui.hero.titleAccent}`,
         url: siteUrl,
         logo: `${siteUrl}/logos/stellift.svg`,
         image: `${siteUrl}/${locale}/opengraph-image`,
         email: dict.site.email,
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: dict.site.email,
+          availableLanguage: ["Portuguese", "English"],
+        },
         sameAs: [dict.site.linkedin, dict.site.github],
         knowsAbout: dict.services.map((service) => service.title),
         makesOffer: dict.services.map((service) => ({

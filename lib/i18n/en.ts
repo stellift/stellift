@@ -45,8 +45,8 @@ export const en: Dictionary = {
       category: "Mobile",
       title: "Mobile apps",
       text: 
-        "iOS and Android, and the app that becomes an arm of a bigger " +
-        "system, like the scanner that closes a sale at the counter.",
+        "iOS and Android, and apps that are part of a bigger system, like the " +
+        "scanner that closes a sale at the counter.",
     },
     {
       code: "CLD",
@@ -526,8 +526,8 @@ export const en: Dictionary = {
       text:
         "A store for game accounts. The buyer searches, fills a cart " +
         "and pays by Pix or card, then follows the order to delivery " +
-        "while the screen updates itself over WebSocket. Signing in is " +
-        "social, no password to invent.",
+        "while the screen updates itself over WebSocket. Sign-in uses a social " +
+        "account, so there is no password to make up.",
       stack: "Next.js, NestJS, Prisma, PostgreSQL, TurboRepo, Terraform, AWS",
       shot: "/shots/neohor.webp",
     },
@@ -571,8 +571,8 @@ export const en: Dictionary = {
       role: "Building the product",
       text:
         "Business software for contractors. The contractor sets the " +
-        "pricing rules and logs each job, with one record pulling the " +
-        "next. Memberships and payments run in the same flow.",
+        "pricing rules and logs each job, each record feeding the next. " +
+        "Memberships and payments run in the same flow.",
       href: "https://servecommand.com",
       shot: "/shots/servecommand.webp",
     },
@@ -593,12 +593,11 @@ export const en: Dictionary = {
     text:
       "The senior who designs the system is the one who writes the code " +
       "and runs it in production. No approval layer in between, no " +
-      "junior learning on your project. The difference is " +
-      "accountability, not headcount.",
+      "junior learning on your project.",
   },
 
   mission: {
-    title: "Building software with love",
+    title: "How we work",
     lead: "Four things we take seriously.",
     values: [
       {
@@ -627,10 +626,9 @@ export const en: Dictionary = {
   talent: {
     title: "We understand what the AI wrote",
     lead:
-      "The best people to steer AI are the ones who can read what it writes. " +
-      "Ours have landed contributions in Chrome's V8, Mozilla's Servo and " +
-      "Haskell's GHC, and they are the ones reviewing the code before it " +
-      "becomes your system.",
+      "We use AI to write code, and the people who review that code before " +
+      "it reaches your system have landed contributions in Chrome's V8, " +
+      "Mozilla's Servo and Haskell's GHC.",
     team: {
       eyebrow: "Our team",
       title: "These are the people who will work on your project",
@@ -644,8 +642,8 @@ export const en: Dictionary = {
   },
 
   contact: {
-    heading: "Let's get the idea off the ground",
-    lead: "Write telling us what you want to build.",
+    heading: "Tell us what you want to build",
+    lead: "A short description is enough to start the conversation.",
     scarcity: "Few projects at a time",
     channels: [
       { kind: "email", label: "Email", value: "ola@stellift.dev", href: "mailto:ola@stellift.dev" },
@@ -662,10 +660,9 @@ export const en: Dictionary = {
   tools: {
     title: "The sums that come before the quote",
     lead:
-      "None of them is hard, and it is rare to meet anyone who ran them " +
-      "before signing. Then the SLA becomes a surprise, the hour costs more " +
-      "than agreed and the manual process keeps billing all year. They run " +
-      "in your browser, no sign-up.",
+      "Simple sums that usually get done after the contract is signed, when " +
+      "the SLA is already accepted and the hourly rate already agreed. They " +
+      "run in your browser, no sign-up.",
     cta: "Open tool",
     backLabel: "Back to stellift",
     allLabel: "All tools",
@@ -674,14 +671,15 @@ export const en: Dictionary = {
     items: {
       sla: {
         name: "SLA uptime calculator",
-        tagline: "How much downtime each uptime level actually allows.",
+        tagline: "How much downtime each uptime level allows.",
         metaTitle: "SLA calculator: how much downtime fits in 99.9% uptime",
         metaDescription:
           "Turn an uptime SLA into real downtime per day, week, month and year. " +
           "See what 99%, 99.9% or 99.99% actually allow.",
         intro:
-          "Nobody signs a contract thinking in percentages. They think in how long " +
-          "the system can be down before the agreement breaks, which is the number " +
+          "Nobody signs a contract thinking in percentages. They think about how " +
+          "long the system can be down before the agreement breaks, which is the " +
+          "number " +
           "this page gives back.",
         fields: [{ key: "uptime", label: "Committed uptime (%)", hint: "e.g. 99.9" }],
         results: [
@@ -691,8 +689,8 @@ export const en: Dictionary = {
           { key: "year", label: "Per year (365 days)" },
         ],
         note:
-          "The monthly window uses a 30-day month and the yearly one 365 days. Real " +
-          "contracts usually measure calendar months and exclude maintenance windows.",
+          "The monthly window uses a 30-day month and the yearly one 365 days. Check " +
+          "whether your contract measures calendar months and counts planned maintenance.",
       },
       "downtime-cost": {
         name: "Cost of downtime calculator",
@@ -702,9 +700,8 @@ export const en: Dictionary = {
           "Turn minutes of downtime into money lost. Enter monthly revenue, the hours " +
           "your operation runs and how long the outage lasted.",
         intro:
-          "Every system outage ends in the same question: how much did we stop " +
-          "earning? With the month's revenue and the hours the operation sells in, " +
-          "the answer comes out in money, not guesswork.",
+          "With the month's revenue and the hours the operation sells in, you can " +
+          "estimate what an outage cost in money.",
         fields: [
           { key: "revenue", label: "Revenue in the month" },
           { key: "openHours", label: "Operating hours per month", hint: "24x7 is 720" },
@@ -717,7 +714,7 @@ export const en: Dictionary = {
         ],
         note:
           "This assumes revenue spread evenly across operating hours. Peak trading and " +
-          "contractual penalties sit outside it and usually weigh more.",
+          "contractual penalties are left out.",
       },
       "team-cost": {
         name: "Project team cost calculator",
@@ -727,11 +724,12 @@ export const en: Dictionary = {
           "Add up what a project team costs per week, per person and in total, from " +
           "team size, hourly cost and the planned duration.",
         intro:
-          "Software budgets disappear in two places, team size and duration. Move both " +
+          "What a project costs depends on how many people work on it and for " +
+          "how long. Move both " +
           "here before you promise a date.",
         fields: [
           { key: "people", label: "People on the team" },
-          { key: "cost", label: "Cost per hour", hint: "Use the result from the other calculator" },
+          { key: "cost", label: "Cost per hour", hint: "You can get it from the hourly cost calculator" },
           { key: "hours", label: "Hours per week, per person" },
           { key: "weeks", label: "Project weeks" },
         ],
@@ -746,14 +744,15 @@ export const en: Dictionary = {
       },
       estimate: {
         name: "PERT estimate calculator",
-        tagline: "Three guesses become a defensible range.",
+        tagline: "Three time estimates become a range.",
         metaTitle: "Three-point PERT estimate calculator",
         metaDescription:
           "Turn optimistic, likely and pessimistic cases into a PERT estimate with " +
           "standard deviation and confidence ranges. The classic three-point formula.",
         intro:
-          "A single number hides the risk. Three-point estimation weighs the likely " +
-          "case four times heavier than the extremes and hands back the deviation.",
+          "A one-number estimate does not show the risk. Three-point estimation " +
+          "weighs the likely " +
+          "case four times as much as the extremes and hands back the deviation.",
         fields: [
           { key: "optimistic", label: "Optimistic", hint: "Days, if everything goes right" },
           { key: "likely", label: "Likely" },
@@ -770,15 +769,15 @@ export const en: Dictionary = {
       },
       "hourly-cost": {
         name: "Developer hourly cost calculator",
-        tagline: "What an hour of engineering really costs.",
+        tagline: "What an hour of a developer's work costs.",
         metaTitle: "Developer hourly cost calculator",
         metaDescription:
           "Work out the real cost of an hour of development from monthly cost, " +
           "charges and productive hours. The maths runs in your browser.",
         intro:
           "Charges, leave and meetings land on the bill the same way. Divide the " +
-          "full monthly cost by the hours that became delivered work last month " +
-          "and you get the number that matters when you quote.",
+          "full monthly cost by the hours that became delivered work last month. " +
+          "That is the figure to use when you quote.",
         fields: [
           { key: "monthly", label: "Monthly cost", hint: "Salary or contract value" },
           { key: "charges", label: "Charges and benefits (%)", hint: "On the monthly value" },
@@ -801,9 +800,8 @@ export const en: Dictionary = {
           "Estimate what a manual process costs per month and per year from the " +
           "hours it takes and your team hourly cost, and what automating it frees up.",
         intro:
-          "Every manual process has a yearly price, and almost nobody has worked " +
-          "theirs out. Add up the hours it eats each month and multiply by the " +
-          "hourly cost of whoever sits down to do it.",
+          "Add up the hours the process takes each month and multiply by the " +
+          "hourly cost of whoever does it. The result is what it costs a year.",
         fields: [
           { key: "hours", label: "Hours per month on the process" },
           { key: "cost", label: "Cost per hour" },
@@ -896,7 +894,13 @@ export const en: Dictionary = {
       nextLabel: "Next screen",
     },
     about: { title: "About stellift" },
-    contact: { title: "Let's get the idea off the ground" },
+    contact: { title: "Tell us what you want to build" },
+    notFound: {
+      title: "This page does not exist",
+      text: "The address may have changed or been mistyped.",
+      home: "Go to the home page",
+      contact: "Talk to us",
+    },
     card: { action: "Talk about this" },
     footer: {
       description:

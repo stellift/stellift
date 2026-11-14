@@ -21,6 +21,12 @@ import {
 } from "@/app/[lang]/_landing/sections";
 import { lawyers } from "@/app/[lang]/landing-page-para-advogados/content";
 
+export function generateStaticParams() {
+  return [{ lang: landingLocale }];
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata(): Promise<Metadata> {
   if ((await lang()) !== landingLocale) return {};
   return landingMetadata(lawyers);

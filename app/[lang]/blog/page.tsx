@@ -24,16 +24,17 @@ export async function generateMetadata({
   if (!isLocale(lang)) return {};
   const dict = await getDictionary(lang);
   const path = blogPath(lang);
+  const hasPosts = publicEntries(lang).length > 0;
 
   return {
     metadataBase: new URL(siteUrl),
     title: dict.blog.metaTitle,
     description: dict.blog.metaDescription,
     robots: {
-      index: true,
+      index: hasPosts,
       follow: true,
       googleBot: {
-        index: true,
+        index: hasPosts,
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,

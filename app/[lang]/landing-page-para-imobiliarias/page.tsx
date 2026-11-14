@@ -22,6 +22,12 @@ import {
 import CreciSize from "@/app/[lang]/landing-page-para-imobiliarias/creci-size";
 import { realEstate } from "@/app/[lang]/landing-page-para-imobiliarias/content";
 
+export function generateStaticParams() {
+  return [{ lang: landingLocale }];
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata(): Promise<Metadata> {
   if ((await lang()) !== landingLocale) return {};
   return landingMetadata(realEstate);
@@ -83,9 +89,9 @@ function LaunchMust() {
             O rodapé de um lançamento
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ink-muted">
-            Num lançamento, estas quatro linhas não são detalhe. A lei dos
-            corretores proíbe anunciar imóvel em condomínio sem o número do registro
-            da incorporação (Lei 6.530/78, art. 20, V).
+            O que um anúncio de lançamento precisa mostrar ou deixar claro. A lei
+            dos corretores proíbe anunciar imóvel em condomínio sem o número do
+            registro da incorporação (Lei 6.530/78, art. 20, V).
           </p>
         </div>
         <dl className="grid-ruled lg:col-span-7">

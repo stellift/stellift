@@ -282,8 +282,7 @@ export default function ClinicDemo() {
                   Paulo.
                 </p>
                 <p>
-                  Atende só em consultório, com agenda espaçada para que cada consulta
-                  tenha o tempo de exame e de conversa que ela pede.
+                  Atende só em consultório, com intervalo entre as consultas para a agenda não atrasar.
                 </p>
               </div>
             </div>

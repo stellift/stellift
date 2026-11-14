@@ -1,3 +1,4 @@
+import { landingLocale, landingPath, landings } from "@/app/[lang]/_landing/registry";
 import { Cloud, Smartphone, Globe, type LucideIcon } from "lucide-react";
 import Slate from "@/app/[lang]/_components/slate";
 import type { Dictionary, ServiceCode } from "@/lib/i18n/types";
@@ -91,6 +92,30 @@ export default function Services({
             {dict.servicesExtra.note}
           </p>
         </div>
+
+        {dict.htmlLang === landingLocale ? (
+          <div className="reveal mt-16">
+            <div className="flex items-center gap-4">
+              <h3 className="eyebrow shrink-0">Landing pages por profissão</h3>
+              <span aria-hidden className="h-px flex-1 bg-line-soft" />
+            </div>
+            <ul className="mt-7 grid-ruled sm:grid-cols-2 lg:grid-cols-4">
+              {landings.map((niche) => (
+                <li key={niche.id} className="cell cell-link group">
+                  <span aria-hidden className="cell-mark" />
+                  <a href={landingPath(niche)} className="block h-full p-6 sm:p-7">
+                    <h4 className="text-[0.9375rem] font-medium leading-snug text-ink">
+                      {niche.card.name}
+                    </h4>
+                    <p className="mt-2.5 text-pretty text-sm leading-relaxed text-ink-muted">
+                      {niche.card.summary}
+                    </p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
     </section>
   );

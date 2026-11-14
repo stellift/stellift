@@ -4,18 +4,17 @@ import type { Niche } from "@/app/[lang]/_landing/types";
 export const lawyers: Niche = {
   id: "lawyers",
   slug: "landing-page-para-advogados",
-  metaTitle: "Landing page para advogados, dentro do Provimento 205",
+  metaTitle: "Landing page para advogados, de acordo com a OAB",
   metaDescription:
-    "Landing page para escritório de advocacia: sóbria, informativa e dentro do " +
-    "Provimento 205/2021 da OAB, com áreas de atuação, OAB à vista e SEO local.",
+    "Landing page para escritório de advocacia seguindo o Provimento 205/2021 da OAB: áreas de atuação, advogados com OAB à vista e SEO local.",
   title: "Landing page para advogados e escritórios",
   eyebrow: "Para advogados e escritórios",
   audience: "Advogados e sociedades de advogados",
   lead:
-    "Uma página sóbria e informativa, do jeito que o Provimento 205/2021 da OAB " +
-    "pede: o que o escritório faz, quem são os advogados e como falar com eles. " +
-    "Sem valor de honorários, sem promessa de resultado e sem lista de casos " +
-    "ganhos.",
+    "Uma página para quem procurou advogado no Google e quer saber se o " +
+    "escritório cuida do caso dele. Ela mostra as áreas de atuação, os " +
+    "advogados com a OAB e como entrar em contato. Valores e casos ganhos " +
+    "ficam de fora, porque o Provimento 205/2021 da OAB proíbe.",
   mailSubject: "Landing page para escritório de advocacia",
   card: {
     name: "Advogados e escritórios",
@@ -38,9 +37,7 @@ export const lawyers: Niche = {
   },
   questions: {
     title: "O que a pessoa quer saber antes de ligar",
-    lead:
-      "A página responde estas quatro coisas sem pressionar ninguém, que é o " +
-      "tom sóbrio que o provimento exige.",
+    lead: "A página responde estas quatro perguntas num tom sóbrio, como o provimento exige.",
     items: [
       {
         title: "Esse escritório cuida do meu tipo de caso?",
@@ -96,12 +93,12 @@ export const lawyers: Niche = {
     {
       x: 11,
       y: 72.7,
-      text: "Botão para agendar conversa, sem preço, sem gratuidade e sem desconto.",
+      text: "Botão para agendar conversa. Não há preço, gratuidade nem desconto.",
       source: "Prov. 205, art. 3º, I",
     },
   ],
   rules: {
-    title: "Dentro do Provimento 205/2021 da OAB",
+    title: "O que o Provimento 205/2021 da OAB pede",
     lead:
       "É a norma da OAB sobre publicidade e marketing jurídico, junto com o " +
       "capítulo de publicidade do Código de Ética e Disciplina. Cada item leva o " +
@@ -193,7 +190,7 @@ export const lawyers: Niche = {
       },
       {
         id: "best",
-        text: "Não há \"o melhor\", \"referência\" nem comparação com outros escritórios.",
+        text: 'Não há "o melhor", "referência" nem comparação com outros escritórios.',
         source: "Prov. 205, art. 3º, IV",
       },
       {
@@ -218,7 +215,7 @@ export const lawyers: Niche = {
   },
   seo: [
     {
-      title: "Busca, não anúncio ostensivo",
+      title: "Anúncio só para quem buscou",
       text:
         "O provimento permite comprar palavra-chave quando o anúncio responde a " +
         "uma busca que a própria pessoa começou. A página é o destino desse " +

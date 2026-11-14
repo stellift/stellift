@@ -593,12 +593,11 @@ export const ptBR: Dictionary = {
     text:
       "O sênior que desenha o sistema é o mesmo que escreve o código e " +
       "que opera ele em produção. Não tem camada de aprovação no meio, " +
-      "nem júnior aprendendo no seu projeto. A diferença é de " +
-      "responsabilidade, não de tamanho de equipe.",
+      "nem júnior aprendendo no seu projeto.",
   },
 
   mission: {
-    title: "Fazer software com amor",
+    title: "Como a gente trabalha",
     lead: "Quatro coisas que a gente leva a sério.",
     values: [
       {
@@ -627,10 +626,9 @@ export const ptBR: Dictionary = {
   talent: {
     title: "A gente entende o que a IA escreveu",
     lead:
-      "Os melhores talentos para dirigir IA são os que conseguem ler o que " +
-      "ela escreve. Os nossos têm contribuição aceita no V8 do Chrome, no " +
-      "Servo da Mozilla e no GHC de Haskell, e são eles que revisam o código " +
-      "antes de ele virar o seu sistema.",
+      "A gente usa IA para escrever código, e quem revisa esse código antes " +
+      "de ele ir para o seu sistema tem contribuição aceita no V8 do Chrome, " +
+      "no Servo da Mozilla e no GHC de Haskell.",
     team: {
       eyebrow: "Nosso time",
       title: "Esse é o time que vai trabalhar no seu projeto",
@@ -644,8 +642,8 @@ export const ptBR: Dictionary = {
   },
 
   contact: {
-    heading: "Vamos tirar a ideia do solo",
-    lead: "Escreva contando o que você quer construir.",
+    heading: "Conta o que você quer construir",
+    lead: "Uma descrição curta já serve para começar a conversa.",
     scarcity: "Poucos projetos por vez",
     channels: [
       { kind: "email", label: "E-mail", value: "ola@stellift.dev", href: "mailto:ola@stellift.dev" },
@@ -662,10 +660,9 @@ export const ptBR: Dictionary = {
   tools: {
     title: "As contas que vêm antes do orçamento",
     lead:
-      "Nenhuma delas é difícil, e é raro alguém ter feito antes de assinar. " +
-      "Aí o SLA vira surpresa, a hora sai mais cara que o combinado e o " +
-      "processo manual continua cobrando o ano inteiro. Rodam no seu " +
-      "navegador, sem cadastro.",
+      "São contas simples que costumam ficar para depois de assinar o " +
+      "contrato, quando o SLA já foi aceito e a hora já foi combinada. " +
+      "Rodam no seu navegador, sem cadastro.",
     cta: "Abrir ferramenta",
     backLabel: "Voltar para a stellift",
     allLabel: "Todas as ferramentas",
@@ -693,8 +690,8 @@ export const ptBR: Dictionary = {
           { key: "year", label: "Por ano (365 dias)" },
         ],
         note:
-          "A janela mensal usa mês de 30 dias e a anual, 365 dias. Contratos reais " +
-          "costumam medir por mês civil e descontar janelas de manutenção.",
+          "A janela mensal usa mês de 30 dias e a anual, 365 dias. Confira no seu " +
+          "contrato se a medição é por mês civil e se a manutenção programada conta.",
       },
       "downtime-cost": {
         name: "Quanto custa ficar fora do ar",
@@ -704,9 +701,8 @@ export const ptBR: Dictionary = {
           "Transforme minutos de indisponibilidade em prejuízo. Informe o faturamento " +
           "do mês, as horas em que a operação roda e a duração da queda.",
         intro:
-          "Toda queda de sistema termina na mesma pergunta: quanto a gente " +
-          "deixou de faturar? Com o faturamento do mês e as horas em que a operação " +
-          "vende, a resposta sai em reais, não em palpite.",
+          "Com o faturamento do mês e as horas em que a operação vende, dá para " +
+          "estimar em reais quanto uma queda custou.",
         fields: [
           { key: "revenue", label: "Faturamento no mês (R$)" },
           { key: "openHours", label: "Horas de operação por mês", hint: "24x7 dá 720" },
@@ -719,7 +715,7 @@ export const ptBR: Dictionary = {
         ],
         note:
           "A conta assume faturamento distribuído por igual nas horas de operação. " +
-          "Pico de venda e multa contratual ficam de fora e costumam pesar mais.",
+          "Pico de venda e multa contratual ficam de fora da conta.",
       },
       "team-cost": {
         name: "Custo de um time de projeto",
@@ -729,11 +725,11 @@ export const ptBR: Dictionary = {
           "Some o custo de um time de projeto por semana, por pessoa e no total, a " +
           "partir do tamanho do time, do custo-hora e da duração prevista.",
         intro:
-          "Orçamento de software some em dois lugares: no tamanho do time e na " +
-          "duração. Mexa nos dois aqui antes de prometer uma data.",
+          "O custo de um projeto depende de quantas pessoas trabalham nele e por " +
+          "quanto tempo. Mexa nos dois aqui antes de prometer uma data.",
         fields: [
           { key: "people", label: "Pessoas no time" },
-          { key: "cost", label: "Custo por hora (R$)", hint: "Use o resultado da outra calculadora" },
+          { key: "cost", label: "Custo por hora (R$)", hint: "Dá para tirar da calculadora de custo-hora" },
           { key: "hours", label: "Horas por semana, por pessoa" },
           { key: "weeks", label: "Semanas de projeto" },
         ],
@@ -748,13 +744,13 @@ export const ptBR: Dictionary = {
       },
       estimate: {
         name: "Estimativa de prazo (PERT)",
-        tagline: "Três palpites viram uma faixa defensável.",
+        tagline: "Três estimativas de prazo viram uma faixa.",
         metaTitle: "Calculadora de estimativa PERT de três pontos",
         metaDescription:
           "Converta cenário otimista, provável e pessimista em uma estimativa PERT " +
           "com desvio padrão e faixa de confiança. Fórmula clássica de três pontos.",
         intro:
-          "Um número só esconde o risco. A estimativa de três pontos pesa o cenário " +
+          "Uma estimativa de um número só não mostra o risco. A de três pontos pesa o cenário " +
           "provável quatro vezes mais que os extremos e devolve o desvio junto.",
         fields: [
           { key: "optimistic", label: "Otimista", hint: "Dias, se tudo der certo" },
@@ -772,7 +768,7 @@ export const ptBR: Dictionary = {
       },
       "hourly-cost": {
         name: "Custo-hora de desenvolvedor",
-        tagline: "O que uma hora de engenharia custa de verdade.",
+        tagline: "Quanto custa uma hora de trabalho de um desenvolvedor.",
         metaTitle: "Calculadora de custo-hora de desenvolvedor",
         metaDescription:
           "Calcule o custo real de uma hora de desenvolvimento a partir do salário " +
@@ -780,7 +776,7 @@ export const ptBR: Dictionary = {
         intro:
           "Encargos, férias e reunião entram na conta do mesmo jeito. Divida o " +
           "custo mensal cheio pelas horas que viraram trabalho entregue no mês " +
-          "passado e você chega no número que importa na hora de orçar.",
+          "passado. Esse é o valor para usar no orçamento.",
         fields: [
           { key: "monthly", label: "Custo mensal (R$)", hint: "Salário ou valor do contrato" },
           { key: "charges", label: "Encargos e benefícios (%)", hint: "Sobre o valor mensal" },
@@ -803,9 +799,8 @@ export const ptBR: Dictionary = {
           "Estime quanto um processo manual custa por mês e por ano a partir das " +
           "horas gastas e do custo-hora da equipe, e quanto sobra ao automatizá-lo.",
         intro:
-          "Todo processo manual tem um preço anual, e quase ninguém calculou o " +
-          "dele. Some as horas que ele consome por mês e multiplique pelo " +
-          "custo-hora de quem senta para fazer.",
+          "Some as horas que o processo consome por mês e multiplique pelo " +
+          "custo-hora de quem faz. O resultado é quanto ele custa por ano.",
         fields: [
           { key: "hours", label: "Horas por mês no processo" },
           { key: "cost", label: "Custo por hora (R$)" },
@@ -898,7 +893,13 @@ export const ptBR: Dictionary = {
       nextLabel: "Próxima tela",
     },
     about: { title: "A stellift" },
-    contact: { title: "Vamos tirar a ideia do solo" },
+    contact: { title: "Conta o que você quer construir" },
+    notFound: {
+      title: "Essa página não existe",
+      text: "O endereço pode ter mudado ou ter sido digitado errado.",
+      home: "Ir para a página inicial",
+      contact: "Falar com a gente",
+    },
     card: { action: "Falar sobre isso" },
     footer: {
       description:

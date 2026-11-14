@@ -4,7 +4,7 @@ import type { Niche } from "@/app/[lang]/_landing/types";
 export const doctors: Niche = {
   id: "doctors",
   slug: "landing-page-para-medicos",
-  metaTitle: "Landing page para médicos e clínicas, dentro do CFM",
+  metaTitle: "Landing page para médicos e clínicas, de acordo com o CFM",
   metaDescription:
     "Landing page para consultório e clínica médica: CRM e RQE no lugar certo, " +
     "valores e convênios à vista, agendamento pelo WhatsApp e SEO local.",
@@ -12,10 +12,10 @@ export const doctors: Niche = {
   eyebrow: "Para médicos e clínicas",
   audience: "Médicos e clínicas médicas",
   lead:
-    "Uma página feita para quem achou você no Google ou no Instagram e está " +
-    "decidindo se marca a consulta. Ela responde o que o paciente quer saber, " +
-    "mostra seu registro do jeito que a Resolução CFM 2.336/2023 pede e deixa o " +
-    "botão de agendar sempre à mão.",
+    "É a página que o paciente abre depois de achar você no Google ou no " +
+    "Instagram. Ali ele vê quem vai atender, onde fica o consultório e " +
+    "como marcar, e o valor da consulta se você quiser mostrar. O CRM e o " +
+    "RQE aparecem como a Resolução CFM 2.336/2023 manda.",
   mailSubject: "Landing page para consultório",
   card: {
     name: "Médicos e clínicas",
@@ -57,8 +57,7 @@ export const doctors: Niche = {
         title: "Onde fica?",
         text:
           "Endereço, mapa, estacionamento, acesso sem degraus e horário de " +
-          "atendimento. Detalhe que parece pequeno e faz o paciente desistir " +
-          "quando falta.",
+          "atendimento, para o paciente não precisar ligar para perguntar.",
       },
       {
         title: "Como eu marco?",
@@ -85,7 +84,7 @@ export const doctors: Niche = {
     {
       x: 56.4,
       y: 56.3,
-      text: "Nome, a palavra MÉDICA, CRM, especialidade e RQE na mesma linha de leitura.",
+      text: "Nome, a palavra MÉDICA, CRM, especialidade e RQE no mesmo bloco.",
       source: "art. 4º",
     },
     {
@@ -103,12 +102,12 @@ export const doctors: Niche = {
     {
       x: 10.9,
       y: 88.9,
-      text: "Dois caminhos: quem já decidiu agenda, quem ainda não decidiu lê os tratamentos.",
+      text: "Um botão para agendar e outro para ver os tratamentos antes.",
       source: null,
     },
   ],
   rules: {
-    title: "Dentro da Resolução CFM 2.336/2023",
+    title: "O que a Resolução CFM 2.336/2023 pede",
     lead:
       "É a norma de publicidade médica em vigor desde março de 2024. Cada item " +
       "abaixo leva o artigo de onde saiu.",
@@ -218,9 +217,7 @@ export const doctors: Niche = {
   seo: [
     {
       title: "Busca local",
-      text:
-        "Endereço, telefone e horário escritos igual ao seu Perfil da Empresa " +
-        "no Google, para os dois contarem a mesma história.",
+      text: "Endereço, telefone e horário escritos igual ao seu Perfil da Empresa no Google, para o buscador não achar dados diferentes nos dois lugares.",
     },
     {
       title: "Dados estruturados",
@@ -236,13 +233,11 @@ export const doctors: Niche = {
     },
     {
       title: "Rápida no celular",
-      text:
-        "A página é desenhada primeiro para o celular e testada em conexão " +
-        "lenta, que é onde ela costuma ser aberta pela primeira vez.",
+      text: "A página é desenhada primeiro para o celular e testada em conexão lenta.",
     },
   ],
   privacy: {
-    title: "Dado de saúde pede cuidado",
+    title: "O formulário não pergunta sobre saúde",
     text:
       "Para a LGPD, informação sobre saúde é dado pessoal sensível. Por isso o " +
       "contato pela página pede só nome e telefone, e não pergunta sintoma nem " +

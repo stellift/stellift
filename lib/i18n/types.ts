@@ -181,6 +181,7 @@ export type Dictionary = {
     };
     about: { title: string };
     contact: { title: string };
+    notFound: { title: string; text: string; home: string; contact: string };
     card: { action: string };
     footer: {
       description: string;

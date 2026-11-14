@@ -21,8 +21,8 @@ function resolveSiteUrl() {
 
 export const siteUrl = resolveSiteUrl();
 
-export function isLocale(value: string): value is Locale {
-  return (locales as readonly string[]).includes(value);
+export function isLocale(value: string | undefined): value is Locale {
+  return value !== undefined && (locales as readonly string[]).includes(value);
 }
 
 export function localizedPath(locale: Locale, hash = "") {

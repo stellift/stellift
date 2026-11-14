@@ -169,9 +169,7 @@ export default function LaunchDemo() {
               <p className="text-xs uppercase tracking-[0.26em] text-clay">Planta</p>
               <h2 className="mt-5 font-serif text-5xl leading-tight text-ink">Unidade tipo</h2>
               <p className="mt-6 text-base leading-relaxed text-ink-soft">
-                As medidas desta página saem do memorial descritivo. Num anúncio,
-                o que está escrito vira parte da oferta, então nada aqui é
-                arredondado para cima.
+                Medidas conforme o memorial descritivo registrado no cartório.
               </p>
             </div>
             <figure className="lg:col-span-8">

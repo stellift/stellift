@@ -21,6 +21,12 @@ import {
 } from "@/app/[lang]/_landing/sections";
 import { dentists } from "@/app/[lang]/landing-page-para-dentistas/content";
 
+export function generateStaticParams() {
+  return [{ lang: landingLocale }];
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata(): Promise<Metadata> {
   if ((await lang()) !== landingLocale) return {};
   return landingMetadata(dentists);
@@ -96,7 +102,7 @@ function BeforeAfterConflict() {
     <section aria-labelledby="conflict-title" className="border-b border-line">
       <div className="shell py-16 sm:py-20">
         <h2 id="conflict-title" className="max-w-2xl font-serif text-3xl leading-tight text-ink sm:text-4xl">
-          Antes e depois: as duas normas não dizem a mesma coisa
+          Antes e depois: o Código e a Resolução 196 dizem coisas diferentes
         </h2>
         <div className="grid-ruled mt-10 lg:grid-cols-2">
           <div className="cell p-7 sm:p-8">

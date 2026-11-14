@@ -6,16 +6,16 @@ export const dentists: Niche = {
   slug: "landing-page-para-dentistas",
   metaTitle: "Landing page para dentistas e clínicas odontológicas",
   metaDescription:
-    "Landing page para dentista e clínica odontológica dentro do Código de Ética " +
-    "do CFO: CRO e especialidades à vista, responsável técnico e SEO local.",
+    "Landing page para dentista e clínica odontológica seguindo o Código de Ética do CFO: CRO e especialidades à vista, responsável técnico e SEO local.",
   title: "Landing page para dentistas e clínicas odontológicas",
   eyebrow: "Para dentistas e clínicas",
   audience: "Cirurgiões-dentistas e clínicas odontológicas",
   lead:
-    "Uma página que apresenta a equipe e os tratamentos do jeito que o Código de " +
-    "Ética Odontológica pede: CRO de cada dentista, especialidade só onde há " +
-    "registro e o responsável técnico da clínica. Sem preço, sem avaliação " +
-    "grátis e sem promessa de resultado.",
+    "É a página da clínica para quem achou vocês no Google. Ela mostra " +
+    "cada dentista com o CRO e a especialidade, os tratamentos que cada " +
+    "um faz e o responsável técnico, como pede o Código de Ética " +
+    "Odontológica. Preço e avaliação grátis ficam de fora, porque o " +
+    "Código proíbe.",
   mailSubject: "Landing page para clínica odontológica",
   card: {
     name: "Dentistas e clínicas odontológicas",
@@ -97,7 +97,7 @@ export const dentists: Niche = {
     },
   ],
   rules: {
-    title: "Dentro do Código de Ética Odontológica",
+    title: "O que o Código de Ética Odontológica pede",
     lead:
       "O Código de Ética Odontológica (Resolução CFO-118/2012) tem um capítulo " +
       "sobre anúncio e publicidade, alterado pela Resolução CFO-271/2025, e a " +
@@ -105,8 +105,7 @@ export const dentists: Niche = {
       "saiu.",
     includes: [
       {
-        text:
-          "Nome e número de inscrição no CRO, com a profissão: cirurgião-dentista.",
+        text: "Nome e número de inscrição no CRO, com a profissão: cirurgião-dentista.",
         source: "CEO, art. 43",
       },
       {
@@ -130,7 +129,7 @@ export const dentists: Niche = {
         source: "CEO, art. 44, I",
       },
       {
-        text: "Consulta ou diagnóstico gratuito ou \"sem compromisso\".",
+        text: 'Consulta ou diagnóstico gratuito ou "sem compromisso".',
         source: "CEO, art. 20, IX",
       },
       {
@@ -138,7 +137,7 @@ export const dentists: Niche = {
         source: "CEO, art. 24",
       },
       {
-        text: "A palavra \"popular\".",
+        text: 'A palavra "popular".',
         source: "CEO, art. 44, VII",
       },
       {
@@ -191,12 +190,12 @@ export const dentists: Niche = {
       },
       {
         id: "free",
-        text: "Não há \"avaliação gratuita\" nem \"consulta sem compromisso\".",
+        text: 'Não há "avaliação gratuita" nem "consulta sem compromisso".',
         source: "CEO, art. 20, IX",
       },
       {
         id: "popular",
-        text: "A palavra \"popular\" não aparece.",
+        text: 'A palavra "popular" não aparece.',
         source: "CEO, art. 44, VII",
       },
       {
@@ -231,13 +230,11 @@ export const dentists: Niche = {
     },
     {
       title: "Rápida no celular",
-      text:
-        "A página é desenhada primeiro para o celular e testada em conexão " +
-        "lenta, que é onde ela costuma ser aberta pela primeira vez.",
+      text: "A página é desenhada primeiro para o celular e testada em conexão lenta.",
     },
   ],
   privacy: {
-    title: "Dado de saúde pede cuidado",
+    title: "O formulário não pergunta sobre saúde",
     text:
       "Para a LGPD, informação sobre saúde é dado pessoal sensível. O contato " +
       "pela página pede só nome e telefone, e não pergunta o que está doendo. " +
@@ -295,7 +292,7 @@ export const dentists: Niche = {
     {
       question: "Posso mostrar antes e depois?",
       answer:
-        "Com cuidado. O Código ainda lista \"antes e depois\" entre as infrações " +
+        'Com cuidado. O Código ainda lista "antes e depois" entre as infrações ' +
         "(art. 44, I e XII), e a Resolução CFO-196/2019 autorizou imagens do " +
         "diagnóstico e da conclusão do tratamento, feitas pelo próprio dentista, " +
         "com termo de consentimento do paciente (art. 2º). Vale consultar o seu " +

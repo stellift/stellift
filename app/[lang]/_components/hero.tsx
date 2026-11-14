@@ -20,7 +20,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             style={{ "--line": 0 } as React.CSSProperties}
           >
             <span>{dict.ui.hero.title}</span>
-          </span>
+          </span>{" "}
           <span
             className="hero-line line-mask"
             style={{ "--line": 1 } as React.CSSProperties}

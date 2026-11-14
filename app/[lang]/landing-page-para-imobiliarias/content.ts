@@ -12,9 +12,9 @@ export const realEstate: Niche = {
   eyebrow: "Para imobiliárias, corretores e incorporadoras",
   audience: "Imobiliárias, corretores de imóveis e incorporadoras",
   lead:
-    "Uma página por empreendimento ou por imóvel, feita para quem pesquisou o " +
-    "bairro e quer ver planta, ficha técnica e como visitar. Com o CRECI e o " +
-    "registro da incorporação do jeito que a lei e o COFECI pedem.",
+    "Uma página por empreendimento ou por imóvel, para quem pesquisou o " +
+    "bairro e quer ver a planta, a ficha técnica e como visitar. O CRECI " +
+    "e o registro da incorporação aparecem como a lei e o COFECI exigem.",
   mailSubject: "Landing page para imobiliária",
   card: {
     name: "Imobiliárias e lançamentos",
@@ -49,8 +49,7 @@ export const realEstate: Niche = {
       },
       {
         title: "Onde fica?",
-        text:
-          "Endereço do terreno e do decorado, com mapa e horário de visita.",
+        text: "Endereço do terreno e do decorado, com mapa e horário de visita.",
       },
       {
         title: "Quem constrói e quem vende?",
@@ -93,7 +92,7 @@ export const realEstate: Niche = {
     },
   ],
   rules: {
-    title: "Dentro da lei, do COFECI e do CDC",
+    title: "O que a lei, o COFECI e o CDC pedem",
     lead:
       "Anúncio de imóvel tem regra em quatro lugares: a lei dos corretores, o " +
       "decreto que a regulamenta, as resoluções do COFECI e, para lançamento, " +
@@ -111,7 +110,7 @@ export const realEstate: Niche = {
       },
       {
         text:
-          "Corretor pessoa física com a expressão \"corretor de imóveis\" e o " +
+          'Corretor pessoa física com a expressão "corretor de imóveis" e o ' +
           "número do CRECI depois do nome.",
         source: "Res. COFECI 1.065/07, art. 2º",
       },
@@ -144,11 +143,7 @@ export const realEstate: Niche = {
         source: "CDC, art. 37, §1º e §3º",
       },
     ],
-    note:
-      "Toda informação precisa de um anúncio passa a fazer parte da oferta e do " +
-      "contrato (CDC, art. 30). Por isso metragem, vagas e prazo de entrega " +
-      "saem do memorial e do contrato, e você aprova cada número antes de " +
-      "publicar.",
+    note: "Pelo CDC, o que o anúncio informa com precisão vale como oferta e entra no contrato (art. 30). Por isso metragem, vagas e prazo de entrega saem do memorial e do contrato, e você aprova cada número antes de publicar.",
   },
   checklist: {
     lead:

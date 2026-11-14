@@ -37,13 +37,18 @@ export default function Checklist({
                   type="checkbox"
                   checked={Boolean(checked[item.id])}
                   onChange={(event) =>
-                    setChecked((prev) => ({ ...prev, [item.id]: event.target.checked }))
+                    setChecked((prev) => ({
+                      ...prev,
+                      [item.id]: event.target.checked,
+                    }))
                   }
                   className="mt-1 size-4 shrink-0 accent-(--color-accent)"
                 />
                 <span className="text-sm leading-relaxed text-ink">
                   {item.text}{" "}
-                  <span className="font-mono text-[11px] text-ink-faint">{item.source}</span>
+                  <span className="font-mono text-[11px] text-ink-faint">
+                    {item.source}
+                  </span>
                 </span>
               </label>
             </li>
@@ -59,14 +64,16 @@ export default function Checklist({
           </p>
           <p className="mt-4 text-sm leading-relaxed text-ink-muted">
             {done === items.length
-              ? "Tudo em ordem nestes pontos. Se a página ainda não traz pacientes, o problema é outro, e a gente pode olhar junto."
+              ? "Nesses pontos está tudo certo. Se mesmo assim a página não traz contatos, dá para olhar junto o que mais pode estar faltando."
               : done === 0
                 ? "Marque o que a sua página atual já faz."
                 : `Faltam ${missing.length}. O e-mail abaixo já vai com a lista do que faltou.`}
           </p>
         </div>
         <a href={mailto} className="btn btn-outline">
-          {done === items.length ? "Conversar sobre a página" : "Pedir ajuste da página"}
+          {done === items.length
+            ? "Conversar sobre a página"
+            : "Pedir ajuste da página"}
         </a>
       </div>
     </div>

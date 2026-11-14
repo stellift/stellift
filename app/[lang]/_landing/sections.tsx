@@ -302,7 +302,7 @@ export function Seo({ niche }: { niche: Niche }) {
           id="seo-title"
           className="max-w-2xl font-serif text-3xl leading-tight text-ink sm:text-4xl"
         >
-          Feita para aparecer na busca da sua cidade
+          Como a página aparece no Google
         </h2>
         <ul className="grid-ruled mt-10 sm:grid-cols-2 lg:grid-cols-4">
           {niche.seo.map((item) => (
