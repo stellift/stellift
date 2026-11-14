@@ -21,11 +21,11 @@ export const en: Dictionary = {
 
   nav: [
     { label: "Services", href: "#services" },
-    { label: "Contributions", href: "#clients" },
-    { label: "Our talent", href: "#talent" },
     { label: "Portfolio", href: "#portfolio" },
-    { label: "Tools", href: "#tools" },
+    { label: "Contributions", href: "#clients" },
     { label: "About", href: "#about" },
+    { label: "Tools", href: "#tools" },
+    { label: "Our talent", href: "#talent" },
     { label: "Mission", href: "#mission" },
     { label: "Contact", href: "#contact" },
   ],
@@ -378,7 +378,147 @@ export const en: Dictionary = {
         "until the delivery is approved.",
       stack: "Elixir, Phoenix, Next.js, PostgreSQL, React Native, Rust",
       shot: "/shots/craftance.webp",
-    },
+      detail: {
+        summary:
+          "A marketplace with two sides. People who need a project done post " +
+          "a brief and get proposals from freelancers, and developers can " +
+          "also sell templates, scripts and ready-made code. On project " +
+          "work, the client deposits the amount for each milestone, the " +
+          "money is held, and it only goes to the freelancer once the " +
+          "delivery is approved.",
+        gallery: [
+          {
+            src: "/shots/craftance/01.webp",
+            caption:
+              "Home page.",
+          },
+          {
+            src: "/shots/craftance/02.webp",
+            caption:
+              "How it works, from the client's side and the freelancer's.",
+          },
+          {
+            src: "/shots/craftance/03.webp",
+            caption:
+              "Open projects on the home page.",
+          },
+          {
+            src: "/shots/craftance/04.webp",
+            caption:
+              "Project list, filtered by category.",
+          },
+          {
+            src: "/shots/craftance/05.webp",
+            caption:
+              "A client's brief, with budget, required skills and number of " +
+              "proposals.",
+          },
+          {
+            src: "/shots/craftance/06.webp",
+            caption:
+              "Freelancer list, with hourly rate and availability.",
+          },
+          {
+            src: "/shots/craftance/07.webp",
+            caption:
+              "A freelancer profile, with the services on offer.",
+          },
+          {
+            src: "/shots/craftance/08.webp",
+            caption:
+              "A service sold in packages, with fixed price and delivery time.",
+          },
+          {
+            src: "/shots/craftance/09.webp",
+            caption:
+              "Catalogue of templates and scripts, filtered by category.",
+          },
+          {
+            src: "/shots/craftance/10.webp",
+            caption:
+              "A product page, with price, version and license.",
+          },
+          {
+            src: "/shots/craftance/11.webp",
+            caption:
+              "A conversation between client and freelancer.",
+          },
+          {
+            src: "/shots/craftance/12.webp",
+            caption:
+              "A contract split into milestones: one already paid and one " +
+              "delivered, waiting for approval.",
+          },
+          {
+            src: "/shots/craftance/13.webp",
+            caption:
+              "A freelancer's balance, after the platform commission.",
+          },
+          {
+            src: "/shots/craftance/14.webp",
+            caption:
+              "Cleanup of AI-written code.",
+          },
+          {
+            src: "/shots/craftance/15.webp",
+            caption:
+              "Kinds of problem the AI cleanup covers.",
+          },
+        ],
+        facts: [
+          { label: "Backend", value: "Elixir and Phoenix, with Oban for queues" },
+          { label: "Web", value: "Next.js" },
+          { label: "Apps", value: "Expo on mobile and Rust with Slint on desktop" },
+          { label: "Payments", value: "Stripe Connect for cards and payouts, Mercado Pago for Pix and boleto" },
+        ],
+        highlights: [
+          {
+            title: "Money held per milestone",
+            text:
+              "The contract is split into milestones with an amount and a " +
+              "due date. The client deposits each one, the freelancer " +
+              "delivers, and the money is only released after approval. The " +
+              "10% commission comes out of the freelancer's share.",
+          },
+          {
+            title: "Its own ledger",
+            text:
+              "Every deposit, release and refund is a double-entry posting. " +
+              "A daily job compares each freelancer's ledger balance with " +
+              "their Stripe balance.",
+          },
+          {
+            title: "Pix and boleto",
+            text:
+              "Besides cards through Stripe, checkout takes Pix and boleto " +
+              "through Mercado Pago. When a webhook arrives, the system " +
+              "looks the payment up again on the API before marking it paid.",
+          },
+          {
+            title: "Selling ready-made code",
+            text:
+              "Templates and scripts are sold with a license and an " +
+              "activation key, and downloads go through a temporary link.",
+          },
+          {
+            title: "Cleaning up AI-written code",
+            text:
+              "The client points at a repository and a scan lists the " +
+              "problems by file and line. Each kind of problem becomes a " +
+              "batch with a fixed price. On delivery the scan runs again, " +
+              "and if the problems are gone without new ones of equal or " +
+              "higher severity, payment is released without anyone having to " +
+              "approve it.",
+          },
+          {
+            title: "Real-time conversations",
+            text:
+              "Messages and notifications arrive instantly over Phoenix " +
+              "channels. There is also a native desktop client, written in " +
+              "Rust, just for conversations.",
+          },
+        ],
+      },    },
     {
       name: "Neohor",
       tags: ["web", "ecommerce"],
@@ -491,14 +631,15 @@ export const en: Dictionary = {
       "Ours have landed contributions in Chrome's V8, Mozilla's Servo and " +
       "Haskell's GHC, and they are the ones reviewing the code before it " +
       "becomes your system.",
-    hiring: {
-      eyebrow: "Work with us",
-      title: "We are looking for people like that",
+    team: {
+      eyebrow: "Our team",
+      title: "These are the people who will work on your project",
       text:
-        "If you work on compilers, runtimes, databases or systems that cannot " +
-        "go down, send us your GitHub and tell us what you have worked on.",
-      cta: "Send my GitHub",
-      subject: "I want to work at stellift",
+        "People who have worked on compilers, runtimes, databases and " +
+        "systems that cannot go down. Tell us what you need to build and " +
+        "we will reply with who on the team fits it.",
+      cta: "Talk to the team",
+      subject: "I want to talk to the stellift team",
     },
   },
 

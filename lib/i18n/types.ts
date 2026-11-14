@@ -80,7 +80,7 @@ export type Dictionary = {
   talent: {
     title: string;
     lead: string;
-    hiring: {
+    team: {
       eyebrow: string;
       title: string;
       text: string;
