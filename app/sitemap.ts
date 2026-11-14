@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales, siteUrl } from "@/lib/i18n/config";
 import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
 import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
+import * as doctors from "@/app/[lang]/[slug]/_pages/doctors/data";
 import {
   blogPath,
   postPath,
@@ -74,6 +75,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/${doctors.locale}/${doctors.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
     },
   ];
 }
