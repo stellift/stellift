@@ -147,77 +147,84 @@ export const ptBR: Dictionary = {
       shot: "/shots/pivenda.webp",
       detail: {
         summary:
-          "Loja de material de construção vende por saco, por metro quadrado " +
-          "e por quilo, e fia para cliente conhecido. O Pivenda roda na " +
-          "máquina do caixa e guarda tudo lá. Se a internet cair, a loja " +
-          "continua vendendo.",
+          "Feito para loja de material de construção, onde o cimento sai por " +
+          "saco, o piso por metro quadrado e o prego por quilo, e onde " +
+          "cliente conhecido compra fiado. Roda no computador do caixa e " +
+          "guarda os dados ali mesmo, então a loja continua vendendo quando " +
+          "a internet cai.",
         ctaLabel: "Abrir a demonstração",
         gallery: [
           {
             src: "/shots/pivenda/01.webp",
-            caption: "Venda aberta: busca por nome, SKU ou código de barras.",
+            caption:
+              "Venda aberta. Dá para buscar o produto pelo nome, pelo SKU ou " +
+              "pelo código de barras.",
           },
           {
             src: "/shots/pivenda/02.webp",
             caption:
-              "Fechamento com mais de uma forma de pagamento na mesma venda.",
+              "Fechamento de uma venda paga com mais de uma forma de " +
+              "pagamento.",
           },
           {
             src: "/shots/pivenda/03.webp",
             caption:
-              "Relatório do período, com quebra por forma de pagamento.",
+              "Relatório do período, separado por forma de pagamento.",
           },
           {
             src: "/shots/pivenda/04.webp",
-            caption: "Produto cadastrado na unidade do setor, com estoque mínimo.",
+            caption:
+              "Cadastro de produto na unidade que a loja usa, com estoque " +
+              "mínimo.",
           },
         ],
         facts: [
           { label: "Onde roda", value: "Linux, Windows, macOS e FreeBSD" },
-          { label: "Base", value: "C++20, Qt6 e SQLite na máquina da loja" },
-          { label: "Internet", value: "Opcional. A loja vende offline" },
+          { label: "Base", value: "C++20, Qt6 e SQLite, no computador da loja" },
+          { label: "Internet", value: "Não é obrigatória" },
           { label: "Fiscal", value: "NFC-e, NFS-e e CT-e pela Focus NFe" },
         ],
         highlights: [
           {
-            title: "Cobra na própria tela",
+            title: "Pix e maquininha no caixa",
             text:
-              "QR do Pix no caixa, maquininha Stone chamada pelo serial do " +
-              "aparelho, boleto pelo Asaas. Venda que não fecha estorna " +
-              "sozinha.",
+              "O QR do Pix aparece na tela do caixa, a maquininha Stone é " +
+              "acionada pelo número de série e o boleto sai pelo Asaas. Se o " +
+              "pagamento não fecha, o estorno é feito automaticamente.",
           },
           {
-            title: "Pedido que chega pelo WhatsApp",
+            title: "Pedidos pelo WhatsApp",
             text:
-              "A mensagem do cliente chega no caixa já virada em itens do " +
-              "catálogo, com o que ficou duvidoso marcado. Quem aceita é o " +
-              "caixa.",
+              "Quando o cliente manda a lista pelo WhatsApp, o sistema " +
+              "converte a mensagem em itens do catálogo e marca os que " +
+              "ficaram em dúvida. O caixa revisa e confirma.",
           },
           {
             title: "Assistente de obra",
             text:
-              "Digite \"revestir 20m² de piso\" e ele sugere produto e " +
-              "quantidade. É um motor local: não usa internet nem cobra por " +
-              "consulta.",
+              "O vendedor digita algo como \"revestir 20m² de piso\" e " +
+              "recebe uma sugestão de produto e quantidade. Roda no próprio " +
+              "computador, sem internet e sem custo por consulta.",
           },
           {
-            title: "O celular vira leitor",
+            title: "Celular como leitor de código de barras",
             text:
-              "O app escaneia o código de barras e o item entra na venda que " +
-              "está aberta no caixa, pela Wi-Fi da loja.",
+              "Pelo app, o vendedor lê o código no celular e o item entra na " +
+              "venda aberta no caixa, pela Wi-Fi da loja.",
           },
           {
-            title: "Pix confirmado em 12 ms",
+            title: "Confirmação do Pix em 12 ms",
             text:
-              "Com o backend ligado, a confirmação chega por webhook. Doze " +
-              "milissegundos do aviso até a tela do caixa, medido ponta a " +
-              "ponta.",
+              "Com o backend ligado, o aviso de pagamento chega por webhook. " +
+              "Medimos 12 milissegundos entre o aviso e a confirmação " +
+              "aparecer na tela do caixa.",
           },
           {
             title: "Balança na porta serial",
             text:
-              "Lê o peso direto do equipamento. O padrão é configurável " +
-              "porque Toledo, Filizola, Urano e Micheletti não falam igual.",
+              "O peso vem direto da balança. Toledo, Filizola, Urano e " +
+              "Micheletti mandam os dados em formatos diferentes, por isso o " +
+              "formato é configurável.",
           },
         ],
       },
@@ -227,104 +234,120 @@ export const ptBR: Dictionary = {
       tags: ["web"],
       role: "Projeto, código e operação",
       text:
-        "Plataforma de doação com taxa zero para ONGs verificadas. Aceita " +
-        "Pix, cartão e doação mensal em várias moedas, e além de dinheiro " +
-        "recebe livros, computadores e alimentos. Também paga exames e " +
-        "consultas em clínicas parceiras para quem foi encaminhado por uma ONG.",
+        "Plataforma de doações para ONGs verificadas, sem taxa da " +
+        "plataforma. Aceita Pix, cartão e doação mensal, em mais de uma " +
+        "moeda, e também recebe livros, computadores e alimentos. Tem ainda " +
+        "um módulo que paga exames e consultas em clínicas parceiras para " +
+        "pacientes encaminhados por ONGs.",
       stack: "Elixir, Phoenix, PostgreSQL, Nuxt, Vue, Reka UI, Valibot, Caddy",
       shot: "/shots/charita.webp",
       detail: {
         summary:
-          "A taxa da plataforma não é um campo zerado: é uma conta contábil " +
-          "que nunca recebeu um lançamento. Todo movimento de dinheiro é " +
-          "partida dobrada, e o banco de dados recusa alterar ou apagar " +
-          "qualquer registro. A página de transparência é o livro-caixa lido " +
-          "como está.",
+          "A Charita não cobra taxa das campanhas, e dá para conferir isso " +
+          "na contabilidade: existe uma conta para a taxa da plataforma e " +
+          "ela nunca recebeu um lançamento. Todo dinheiro que entra ou sai é " +
+          "registrado em partidas dobradas, e o banco de dados não deixa " +
+          "alterar nem apagar registros. A página de transparência mostra " +
+          "esse livro-caixa diretamente, sem números digitados à mão.",
         gallery: [
           {
             src: "/shots/charita/01.webp",
             caption:
-              "Campanhas abertas, com busca por causa e por quanto você quer doar.",
+              "Lista de campanhas. Dá para filtrar por causa e informar " +
+              "quanto você quer doar.",
           },
           {
             src: "/shots/charita/02.webp",
-            caption: "Página da campanha: arrecadado, meta e taxa de 0,00%.",
+            caption:
+              "Página de uma campanha, com o valor arrecadado, a meta e a " +
+              "taxa da plataforma.",
           },
           {
             src: "/shots/charita/03.webp",
-            caption: "Doação por Pix: QR e copia e cola, confirmação por webhook.",
+            caption:
+              "Doação por Pix, com QR code e código copia e cola.",
           },
           {
             src: "/shots/charita/04.webp",
             caption:
-              "Transparência: o extrato soma zero em cada moeda, por regra do banco.",
+              "Página de transparência. O extrato fecha em zero em cada moeda.",
           },
           {
             src: "/shots/charita/05.webp",
-            caption: "Números da página inicial, calculados do livro-caixa.",
+            caption:
+              "Números da página inicial, calculados a partir do livro-caixa.",
           },
           {
             src: "/shots/charita/06.webp",
-            caption: "Pedidos de livros por prateleira, país de envio e idioma.",
+            caption:
+              "Pedidos de livros, com filtro por assunto, país de envio e " +
+              "idioma.",
           },
           {
             src: "/shots/charita/07.webp",
-            caption: "Exames e consultas com preço fechado e código SIGTAP.",
+            caption:
+              "Exames e consultas oferecidos por clínicas, com preço e " +
+              "código SIGTAP.",
           },
           {
             src: "/shots/charita/08.webp",
             caption:
-              "Fila do time: organização, campanha e conta de saque esperando decisão.",
+              "Fila do time, com uma ONG, uma campanha e uma conta de saque " +
+              "esperando aprovação.",
           },
         ],
         facts: [
-          { label: "API", value: "Elixir e Phoenix, só JSON" },
-          { label: "Front", value: "Nuxt, que é o único que fala com a API" },
-          { label: "Pagamento", value: "Woovi no Pix, Stripe no cartão, Asaas no repasse" },
+          { label: "API", value: "Elixir e Phoenix" },
+          { label: "Front", value: "Nuxt. O navegador não fala direto com a API" },
+          { label: "Pagamentos", value: "Woovi para Pix, Stripe para cartão e Asaas para repasses" },
           { label: "Idiomas", value: "Português, inglês e espanhol" },
         ],
         highlights: [
           {
-            title: "Dinheiro só entra, nunca muda",
+            title: "Registros que não podem ser alterados",
             text:
-              "Cada movimento é partida dobrada e soma zero. Um gatilho no " +
-              "Postgres recusa update e delete. Estorno é um lançamento novo " +
-              "de sinal contrário, e o original continua lá.",
+              "Cada movimentação de dinheiro é registrada em partidas " +
+              "dobradas. Um gatilho no Postgres bloqueia update e delete, " +
+              "então um estorno entra como um lançamento novo, com o sinal " +
+              "invertido.",
           },
           {
-            title: "Campanha só por convite",
+            title: "Campanhas só por convite",
             text:
-              "Plataforma de doação aberta a qualquer um vira canal de lavagem. " +
-              "O time verifica a ONG e manda um convite de uso único, guardado " +
-              "só como hash.",
+              "Uma ONG só abre campanha depois que o time verifica a " +
+              "organização e manda um convite. O link vale uma vez e fica " +
+              "guardado apenas como hash. É uma forma de dificultar o uso da " +
+              "plataforma para lavar dinheiro.",
           },
           {
-            title: "Conferência de quem recebe",
+            title: "Verificação das ONGs",
             text:
-              "A ONG passa pelo registro de empresas e pelas listas públicas " +
-              "de sanções e de pessoas politicamente expostas, incluindo quem " +
-              "dirige a organização.",
+              "Antes da aprovação, o sistema consulta o registro de empresas " +
+              "e as listas públicas de sanções e de pessoas politicamente " +
+              "expostas, pelo nome da organização e pelo nome de quem a " +
+              "dirige.",
           },
           {
-            title: "Gateway é um adaptador",
+            title: "Gateways de pagamento trocáveis",
             text:
-              "Woovi, Stripe e Asaas ficam atrás de uma porta do domínio e " +
-              "passam pela mesma suíte de contrato. Trocar de gateway é " +
-              "configuração.",
+              "Woovi, Stripe e Asaas ficam atrás de uma interface própria e " +
+              "passam pelos mesmos testes de contrato. Trocar de gateway é " +
+              "uma mudança de configuração.",
           },
           {
-            title: "Livro não é dinheiro",
+            title: "Doação de livros, computadores e alimentos",
             text:
-              "Doação de livro, computador ou alimento tem histórico próprio e " +
-              "nunca entra no livro-caixa. O endereço da ONG só aparece para " +
-              "o doador depois que a oferta é aceita.",
+              "Essas doações têm um histórico separado e ficam fora da " +
+              "contabilidade em dinheiro. O endereço da ONG só é mostrado ao " +
+              "doador depois que ela aceita a oferta.",
           },
           {
-            title: "Paga a conta, não promete a próxima",
+            title: "Pagamento de exames e consultas",
             text:
-              "O módulo de saúde quita uma conta que a clínica já emitiu. O " +
-              "paciente é só um código da ONG que encaminhou, sem nome nem " +
-              "documento.",
+              "O módulo de saúde paga, com o dinheiro de uma campanha, uma " +
+              "conta que a clínica já emitiu. O paciente aparece só como um " +
+              "código definido pela ONG que fez o encaminhamento, sem nome " +
+              "nem documento.",
           },
         ],
       },

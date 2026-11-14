@@ -149,76 +149,85 @@ export const en: Dictionary = {
       shot: "/shots/pivenda.webp",
       detail: {
         summary:
-          "A builder's merchant sells by the bag, by the square metre and by " +
-          "the kilo, and gives credit to regulars. Pivenda runs on the till " +
-          "machine and keeps everything there. If the line drops, the shop " +
-          "keeps selling.",
+          "Built for building supply stores, where cement is sold by the " +
+          "bag, tiles by the square metre and nails by the kilo, and regular " +
+          "customers buy on credit. It runs on the till computer and keeps " +
+          "the data there, so the store keeps selling when the internet goes " +
+          "down.",
         ctaLabel: "Open the demo",
         gallery: [
           {
             src: "/shots/pivenda/01.webp",
-            caption: "A sale in progress: search by name, SKU or barcode.",
+            caption:
+              "A sale in progress. Products can be found by name, SKU or " +
+              "barcode.",
           },
           {
             src: "/shots/pivenda/02.webp",
-            caption: "Checkout with more than one payment method on one sale.",
+            caption:
+              "Closing a sale paid with more than one payment method.",
           },
           {
             src: "/shots/pivenda/03.webp",
-            caption: "Period report, broken down by payment method.",
+            caption:
+              "Report for the period, split by payment method.",
           },
           {
             src: "/shots/pivenda/04.webp",
-            caption: "A product filed in the trade's unit, with minimum stock.",
+            caption:
+              "A product set up in the unit the store sells it in, with " +
+              "minimum stock.",
           },
         ],
         facts: [
           { label: "Runs on", value: "Linux, Windows, macOS and FreeBSD" },
-          { label: "Built on", value: "C++20, Qt6 and SQLite on the shop machine" },
-          { label: "Network", value: "Optional. The shop sells offline" },
+          { label: "Built on", value: "C++20, Qt6 and SQLite, on the store computer" },
+          { label: "Internet", value: "Not required" },
           { label: "Tax documents", value: "NFC-e, NFS-e and CT-e via Focus NFe" },
         ],
         highlights: [
           {
-            title: "It charges on the same screen",
+            title: "Pix and card machine at the till",
             text:
-              "A Pix QR code at the till, a Stone card machine called by its " +
-              "serial number, bank slips through Asaas. A sale that does not " +
-              "close refunds itself.",
+              "The Pix QR code shows up on the till screen, the Stone card " +
+              "machine is triggered by its serial number and bank slips go " +
+              "through Asaas. If a payment does not go through, it is " +
+              "refunded automatically.",
           },
           {
-            title: "Orders that arrive by WhatsApp",
+            title: "Orders over WhatsApp",
             text:
-              "The customer's message reaches the till already turned into " +
-              "catalogue items, with the doubtful ones flagged. The cashier " +
-              "is the one who accepts.",
+              "When a customer sends their list on WhatsApp, the system " +
+              "turns the message into catalogue items and flags the ones it " +
+              "was unsure about. The cashier reviews and confirms.",
           },
           {
             title: "Building assistant",
             text:
-              "Type \"tile 20 square metres of floor\" and it suggests the " +
-              "product and the quantity. A local engine: no internet, no cost " +
-              "per query.",
+              "The salesperson types something like \"tile 20 m² of floor\" " +
+              "and gets a suggested product and quantity. It runs on the " +
+              "store computer, with no internet and no per-query cost.",
           },
           {
-            title: "The phone becomes a scanner",
+            title: "Phone as a barcode scanner",
             text:
-              "The app scans the barcode and the item lands on the sale that " +
-              "is open at the till, over the shop Wi-Fi.",
+              "With the app, the salesperson scans a barcode on the phone " +
+              "and the item is added to the sale open at the till, over the " +
+              "store Wi-Fi.",
           },
           {
             title: "Pix confirmed in 12 ms",
             text:
-              "With the backend running, confirmation arrives by webhook. " +
-              "Twelve milliseconds from the alert to the cashier's screen, " +
-              "measured end to end.",
+              "With the backend running, the payment notice arrives by " +
+              "webhook. We measured 12 milliseconds between the notice and " +
+              "the confirmation showing on the till screen.",
           },
           {
             title: "Scales on the serial port",
             text:
-              "It reads the weight straight off the device. The pattern is " +
-              "configurable because Toledo, Filizola, Urano and Micheletti do " +
-              "not speak alike.",
+              "The weight comes straight from the scale. Toledo, Filizola, " +
+              "Urano and Micheletti send data in different formats, so the " +
+              "format is configurable.",
           },
         ],
       },
@@ -228,102 +237,119 @@ export const en: Dictionary = {
       tags: ["web"],
       role: "Design, code and operation",
       text:
-        "Donation platform with a zero fee for verified nonprofits. It takes " +
-        "Pix, cards and monthly giving in several currencies, and besides " +
-        "money it collects books, computers and food. It also pays for exams " +
-        "and consultations at partner clinics for people a nonprofit referred.",
+        "Donation platform for verified nonprofits, with no platform fee. It " +
+        "accepts Pix, cards and monthly giving in more than one currency, " +
+        "and also takes donations of books, computers and food. A separate " +
+        "module pays for exams and consultations at partner clinics for " +
+        "patients referred by nonprofits.",
       stack: "Elixir, Phoenix, PostgreSQL, Nuxt, Vue, Reka UI, Valibot, Caddy",
       shot: "/shots/charita.webp",
       detail: {
         summary:
-          "The platform fee is not a column set to zero: it is a ledger " +
-          "account that has never received an entry. Every movement of money " +
-          "is double entry, and the database refuses to update or delete any " +
-          "record. The transparency page is the ledger read as it stands.",
+          "Charita charges campaigns no fee, and you can check that in the " +
+          "books: there is an account for the platform fee and it has never " +
+          "received an entry. All money coming in or going out is recorded " +
+          "with double-entry bookkeeping, and the database does not allow " +
+          "records to be changed or deleted. The transparency page shows " +
+          "that ledger directly, with no numbers typed in by hand.",
         gallery: [
           {
             src: "/shots/charita/01.webp",
             caption:
-              "Live campaigns, searchable by cause and by how much you want to give.",
+              "Campaign list. You can filter by cause and enter how much you " +
+              "want to give.",
           },
           {
             src: "/shots/charita/02.webp",
-            caption: "Campaign page: raised, goal and a 0.00% fee.",
+            caption:
+              "A campaign page, with the amount raised, the goal and the " +
+              "platform fee.",
           },
           {
             src: "/shots/charita/03.webp",
-            caption: "Giving by Pix: QR and copy-paste code, confirmed by webhook.",
+            caption:
+              "Giving by Pix, with a QR code and a copy-and-paste code.",
           },
           {
             src: "/shots/charita/04.webp",
             caption:
-              "Transparency: the statement sums to zero in each currency, enforced by the database.",
+              "Transparency page. The statement balances to zero in each " +
+              "currency.",
           },
           {
             src: "/shots/charita/05.webp",
-            caption: "Home page figures, computed from the ledger.",
+            caption:
+              "Home page figures, calculated from the ledger.",
           },
           {
             src: "/shots/charita/06.webp",
-            caption: "Book requests by shelf, shipping country and language.",
+            caption:
+              "Book requests, filtered by subject, shipping country and " +
+              "language.",
           },
           {
             src: "/shots/charita/07.webp",
-            caption: "Exams and consultations at a fixed price, with a SIGTAP code.",
+            caption:
+              "Exams and consultations offered by clinics, with price and " +
+              "SIGTAP code.",
           },
           {
             src: "/shots/charita/08.webp",
             caption:
-              "Team queue: a nonprofit, a campaign and a payout account awaiting a decision.",
+              "Team queue, with a nonprofit, a campaign and a payout account " +
+              "waiting for approval.",
           },
         ],
         facts: [
-          { label: "API", value: "Elixir and Phoenix, JSON only" },
-          { label: "Front end", value: "Nuxt, the only thing that talks to the API" },
-          { label: "Payments", value: "Woovi for Pix, Stripe for cards, Asaas for payouts" },
+          { label: "API", value: "Elixir and Phoenix" },
+          { label: "Front end", value: "Nuxt. The browser never talks to the API directly" },
+          { label: "Payments", value: "Woovi for Pix, Stripe for cards and Asaas for payouts" },
           { label: "Languages", value: "Portuguese, English and Spanish" },
         ],
         highlights: [
           {
-            title: "Money is appended, never changed",
+            title: "Records that cannot be changed",
             text:
-              "Every movement is double entry and sums to zero. A Postgres " +
-              "trigger refuses updates and deletes. A refund is a new entry " +
-              "of the opposite sign, and the original stays.",
+              "Every money movement is recorded with double-entry " +
+              "bookkeeping. A Postgres trigger blocks updates and deletes, " +
+              "so a refund goes in as a new entry with the opposite sign.",
           },
           {
             title: "Campaigns by invitation only",
             text:
-              "A donation platform open to anyone is a laundering channel. " +
-              "The team verifies the nonprofit and sends a single-use " +
-              "invitation, stored only as a hash.",
+              "A nonprofit can only open a campaign after the team verifies " +
+              "it and sends an invitation. The link works once and is stored " +
+              "only as a hash. This makes it harder to use the platform for " +
+              "money laundering.",
           },
           {
-            title: "Checking who gets paid",
+            title: "Checking nonprofits",
             text:
-              "Each nonprofit goes through the company register and the public " +
-              "sanctions and politically exposed persons lists, including the " +
-              "people who run it.",
+              "Before approval, the system checks the company register and " +
+              "the public sanctions and politically exposed persons lists, " +
+              "by the organization's name and by the names of the people who " +
+              "run it.",
           },
           {
-            title: "The gateway is an adapter",
+            title: "Swappable payment gateways",
             text:
-              "Woovi, Stripe and Asaas sit behind a port in the domain and pass " +
-              "the same contract suite. Switching gateways is configuration.",
+              "Woovi, Stripe and Asaas sit behind an interface of our own " +
+              "and pass the same contract tests. Changing gateways is a " +
+              "configuration change.",
           },
           {
-            title: "A book is not money",
+            title: "Books, computers and food",
             text:
-              "Donated books, computers and food have their own history and " +
-              "never touch the ledger. The nonprofit's address reaches a donor " +
-              "only after their offer is accepted.",
+              "These donations have their own history and are kept out of " +
+              "the money ledger. The nonprofit's address is only shown to a " +
+              "donor after the nonprofit accepts their offer.",
           },
           {
-            title: "Pays the bill, promises nothing next",
+            title: "Paying for exams and consultations",
             text:
-              "The care module settles a bill the clinic already issued. The " +
-              "patient is only a code from the referring nonprofit, with no " +
-              "name or document.",
+              "The care module uses money from a campaign to pay a bill the " +
+              "clinic has already issued. The patient appears only as a code " +
+              "set by the referring nonprofit, with no name or ID document.",
           },
         ],
       },
