@@ -19,6 +19,28 @@ export type Post = {
 
 export const posts: readonly Post[] = [
   {
+    id: "regex-utf8",
+    date: "2026-11-15",
+    content: {
+      "pt-BR": {
+        slug: "regex-sem-flag-u-quebra-utf-8-no-elixir",
+        title: "Regex sem a flag u quebrando UTF-8 no Elixir",
+        description:
+          "Um título com acento derrubava o insert no Postgres. A causa era uma regex que comparava byte a byte.",
+        topic: "Elixir",
+        body: () => import("./regex-utf8/pt-BR.mdx"),
+      },
+      en: {
+        slug: "elixir-regex-without-u-flag-breaks-utf-8",
+        title: "An Elixir regex without the u flag that broke UTF-8",
+        description:
+          "A title with an accent made the Postgres insert fail. The cause was a regex comparing byte by byte.",
+        topic: "Elixir",
+        body: () => import("./regex-utf8/en.mdx"),
+      },
+    },
+  },
+  {
     id: "amostra",
     date: "2026-11-13",
     draft: true,

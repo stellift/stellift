@@ -1,0 +1,59 @@
+Num marketplace que fizemos em Elixir, o cadastro de serviço começou a falhar quando o título tinha acento. Com o título "Integração de pagamento Pix e cartão", o Postgres recusava o insert:
+
+```
+ERROR 22021 (character_not_in_repertoire) invalid byte sequence for encoding "UTF8": 0xc3 0xc3
+```
+
+O slug do serviço era gerado a partir do título por esta função:
+
+```elixir
+defp generate_slug(title) do
+  title
+  |> String.downcase()
+  |> String.replace(~r/[^\w\s-]/, "")
+  |> String.replace(~r/\s+/, "-")
+  |> String.slice(0, 100)
+end
+```
+
+## Por que quebrava
+
+A regex não tem a flag `u`, então o Elixir compara byte a byte. Em UTF-8, "ç" são os bytes `0xC3 0xA7` e "ã" são `0xC3 0xA3`.
+
+Nesse modo, `\w` segue a tabela Latin-1. Nela `0xC3` é a letra "Ã" e continua no texto, mas `0xA7` ("§") e `0xA3` ("£") não são letras e a regex remove os dois. De "ção" sobram `0xC3 0xC3 0x6F`, que não é UTF-8 válido. O `0xc3 0xc3` da mensagem de erro é esse pedaço.
+
+Dá para ver no `iex`:
+
+```elixir
+Regex.run(~r/\w/, <<0xC3>>)
+# [<<195>>]
+
+Regex.run(~r/\w/, <<0xA7>>)
+# nil
+```
+
+## Como ficou
+
+Com a flag `u`, a regex passa a comparar caracteres inteiros e o texto não quebra mais. O slug, porém, manteria os acentos, e um endereço com acento vira `integra%C3%A7%C3%A3o` quando alguém copia o link. Por isso a função também tira os acentos antes de limpar o resto:
+
+```elixir
+defp generate_slug(title) do
+  title
+  |> :unicode.characters_to_nfd_binary()
+  |> String.replace(~r/\p{Mn}/u, "")
+  |> String.downcase()
+  |> String.replace(~r/[^a-z0-9\s-]/u, "")
+  |> String.replace(~r/[\s-]+/u, "-")
+  |> String.trim("-")
+  |> String.slice(0, 100)
+end
+```
+
+`:unicode.characters_to_nfd_binary` separa "ç" em "c" e um acento combinante, e `\p{Mn}` apaga o acento. O resultado:
+
+```
+Integração de pagamento Pix e cartão  ->  integracao-de-pagamento-pix-e-cartao
+Café & Pão                            ->  cafe-pao
+```
+
+Se o seu projeto tem regex que roda sobre texto digitado pelo usuário, vale procurar por `~r/` sem o `u` no fim, principalmente onde aparecem `\w`, `\s` ou classes negadas.

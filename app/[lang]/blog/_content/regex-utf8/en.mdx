@@ -1,0 +1,59 @@
+In a marketplace we built in Elixir, creating a service started to fail whenever the title had an accent. With the title "Integração de pagamento Pix e cartão", Postgres rejected the insert:
+
+```
+ERROR 22021 (character_not_in_repertoire) invalid byte sequence for encoding "UTF8": 0xc3 0xc3
+```
+
+The service slug was built from the title by this function:
+
+```elixir
+defp generate_slug(title) do
+  title
+  |> String.downcase()
+  |> String.replace(~r/[^\w\s-]/, "")
+  |> String.replace(~r/\s+/, "-")
+  |> String.slice(0, 100)
+end
+```
+
+## Why it broke
+
+The regex has no `u` flag, so Elixir compares byte by byte. In UTF-8, "ç" is the bytes `0xC3 0xA7` and "ã" is `0xC3 0xA3`.
+
+In that mode, `\w` follows the Latin-1 table. There `0xC3` is the letter "Ã" and stays in the text, but `0xA7` ("§") and `0xA3` ("£") are not letters, so the regex removes both. What is left of "ção" is `0xC3 0xC3 0x6F`, which is not valid UTF-8. The `0xc3 0xc3` in the error message is that fragment.
+
+You can see it in `iex`:
+
+```elixir
+Regex.run(~r/\w/, <<0xC3>>)
+# [<<195>>]
+
+Regex.run(~r/\w/, <<0xA7>>)
+# nil
+```
+
+## The fix
+
+With the `u` flag, the regex compares whole characters and the text no longer breaks. The slug would still keep the accents, though, and a URL with accents turns into `integra%C3%A7%C3%A3o` when someone copies the link. So the function also strips the accents before cleaning up the rest:
+
+```elixir
+defp generate_slug(title) do
+  title
+  |> :unicode.characters_to_nfd_binary()
+  |> String.replace(~r/\p{Mn}/u, "")
+  |> String.downcase()
+  |> String.replace(~r/[^a-z0-9\s-]/u, "")
+  |> String.replace(~r/[\s-]+/u, "-")
+  |> String.trim("-")
+  |> String.slice(0, 100)
+end
+```
+
+`:unicode.characters_to_nfd_binary` splits "ç" into "c" plus a combining accent, and `\p{Mn}` deletes the accent. The result:
+
+```
+Integração de pagamento Pix e cartão  ->  integracao-de-pagamento-pix-e-cartao
+Café & Pão                            ->  cafe-pao
+```
+
+If your project runs regexes over text that users type, it is worth searching for `~r/` without the `u` at the end, especially where `\w`, `\s` or negated classes show up.
