@@ -1,10 +1,10 @@
-In a marketplace we built in Elixir, creating a service started to fail whenever the title had an accent. With the title "Integração de pagamento Pix e cartão", Postgres rejected the insert:
+This bug showed up in a marketplace we built in Elixir. Creating a service called "Integração de pagamento Pix e cartão" made Postgres throw:
 
 ```
 ERROR 22021 (character_not_in_repertoire) invalid byte sequence for encoding "UTF8": 0xc3 0xc3
 ```
 
-The service slug was built from the title by this function:
+Titles without accents worked fine. The slug came from this function:
 
 ```elixir
 defp generate_slug(title) do
@@ -16,13 +16,11 @@ defp generate_slug(title) do
 end
 ```
 
-## Why it broke
+The problem is the regex without the `u` flag. Without it, Elixir looks at the text byte by byte, and in UTF-8 "ç" takes two bytes, `0xC3 0xA7`, and so does "ã", `0xC3 0xA3`.
 
-The regex has no `u` flag, so Elixir compares byte by byte. In UTF-8, "ç" is the bytes `0xC3 0xA7` and "ã" is `0xC3 0xA3`.
+Byte by byte, `\w` uses the Latin-1 table. There `0xC3` is the letter "Ã", so it stays. But `0xA7` is "§" and `0xA3` is "£", which aren't letters, so they go. What's left of "ção" is `0xC3 0xC3 0x6F`, which isn't valid UTF-8, and that's why the error mentions `0xc3 0xc3`.
 
-In that mode, `\w` follows the Latin-1 table. There `0xC3` is the letter "Ã" and stays in the text, but `0xA7` ("§") and `0xA3` ("£") are not letters, so the regex removes both. What is left of "ção" is `0xC3 0xC3 0x6F`, which is not valid UTF-8. The `0xc3 0xc3` in the error message is that fragment.
-
-You can see it in `iex`:
+You can check it in `iex`:
 
 ```elixir
 Regex.run(~r/\w/, <<0xC3>>)
@@ -32,9 +30,7 @@ Regex.run(~r/\w/, <<0xA7>>)
 # nil
 ```
 
-## The fix
-
-With the `u` flag, the regex compares whole characters and the text no longer breaks. The slug would still keep the accents, though, and a URL with accents turns into `integra%C3%A7%C3%A3o` when someone copies the link. So the function also strips the accents before cleaning up the rest:
+Adding the `u` flag already gets rid of the error, because then the regex looks at whole characters. But the slug would keep its accents, and a URL with accents turns into `integra%C3%A7%C3%A3o` when someone copies the link. So we also strip the accents first:
 
 ```elixir
 defp generate_slug(title) do
@@ -49,11 +45,11 @@ defp generate_slug(title) do
 end
 ```
 
-`:unicode.characters_to_nfd_binary` splits "ç" into "c" plus a combining accent, and `\p{Mn}` deletes the accent. The result:
+`characters_to_nfd_binary` splits "ç" into "c" plus the accent, and `\p{Mn}` deletes the accent. You end up with:
 
 ```
 Integração de pagamento Pix e cartão  ->  integracao-de-pagamento-pix-e-cartao
 Café & Pão                            ->  cafe-pao
 ```
 
-If your project runs regexes over text that users type, it is worth searching for `~r/` without the `u` at the end, especially where `\w`, `\s` or negated classes show up.
+If you have regexes running on text users type, search your project for `~r/` without a `u` at the end. The ones using `\w`, `\s` or a negated class are the ones that break on accents.

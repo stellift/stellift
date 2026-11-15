@@ -1,8 +1,8 @@
-At Charita, a donation platform that charges campaigns no fee, money is recorded in a double-entry ledger inside Postgres. The database itself enforces two rules: every transaction adds up to zero, and nothing that was written can be changed or deleted.
+At Charita, a donation platform that charges campaigns no fee, the money lives in a double-entry ledger inside Postgres. The database itself looks after its rules, with two triggers. One won't save a transaction that doesn't add up to zero. The other won't let anything be changed or deleted.
 
 ## The tables
 
-Each movement of money is a transaction with two or more entries. An entry is a signed amount on one account. Without the automatic creation timestamps, the tables look like this:
+Each movement of money is a transaction with two or more entries, and each entry is a signed amount on one account. Leaving out the creation timestamps Ecto adds, the tables look like this:
 
 ```sql
 create table ledger_accounts (
@@ -25,11 +25,9 @@ create table ledger_entries (
 );
 ```
 
-Amounts are stored in each currency's smallest unit, so 5000 is fifty reais. Each account has a single currency.
+Amounts are stored in the currency's smallest unit, so 5000 is fifty reais. Each account has a single currency.
 
-## Every transaction adds up to zero
-
-A trigger checks that the entries of a transaction add up to zero and that they all use the same currency:
+## The trigger that checks the sum
 
 ```sql
 create function ledger_transaction_must_balance() returns trigger as $$
@@ -61,11 +59,9 @@ create constraint trigger ledger_entries_must_balance
   for each row execute function ledger_transaction_must_balance();
 ```
 
-It is `deferrable initially deferred` because entries are written one at a time, and after the first one the sum is not zero yet. With the check deferred to `commit`, the database checks once all the entries are in. If the sum does not balance, nothing is saved.
+The `deferrable initially deferred` is there because entries go in one at a time. After the first one the sum isn't zero yet, so the check waits for `commit`, when they're all in. If the sum doesn't balance, the `commit` fails and nothing is saved. The same trigger also refuses a transaction that mixes currencies.
 
-## Nothing is changed or deleted
-
-Another trigger refuses `update` and `delete`:
+## The trigger that won't let anything change
 
 ```sql
 create function ledger_is_append_only() returns trigger as $$
@@ -80,10 +76,8 @@ create trigger ledger_entries_append_only
   for each row execute function ledger_is_append_only();
 ```
 
-The example shows `ledger_entries`, and `ledger_transactions` and `ledger_accounts` have the same trigger.
+`ledger_transactions` and `ledger_accounts` have the same trigger.
 
-To refund a donation, a new transaction is written with the original entries and the sign flipped. The original stays in the history.
+So refunding a donation means writing another transaction with the same entries and the sign flipped. The original transaction stays where it is.
 
-## On the transparency page
-
-The platform fee is an account like any other and has never received an entry. Charita's transparency page builds its statement straight from the ledger, and the statement adds up to zero in each currency.
+This is the ledger Charita's transparency page shows. The platform fee is an account like any other, and it has never received an entry.

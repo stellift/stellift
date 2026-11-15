@@ -1,8 +1,8 @@
-Na Charita, uma plataforma de doações que não cobra taxa das campanhas, o dinheiro é registrado num livro-caixa de partidas dobradas dentro do Postgres. Duas regras são garantidas pelo próprio banco: toda transação soma zero, e nada que foi gravado pode ser alterado ou apagado.
+Na Charita, plataforma de doações que não cobra taxa das campanhas, o dinheiro fica num livro-caixa de partidas dobradas dentro do Postgres. Quem cuida das regras dele é o próprio banco, com dois gatilhos. Um não deixa gravar transação que não some zero. O outro não deixa alterar nem apagar nada.
 
 ## As tabelas
 
-Cada movimento de dinheiro é uma transação com dois ou mais lançamentos. Um lançamento é um valor com sinal numa conta. Sem as colunas automáticas de data de criação, as tabelas são estas:
+Cada movimento de dinheiro é uma transação com dois ou mais lançamentos, e cada lançamento é um valor com sinal numa conta. Tirando as colunas de data de criação que o Ecto acrescenta, as tabelas são estas:
 
 ```sql
 create table ledger_accounts (
@@ -25,11 +25,9 @@ create table ledger_entries (
 );
 ```
 
-Os valores ficam na menor unidade de cada moeda, então 5000 são cinquenta reais. Cada conta tem uma moeda só.
+Os valores ficam na menor unidade da moeda, então 5000 são cinquenta reais. Cada conta tem uma moeda só.
 
-## Toda transação soma zero
-
-Um gatilho confere se a soma dos lançamentos da transação é zero e se todos são da mesma moeda:
+## O gatilho que confere a soma
 
 ```sql
 create function ledger_transaction_must_balance() returns trigger as $$
@@ -61,11 +59,9 @@ create constraint trigger ledger_entries_must_balance
   for each row execute function ledger_transaction_must_balance();
 ```
 
-Ele é `deferrable initially deferred` porque os lançamentos são gravados um por vez, e depois do primeiro a soma ainda não é zero. Com a verificação adiada para o `commit`, o banco confere quando todos os lançamentos já foram gravados. Se a soma não fechar, nada é salvo.
+O `deferrable initially deferred` está aí porque os lançamentos entram um de cada vez. Depois do primeiro, a soma ainda não é zero, então a conferência fica para o `commit`, quando todos já entraram. Se a soma não fechar, o `commit` falha e nada é gravado. O mesmo gatilho recusa transação que misture moedas.
 
-## Nada é alterado nem apagado
-
-Outro gatilho recusa `update` e `delete`:
+## O gatilho que não deixa mudar nada
 
 ```sql
 create function ledger_is_append_only() returns trigger as $$
@@ -80,10 +76,8 @@ create trigger ledger_entries_append_only
   for each row execute function ledger_is_append_only();
 ```
 
-O exemplo mostra `ledger_entries`, e `ledger_transactions` e `ledger_accounts` têm o mesmo gatilho.
+`ledger_transactions` e `ledger_accounts` têm o mesmo gatilho.
 
-Para estornar uma doação, grava-se uma transação nova com os lançamentos da original e o sinal trocado. A original continua no histórico.
+Com isso, estornar uma doação é gravar outra transação com os mesmos lançamentos e o sinal trocado. A transação original continua lá.
 
-## Na página de transparência
-
-A taxa da plataforma é uma conta como as outras e nunca recebeu lançamento. A página de transparência da Charita monta o extrato direto do livro-caixa, e o extrato fecha em zero em cada moeda.
+É esse livro-caixa que a página de transparência da Charita mostra. A taxa da plataforma é uma conta como qualquer outra, e nunca recebeu lançamento.
