@@ -31,7 +31,6 @@ export function LandingJsonLd({ niche }: { niche: Niche }) {
               "@type": "BusinessAudience",
               audienceType: niche.audience,
             },
-            inLanguage: "pt-BR",
           },
           {
             "@type": "FAQPage",

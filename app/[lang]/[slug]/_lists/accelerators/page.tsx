@@ -20,7 +20,6 @@ export default async function Accelerators() {
           name: title,
           description: metaDescription,
           url: `${siteUrl}${acceleratorsPath()}`,
-          inLanguage: "pt-BR",
           numberOfItems: entryCount,
           itemListElement: sections.flatMap((section) =>
             section.entries.map((entry) => ({
