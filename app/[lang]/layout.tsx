@@ -26,6 +26,7 @@ const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
+  preload: false,
 });
 
 export const viewport: Viewport = {
