@@ -18,6 +18,13 @@ import { slugs as numberBase } from "@/app/[lang]/[slug]/_tools/base";
 import { slugs as qrcode } from "@/app/[lang]/[slug]/_tools/qrcode";
 import { slugs as color } from "@/app/[lang]/[slug]/_tools/color";
 import { slugs as diff } from "@/app/[lang]/[slug]/_tools/diff";
+import { slugs as dates } from "@/app/[lang]/[slug]/_tools/dates";
+import { slugs as percent } from "@/app/[lang]/[slug]/_tools/percent";
+import { slugs as draw } from "@/app/[lang]/[slug]/_tools/draw";
+import { slugs as slugTool } from "@/app/[lang]/[slug]/_tools/slug";
+import { slugs as lines } from "@/app/[lang]/[slug]/_tools/lines";
+import { slugs as csv } from "@/app/[lang]/[slug]/_tools/csv";
+import { slugs as cron } from "@/app/[lang]/[slug]/_tools/cron";
 import { slugs as downtimeCost } from "@/app/[lang]/[slug]/_tools/downtime-cost";
 import { slugs as estimate } from "@/app/[lang]/[slug]/_tools/estimate";
 import { slugs as hourlyCost } from "@/app/[lang]/[slug]/_tools/hourly-cost";
@@ -49,6 +56,13 @@ export const toolSlugs = {
   qrcode,
   color,
   diff,
+  dates,
+  percent,
+  draw,
+  slug: slugTool,
+  lines,
+  csv,
+  cron,
 } satisfies Record<string, Record<Locale, string>>;
 
 export type ToolId = keyof typeof toolSlugs;
@@ -65,6 +79,9 @@ export const calculatorIds: ToolId[] = [
 ];
 
 export const utilityIds: ToolId[] = [
+  "percent",
+  "dates",
+  "draw",
   "cpf",
   "cnpj",
   "password",
@@ -74,6 +91,8 @@ export const utilityIds: ToolId[] = [
   "json",
   "regex",
   "diff",
+  "cron",
+  "csv",
   "base64",
   "url",
   "timestamp",
@@ -82,6 +101,8 @@ export const utilityIds: ToolId[] = [
   "qrcode",
   "counter",
   "case",
+  "slug",
+  "lines",
   "lorem",
 ];
 

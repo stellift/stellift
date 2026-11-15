@@ -667,7 +667,7 @@ export const ptBR: Dictionary = {
     allLabel: "Todas as ferramentas",
     rangeJoin: "a",
     units: { day: "dias", hour: "h", minute: "min", second: "s" },
-    utilitiesTitle: "Utilitários para desenvolvedores",
+    utilitiesTitle: "Utilitários",
     copyLabel: "Copiar",
     copiedLabel: "Copiado",
     items: {
@@ -1299,6 +1299,228 @@ export const ptBR: Dictionary = {
           png: "Baixar PNG",
           svg: "Baixar SVG",
           tooLong: "Esse texto é grande demais para um QR code com essa correção de erro. Diminua o texto ou escolha uma correção menor.",
+        },
+      },
+      dates: {
+        name: "Dias entre datas",
+        tagline: "Quantos dias, semanas e meses tem entre duas datas.",
+        metaTitle: "Calcular dias entre datas",
+        metaDescription:
+          "Escolha duas datas e veja quantos dias tem entre elas, contando " +
+          "também em semanas, em meses e em dias úteis.",
+        intro:
+          "Escolha a data de início e a de fim. A conta sai em dias corridos, em " +
+          "semanas, em anos e meses, e em dias úteis.",
+        fields: [],
+        results: [],
+        note:
+          "Dias úteis aqui são de segunda a sexta. Feriado fica de fora da conta " +
+          "porque muda de cidade para cidade. Se o último dia também precisa " +
+          "contar, marque a opção embaixo das datas.",
+        labels: {
+          from: "Data inicial",
+          to: "Data final",
+          includeLast: "Contar o último dia também",
+          calendar: "Em anos, meses e dias",
+          weeks: "Em semanas",
+          business: "Dias úteis",
+          dayOne: "dia",
+          dayMany: "dias",
+          weekOne: "semana",
+          weekMany: "semanas",
+          monthOne: "mês",
+          monthMany: "meses",
+          yearOne: "ano",
+          yearMany: "anos",
+          empty: "Escolha as duas datas.",
+        },
+      },
+      percent: {
+        name: "Calculadora de porcentagem",
+        tagline: "Quanto é X% de um valor, quantos % uma parte representa e quanto algo subiu ou caiu.",
+        metaTitle: "Calculadora de porcentagem online",
+        metaDescription:
+          "Calcule quanto é uma porcentagem de um valor, quantos por cento uma " +
+          "parte é do total e quanto um valor subiu ou caiu em porcentagem.",
+        intro:
+          "Aqui estão as três contas de porcentagem que mais aparecem no dia a " +
+          "dia. Mude qualquer número e o resultado muda junto.",
+        fields: [],
+        results: [],
+        note:
+          "Pode digitar com vírgula ou com ponto. A variação é calculada sobre o " +
+          "valor antigo, por isso de 80 para 100 dá 25% e de 100 para 80 dá 20% " +
+          "de queda.",
+        labels: {
+          q1: "Quanto é X% de um valor?",
+          a1: "Porcentagem",
+          b1: "Valor",
+          q2: "Quantos % uma parte é do total?",
+          a2: "Parte",
+          b2: "Total",
+          q3: "Quanto um valor subiu ou caiu?",
+          a3: "Valor antigo",
+          b3: "Valor novo",
+          up: "de aumento",
+          down: "de queda",
+        },
+      },
+      draw: {
+        name: "Sorteador de números e nomes",
+        tagline: "Sorteie números num intervalo ou nomes de uma lista.",
+        metaTitle: "Sortear números e nomes online",
+        metaDescription:
+          "Sorteie números entre um mínimo e um máximo, com ou sem repetição, ou " +
+          "sorteie nomes de uma lista. Serve para rifa e sorteio em rede social.",
+        intro:
+          "Para números, diga de quanto a quanto e quantos você quer. Para " +
+          "nomes, cole a lista com um nome por linha. Nada é sorteado até você " +
+          "clicar no botão.",
+        fields: [],
+        results: [],
+        note:
+          "O sorteio usa crypto.getRandomValues, o gerador aleatório que o " +
+          "navegador oferece para criptografia. Todo número do intervalo e todo " +
+          "nome da lista tem a mesma chance de sair.",
+        labels: {
+          mode: "Sortear",
+          numbers: "Números",
+          names: "Nomes",
+          min: "De",
+          max: "Até",
+          count: "Quantos",
+          unique: "Sem repetir",
+          list: "Nomes, um por linha",
+          draw: "Sortear",
+          result: "Resultado",
+          waiting: "Clique em sortear.",
+          badCount: "Escolha uma quantidade entre 1 e 1.000.",
+          badRange: "Confira o intervalo. Use números inteiros.",
+          tooMany: "Não cabem tantos números sem repetir nesse intervalo.",
+          noNames: "Cole pelo menos um nome.",
+        },
+      },
+      slug: {
+        name: "Gerador de slug",
+        tagline: "Transforma um título em endereço de página.",
+        metaTitle: "Gerador de slug para URL",
+        metaDescription:
+          "Cole um título e receba o slug pronto para a URL, sem acento, em " +
+          "letras minúsculas e com hífen no lugar dos espaços.",
+        intro:
+          "Cole o título de um post ou de um produto e o slug aparece do lado. " +
+          "Os acentos saem, tudo fica em minúscula e o que não for letra ou " +
+          "número vira hífen.",
+        fields: [],
+        results: [],
+        note:
+          "Ç vira c, ã vira a, e símbolos como & e ! somem. Vários espaços " +
+          "seguidos viram um hífen só.",
+        labels: {
+          input: "Título",
+          separator: "Separador",
+          hyphen: "Hífen",
+          underscore: "Underline",
+          result: "Slug",
+          example: "Como escolher um sistema de gestão para a sua clínica",
+        },
+      },
+      lines: {
+        name: "Ordenar e limpar linhas",
+        tagline: "Tira linhas repetidas e vazias e coloca a lista em ordem.",
+        metaTitle: "Remover linhas duplicadas e ordenar lista online",
+        metaDescription:
+          "Cole uma lista para tirar as linhas repetidas e vazias, apagar " +
+          "espaços sobrando e ordenar de A a Z ou de Z a A.",
+        intro:
+          "Cole a lista com um item por linha e marque o que quer fazer com ela. " +
+          "Serve para lista de e-mails, de produtos, de palavras-chave ou do que " +
+          "for.",
+        fields: [],
+        results: [],
+        note:
+          "A ordem alfabética entende acento e número, então Árvore fica junto " +
+          "com as palavras de A e item 2 vem antes de item 10.",
+        labels: {
+          input: "Lista",
+          trim: "Apagar espaços no começo e no fim",
+          dropEmpty: "Tirar linhas vazias",
+          dedupe: "Tirar linhas repetidas",
+          ignoreCase: "Ignorar maiúsculas e minúsculas",
+          order: "Ordem",
+          keep: "Original",
+          asc: "A a Z",
+          desc: "Z a A",
+          reverse: "Invertida",
+          count: "{before} linhas antes, {after} depois",
+          result: "Resultado",
+        },
+      },
+      csv: {
+        name: "CSV para JSON",
+        tagline: "Converte CSV em JSON e JSON em CSV.",
+        metaTitle: "Converter CSV para JSON e JSON para CSV online",
+        metaDescription:
+          "Converta CSV para JSON e JSON para CSV, com vírgula, ponto e vírgula " +
+          "ou tab como separador. Aceita o CSV que o Excel em português salva.",
+        intro:
+          "A primeira linha do CSV vira o nome dos campos, e cada linha depois " +
+          "dela vira um objeto. No caminho contrário, as chaves dos objetos " +
+          "viram as colunas.",
+        fields: [],
+        results: [],
+        note:
+          "O Excel em português costuma salvar CSV com ponto e vírgula, e o modo " +
+          "automático percebe isso sozinho. Campo entre aspas com vírgula ou " +
+          "quebra de linha dentro também funciona.",
+        labels: {
+          mode: "Converter",
+          toJson: "CSV para JSON",
+          toCsv: "JSON para CSV",
+          delimiter: "Separador",
+          auto: "Automático",
+          comma: "Vírgula",
+          semicolon: "Ponto e vírgula",
+          tab: "Tab",
+          invalid: "Não consegui converter. Para virar CSV, o JSON precisa ser uma lista de objetos, tipo [{\"nome\": \"Ana\"}].",
+        },
+      },
+      cron: {
+        name: "Expressão cron",
+        tagline: "Entenda uma expressão cron e veja quando ela vai rodar.",
+        metaTitle: "Expressão cron explicada, com as próximas execuções",
+        metaDescription:
+          "Cole uma expressão cron e veja o que cada campo quer dizer e as " +
+          "próximas cinco vezes em que ela vai rodar, no seu fuso horário.",
+        intro:
+          "Cole a expressão e veja campo por campo o que ela pede. Do lado " +
+          "aparecem as próximas cinco vezes em que ela vai rodar, no horário do " +
+          "seu computador.",
+        fields: [],
+        results: [],
+        note:
+          "Segue o formato de cinco campos do cron do Linux. Quando o dia do mês " +
+          "e o dia da semana estão preenchidos juntos, o cron roda se qualquer " +
+          "um dos dois bater, e a ferramenta faz a mesma coisa. Muito servidor " +
+          "roda em UTC, então vale conferir o fuso antes de agendar.",
+        labels: {
+          input: "Expressão",
+          inputHint: "Minuto, hora, dia do mês, mês e dia da semana",
+          examples: "Exemplos",
+          preset1: "a cada 15 minutos",
+          preset2: "toda hora cheia",
+          preset3: "dias úteis às 9h",
+          preset4: "todo dia 1º à meia-noite",
+          preset5: "domingo às 2h30",
+          minute: "Minuto",
+          hour: "Hora",
+          dayOfMonth: "Dia do mês",
+          month: "Mês",
+          dayOfWeek: "Dia da semana",
+          any: "qualquer",
+          next: "Próximas execuções",
+          never: "Essa expressão não roda nos próximos cinco anos.",
+          invalid: "Essa expressão não está no formato do cron. São cinco campos separados por espaço.",
         },
       },
     },

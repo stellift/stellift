@@ -135,6 +135,13 @@ export type Dictionary = {
       qrcode: ToolCopy;
       color: ToolCopy;
       diff: ToolCopy;
+      dates: ToolCopy;
+      percent: ToolCopy;
+      draw: ToolCopy;
+      slug: ToolCopy;
+      lines: ToolCopy;
+      csv: ToolCopy;
+      cron: ToolCopy;
     };
   };
   blog: {

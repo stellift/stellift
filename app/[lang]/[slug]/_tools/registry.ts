@@ -23,6 +23,13 @@ import NumberBase from "@/app/[lang]/[slug]/_tools/base/calculator";
 import QrCode from "@/app/[lang]/[slug]/_tools/qrcode/calculator";
 import Color from "@/app/[lang]/[slug]/_tools/color/calculator";
 import Diff from "@/app/[lang]/[slug]/_tools/diff/calculator";
+import Dates from "@/app/[lang]/[slug]/_tools/dates/calculator";
+import Percent from "@/app/[lang]/[slug]/_tools/percent/calculator";
+import Draw from "@/app/[lang]/[slug]/_tools/draw/calculator";
+import Slug from "@/app/[lang]/[slug]/_tools/slug/calculator";
+import Lines from "@/app/[lang]/[slug]/_tools/lines/calculator";
+import Csv from "@/app/[lang]/[slug]/_tools/csv/calculator";
+import Cron from "@/app/[lang]/[slug]/_tools/cron/calculator";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 import type { ToolId } from "@/app/[lang]/[slug]/_tools/config";
 
@@ -51,4 +58,11 @@ export const calculators: Record<ToolId, ComponentType<CalculatorProps>> = {
   qrcode: QrCode,
   color: Color,
   diff: Diff,
+  dates: Dates,
+  percent: Percent,
+  draw: Draw,
+  slug: Slug,
+  lines: Lines,
+  csv: Csv,
+  cron: Cron,
 };

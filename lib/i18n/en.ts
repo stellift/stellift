@@ -667,7 +667,7 @@ export const en: Dictionary = {
     allLabel: "All tools",
     rangeJoin: "to",
     units: { day: "d", hour: "h", minute: "min", second: "s" },
-    utilitiesTitle: "Developer utilities",
+    utilitiesTitle: "Utilities",
     copyLabel: "Copy",
     copiedLabel: "Copied",
     items: {
@@ -1299,6 +1299,227 @@ export const en: Dictionary = {
           png: "Download PNG",
           svg: "Download SVG",
           tooLong: "This text is too long for a QR code with this error correction. Shorten it or pick a lower correction.",
+        },
+      },
+      dates: {
+        name: "Days between dates",
+        tagline: "How many days, weeks and months there are between two dates.",
+        metaTitle: "Days between two dates calculator",
+        metaDescription:
+          "Pick two dates and see how many days there are between them, also " +
+          "counted in weeks, in months and in business days.",
+        intro:
+          "Pick a start date and an end date. You get the count in calendar " +
+          "days, in weeks, in years and months, and in business days.",
+        fields: [],
+        results: [],
+        note:
+          "Business days here are Monday to Friday. Public holidays aren't " +
+          "counted because they change from place to place. If the last day " +
+          "should count too, tick the option under the dates.",
+        labels: {
+          from: "Start date",
+          to: "End date",
+          includeLast: "Count the last day too",
+          calendar: "In years, months and days",
+          weeks: "In weeks",
+          business: "Business days",
+          dayOne: "day",
+          dayMany: "days",
+          weekOne: "week",
+          weekMany: "weeks",
+          monthOne: "month",
+          monthMany: "months",
+          yearOne: "year",
+          yearMany: "years",
+          empty: "Pick both dates.",
+        },
+      },
+      percent: {
+        name: "Percentage calculator",
+        tagline: "What X% of a number is, what % a part is, and how much something went up or down.",
+        metaTitle: "Percentage calculator online",
+        metaDescription:
+          "Work out a percentage of a number, what percent a part is of a total, " +
+          "and how much a value went up or down in percent.",
+        intro:
+          "These are the three percentage sums that come up most in everyday " +
+          "life. Change any number and the result changes with it.",
+        fields: [],
+        results: [],
+        note:
+          "You can type with a comma or a dot. The change is worked out against " +
+          "the old value, which is why 80 to 100 is 25% and 100 to 80 is a 20% " +
+          "drop.",
+        labels: {
+          q1: "What is X% of a number?",
+          a1: "Percentage",
+          b1: "Number",
+          q2: "What % of the total is a part?",
+          a2: "Part",
+          b2: "Total",
+          q3: "How much did a value go up or down?",
+          a3: "Old value",
+          b3: "New value",
+          up: "increase",
+          down: "decrease",
+        },
+      },
+      draw: {
+        name: "Random number and name picker",
+        tagline: "Draw numbers from a range or names from a list.",
+        metaTitle: "Random number and name picker online",
+        metaDescription:
+          "Draw random numbers between a minimum and a maximum, with or without " +
+          "repeats, or pick names from a list. Works for raffles and giveaways.",
+        intro:
+          "For numbers, say the range and how many you want. For names, paste " +
+          "the list with one name per line. Nothing is drawn until you click the " +
+          "button.",
+        fields: [],
+        results: [],
+        note:
+          "The draw uses crypto.getRandomValues, the random generator browsers " +
+          "provide for cryptography. Every number in the range and every name in " +
+          "the list has the same chance of coming up.",
+        labels: {
+          mode: "Draw",
+          numbers: "Numbers",
+          names: "Names",
+          min: "From",
+          max: "To",
+          count: "How many",
+          unique: "No repeats",
+          list: "Names, one per line",
+          draw: "Draw",
+          result: "Result",
+          waiting: "Click draw.",
+          badCount: "Pick an amount between 1 and 1,000.",
+          badRange: "Check the range. Use whole numbers.",
+          tooMany: "That many numbers don't fit in this range without repeats.",
+          noNames: "Paste at least one name.",
+        },
+      },
+      slug: {
+        name: "Slug generator",
+        tagline: "Turns a title into a page address.",
+        metaTitle: "URL slug generator",
+        metaDescription:
+          "Paste a title and get a slug ready for the URL, without accents, in " +
+          "lowercase and with hyphens instead of spaces.",
+        intro:
+          "Paste the title of a post or a product and the slug shows up next to " +
+          "it. Accents come off, everything goes lowercase and anything that " +
+          "isn't a letter or a number becomes a hyphen.",
+        fields: [],
+        results: [],
+        note:
+          "é becomes e, ß becomes ss, and symbols like & and ! go away. Several " +
+          "spaces in a row turn into a single hyphen.",
+        labels: {
+          input: "Title",
+          separator: "Separator",
+          hyphen: "Hyphen",
+          underscore: "Underscore",
+          result: "Slug",
+          example: "How to choose a practice management system for your clinic",
+        },
+      },
+      lines: {
+        name: "Sort and clean lines",
+        tagline: "Removes duplicate and empty lines and puts the list in order.",
+        metaTitle: "Remove duplicate lines and sort a list online",
+        metaDescription:
+          "Paste a list to remove duplicate and empty lines, trim extra spaces " +
+          "and sort it A to Z or Z to A.",
+        intro:
+          "Paste the list with one item per line and tick what you want done to " +
+          "it. It works for email lists, product lists, keywords or anything " +
+          "else.",
+        fields: [],
+        results: [],
+        note:
+          "The alphabetical order understands accents and numbers, so Émile sits " +
+          "with the other E words and item 2 comes before item 10.",
+        labels: {
+          input: "List",
+          trim: "Trim spaces at the start and end",
+          dropEmpty: "Remove empty lines",
+          dedupe: "Remove duplicate lines",
+          ignoreCase: "Ignore upper and lower case",
+          order: "Order",
+          keep: "Original",
+          asc: "A to Z",
+          desc: "Z to A",
+          reverse: "Reversed",
+          count: "{before} lines before, {after} after",
+          result: "Result",
+        },
+      },
+      csv: {
+        name: "CSV to JSON",
+        tagline: "Converts CSV to JSON and JSON to CSV.",
+        metaTitle: "Convert CSV to JSON and JSON to CSV online",
+        metaDescription:
+          "Convert CSV to JSON and JSON to CSV, with comma, semicolon or tab as " +
+          "the separator. Detects the separator for you.",
+        intro:
+          "The first CSV row becomes the field names, and every row after it " +
+          "becomes an object. Going the other way, the object keys become the " +
+          "columns.",
+        fields: [],
+        results: [],
+        note:
+          "Excel in some languages saves CSV with semicolons, and the automatic " +
+          "mode picks that up by itself. Quoted fields with commas or line " +
+          "breaks inside work too.",
+        labels: {
+          mode: "Convert",
+          toJson: "CSV to JSON",
+          toCsv: "JSON to CSV",
+          delimiter: "Separator",
+          auto: "Automatic",
+          comma: "Comma",
+          semicolon: "Semicolon",
+          tab: "Tab",
+          invalid: "I couldn't convert that. To turn into CSV, the JSON has to be a list of objects, like [{\"name\": \"Ana\"}].",
+        },
+      },
+      cron: {
+        name: "Cron expression",
+        tagline: "Understand a cron expression and see when it will run.",
+        metaTitle: "Cron expression explained, with the next runs",
+        metaDescription:
+          "Paste a cron expression and see what each field means and the next " +
+          "five times it will run, in your time zone.",
+        intro:
+          "Paste the expression and see field by field what it asks for. Next to " +
+          "it you get the next five times it will run, in your computer's time.",
+        fields: [],
+        results: [],
+        note:
+          "It follows the five-field format of Linux cron. When day of month and " +
+          "day of week are both set, cron runs if either one matches, and the " +
+          "tool does the same. Lots of servers run on UTC, so check the time " +
+          "zone before you schedule.",
+        labels: {
+          input: "Expression",
+          inputHint: "Minute, hour, day of month, month and day of week",
+          examples: "Examples",
+          preset1: "every 15 minutes",
+          preset2: "every hour on the hour",
+          preset3: "weekdays at 9am",
+          preset4: "the 1st of every month at midnight",
+          preset5: "Sundays at 2:30am",
+          minute: "Minute",
+          hour: "Hour",
+          dayOfMonth: "Day of month",
+          month: "Month",
+          dayOfWeek: "Day of week",
+          any: "any",
+          next: "Next runs",
+          never: "This expression doesn't run in the next five years.",
+          invalid: "This expression isn't in cron format. It needs five fields separated by spaces.",
         },
       },
     },
