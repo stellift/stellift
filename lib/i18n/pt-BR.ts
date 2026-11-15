@@ -1737,6 +1737,275 @@ export const ptBR: Dictionary = {
           result: "Resultado",
         },
       },
+      whatsapp: {
+        name: "Link do WhatsApp",
+        tagline: "Crie um link que abre uma conversa no WhatsApp, com mensagem pronta.",
+        metaTitle: "Gerador de link do WhatsApp com mensagem",
+        metaDescription:
+          "Crie um link wa.me para o seu WhatsApp, com uma mensagem já escrita, " +
+          "para colocar no Instagram, no site ou no cartão. Gera o QR code " +
+          "junto.",
+        intro:
+          "Coloque o número com DDD e, se quiser, a mensagem que vai aparecer " +
+          "escrita quando a pessoa abrir a conversa. O link sai pronto para a " +
+          "bio do Instagram, para o site ou para um botão, e o QR code vem junto " +
+          "para imprimir.",
+        fields: [],
+        results: [],
+        note:
+          "O WhatsApp pede o número no formato internacional, sem zero na " +
+          "frente, parêntese ou traço, e a ferramenta já limpa isso. Se você " +
+          "deixar o número em branco, quem abrir o link escolhe para quem mandar " +
+          "a mensagem.",
+        labels: {
+          country: "País",
+          phone: "Número com DDD",
+          phonePlaceholder: "11 98765-4321",
+          phoneHint: "O 55 é o código do Brasil. Para outro país, troque.",
+          message: "Mensagem (opcional)",
+          result: "Link",
+          test: "Abrir no WhatsApp",
+          qr: "QR code do link",
+          empty: "Coloque um número ou uma mensagem.",
+          invalid: "Esse número parece curto ou longo demais. Confira o DDD.",
+        },
+      },
+      margin: {
+        name: "Margem e markup",
+        tagline: "Calcule a margem de lucro, o markup e o preço de venda.",
+        metaTitle: "Calculadora de margem de lucro e markup",
+        metaDescription:
+          "Descubra a margem e o markup a partir do custo e do preço, ou calcule " +
+          "o preço de venda para ter a margem ou o markup que você quer.",
+        intro:
+          "É comum confundir margem com markup. A margem é o lucro dividido pelo " +
+          "preço de venda, e o markup é o lucro dividido pelo custo. Um produto " +
+          "que custa 60 e é vendido por 100 tem 40% de margem e 66,67% de " +
+          "markup.",
+        fields: [],
+        results: [],
+        note:
+          "Os impostos e as taxas de venda não estão na conta. Se eles saem do " +
+          "preço, some tudo ao custo antes de calcular.",
+        labels: {
+          q1: "Tenho o custo e o preço",
+          q2: "Quero uma margem de",
+          q3: "Quero um markup de",
+          cost: "Custo",
+          price: "Preço de venda",
+          margin: "Margem (%)",
+          markup: "Markup (%)",
+          profit: "Lucro por unidade",
+        },
+      },
+      average: {
+        name: "Calculadora de média",
+        tagline: "Média simples e ponderada, e quanto falta para passar.",
+        metaTitle: "Calculadora de média simples e ponderada",
+        metaDescription:
+          "Calcule a média simples ou ponderada das suas notas e descubra quanto " +
+          "você precisa tirar na próxima prova para chegar à média.",
+        intro:
+          "Coloque uma nota por linha. Se as provas têm pesos diferentes, " +
+          "escreva o peso depois da nota, separado por espaço, e a média " +
+          "ponderada aparece em destaque. Embaixo dá para ver quanto falta tirar " +
+          "na próxima prova.",
+        fields: [],
+        results: [],
+        note:
+          "Sem peso, cada nota vale 1. A conta do quanto falta considera que a " +
+          "próxima prova entra com o peso que você colocar.",
+        labels: {
+          input: "Notas",
+          inputHint: "Ex.: 7,5 2 é nota 7,5 com peso 2",
+          skipped: "Não entendi a linha {lines}, então ela ficou fora da conta.",
+          neededTitle: "Quanto preciso tirar?",
+          target: "Média para passar",
+          nextWeight: "Peso da próxima prova",
+          needed: "Você precisa tirar {value} na próxima prova.",
+          alreadyThere: "Você já passou, mesmo tirando zero.",
+          weighted: "Média ponderada",
+          mean: "Média simples",
+          median: "Mediana",
+          min: "Menor nota",
+          max: "Maior nota",
+          count: "{count} notas",
+          empty: "Coloque pelo menos uma nota.",
+        },
+      },
+      stopwatch: {
+        name: "Cronômetro e timer",
+        tagline: "Cronômetro com voltas e timer com alarme.",
+        metaTitle: "Cronômetro online com voltas e timer",
+        metaDescription:
+          "Use o cronômetro com voltas ou o timer com alarme direto no " +
+          "navegador. Funciona no celular e no computador.",
+        intro:
+          "No cronômetro, clique em iniciar e marque as voltas quando quiser. No " +
+          "timer, escolha os minutos e os segundos, e quando o tempo acabar toca " +
+          "um alarme.",
+        fields: [],
+        results: [],
+        note:
+          "O tempo é medido pelo relógio do navegador, então continua certo " +
+          "mesmo se você trocar de aba. Para ouvir o alarme, deixe o som do " +
+          "aparelho ligado.",
+        labels: {
+          mode: "Modo",
+          stopwatch: "Cronômetro",
+          timer: "Timer",
+          minutes: "Minutos",
+          seconds: "Segundos",
+          start: "Iniciar",
+          pause: "Pausar",
+          resume: "Continuar",
+          lap: "Volta",
+          reset: "Zerar",
+          lapN: "Volta {n}",
+          finished: "O tempo acabou.",
+        },
+      },
+      units: {
+        name: "Conversor de unidades",
+        tagline: "Comprimento, peso, volume, área, velocidade, dados e temperatura.",
+        metaTitle: "Conversor de unidades de medida",
+        metaDescription:
+          "Converta comprimento, peso, volume, área, velocidade, temperatura e " +
+          "tamanho de arquivo. Polegada para centímetro, libra para quilo, " +
+          "Fahrenheit para Celsius e mais.",
+        intro:
+          "Escolha o tipo de medida, digite o valor e a unidade, e todas as " +
+          "conversões aparecem de uma vez.",
+        fields: [],
+        results: [],
+        note:
+          "Os fatores são os das definições oficiais, como 1 polegada = 2,54 cm " +
+          "e 1 libra = 453,59237 g. Galão, xícara e onça fluida são os " +
+          "americanos. Nos dados, KB, MB e GB contam de mil em mil, e KiB, MiB e " +
+          "GiB de 1.024 em 1.024.",
+        labels: {
+          category: "Medida",
+          length: "Comprimento",
+          mass: "Peso",
+          volume: "Volume",
+          area: "Área",
+          speed: "Velocidade",
+          data: "Dados",
+          temperature: "Temperatura",
+          value: "Valor",
+          from: "Unidade",
+          u_mm: "Milímetro (mm)",
+          u_cm: "Centímetro (cm)",
+          u_m: "Metro (m)",
+          u_km: "Quilômetro (km)",
+          u_in: "Polegada (in)",
+          u_ft: "Pé (ft)",
+          u_yd: "Jarda (yd)",
+          u_mi: "Milha (mi)",
+          u_mg: "Miligrama (mg)",
+          u_g: "Grama (g)",
+          u_kg: "Quilo (kg)",
+          u_t: "Tonelada (t)",
+          u_oz: "Onça (oz)",
+          u_lb: "Libra (lb)",
+          u_ml: "Mililitro (ml)",
+          u_l: "Litro (l)",
+          u_m3: "Metro cúbico (m³)",
+          u_floz: "Onça fluida americana (fl oz)",
+          u_cup: "Xícara americana",
+          u_gal: "Galão americano (gal)",
+          u_cm2: "Centímetro quadrado (cm²)",
+          u_m2: "Metro quadrado (m²)",
+          u_ha: "Hectare (ha)",
+          u_km2: "Quilômetro quadrado (km²)",
+          u_ft2: "Pé quadrado (ft²)",
+          u_acre: "Acre",
+          u_ms: "Metro por segundo (m/s)",
+          u_kmh: "Quilômetro por hora (km/h)",
+          u_mph: "Milha por hora (mph)",
+          u_kn: "Nó (kn)",
+          u_B: "Byte (B)",
+          u_KB: "Kilobyte (KB)",
+          u_MB: "Megabyte (MB)",
+          u_GB: "Gigabyte (GB)",
+          u_TB: "Terabyte (TB)",
+          u_KiB: "Kibibyte (KiB)",
+          u_MiB: "Mebibyte (MiB)",
+          u_GiB: "Gibibyte (GiB)",
+          u_TiB: "Tebibyte (TiB)",
+          u_c: "Celsius (°C)",
+          u_f: "Fahrenheit (°F)",
+          u_k: "Kelvin (K)",
+        },
+      },
+      utm: {
+        name: "Gerador de UTM",
+        tagline: "Monte links com UTM para saber de onde vêm as visitas.",
+        metaTitle: "Gerador de UTM para links de campanha",
+        metaDescription:
+          "Monte links com utm_source, utm_medium e utm_campaign para acompanhar " +
+          "suas campanhas no Google Analytics.",
+        intro:
+          "Cole o endereço da página e preencha de onde vem a visita, por qual " +
+          "meio e de qual campanha. O link fica pronto para colocar no anúncio, " +
+          "no e-mail ou no post, e o Google Analytics mostra as visitas " +
+          "separadas por esses nomes.",
+        fields: [],
+        results: [],
+        note:
+          "O Google Analytics diferencia maiúscula de minúscula, então Instagram " +
+          "e instagram aparecem como duas origens. Por isso a ferramenta já " +
+          "deixa tudo em minúscula, se você não desmarcar. O Google recomenda " +
+          "preencher sempre source, medium e campaign.",
+        labels: {
+          url: "Endereço da página",
+          optional: "opcional",
+          sourcePlaceholder: "instagram",
+          sourceHint: "De onde vem a visita",
+          mediumPlaceholder: "social",
+          mediumHint: "O tipo de canal, como social, email ou cpc",
+          campaignPlaceholder: "black-friday",
+          campaignHint: "O nome da campanha",
+          termPlaceholder: "",
+          termHint: "A palavra-chave, em anúncio de busca",
+          contentPlaceholder: "",
+          contentHint: "Para diferenciar dois links da mesma campanha",
+          lowercase: "Deixar tudo em minúscula",
+          result: "Link com UTM",
+          empty: "Cole o endereço da página.",
+          invalid: "Esse endereço não parece válido. Ele precisa começar com https:// e ter um domínio.",
+        },
+      },
+      image: {
+        name: "Imagem para Base64",
+        tagline: "Transforma uma imagem em data URI para usar no HTML ou no CSS.",
+        metaTitle: "Converter imagem para Base64 online",
+        metaDescription:
+          "Converta PNG, JPG, SVG, GIF ou WebP em Base64 e copie a data URI, a " +
+          "tag img ou o CSS prontos. A imagem não sai do seu computador.",
+        intro:
+          "Arraste a imagem ou clique para escolher. Você recebe a data URI, o " +
+          "Base64 puro, a tag img e a linha de CSS, cada um com botão de copiar.",
+        fields: [],
+        results: [],
+        note:
+          "A imagem é lida no seu navegador e não é enviada para nenhum " +
+          "servidor. Em Base64 ela fica cerca de um terço maior, então vale mais " +
+          "a pena para ícone e imagem pequena. O limite aqui é de 5 MB.",
+        labels: {
+          drop: "Arraste a imagem aqui",
+          dropHint: "ou clique para escolher um arquivo",
+          preview: "Prévia da imagem",
+          asText: "em texto",
+          dataUrl: "Data URI",
+          base64: "Base64",
+          img: "Tag img",
+          css: "CSS",
+          notImage: "Esse arquivo não é uma imagem.",
+          tooBig: "Essa imagem passa de 5 MB.",
+          empty: "Escolha uma imagem.",
+        },
+      },
     },
   },
 

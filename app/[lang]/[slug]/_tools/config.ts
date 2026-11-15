@@ -32,6 +32,13 @@ import { slugs as interest } from "@/app/[lang]/[slug]/_tools/interest";
 import { slugs as hours } from "@/app/[lang]/[slug]/_tools/hours";
 import { slugs as entities } from "@/app/[lang]/[slug]/_tools/entities";
 import { slugs as timezone } from "@/app/[lang]/[slug]/_tools/timezone";
+import { slugs as units } from "@/app/[lang]/[slug]/_tools/units";
+import { slugs as average } from "@/app/[lang]/[slug]/_tools/average";
+import { slugs as whatsapp } from "@/app/[lang]/[slug]/_tools/whatsapp";
+import { slugs as stopwatch } from "@/app/[lang]/[slug]/_tools/stopwatch";
+import { slugs as image } from "@/app/[lang]/[slug]/_tools/image";
+import { slugs as utm } from "@/app/[lang]/[slug]/_tools/utm";
+import { slugs as margin } from "@/app/[lang]/[slug]/_tools/margin";
 import { slugs as downtimeCost } from "@/app/[lang]/[slug]/_tools/downtime-cost";
 import { slugs as estimate } from "@/app/[lang]/[slug]/_tools/estimate";
 import { slugs as hourlyCost } from "@/app/[lang]/[slug]/_tools/hourly-cost";
@@ -77,6 +84,13 @@ export const toolSlugs = {
   hours,
   entities,
   timezone,
+  units,
+  average,
+  whatsapp,
+  stopwatch,
+  image,
+  utm,
+  margin,
 } satisfies Record<string, Record<Locale, string>>;
 
 export type ToolId = keyof typeof toolSlugs;
@@ -93,14 +107,19 @@ export const calculatorIds: ToolId[] = [
 ];
 
 export const utilityIds: ToolId[] = [
+  "whatsapp",
   "percent",
+  "margin",
   "ratio",
   "interest",
   "words",
+  "average",
   "age",
   "dates",
   "hours",
   "timezone",
+  "stopwatch",
+  "units",
   "draw",
   "cpf",
   "cnpj",
@@ -114,7 +133,9 @@ export const utilityIds: ToolId[] = [
   "cron",
   "csv",
   "base64",
+  "image",
   "url",
+  "utm",
   "entities",
   "timestamp",
   "base",

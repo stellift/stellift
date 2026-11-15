@@ -162,11 +162,13 @@ export function CopyRow({
   value,
   shared,
   literal = false,
+  display,
 }: {
   label: string;
   value: string;
   shared: CalculatorProps["shared"];
   literal?: boolean;
+  display?: string;
 }) {
   return (
     <div className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 border-b border-line pb-4 last:border-b-0 last:pb-0">
@@ -175,7 +177,7 @@ export function CopyRow({
         <CopyButton value={value} shared={shared} />
       </dd>
       <dd className="col-span-2 break-all font-mono text-[13px] leading-relaxed text-ink">
-        {value || "\u00a0"}
+        {(display ?? value) || "\u00a0"}
       </dd>
     </div>
   );

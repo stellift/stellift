@@ -37,6 +37,13 @@ import Interest from "@/app/[lang]/[slug]/_tools/interest/calculator";
 import Hours from "@/app/[lang]/[slug]/_tools/hours/calculator";
 import Entities from "@/app/[lang]/[slug]/_tools/entities/calculator";
 import TimeZone from "@/app/[lang]/[slug]/_tools/timezone/calculator";
+import Units from "@/app/[lang]/[slug]/_tools/units/calculator";
+import Average from "@/app/[lang]/[slug]/_tools/average/calculator";
+import Whatsapp from "@/app/[lang]/[slug]/_tools/whatsapp/calculator";
+import Stopwatch from "@/app/[lang]/[slug]/_tools/stopwatch/calculator";
+import ImageToBase64 from "@/app/[lang]/[slug]/_tools/image/calculator";
+import Utm from "@/app/[lang]/[slug]/_tools/utm/calculator";
+import Margin from "@/app/[lang]/[slug]/_tools/margin/calculator";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 import type { ToolId } from "@/app/[lang]/[slug]/_tools/config";
 
@@ -79,4 +86,11 @@ export const calculators: Record<ToolId, ComponentType<CalculatorProps>> = {
   hours: Hours,
   entities: Entities,
   timezone: TimeZone,
+  units: Units,
+  average: Average,
+  whatsapp: Whatsapp,
+  stopwatch: Stopwatch,
+  image: ImageToBase64,
+  utm: Utm,
+  margin: Margin,
 };

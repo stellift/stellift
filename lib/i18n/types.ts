@@ -149,6 +149,13 @@ export type Dictionary = {
       hours: ToolCopy;
       entities: ToolCopy;
       timezone: ToolCopy;
+      units: ToolCopy;
+      average: ToolCopy;
+      whatsapp: ToolCopy;
+      stopwatch: ToolCopy;
+      image: ToolCopy;
+      utm: ToolCopy;
+      margin: ToolCopy;
     };
   };
   blog: {

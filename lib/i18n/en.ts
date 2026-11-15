@@ -1732,6 +1732,272 @@ export const en: Dictionary = {
           result: "Result",
         },
       },
+      whatsapp: {
+        name: "WhatsApp link",
+        tagline: "Create a link that opens a WhatsApp chat, with a message ready.",
+        metaTitle: "WhatsApp link generator with a message",
+        metaDescription:
+          "Create a wa.me link to your WhatsApp, with a message already typed " +
+          "in, for your Instagram bio, website or business card. Comes with a QR " +
+          "code.",
+        intro:
+          "Enter the number and, if you like, the message that will already be " +
+          "typed when the person opens the chat. The link is ready for an " +
+          "Instagram bio, a website or a button, and there's a QR code to print.",
+        fields: [],
+        results: [],
+        note:
+          "WhatsApp wants the number in international format, without leading " +
+          "zeros, parentheses or dashes, and the tool cleans that up for you. If " +
+          "you leave the number blank, whoever opens the link picks who to send " +
+          "the message to.",
+        labels: {
+          country: "Country",
+          phone: "Phone number",
+          phonePlaceholder: "555 123 4567",
+          phoneHint: "1 is the code for the US and Canada. Change it for other countries.",
+          message: "Message (optional)",
+          result: "Link",
+          test: "Open in WhatsApp",
+          qr: "QR code for the link",
+          empty: "Enter a number or a message.",
+          invalid: "That number looks too short or too long. Check it.",
+        },
+      },
+      margin: {
+        name: "Margin and markup",
+        tagline: "Work out profit margin, markup and selling price.",
+        metaTitle: "Profit margin and markup calculator",
+        metaDescription:
+          "Get margin and markup from cost and price, or work out the selling " +
+          "price that gives you the margin or markup you want.",
+        intro:
+          "Margin and markup get mixed up a lot. Margin is profit divided by the " +
+          "selling price, and markup is profit divided by cost. Something that " +
+          "costs 60 and sells for 100 has a 40% margin and a 66.67% markup.",
+        fields: [],
+        results: [],
+        note:
+          "Taxes and sales fees aren't included. If they come out of the price, " +
+          "add them to the cost before you calculate.",
+        labels: {
+          q1: "I have the cost and the price",
+          q2: "I want a margin of",
+          q3: "I want a markup of",
+          cost: "Cost",
+          price: "Selling price",
+          margin: "Margin (%)",
+          markup: "Markup (%)",
+          profit: "Profit per unit",
+        },
+      },
+      average: {
+        name: "Average calculator",
+        tagline: "Simple and weighted average, and what you still need to pass.",
+        metaTitle: "Simple and weighted average calculator",
+        metaDescription:
+          "Work out the simple or weighted average of your grades and find out " +
+          "what you need on the next test to reach your target.",
+        intro:
+          "Put one grade per line. If tests have different weights, write the " +
+          "weight after the grade, separated by a space, and the weighted " +
+          "average shows up first. Below, you can see what you still need on the " +
+          "next test.",
+        fields: [],
+        results: [],
+        note:
+          "Without a weight, each grade counts as 1. The what-you-need sum " +
+          "assumes the next test counts with the weight you enter.",
+        labels: {
+          input: "Grades",
+          inputHint: "E.g. 7.5 2 is a grade of 7.5 with a weight of 2",
+          skipped: "I didn't understand line {lines}, so it was left out.",
+          neededTitle: "What do I need?",
+          target: "Target average",
+          nextWeight: "Weight of the next test",
+          needed: "You need {value} on the next test.",
+          alreadyThere: "You've already made it, even with a zero.",
+          weighted: "Weighted average",
+          mean: "Simple average",
+          median: "Median",
+          min: "Lowest grade",
+          max: "Highest grade",
+          count: "{count} grades",
+          empty: "Enter at least one grade.",
+        },
+      },
+      stopwatch: {
+        name: "Stopwatch and timer",
+        tagline: "A stopwatch with laps and a timer with an alarm.",
+        metaTitle: "Online stopwatch with laps and timer",
+        metaDescription:
+          "Use a stopwatch with laps or a countdown timer with an alarm right in " +
+          "your browser. Works on phones and computers.",
+        intro:
+          "With the stopwatch, click start and mark laps whenever you like. With " +
+          "the timer, pick the minutes and seconds, and an alarm goes off when " +
+          "time is up.",
+        fields: [],
+        results: [],
+        note:
+          "Time is measured by the browser's clock, so it stays right even if " +
+          "you switch tabs. To hear the alarm, keep your device's sound on.",
+        labels: {
+          mode: "Mode",
+          stopwatch: "Stopwatch",
+          timer: "Timer",
+          minutes: "Minutes",
+          seconds: "Seconds",
+          start: "Start",
+          pause: "Pause",
+          resume: "Resume",
+          lap: "Lap",
+          reset: "Reset",
+          lapN: "Lap {n}",
+          finished: "Time's up.",
+        },
+      },
+      units: {
+        name: "Unit converter",
+        tagline: "Length, weight, volume, area, speed, data and temperature.",
+        metaTitle: "Unit converter",
+        metaDescription:
+          "Convert length, weight, volume, area, speed, temperature and file " +
+          "size. Inches to centimeters, pounds to kilograms, Fahrenheit to " +
+          "Celsius and more.",
+        intro:
+          "Pick the kind of measurement, type the value and the unit, and every " +
+          "conversion shows up at once.",
+        fields: [],
+        results: [],
+        note:
+          "The factors come from the official definitions, like 1 inch = 2.54 cm " +
+          "and 1 pound = 453.59237 g. Gallon, cup and fluid ounce are US ones. " +
+          "For data, KB, MB and GB go up by 1,000, and KiB, MiB and GiB by " +
+          "1,024.",
+        labels: {
+          category: "Measurement",
+          length: "Length",
+          mass: "Weight",
+          volume: "Volume",
+          area: "Area",
+          speed: "Speed",
+          data: "Data",
+          temperature: "Temperature",
+          value: "Value",
+          from: "Unit",
+          u_mm: "Millimeter (mm)",
+          u_cm: "Centimeter (cm)",
+          u_m: "Meter (m)",
+          u_km: "Kilometer (km)",
+          u_in: "Inch (in)",
+          u_ft: "Foot (ft)",
+          u_yd: "Yard (yd)",
+          u_mi: "Mile (mi)",
+          u_mg: "Milligram (mg)",
+          u_g: "Gram (g)",
+          u_kg: "Kilogram (kg)",
+          u_t: "Metric ton (t)",
+          u_oz: "Ounce (oz)",
+          u_lb: "Pound (lb)",
+          u_ml: "Milliliter (ml)",
+          u_l: "Liter (l)",
+          u_m3: "Cubic meter (m³)",
+          u_floz: "US fluid ounce (fl oz)",
+          u_cup: "US cup",
+          u_gal: "US gallon (gal)",
+          u_cm2: "Square centimeter (cm²)",
+          u_m2: "Square meter (m²)",
+          u_ha: "Hectare (ha)",
+          u_km2: "Square kilometer (km²)",
+          u_ft2: "Square foot (ft²)",
+          u_acre: "Acre",
+          u_ms: "Meter per second (m/s)",
+          u_kmh: "Kilometer per hour (km/h)",
+          u_mph: "Mile per hour (mph)",
+          u_kn: "Knot (kn)",
+          u_B: "Byte (B)",
+          u_KB: "Kilobyte (KB)",
+          u_MB: "Megabyte (MB)",
+          u_GB: "Gigabyte (GB)",
+          u_TB: "Terabyte (TB)",
+          u_KiB: "Kibibyte (KiB)",
+          u_MiB: "Mebibyte (MiB)",
+          u_GiB: "Gibibyte (GiB)",
+          u_TiB: "Tebibyte (TiB)",
+          u_c: "Celsius (°C)",
+          u_f: "Fahrenheit (°F)",
+          u_k: "Kelvin (K)",
+        },
+      },
+      utm: {
+        name: "UTM builder",
+        tagline: "Build links with UTM tags to see where visits come from.",
+        metaTitle: "UTM builder for campaign links",
+        metaDescription:
+          "Build links with utm_source, utm_medium and utm_campaign to track " +
+          "your campaigns in Google Analytics.",
+        intro:
+          "Paste the page address and fill in where the visit comes from, " +
+          "through which medium and from which campaign. The link is ready for " +
+          "an ad, an email or a post, and Google Analytics shows visits split by " +
+          "those names.",
+        fields: [],
+        results: [],
+        note:
+          "Google Analytics is case sensitive, so Instagram and instagram show " +
+          "up as two sources. That's why the tool lowercases everything unless " +
+          "you untick it. Google recommends always filling in source, medium and " +
+          "campaign.",
+        labels: {
+          url: "Page address",
+          optional: "optional",
+          sourcePlaceholder: "instagram",
+          sourceHint: "Where the visit comes from",
+          mediumPlaceholder: "social",
+          mediumHint: "The kind of channel, like social, email or cpc",
+          campaignPlaceholder: "black-friday",
+          campaignHint: "The campaign name",
+          termPlaceholder: "",
+          termHint: "The keyword, for search ads",
+          contentPlaceholder: "",
+          contentHint: "To tell apart two links in the same campaign",
+          lowercase: "Lowercase everything",
+          result: "Link with UTM",
+          empty: "Paste the page address.",
+          invalid: "That address doesn't look valid. It needs to start with https:// and have a domain.",
+        },
+      },
+      image: {
+        name: "Image to Base64",
+        tagline: "Turns an image into a data URI for HTML or CSS.",
+        metaTitle: "Convert an image to Base64 online",
+        metaDescription:
+          "Convert PNG, JPG, SVG, GIF or WebP to Base64 and copy the data URI, " +
+          "the img tag or the CSS. The image never leaves your computer.",
+        intro:
+          "Drag the image in or click to pick one. You get the data URI, the raw " +
+          "Base64, the img tag and the CSS line, each with a copy button.",
+        fields: [],
+        results: [],
+        note:
+          "The image is read in your browser and isn't sent to any server. In " +
+          "Base64 it gets about a third bigger, so it's most worth it for icons " +
+          "and small images. The limit here is 5 MB.",
+        labels: {
+          drop: "Drag the image here",
+          dropHint: "or click to pick a file",
+          preview: "Image preview",
+          asText: "as text",
+          dataUrl: "Data URI",
+          base64: "Base64",
+          img: "img tag",
+          css: "CSS",
+          notImage: "That file isn't an image.",
+          tooBig: "That image is over 5 MB.",
+          empty: "Pick an image.",
+        },
+      },
     },
   },
 
