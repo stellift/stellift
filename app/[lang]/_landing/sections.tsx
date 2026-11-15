@@ -92,14 +92,14 @@ export function Hero({ niche, mailto }: { niche: Niche; mailto: string }) {
 
         <a
           href={niche.demo.path}
-          className="group block border border-line bg-surface lg:col-span-6"
+          className="group block min-w-0 border border-line bg-surface lg:col-span-6"
           aria-label="Abrir a página de exemplo"
         >
           <div className="flex items-center gap-1.5 border-b border-line px-4 py-3">
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
-            <span className="ml-3 truncate font-mono text-[11px] text-ink-muted">
+            <span className="ml-3 min-w-0 truncate font-mono text-[11px] text-ink-muted">
               {niche.demo.label}
             </span>
           </div>
