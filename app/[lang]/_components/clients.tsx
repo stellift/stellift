@@ -133,15 +133,15 @@ function ClientLogo({ client, size }: { client: Client; size: "sm" | "lg" }) {
           <Image
             src="/logos/floprobux-light.webp"
             alt=""
-            width={560}
-            height={213}
+            width={84}
+            height={32}
             className={`${h} w-auto dark:hidden`}
           />
           <Image
             src="/logos/floprobux.webp"
             alt=""
-            width={560}
-            height={213}
+            width={84}
+            height={32}
             className={`hidden ${h} w-auto dark:block`}
           />
         </>
