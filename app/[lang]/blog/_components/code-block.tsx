@@ -24,7 +24,7 @@ export default async function CodeBlock({
   copied: string;
 }) {
   const parsed = read(children);
-  if (!parsed) return <pre>{children}</pre>;
+  if (!parsed) return <pre tabIndex={0}>{children}</pre>;
 
   const html = await highlight(parsed.code, parsed.name);
   const label = parsed.name ? languageLabel(parsed.name) : null;
@@ -41,11 +41,12 @@ export default async function CodeBlock({
       {html ? (
         <div
           className="code-body"
+          tabIndex={0}
           data-numbered={numbered ? "true" : undefined}
           dangerouslySetInnerHTML={{ __html: html }}
         />
       ) : (
-        <div className="code-body">
+        <div className="code-body" tabIndex={0}>
           <pre>
             <code>{parsed.code}</code>
           </pre>
