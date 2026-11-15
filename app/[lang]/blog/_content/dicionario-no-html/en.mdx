@@ -1,0 +1,87 @@
+While measuring page sizes on this site, a static landing page showed up with 149 KB of HTML, far more than its text accounts for. Most of it came from the header.
+
+## The problem
+
+In the Next.js App Router, the props of a component marked `"use client"` are serialized into the page HTML so React can hydrate the component in the browser.
+
+The site header is a client component, because it follows the scroll and opens the menu on mobile. It lives in the layout and received the whole translation dictionary:
+
+```tsx
+<Frame dict={dict} lang={lang} />
+```
+
+It used only five fields from the dictionary, but the whole object went along, with the portfolio, each project's gallery and the calculator copy. Since the header is in the layout, this happened on every page.
+
+## The fix
+
+We made a typed slice of the dictionary for each client component:
+
+```ts
+export type FrameCopy = {
+  nav: Dictionary["nav"];
+  site: Pick<Dictionary["site"], "name">;
+  tools: Pick<Dictionary["tools"], "backLabel">;
+  ui: {
+    header: Dictionary["ui"]["header"];
+    footer: Pick<Dictionary["ui"]["footer"], "ariaLabel">;
+  };
+};
+
+export function frameCopy(dict: Dictionary): FrameCopy {
+  return {
+    nav: dict.nav,
+    site: { name: dict.site.name },
+    tools: { backLabel: dict.tools.backLabel },
+    ui: {
+      header: dict.ui.header,
+      footer: { ariaLabel: dict.ui.footer.ariaLabel },
+    },
+  };
+}
+```
+
+```tsx
+<Frame dict={frameCopy(dict)} lang={lang} />
+```
+
+If the header starts using another string, TypeScript complains until the field is added to the slice. We did the same for the contact form and the portfolio carousel. The landing page went down to 124 KB.
+
+## The icon sprite
+
+The home page had a similar case. The tech icons on the portfolio cards came from a 42 KB SVG sprite rendered in the page. Because React rendered it, it showed up twice, in the HTML and in the hydration data.
+
+We moved the sprite to a file served by a cached route:
+
+```ts
+export const dynamic = "force-static";
+
+export function GET() {
+  const symbols = Object.entries(techIcons)
+    .map(
+      ([slug, icon]) =>
+        `<symbol id="tech-${slug}" viewBox="${icon.viewBox}">${icon.paths
+          .map((d) => `<path d="${d}"/>`)
+          .join("")}</symbol>`,
+    )
+    .join("");
+
+  return new Response(`<svg xmlns="http://www.w3.org/2000/svg">${symbols}</svg>`, {
+    headers: {
+      "Content-Type": "image/svg+xml",
+      "Cache-Control": "public, max-age=604800, stale-while-revalidate=86400",
+    },
+  });
+}
+```
+
+And the icons now point at it:
+
+```tsx
+<use href={`/tech.svg#tech-${tech.slug}`} />
+```
+
+The home page HTML went from 268 KB to 181 KB, or from 78 KB to 39 KB compressed.
+
+## Checking your own project
+
+The hydration data sits in the `self.__next_f.push` calls in the page source. If text the page does not show appears there, some client component is receiving more than it uses.

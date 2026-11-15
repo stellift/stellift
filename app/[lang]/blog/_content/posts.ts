@@ -19,6 +19,28 @@ export type Post = {
 
 export const posts: readonly Post[] = [
   {
+    id: "dicionario-no-html",
+    date: "2026-11-15",
+    content: {
+      "pt-BR": {
+        slug: "dicionario-inteiro-no-html-de-cada-pagina",
+        title: "O dicionário inteiro no HTML de cada página",
+        description:
+          "Um componente cliente do Next.js recebia mais dados do que usava, e isso ia para o HTML de todas as páginas.",
+        topic: "Next.js",
+        body: () => import("./dicionario-no-html/pt-BR.mdx"),
+      },
+      en: {
+        slug: "whole-dictionary-in-every-page-html",
+        title: "The whole dictionary in every page's HTML",
+        description:
+          "A Next.js client component received more data than it used, and all of it went into the HTML of every page.",
+        topic: "Next.js",
+        body: () => import("./dicionario-no-html/en.mdx"),
+      },
+    },
+  },
+  {
     id: "livro-caixa",
     date: "2026-11-15",
     content: {

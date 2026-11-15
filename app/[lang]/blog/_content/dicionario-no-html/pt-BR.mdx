@@ -1,0 +1,87 @@
+Medindo o tamanho das páginas deste site, uma landing page estática apareceu com 149 KB de HTML, bem mais do que o texto dela justifica. A maior parte vinha do cabeçalho.
+
+## O problema
+
+No App Router do Next.js, as props de um componente marcado com `"use client"` são serializadas e vão no HTML da página, para o React hidratar o componente no navegador.
+
+O cabeçalho do site é um componente cliente, porque acompanha a rolagem e abre o menu no celular. Ele fica no layout e recebia o dicionário de traduções inteiro:
+
+```tsx
+<Frame dict={dict} lang={lang} />
+```
+
+Ele usava só cinco campos do dicionário, mas o objeto inteiro ia junto, com o portfólio, as galerias de cada projeto e os textos das calculadoras. Como o cabeçalho está no layout, isso acontecia em todas as páginas.
+
+## A correção
+
+Criamos um recorte tipado do dicionário para cada componente cliente:
+
+```ts
+export type FrameCopy = {
+  nav: Dictionary["nav"];
+  site: Pick<Dictionary["site"], "name">;
+  tools: Pick<Dictionary["tools"], "backLabel">;
+  ui: {
+    header: Dictionary["ui"]["header"];
+    footer: Pick<Dictionary["ui"]["footer"], "ariaLabel">;
+  };
+};
+
+export function frameCopy(dict: Dictionary): FrameCopy {
+  return {
+    nav: dict.nav,
+    site: { name: dict.site.name },
+    tools: { backLabel: dict.tools.backLabel },
+    ui: {
+      header: dict.ui.header,
+      footer: { ariaLabel: dict.ui.footer.ariaLabel },
+    },
+  };
+}
+```
+
+```tsx
+<Frame dict={frameCopy(dict)} lang={lang} />
+```
+
+Se o cabeçalho passar a usar outro texto, o TypeScript acusa até o campo entrar no recorte. Fizemos o mesmo no formulário de contato e no carrossel do portfólio. A landing page caiu para 124 KB.
+
+## O sprite de ícones
+
+A home tinha mais um caso parecido. Os ícones de tecnologia dos cards do portfólio vinham de um sprite SVG de 42 KB renderizado na página. Por ser renderizado pelo React, ele aparecia duas vezes, no HTML e nos dados de hidratação.
+
+Passamos o sprite para um arquivo servido por uma rota com cache:
+
+```ts
+export const dynamic = "force-static";
+
+export function GET() {
+  const symbols = Object.entries(techIcons)
+    .map(
+      ([slug, icon]) =>
+        `<symbol id="tech-${slug}" viewBox="${icon.viewBox}">${icon.paths
+          .map((d) => `<path d="${d}"/>`)
+          .join("")}</symbol>`,
+    )
+    .join("");
+
+  return new Response(`<svg xmlns="http://www.w3.org/2000/svg">${symbols}</svg>`, {
+    headers: {
+      "Content-Type": "image/svg+xml",
+      "Cache-Control": "public, max-age=604800, stale-while-revalidate=86400",
+    },
+  });
+}
+```
+
+E os ícones passaram a apontar para ele:
+
+```tsx
+<use href={`/tech.svg#tech-${tech.slug}`} />
+```
+
+O HTML da home foi de 268 KB para 181 KB, ou de 78 KB para 39 KB comprimido.
+
+## Para conferir no seu projeto
+
+Os dados de hidratação ficam nas chamadas `self.__next_f.push` no código-fonte da página. Se ali aparece texto que a página não mostra, algum componente cliente está recebendo mais do que usa.
