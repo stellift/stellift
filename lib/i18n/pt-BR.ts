@@ -1001,6 +1001,160 @@ export const ptBR: Dictionary = {
           bytes: "Bytes (UTF-8)",
         },
       },
+      hash: {
+        name: "Gerador de hash",
+        tagline: "MD5, SHA-1, SHA-256, SHA-384 e SHA-512 de qualquer texto.",
+        metaTitle: "Gerador de hash MD5, SHA-1 e SHA-256 online",
+        metaDescription:
+          "Gere o hash MD5, SHA-1, SHA-256, SHA-384 e SHA-512 de um texto " +
+          "enquanto você digita. O texto não sai do seu navegador.",
+        intro:
+          "Digite ou cole o texto e os cinco hashes aparecem na hora. O texto " +
+          "vira UTF-8 antes do cálculo, então o resultado bate com o de md5sum e " +
+          "sha256sum no terminal.",
+        fields: [],
+        results: [],
+        note:
+          "MD5 e SHA-1 servem para conferir arquivo e gerar chave de cache, mas " +
+          "não são seguros para guardar senha. Para senha, use bcrypt, scrypt ou " +
+          "Argon2.",
+        labels: {
+          input: "Texto",
+          upper: "Letras maiúsculas",
+        },
+      },
+      url: {
+        name: "URL encode e decode",
+        tagline: "Codifica e decodifica texto para usar em URL.",
+        metaTitle: "URL encode e decode online",
+        metaDescription:
+          "Codifique texto para URL (percent-encoding) e decodifique de volta, " +
+          "com acento e espaço. Roda no navegador.",
+        intro:
+          "Codificar troca espaço, acento e símbolo por %20, %C3%A7 e assim por " +
+          "diante. Por padrão a ferramenta codifica tudo, que é o certo para o " +
+          "valor de um parâmetro. Marque URL completa para manter :, /, ? e & " +
+          "como estão.",
+        fields: [],
+        results: [],
+        note:
+          "Usa encodeURIComponent e encodeURI, as mesmas funções do JavaScript.",
+        labels: {
+          mode: "Modo",
+          encode: "Codificar",
+          decode: "Decodificar",
+          input: "Texto",
+          whole: "URL completa",
+          plus: "Tratar + como espaço",
+          result: "Resultado",
+          invalid: "Esse texto tem uma sequência % que não forma um caractere válido.",
+        },
+      },
+      timestamp: {
+        name: "Conversor de timestamp",
+        tagline: "Timestamp Unix para data e data para timestamp.",
+        metaTitle: "Conversor de timestamp Unix para data online",
+        metaDescription:
+          "Converta timestamp Unix em segundos ou milissegundos para data e " +
+          "hora, e data para timestamp. Mostra o horário local e o UTC.",
+        intro:
+          "Cole um timestamp em segundos ou em milissegundos e veja a data no " +
+          "seu fuso e em UTC. Também dá para escolher uma data e ver o timestamp " +
+          "dela.",
+        fields: [],
+        results: [],
+        note:
+          "Números a partir de 100.000.000.000 são lidos como milissegundos. A " +
+          "data é mostrada no fuso horário do seu navegador.",
+        labels: {
+          input: "Timestamp",
+          inputHint: "Em segundos ou milissegundos",
+          date: "Data e hora",
+          now: "Agora",
+          local: "Data local",
+          iso: "ISO 8601 (UTC)",
+          seconds: "Segundos",
+          milliseconds: "Milissegundos",
+          invalid: "Isso não parece um timestamp. Use só números.",
+        },
+      },
+      jwt: {
+        name: "Decodificador de JWT",
+        tagline: "Mostra o header e o payload de um token JWT.",
+        metaTitle: "Decodificador de JWT online",
+        metaDescription:
+          "Cole um token JWT para ver o header, o payload e as datas de emissão " +
+          "e expiração. O token não sai do seu navegador.",
+        intro:
+          "Cole o token e o header e o payload aparecem formatados. Se o payload " +
+          "tiver iat, nbf ou exp, as datas aparecem embaixo do campo.",
+        fields: [],
+        results: [],
+        note:
+          "A ferramenta só decodifica. Ela não confere a assinatura, então não " +
+          "diz se o token é legítimo. O token é lido no seu navegador e não vai " +
+          "para nenhum servidor.",
+        labels: {
+          input: "Token",
+          header: "Header",
+          payload: "Payload",
+          iat: "Emitido em (iat)",
+          nbf: "Válido a partir de (nbf)",
+          exp: "Expira em (exp)",
+          invalid: "Isso não parece um JWT. O token tem três partes separadas por ponto.",
+        },
+      },
+      case: {
+        name: "Conversor de maiúsculas e minúsculas",
+        tagline: "Maiúsculas, minúsculas, título, camelCase, snake_case e mais.",
+        metaTitle: "Converter texto para maiúsculas, minúsculas e camelCase",
+        metaDescription:
+          "Converta texto para maiúsculas, minúsculas, primeira letra maiúscula, " +
+          "camelCase, PascalCase, snake_case e kebab-case de uma vez.",
+        intro:
+          "Digite o texto e todas as versões aparecem juntas, cada uma com botão " +
+          "de copiar. Nos formatos de código, como camelCase e snake_case, os " +
+          "acentos saem.",
+        fields: [],
+        results: [],
+        note:
+          "Maiúsculas, minúsculas, título e frase mantêm a pontuação e os " +
+          "acentos do texto.",
+        labels: {
+          input: "Texto",
+          upper: "MAIÚSCULAS",
+          lower: "minúsculas",
+          title: "Título",
+          sentence: "Frase",
+          camel: "camelCase",
+          pascal: "PascalCase",
+          snake: "snake_case",
+          kebab: "kebab-case",
+          constant: "CONSTANT_CASE",
+        },
+      },
+      lorem: {
+        name: "Gerador de lorem ipsum",
+        tagline: "Texto de preenchimento para layout e protótipo.",
+        metaTitle: "Gerador de lorem ipsum online",
+        metaDescription:
+          "Gere parágrafos de lorem ipsum para preencher layout, protótipo e " +
+          "banco de dados de teste. Escolha quantos e copie.",
+        intro:
+          "Escolha quantos parágrafos quer e copie. As frases são montadas com " +
+          "palavras do lorem ipsum tradicional, e o primeiro parágrafo pode " +
+          "começar com o clássico Lorem ipsum dolor sit amet.",
+        fields: [],
+        results: [],
+        note:
+          "Cada clique gera um texto diferente.",
+        labels: {
+          paragraphs: "Parágrafos",
+          classic: "Começar com Lorem ipsum",
+          generate: "Gerar outro",
+          result: "Texto",
+        },
+      },
     },
   },
 

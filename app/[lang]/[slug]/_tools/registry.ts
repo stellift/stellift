@@ -12,6 +12,12 @@ import Password from "@/app/[lang]/[slug]/_tools/password/calculator";
 import Sla from "@/app/[lang]/[slug]/_tools/sla/calculator";
 import TeamCost from "@/app/[lang]/[slug]/_tools/team-cost/calculator";
 import Uuid from "@/app/[lang]/[slug]/_tools/uuid/calculator";
+import Case from "@/app/[lang]/[slug]/_tools/case/calculator";
+import Hash from "@/app/[lang]/[slug]/_tools/hash/calculator";
+import Jwt from "@/app/[lang]/[slug]/_tools/jwt/calculator";
+import Lorem from "@/app/[lang]/[slug]/_tools/lorem/calculator";
+import Timestamp from "@/app/[lang]/[slug]/_tools/timestamp/calculator";
+import Url from "@/app/[lang]/[slug]/_tools/url/calculator";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 import type { ToolId } from "@/app/[lang]/[slug]/_tools/config";
 
@@ -29,4 +35,10 @@ export const calculators: Record<ToolId, ComponentType<CalculatorProps>> = {
   base64: Base64,
   json: Json,
   counter: Counter,
+  hash: Hash,
+  url: Url,
+  timestamp: Timestamp,
+  jwt: Jwt,
+  case: Case,
+  lorem: Lorem,
 };

@@ -7,6 +7,12 @@ import { slugs as cpf } from "@/app/[lang]/[slug]/_tools/cpf";
 import { slugs as json } from "@/app/[lang]/[slug]/_tools/json";
 import { slugs as password } from "@/app/[lang]/[slug]/_tools/password";
 import { slugs as uuid } from "@/app/[lang]/[slug]/_tools/uuid";
+import { slugs as hash } from "@/app/[lang]/[slug]/_tools/hash";
+import { slugs as url } from "@/app/[lang]/[slug]/_tools/url";
+import { slugs as timestamp } from "@/app/[lang]/[slug]/_tools/timestamp";
+import { slugs as jwt } from "@/app/[lang]/[slug]/_tools/jwt";
+import { slugs as textCase } from "@/app/[lang]/[slug]/_tools/case";
+import { slugs as lorem } from "@/app/[lang]/[slug]/_tools/lorem";
 import { slugs as downtimeCost } from "@/app/[lang]/[slug]/_tools/downtime-cost";
 import { slugs as estimate } from "@/app/[lang]/[slug]/_tools/estimate";
 import { slugs as hourlyCost } from "@/app/[lang]/[slug]/_tools/hourly-cost";
@@ -27,6 +33,12 @@ export const toolSlugs = {
   base64,
   json,
   counter,
+  hash,
+  url,
+  timestamp,
+  jwt,
+  case: textCase,
+  lorem,
 } satisfies Record<string, Record<Locale, string>>;
 
 export type ToolId = keyof typeof toolSlugs;
@@ -42,7 +54,21 @@ export const calculatorIds: ToolId[] = [
   "automation",
 ];
 
-export const utilityIds: ToolId[] = ["cpf", "cnpj", "password", "uuid", "base64", "json", "counter"];
+export const utilityIds: ToolId[] = [
+  "cpf",
+  "cnpj",
+  "password",
+  "uuid",
+  "hash",
+  "jwt",
+  "json",
+  "base64",
+  "url",
+  "timestamp",
+  "counter",
+  "case",
+  "lorem",
+];
 
 export function toolGroup(id: ToolId) {
   return calculatorIds.includes(id) ? calculatorIds : utilityIds;

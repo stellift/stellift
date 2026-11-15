@@ -125,6 +125,12 @@ export type Dictionary = {
       base64: ToolCopy;
       json: ToolCopy;
       counter: ToolCopy;
+      hash: ToolCopy;
+      url: ToolCopy;
+      timestamp: ToolCopy;
+      jwt: ToolCopy;
+      case: ToolCopy;
+      lorem: ToolCopy;
     };
   };
   blog: {

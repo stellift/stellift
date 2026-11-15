@@ -1003,6 +1003,158 @@ export const en: Dictionary = {
           bytes: "Bytes (UTF-8)",
         },
       },
+      hash: {
+        name: "Hash generator",
+        tagline: "MD5, SHA-1, SHA-256, SHA-384 and SHA-512 of any text.",
+        metaTitle: "MD5, SHA-1 and SHA-256 hash generator online",
+        metaDescription:
+          "Get the MD5, SHA-1, SHA-256, SHA-384 and SHA-512 hash of a text as " +
+          "you type. The text never leaves your browser.",
+        intro:
+          "Type or paste the text and all five hashes show up right away. The " +
+          "text is turned into UTF-8 first, so the result matches md5sum and " +
+          "sha256sum in the terminal.",
+        fields: [],
+        results: [],
+        note:
+          "MD5 and SHA-1 are fine for checking files and building cache keys, " +
+          "but they aren't safe for storing passwords. For passwords, use " +
+          "bcrypt, scrypt or Argon2.",
+        labels: {
+          input: "Text",
+          upper: "Uppercase",
+        },
+      },
+      url: {
+        name: "URL encode and decode",
+        tagline: "Encodes and decodes text for use in a URL.",
+        metaTitle: "URL encode and decode online",
+        metaDescription:
+          "Encode text for a URL (percent-encoding) and decode it back, accents " +
+          "and spaces included. Runs in your browser.",
+        intro:
+          "Encoding swaps spaces, accents and symbols for %20, %C3%A7 and so on. " +
+          "By default the tool encodes everything, which is right for a " +
+          "parameter value. Tick full URL to keep :, /, ? and & as they are.",
+        fields: [],
+        results: [],
+        note:
+          "It uses encodeURIComponent and encodeURI, the same JavaScript functions.",
+        labels: {
+          mode: "Mode",
+          encode: "Encode",
+          decode: "Decode",
+          input: "Text",
+          whole: "Full URL",
+          plus: "Read + as a space",
+          result: "Result",
+          invalid: "This text has a % sequence that doesn't form a valid character.",
+        },
+      },
+      timestamp: {
+        name: "Timestamp converter",
+        tagline: "Unix timestamp to date and date to timestamp.",
+        metaTitle: "Unix timestamp to date converter online",
+        metaDescription:
+          "Convert a Unix timestamp in seconds or milliseconds to a date and " +
+          "time, and a date to a timestamp. Shows local time and UTC.",
+        intro:
+          "Paste a timestamp in seconds or milliseconds and see the date in your " +
+          "time zone and in UTC. You can also pick a date and get its timestamp.",
+        fields: [],
+        results: [],
+        note:
+          "Numbers from 100,000,000,000 up are read as milliseconds. The date is " +
+          "shown in your browser's time zone.",
+        labels: {
+          input: "Timestamp",
+          inputHint: "In seconds or milliseconds",
+          date: "Date and time",
+          now: "Now",
+          local: "Local date",
+          iso: "ISO 8601 (UTC)",
+          seconds: "Seconds",
+          milliseconds: "Milliseconds",
+          invalid: "That doesn't look like a timestamp. Use digits only.",
+        },
+      },
+      jwt: {
+        name: "JWT decoder",
+        tagline: "Shows the header and payload of a JWT.",
+        metaTitle: "JWT decoder online",
+        metaDescription:
+          "Paste a JWT to see its header, payload and issue and expiry dates. " +
+          "The token never leaves your browser.",
+        intro:
+          "Paste the token and you get the header and the payload, formatted. If " +
+          "the payload has iat, nbf or exp, the dates show up under the field.",
+        fields: [],
+        results: [],
+        note:
+          "The tool only decodes. It doesn't check the signature, so it can't " +
+          "tell you whether the token is legitimate. The token is read in your " +
+          "browser and isn't sent to any server.",
+        labels: {
+          input: "Token",
+          header: "Header",
+          payload: "Payload",
+          iat: "Issued at (iat)",
+          nbf: "Not before (nbf)",
+          exp: "Expires (exp)",
+          invalid: "That doesn't look like a JWT. A token has three parts separated by dots.",
+        },
+      },
+      case: {
+        name: "Case converter",
+        tagline: "Uppercase, lowercase, title case, camelCase, snake_case and more.",
+        metaTitle: "Convert text to uppercase, lowercase and camelCase",
+        metaDescription:
+          "Convert text to uppercase, lowercase, title case, sentence case, " +
+          "camelCase, PascalCase, snake_case and kebab-case at once.",
+        intro:
+          "Type the text and every version shows up together, each with a copy " +
+          "button. In the code formats, like camelCase and snake_case, accents " +
+          "are dropped.",
+        fields: [],
+        results: [],
+        note:
+          "Uppercase, lowercase, title and sentence case keep the text's " +
+          "punctuation and accents.",
+        labels: {
+          input: "Text",
+          upper: "UPPERCASE",
+          lower: "lowercase",
+          title: "Title Case",
+          sentence: "Sentence case",
+          camel: "camelCase",
+          pascal: "PascalCase",
+          snake: "snake_case",
+          kebab: "kebab-case",
+          constant: "CONSTANT_CASE",
+        },
+      },
+      lorem: {
+        name: "Lorem ipsum generator",
+        tagline: "Placeholder text for layouts and prototypes.",
+        metaTitle: "Lorem ipsum generator online",
+        metaDescription:
+          "Generate lorem ipsum paragraphs to fill layouts, prototypes and test " +
+          "databases. Pick how many and copy.",
+        intro:
+          "Pick how many paragraphs you want and copy them. The sentences are " +
+          "built from the traditional lorem ipsum words, and the first paragraph " +
+          "can open with the classic Lorem ipsum dolor sit amet.",
+        fields: [],
+        results: [],
+        note:
+          "Every click generates a different text.",
+        labels: {
+          paragraphs: "Paragraphs",
+          classic: "Start with Lorem ipsum",
+          generate: "Generate another",
+          result: "Text",
+        },
+      },
     },
   },
 
