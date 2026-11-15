@@ -1,0 +1,89 @@
+Na Charita, uma plataforma de doações que não cobra taxa das campanhas, o dinheiro é registrado num livro-caixa de partidas dobradas dentro do Postgres. Duas regras são garantidas pelo próprio banco: toda transação soma zero, e nada que foi gravado pode ser alterado ou apagado.
+
+## As tabelas
+
+Cada movimento de dinheiro é uma transação com dois ou mais lançamentos. Um lançamento é um valor com sinal numa conta. Sem as colunas automáticas de data de criação, as tabelas são estas:
+
+```sql
+create table ledger_accounts (
+  id uuid primary key,
+  key varchar(255) not null,
+  currency varchar(3) not null,
+  unique (key, currency)
+);
+
+create table ledger_transactions (
+  id uuid primary key,
+  occurred_at timestamp(0) not null
+);
+
+create table ledger_entries (
+  id uuid primary key,
+  transaction_id uuid not null references ledger_transactions on delete restrict,
+  account_id uuid not null references ledger_accounts on delete restrict,
+  amount bigint not null check (amount <> 0)
+);
+```
+
+Os valores ficam na menor unidade de cada moeda, então 5000 são cinquenta reais. Cada conta tem uma moeda só.
+
+## Toda transação soma zero
+
+Um gatilho confere se a soma dos lançamentos da transação é zero e se todos são da mesma moeda:
+
+```sql
+create function ledger_transaction_must_balance() returns trigger as $$
+declare
+  currencies integer;
+  total bigint;
+begin
+  select count(distinct a.currency), coalesce(sum(e.amount), 0)
+    into currencies, total
+    from ledger_entries e
+    join ledger_accounts a on a.id = e.account_id
+   where e.transaction_id = new.transaction_id;
+
+  if currencies > 1 then
+    raise exception 'ledger transaction % mixes currencies', new.transaction_id;
+  end if;
+
+  if total <> 0 then
+    raise exception 'ledger transaction % is off by %', new.transaction_id, total;
+  end if;
+
+  return null;
+end;
+$$ language plpgsql;
+
+create constraint trigger ledger_entries_must_balance
+  after insert on ledger_entries
+  deferrable initially deferred
+  for each row execute function ledger_transaction_must_balance();
+```
+
+Ele é `deferrable initially deferred` porque os lançamentos são gravados um por vez, e depois do primeiro a soma ainda não é zero. Com a verificação adiada para o `commit`, o banco confere quando todos os lançamentos já foram gravados. Se a soma não fechar, nada é salvo.
+
+## Nada é alterado nem apagado
+
+Outro gatilho recusa `update` e `delete`:
+
+```sql
+create function ledger_is_append_only() returns trigger as $$
+begin
+  raise exception 'the ledger is append only: % on % is not allowed',
+    tg_op, tg_table_name;
+end;
+$$ language plpgsql;
+
+create trigger ledger_entries_append_only
+  before update or delete on ledger_entries
+  for each row execute function ledger_is_append_only();
+```
+
+O exemplo mostra `ledger_entries`, e `ledger_transactions` e `ledger_accounts` têm o mesmo gatilho.
+
+Para estornar uma doação, grava-se uma transação nova com os lançamentos da original e o sinal trocado. A original continua no histórico.
+
+## Na página de transparência
+
+A taxa da plataforma é uma conta como as outras e nunca recebeu lançamento. A página de transparência da Charita monta o extrato direto do livro-caixa, e o extrato fecha em zero em cada moeda.

@@ -19,6 +19,28 @@ export type Post = {
 
 export const posts: readonly Post[] = [
   {
+    id: "livro-caixa",
+    date: "2026-11-15",
+    content: {
+      "pt-BR": {
+        slug: "livro-caixa-que-o-postgres-nao-deixa-editar",
+        title: "Livro-caixa que o Postgres não deixa editar",
+        description:
+          "Como a Charita usa gatilhos no Postgres para que toda transação some zero e nenhum lançamento seja alterado ou apagado.",
+        topic: "PostgreSQL",
+        body: () => import("./livro-caixa/pt-BR.mdx"),
+      },
+      en: {
+        slug: "a-ledger-postgres-will-not-let-you-edit",
+        title: "A ledger Postgres will not let you edit",
+        description:
+          "How Charita uses Postgres triggers so every transaction adds up to zero and no entry is ever changed or deleted.",
+        topic: "PostgreSQL",
+        body: () => import("./livro-caixa/en.mdx"),
+      },
+    },
+  },
+  {
     id: "regex-utf8",
     date: "2026-11-15",
     content: {
