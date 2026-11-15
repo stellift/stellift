@@ -131,6 +131,11 @@ export type Dictionary = {
       jwt: ToolCopy;
       case: ToolCopy;
       lorem: ToolCopy;
+      regex: ToolCopy;
+      base: ToolCopy;
+      qrcode: ToolCopy;
+      color: ToolCopy;
+      diff: ToolCopy;
     };
   };
   blog: {

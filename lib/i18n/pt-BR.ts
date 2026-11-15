@@ -1155,6 +1155,153 @@ export const ptBR: Dictionary = {
           result: "Texto",
         },
       },
+      regex: {
+        name: "Testador de regex",
+        tagline: "Teste expressões regulares e veja cada correspondência no texto.",
+        metaTitle: "Testador de regex online (expressão regular)",
+        metaDescription:
+          "Teste expressões regulares em JavaScript: veja as correspondências " +
+          "destacadas no texto, os grupos capturados e o resultado da " +
+          "substituição.",
+        intro:
+          "Escreva a expressão, cole o texto e as correspondências aparecem " +
+          "destacadas. Os grupos capturados aparecem embaixo, e o campo de " +
+          "substituição mostra como o texto fica depois do replace.",
+        fields: [],
+        results: [],
+        note:
+          "A expressão roda no motor de regex do JavaScript do seu navegador, " +
+          "então o resultado é o mesmo de new RegExp no seu código. Outras " +
+          "linguagens, como Python, PHP e Elixir, têm diferenças de sintaxe.",
+        labels: {
+          pattern: "Expressão",
+          flags: "Flags",
+          g: "todas as ocorrências",
+          i: "ignorar maiúsculas",
+          m: "multilinha",
+          s: "ponto pega quebra de linha",
+          u: "Unicode",
+          text: "Texto",
+          replacement: "Substituir por",
+          replacementHint: "Use $1, $2 para os grupos e $& para a correspondência inteira",
+          invalid: "Expressão inválida:",
+          match: "correspondência",
+          matches: "correspondências",
+          truncated: "mostrando as primeiras 1.000",
+          marked: "Texto com as correspondências",
+          replaced: "Texto substituído",
+        },
+      },
+      diff: {
+        name: "Comparar textos",
+        tagline: "Mostra as linhas que mudaram entre dois textos.",
+        metaTitle: "Comparar textos online e ver as diferenças",
+        metaDescription:
+          "Cole dois textos e veja linha por linha o que foi adicionado e o que " +
+          "foi removido. Serve para código, contrato, configuração e lista.",
+        intro:
+          "Cole a versão antiga de um lado e a nova do outro. As linhas " +
+          "adicionadas aparecem com + e as removidas com −, na ordem do texto.",
+        fields: [],
+        results: [],
+        note:
+          "A comparação é feita linha por linha e roda no seu navegador. Cada " +
+          "texto pode ter até 3.000 linhas.",
+        labels: {
+          before: "Texto original",
+          after: "Texto novo",
+          ignoreSpace: "Ignorar diferenças de espaço",
+          added: "linhas adicionadas",
+          removed: "linhas removidas",
+          lineAdded: "adicionada:",
+          lineRemoved: "removida:",
+          result: "Diferenças",
+          tooLong: "Cada texto pode ter até {max} linhas.",
+        },
+      },
+      base: {
+        name: "Conversor de bases numéricas",
+        tagline: "Binário, octal, decimal e hexadecimal ao mesmo tempo.",
+        metaTitle: "Conversor de binário, decimal, hexadecimal e octal",
+        metaDescription:
+          "Converta números entre binário, octal, decimal e hexadecimal. Digite " +
+          "em qualquer campo e os outros se atualizam, inclusive com números " +
+          "muito grandes.",
+        intro:
+          "Digite em qualquer um dos quatro campos e os outros mudam junto. " +
+          "Funciona com número de qualquer tamanho, porque o cálculo usa BigInt " +
+          "e não perde precisão depois de 2⁵³.",
+        fields: [],
+        results: [],
+        note:
+          "Os prefixos 0b, 0o e 0x são aceitos, e espaços e _ entre os dígitos " +
+          "são ignorados.",
+        labels: {
+          b2: "Binário (base 2)",
+          b8: "Octal (base 8)",
+          b10: "Decimal (base 10)",
+          b16: "Hexadecimal (base 16)",
+          invalid: "Esse número tem dígitos que não existem nessa base.",
+        },
+      },
+      color: {
+        name: "Conversor de cores",
+        tagline: "HEX, RGB e HSL, com o contraste sobre branco e preto.",
+        metaTitle: "Conversor de cores HEX, RGB e HSL online",
+        metaDescription:
+          "Converta cores entre HEX, RGB e HSL e veja o contraste da cor sobre " +
+          "fundo branco e preto, segundo a WCAG.",
+        intro:
+          "Digite a cor em HEX, RGB ou HSL, ou escolha no seletor, e as três " +
+          "notações aparecem prontas para copiar. Embaixo fica o contraste da " +
+          "cor com branco e com preto.",
+        fields: [],
+        results: [],
+        note:
+          "O contraste segue a fórmula da WCAG 2. Texto normal precisa de pelo " +
+          "menos 4,5:1 para passar no nível AA, e texto grande, de 3:1.",
+        labels: {
+          input: "Cor",
+          inputHint: "Ex.: #0B63C6, rgb(11 99 198) ou hsl(212 89% 41%)",
+          picker: "Seletor de cor",
+          onWhite: "Sobre branco",
+          onBlack: "Sobre preto",
+          passes: "Passa no AA para qualquer texto",
+          large: "Passa no AA só para texto grande",
+          fails: "Não passa no AA",
+          invalid: "Não reconheci essa cor. Use HEX, rgb() ou hsl().",
+        },
+      },
+      qrcode: {
+        name: "Gerador de QR code",
+        tagline: "QR code de link ou texto, para baixar em PNG ou SVG.",
+        metaTitle: "Gerador de QR code grátis em PNG e SVG",
+        metaDescription:
+          "Crie QR code de link ou texto e baixe em PNG ou SVG. O código " +
+          "é gerado no navegador, não expira e não passa por redirecionamento.",
+        intro:
+          "Digite o link ou o texto e o QR code aparece na hora. O conteúdo vai " +
+          "direto no código, sem passar por um link nosso, então ele não expira " +
+          "e funciona para sempre.",
+        fields: [],
+        results: [],
+        note:
+          "Quanto maior a correção de erro, mais o código aguenta estar sujo ou " +
+          "parcialmente coberto, e mais denso ele fica. Para impressão, o SVG " +
+          "mantém a nitidez em qualquer tamanho.",
+        labels: {
+          input: "Link ou texto",
+          level: "Correção de erro",
+          levelL: "Baixa (7%)",
+          levelM: "Média (15%)",
+          levelQ: "Alta (25%)",
+          levelH: "Máxima (30%)",
+          preview: "QR code gerado",
+          png: "Baixar PNG",
+          svg: "Baixar SVG",
+          tooLong: "Esse texto é grande demais para um QR code com essa correção de erro. Diminua o texto ou escolha uma correção menor.",
+        },
+      },
     },
   },
 

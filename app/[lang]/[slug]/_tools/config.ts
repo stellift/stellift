@@ -13,6 +13,11 @@ import { slugs as timestamp } from "@/app/[lang]/[slug]/_tools/timestamp";
 import { slugs as jwt } from "@/app/[lang]/[slug]/_tools/jwt";
 import { slugs as textCase } from "@/app/[lang]/[slug]/_tools/case";
 import { slugs as lorem } from "@/app/[lang]/[slug]/_tools/lorem";
+import { slugs as regex } from "@/app/[lang]/[slug]/_tools/regex";
+import { slugs as numberBase } from "@/app/[lang]/[slug]/_tools/base";
+import { slugs as qrcode } from "@/app/[lang]/[slug]/_tools/qrcode";
+import { slugs as color } from "@/app/[lang]/[slug]/_tools/color";
+import { slugs as diff } from "@/app/[lang]/[slug]/_tools/diff";
 import { slugs as downtimeCost } from "@/app/[lang]/[slug]/_tools/downtime-cost";
 import { slugs as estimate } from "@/app/[lang]/[slug]/_tools/estimate";
 import { slugs as hourlyCost } from "@/app/[lang]/[slug]/_tools/hourly-cost";
@@ -39,6 +44,11 @@ export const toolSlugs = {
   jwt,
   case: textCase,
   lorem,
+  regex,
+  base: numberBase,
+  qrcode,
+  color,
+  diff,
 } satisfies Record<string, Record<Locale, string>>;
 
 export type ToolId = keyof typeof toolSlugs;
@@ -62,9 +72,14 @@ export const utilityIds: ToolId[] = [
   "hash",
   "jwt",
   "json",
+  "regex",
+  "diff",
   "base64",
   "url",
   "timestamp",
+  "base",
+  "color",
+  "qrcode",
   "counter",
   "case",
   "lorem",

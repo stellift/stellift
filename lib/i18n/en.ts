@@ -1155,6 +1155,153 @@ export const en: Dictionary = {
           result: "Text",
         },
       },
+      regex: {
+        name: "Regex tester",
+        tagline: "Test regular expressions and see every match in the text.",
+        metaTitle: "Regex tester online (regular expressions)",
+        metaDescription:
+          "Test JavaScript regular expressions: see matches highlighted in the " +
+          "text, the captured groups and the result of a replace.",
+        intro:
+          "Write the expression, paste the text and the matches show up " +
+          "highlighted. Captured groups are listed below, and the replace field " +
+          "shows what the text looks like after the replace.",
+        fields: [],
+        results: [],
+        note:
+          "The expression runs on your browser's JavaScript regex engine, so the " +
+          "result is the same as new RegExp in your code. Other languages, like " +
+          "Python, PHP and Elixir, have syntax differences.",
+        labels: {
+          pattern: "Expression",
+          flags: "Flags",
+          g: "all matches",
+          i: "ignore case",
+          m: "multiline",
+          s: "dot matches newlines",
+          u: "Unicode",
+          text: "Text",
+          replacement: "Replace with",
+          replacementHint: "Use $1, $2 for groups and $& for the whole match",
+          invalid: "Invalid expression:",
+          match: "match",
+          matches: "matches",
+          truncated: "showing the first 1,000",
+          marked: "Text with matches",
+          replaced: "Replaced text",
+        },
+      },
+      diff: {
+        name: "Text diff",
+        tagline: "Shows the lines that changed between two texts.",
+        metaTitle: "Compare two texts online and see the differences",
+        metaDescription:
+          "Paste two texts and see line by line what was added and what was " +
+          "removed. Works for code, contracts, config files and lists.",
+        intro:
+          "Paste the old version on one side and the new one on the other. Added " +
+          "lines show up with + and removed ones with −, in the order of the " +
+          "text.",
+        fields: [],
+        results: [],
+        note:
+          "The comparison is line by line and runs in your browser. Each text " +
+          "can have up to 3,000 lines.",
+        labels: {
+          before: "Original text",
+          after: "New text",
+          ignoreSpace: "Ignore whitespace differences",
+          added: "lines added",
+          removed: "lines removed",
+          lineAdded: "added:",
+          lineRemoved: "removed:",
+          result: "Differences",
+          tooLong: "Each text can have up to {max} lines.",
+        },
+      },
+      base: {
+        name: "Number base converter",
+        tagline: "Binary, octal, decimal and hexadecimal at the same time.",
+        metaTitle: "Binary, decimal, hex and octal converter",
+        metaDescription:
+          "Convert numbers between binary, octal, decimal and hexadecimal. Type " +
+          "in any field and the others update, even with very large numbers.",
+        intro:
+          "Type in any of the four fields and the others change along. It works " +
+          "with numbers of any size, because the math uses BigInt and doesn't " +
+          "lose precision past 2⁵³.",
+        fields: [],
+        results: [],
+        note:
+          "The 0b, 0o and 0x prefixes are accepted, and spaces and _ between " +
+          "digits are ignored.",
+        labels: {
+          b2: "Binary (base 2)",
+          b8: "Octal (base 8)",
+          b10: "Decimal (base 10)",
+          b16: "Hexadecimal (base 16)",
+          invalid: "This number has digits that don't exist in this base.",
+        },
+      },
+      color: {
+        name: "Color converter",
+        tagline: "HEX, RGB and HSL, with contrast on white and black.",
+        metaTitle: "HEX, RGB and HSL color converter online",
+        metaDescription:
+          "Convert colors between HEX, RGB and HSL and see the color's contrast " +
+          "on white and black backgrounds, according to WCAG.",
+        intro:
+          "Type the color in HEX, RGB or HSL, or pick it, and all three " +
+          "notations show up ready to copy. Below is the color's contrast with " +
+          "white and with black.",
+        fields: [],
+        results: [],
+        note:
+          "Contrast follows the WCAG 2 formula. Normal text needs at least 4.5:1 " +
+          "to pass level AA, and large text needs 3:1.",
+        labels: {
+          input: "Color",
+          inputHint: "E.g. #0B63C6, rgb(11 99 198) or hsl(212 89% 41%)",
+          picker: "Color picker",
+          onWhite: "On white",
+          onBlack: "On black",
+          passes: "Passes AA for any text",
+          large: "Passes AA for large text only",
+          fails: "Doesn't pass AA",
+          invalid: "I didn't recognize that color. Use HEX, rgb() or hsl().",
+        },
+      },
+      qrcode: {
+        name: "QR code generator",
+        tagline: "A QR code for a link or text, to download as PNG or SVG.",
+        metaTitle: "Free QR code generator, PNG and SVG",
+        metaDescription:
+          "Create a QR code for a link or text and download it as PNG or " +
+          "SVG. It's generated in your browser, never expires and has no " +
+          "redirect.",
+        intro:
+          "Type the link or the text and the QR code shows up right away. The " +
+          "content goes straight into the code, without a link of ours in " +
+          "between, so it doesn't expire and works forever.",
+        fields: [],
+        results: [],
+        note:
+          "The higher the error correction, the more dirt or cover the code can " +
+          "take, and the denser it gets. For print, the SVG stays sharp at any " +
+          "size.",
+        labels: {
+          input: "Link or text",
+          level: "Error correction",
+          levelL: "Low (7%)",
+          levelM: "Medium (15%)",
+          levelQ: "High (25%)",
+          levelH: "Highest (30%)",
+          preview: "Generated QR code",
+          png: "Download PNG",
+          svg: "Download SVG",
+          tooLong: "This text is too long for a QR code with this error correction. Shorten it or pick a lower correction.",
+        },
+      },
     },
   },
 

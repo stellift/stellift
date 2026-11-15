@@ -18,6 +18,11 @@ import Jwt from "@/app/[lang]/[slug]/_tools/jwt/calculator";
 import Lorem from "@/app/[lang]/[slug]/_tools/lorem/calculator";
 import Timestamp from "@/app/[lang]/[slug]/_tools/timestamp/calculator";
 import Url from "@/app/[lang]/[slug]/_tools/url/calculator";
+import Regex from "@/app/[lang]/[slug]/_tools/regex/calculator";
+import NumberBase from "@/app/[lang]/[slug]/_tools/base/calculator";
+import QrCode from "@/app/[lang]/[slug]/_tools/qrcode/calculator";
+import Color from "@/app/[lang]/[slug]/_tools/color/calculator";
+import Diff from "@/app/[lang]/[slug]/_tools/diff/calculator";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 import type { ToolId } from "@/app/[lang]/[slug]/_tools/config";
 
@@ -41,4 +46,9 @@ export const calculators: Record<ToolId, ComponentType<CalculatorProps>> = {
   jwt: Jwt,
   case: Case,
   lorem: Lorem,
+  regex: Regex,
+  base: NumberBase,
+  qrcode: QrCode,
+  color: Color,
+  diff: Diff,
 };
