@@ -826,8 +826,8 @@ export const en: Dictionary = {
       "Problems that came up in stellift projects, with the code that fixed them.",
     metaTitle: "Technical notes | stellift",
     metaDescription:
-      "Technical notes from stellift on CSS, computational geometry and " +
-      "development tooling.",
+      "Technical notes from stellift on problems from real projects in " +
+      "Elixir, PostgreSQL and Next.js, with the code that fixed them.",
     feedLabel: "Subscribe via RSS",
     publishedLabel: "Published",
     updatedLabel: "Updated",

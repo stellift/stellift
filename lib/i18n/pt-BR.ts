@@ -825,8 +825,8 @@ export const ptBR: Dictionary = {
       "Problemas que apareceram em projetos da stellift, com o código que resolveu.",
     metaTitle: "Notas técnicas | stellift",
     metaDescription:
-      "Notas técnicas da stellift sobre CSS, geometria computacional e " +
-      "ferramentas de desenvolvimento.",
+      "Notas técnicas da stellift sobre problemas de projetos reais em " +
+      "Elixir, PostgreSQL e Next.js, com o código que resolveu.",
     feedLabel: "Assinar o RSS",
     publishedLabel: "Publicado em",
     updatedLabel: "Atualizado em",
