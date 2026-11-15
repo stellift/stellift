@@ -105,7 +105,7 @@ export const en: Dictionary = {
       logo: "google",
       featured: true,
       note:
-        "Contributions to [[v8]], the JavaScript engine behind [[chrome]], " +
+        "Contributions to V8, the JavaScript engine behind Google Chrome, " +
         "and to Flutter.",
     },
     {
@@ -113,7 +113,7 @@ export const en: Dictionary = {
       logo: "mozilla",
       featured: true,
       note:
-        "Contributions to [[servo]] (Servo), a browser engine written in " +
+        "Contributions to Servo, a browser engine written in " +
         "Rust.",
     },
     {

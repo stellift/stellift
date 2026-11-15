@@ -103,7 +103,7 @@ export const ptBR: Dictionary = {
       logo: "google",
       featured: true,
       note:
-        "Contribuições para o [[v8]], o motor de JavaScript do [[chrome]], " +
+        "Contribuições para o V8, o motor de JavaScript do Google Chrome, " +
         "e para o Flutter.",
     },
     {
@@ -111,7 +111,7 @@ export const ptBR: Dictionary = {
       logo: "mozilla",
       featured: true,
       note:
-        "Contribuições para o [[servo]] (Servo), motor de navegador escrito " +
+        "Contribuições para o Servo, motor de navegador escrito " +
         "em Rust.",
     },
     {
