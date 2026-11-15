@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import type { MouseEvent } from "react";
 import { Moon, Sun } from "lucide-react";
 
@@ -46,6 +46,12 @@ export default function ThemeToggle({
   label: string;
 }) {
   const theme = useSyncExternalStore<Theme>(subscribe, readTheme, serverTheme);
+
+  useEffect(() => {
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme === "light" ? "#ffffff" : "#06080b");
+  }, [theme]);
 
   function select(next: Theme, event: MouseEvent<HTMLButtonElement>) {
     if (next === theme) return;
