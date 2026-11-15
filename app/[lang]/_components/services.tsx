@@ -86,10 +86,6 @@ export default function Services({
               </li>
             ))}
           </ul>
-
-          <p className="mt-6 text-xs text-ink-faint">
-            {dict.servicesExtra.note}
-          </p>
         </div>
       </div>
     </section>

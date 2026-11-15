@@ -60,7 +60,6 @@ export const en: Dictionary = {
 
   servicesExtra: {
     label: "We also do",
-    note: "Usually bundled with a project, but you can hire it on its own.",
     items: [
       {
         title: "Technical writing",

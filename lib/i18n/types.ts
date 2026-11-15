@@ -53,7 +53,6 @@ export type Dictionary = {
   }>;
   servicesExtra: {
     label: string;
-    note: string;
     items: ReadonlyArray<{ title: string; text: string }>;
   };
   portfolio: ReadonlyArray<{

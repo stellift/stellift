@@ -59,7 +59,6 @@ export const ptBR: Dictionary = {
 
   servicesExtra: {
     label: "Também fazemos",
-    note: "Normalmente entra junto com um projeto, mas dá para contratar à parte.",
     items: [
       {
         title: "Documentação técnica",
