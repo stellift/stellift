@@ -5,14 +5,14 @@ import { formatDuration } from "@/app/[lang]/[slug]/_tools/format";
 import { downtimeMinutes } from "@/app/[lang]/[slug]/_tools/sla";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 
-export default function Sla({ dict }: CalculatorProps) {
+export default function Sla({ copy, shared }: CalculatorProps) {
   const { values, set, num } = useNumbers({ uptime: "99.9" });
   const window = (days: number) =>
-    formatDuration(downtimeMinutes(num("uptime"), days), dict.tools.units);
+    formatDuration(downtimeMinutes(num("uptime"), days), shared.units);
 
   return (
     <CalculatorShell
-      copy={dict.tools.items.sla}
+      copy={copy}
       values={values}
       onChange={set}
       results={{

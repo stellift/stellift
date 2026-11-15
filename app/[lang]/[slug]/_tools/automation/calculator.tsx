@@ -5,20 +5,20 @@ import { formatMoney } from "@/app/[lang]/[slug]/_tools/format";
 import { monthlySaving } from "@/app/[lang]/[slug]/_tools/automation";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 
-export default function Automation({ dict, currency }: CalculatorProps) {
+export default function Automation({ copy, locale, currency }: CalculatorProps) {
   const { values, set, num } = useNumbers({
     hours: "40",
     cost: "150",
     reduction: "80",
   });
 
-  const money = (value: number) => formatMoney(value, dict.htmlLang, currency);
+  const money = (value: number) => formatMoney(value, locale, currency);
   const monthly = num("hours") * num("cost");
   const saved = monthlySaving(num("hours"), num("cost"), num("reduction"));
 
   return (
     <CalculatorShell
-      copy={dict.tools.items.automation}
+      copy={copy}
       values={values}
       onChange={set}
       results={{

@@ -5,7 +5,7 @@ import { formatNumber } from "@/app/[lang]/[slug]/_tools/format";
 import { pert } from "@/app/[lang]/[slug]/_tools/estimate";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 
-export default function Estimate({ dict }: CalculatorProps) {
+export default function Estimate({ copy, shared, locale }: CalculatorProps) {
   const { values, set, num } = useNumbers({
     optimistic: "5",
     likely: "8",
@@ -17,13 +17,13 @@ export default function Estimate({ dict }: CalculatorProps) {
     num("likely"),
     num("pessimistic"),
   );
-  const show = (value: number) => formatNumber(value, dict.htmlLang);
+  const show = (value: number) => formatNumber(value, locale);
   const span = (factor: number) =>
-    `${show(Math.max(expected - factor * deviation, 0))} ${dict.tools.rangeJoin} ${show(expected + factor * deviation)}`;
+    `${show(Math.max(expected - factor * deviation, 0))} ${shared.rangeJoin} ${show(expected + factor * deviation)}`;
 
   return (
     <CalculatorShell
-      copy={dict.tools.items.estimate}
+      copy={copy}
       values={values}
       onChange={set}
       results={{ expected: show(expected), range: span(1), safe: span(2) }}

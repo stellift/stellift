@@ -56,7 +56,12 @@ export default async function ToolPage({
           </p>
 
           <div className="mt-12">
-            <Calculator dict={dict} currency={currencies[lang]} />
+            <Calculator
+              copy={copy}
+              shared={{ units: dict.tools.units, rangeJoin: dict.tools.rangeJoin }}
+              locale={dict.htmlLang}
+              currency={currencies[lang]}
+            />
           </div>
 
           <p className="mt-6 max-w-2xl text-xs leading-relaxed text-ink-faint">

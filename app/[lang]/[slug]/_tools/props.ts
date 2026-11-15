@@ -1,6 +1,8 @@
-import type { Dictionary } from "@/lib/i18n/types";
+import type { Dictionary, ToolCopy } from "@/lib/i18n/types";
 
 export type CalculatorProps = {
-  dict: Dictionary;
+  copy: ToolCopy;
+  shared: Pick<Dictionary["tools"], "units" | "rangeJoin">;
+  locale: string;
   currency: string;
 };
