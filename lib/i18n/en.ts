@@ -668,6 +668,9 @@ export const en: Dictionary = {
     allLabel: "All tools",
     rangeJoin: "to",
     units: { day: "d", hour: "h", minute: "min", second: "s" },
+    utilitiesTitle: "Developer utilities",
+    copyLabel: "Copy",
+    copiedLabel: "Copied",
     items: {
       sla: {
         name: "SLA uptime calculator",
@@ -815,6 +818,190 @@ export const en: Dictionary = {
         note:
           "The expected reduction is your own assumption. This does not estimate the " +
           "cost of building or maintaining the automation.",
+      },
+      cpf: {
+        name: "CPF generator",
+        tagline: "Generates a valid CPF for testing and checks whether a CPF is valid.",
+        metaTitle: "Valid CPF generator and CPF validator",
+        metaDescription:
+          "Generate valid Brazilian CPF numbers for software testing and " +
+          "validate any CPF by its check digits. Runs in your browser.",
+        intro:
+          "CPF is the Brazilian individual taxpayer number. The numbers " +
+          "generated here pass the check digit calculation, so they work for " +
+          "filling in forms and testing systems. A generated number may match a " +
+          "real person's CPF, so use it only in test environments.",
+        fields: [],
+        results: [],
+        note:
+          "Validation only checks the check digits. It doesn't tell you whether " +
+          "the CPF exists or is in good standing with the Brazilian tax office.",
+        labels: {
+          generated: "Generated CPF",
+          generate: "Generate another",
+          punctuation: "With punctuation",
+          input: "CPF to validate",
+          inputHint: "With or without punctuation",
+          valid: "Valid",
+          invalid: "Invalid",
+          empty: "Type a CPF to validate.",
+        },
+      },
+      cnpj: {
+        name: "CNPJ generator",
+        tagline: "Generates a valid CNPJ, numeric or alphanumeric, and validates any CNPJ.",
+        metaTitle: "CNPJ generator and validator, alphanumeric included",
+        metaDescription:
+          "Generate valid Brazilian CNPJ numbers for testing, in the numeric or " +
+          "the 2026 alphanumeric format, and validate any CNPJ by its check " +
+          "digits.",
+        intro:
+          "CNPJ is the Brazilian company taxpayer number, and since July 2026 " +
+          "the tax office issues it with letters too. The validator accepts both " +
+          "formats, and the generator creates test numbers in either one. A " +
+          "generated number may match a real company's CNPJ, so use it only in " +
+          "test environments.",
+        fields: [],
+        results: [],
+        note:
+          "The calculation follows the Brazilian tax office's Q&A on the " +
+          "alphanumeric CNPJ. Validation only checks the check digits, not " +
+          "whether the company exists.",
+        labels: {
+          generated: "Generated CNPJ",
+          generate: "Generate another",
+          punctuation: "With punctuation",
+          alphanumeric: "Alphanumeric",
+          input: "CNPJ to validate",
+          inputHint: "With or without punctuation or letters",
+          valid: "Valid",
+          invalid: "Invalid",
+          empty: "Type a CNPJ to validate.",
+        },
+      },
+      password: {
+        name: "Password generator",
+        tagline: "A random password with the length and characters you choose.",
+        metaTitle: "Strong random password generator",
+        metaDescription:
+          "Generate strong passwords by choosing the length and character types. " +
+          "The password is created in your browser and never sent to a server.",
+        intro:
+          "The password is generated in your browser with " +
+          "crypto.getRandomValues, the random number generator meant for " +
+          "cryptography. It never goes through a server.",
+        fields: [],
+        results: [],
+        note:
+          "Every character type you tick shows up at least once in the password.",
+        labels: {
+          length: "Length",
+          upper: "Uppercase letters",
+          lower: "Lowercase letters",
+          digits: "Numbers",
+          symbols: "Symbols",
+          generate: "Generate another",
+          result: "Password",
+          pickOne: "Tick at least one character type.",
+          sets: "Character types",
+        },
+      },
+      uuid: {
+        name: "UUID generator",
+        tagline: "UUID v4 or v7, one at a time or in bulk.",
+        metaTitle: "UUID v4 and v7 generator",
+        metaDescription:
+          "Generate version 4 UUIDs, fully random, or version 7, ordered by " +
+          "time, one at a time or in bulk. Runs in your browser.",
+        intro:
+          "v4 is fully random. v7 starts with the time in milliseconds, so UUIDs " +
+          "generated one after another stay in order, which tends to make " +
+          "database indexes more efficient.",
+        fields: [],
+        results: [],
+        note:
+          "Both follow RFC 9562, and the random part comes from " +
+          "crypto.getRandomValues. In v7, a counter keeps the order when several come out in " +
+          "the same millisecond.",
+        labels: {
+          version: "Version",
+          amount: "How many",
+          generate: "Generate",
+          result: "UUIDs",
+        },
+      },
+      base64: {
+        name: "Base64",
+        tagline: "Encodes text to Base64 and decodes it back.",
+        metaTitle: "Base64 encode and decode online",
+        metaDescription:
+          "Convert text to Base64 and Base64 to text, with accents and emoji " +
+          "(UTF-8) and a URL-safe Base64 option.",
+        intro:
+          "The text is turned into UTF-8 before encoding, so accents and emoji " +
+          "work. The URL option swaps + and / for - and _, and drops the " +
+          "trailing =.",
+        fields: [],
+        results: [],
+        note:
+          "When decoding, the tool accepts both formats and adds back any " +
+          "missing =.",
+        labels: {
+          input: "Text or Base64",
+          encode: "Encode",
+          mode: "Mode",
+          decode: "Decode",
+          urlSafe: "URL-safe Base64",
+          result: "Result",
+          invalid: "That isn't valid Base64, or the content isn't UTF-8 text.",
+        },
+      },
+      json: {
+        name: "JSON formatter",
+        tagline: "Formats, minifies and shows where the syntax error is.",
+        metaTitle: "JSON formatter and validator online",
+        metaDescription:
+          "Paste JSON to format it with indentation, minify it to one line or " +
+          "find where the syntax error is. Runs in your browser.",
+        intro:
+          "Paste the JSON and pick an indentation or the minified version. If there's a syntax " +
+          "error, you get the browser's error message.",
+        fields: [],
+        results: [],
+        note:
+          "The JSON is processed in your browser and isn't sent to any server.",
+        labels: {
+          input: "JSON",
+          mode: "Output",
+          indent2: "2 spaces",
+          indent4: "4 spaces",
+          minify: "Minify",
+          result: "Result",
+          invalid: "Invalid JSON:",
+        },
+      },
+      counter: {
+        name: "Character counter",
+        tagline: "Characters, words, lines and bytes in a text.",
+        metaTitle: "Character and word counter online",
+        metaDescription:
+          "Count characters, characters without spaces, words, lines and bytes " +
+          "in any text as you type.",
+        intro:
+          "The numbers update as you type. An emoji or an accented letter counts " +
+          "as one character, the way it looks on screen.",
+        fields: [],
+        results: [],
+        note:
+          "Bytes are counted in UTF-8.",
+        labels: {
+          input: "Text",
+          characters: "Characters",
+          noSpaces: "Without spaces",
+          words: "Words",
+          lines: "Lines",
+          bytes: "Bytes (UTF-8)",
+        },
       },
     },
   },

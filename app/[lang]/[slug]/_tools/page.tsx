@@ -4,7 +4,7 @@ import JsonLd from "@/app/[lang]/_components/json-ld";
 import Star from "@/app/[lang]/_components/star";
 import { siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
-import { toolIds, toolPath, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
+import { toolGroup, toolPath, utilityIds, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
 import { currencies } from "@/app/[lang]/[slug]/_tools/metadata";
 
 export default async function ToolPage({
@@ -16,10 +16,13 @@ export default async function ToolPage({
 }) {
   const dict = await getDictionary(lang);
   const copy = dict.tools.items[id];
-  const others = toolIds.filter((other) => other !== id);
+  const group = toolGroup(id);
+  const others = group.filter((other) => other !== id);
+  const isUtility = group === utilityIds;
   const Calculator = calculators[id];
-  const toolsLabel =
-    dict.nav.find((item) => item.href === "#tools")?.label ?? dict.tools.allLabel;
+  const toolsLabel = isUtility
+    ? dict.tools.utilitiesTitle
+    : (dict.nav.find((item) => item.href === "#tools")?.label ?? dict.tools.allLabel);
 
   return (
     <>
@@ -30,7 +33,7 @@ export default async function ToolPage({
           name: copy.name,
           description: copy.metaDescription,
           url: `${siteUrl}${toolPath(lang, id)}`,
-          applicationCategory: "BusinessApplication",
+          applicationCategory: isUtility ? "DeveloperApplication" : "BusinessApplication",
           operatingSystem: "Web",
           inLanguage: dict.htmlLang,
           isAccessibleForFree: true,
@@ -42,7 +45,7 @@ export default async function ToolPage({
       <section className="border-b border-line">
         <div className="shell py-16 sm:py-24">
           <div className="mt-10 flex items-center gap-4">
-            <span className="index">{String(toolIds.indexOf(id) + 1).padStart(2, "0")}</span>
+            <span className="index">{String(group.indexOf(id) + 1).padStart(2, "0")}</span>
             <span className="eyebrow">{toolsLabel}</span>
             <span aria-hidden className="h-px flex-1 bg-line" />
             <Star className="size-2.5 shrink-0 text-line-strong" />
@@ -58,7 +61,12 @@ export default async function ToolPage({
           <div className="mt-12">
             <Calculator
               copy={copy}
-              shared={{ units: dict.tools.units, rangeJoin: dict.tools.rangeJoin }}
+              shared={{
+                units: dict.tools.units,
+                rangeJoin: dict.tools.rangeJoin,
+                copyLabel: dict.tools.copyLabel,
+                copiedLabel: dict.tools.copiedLabel,
+              }}
               locale={dict.htmlLang}
               currency={currencies[lang]}
             />
@@ -73,7 +81,7 @@ export default async function ToolPage({
       <section className="border-b border-line">
         <div className="shell py-16">
           <h2 className="font-serif text-3xl leading-tight text-ink">
-            {dict.tools.allLabel}
+            {isUtility ? dict.tools.utilitiesTitle : dict.tools.allLabel}
           </h2>
           <ul className="grid-ruled mt-8 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((other) => (

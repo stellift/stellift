@@ -20,6 +20,7 @@ export type ToolCopy = {
   fields: ReadonlyArray<{ key: string; label: string; hint?: string }>;
   results: ReadonlyArray<{ key: string; label: string }>;
   note: string;
+  labels?: Readonly<Record<string, string>>;
 };
 
 export type Dictionary = {
@@ -107,6 +108,9 @@ export type Dictionary = {
     allLabel: string;
     rangeJoin: string;
     units: { day: string; hour: string; minute: string; second: string };
+    utilitiesTitle: string;
+    copyLabel: string;
+    copiedLabel: string;
     items: {
       sla: ToolCopy;
       "downtime-cost": ToolCopy;
@@ -114,6 +118,13 @@ export type Dictionary = {
       "team-cost": ToolCopy;
       estimate: ToolCopy;
       automation: ToolCopy;
+      cpf: ToolCopy;
+      cnpj: ToolCopy;
+      password: ToolCopy;
+      uuid: ToolCopy;
+      base64: ToolCopy;
+      json: ToolCopy;
+      counter: ToolCopy;
     };
   };
   blog: {
