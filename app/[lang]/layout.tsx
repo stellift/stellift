@@ -1,5 +1,5 @@
 import { frameCopy } from "@/lib/i18n/slices";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
@@ -27,6 +27,10 @@ const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
 });
+
+export const viewport: Viewport = {
+  themeColor: "#06080b",
+};
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
