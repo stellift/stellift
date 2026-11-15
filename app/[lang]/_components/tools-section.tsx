@@ -72,7 +72,12 @@ export default function ToolsSection({
               </Link>
             </li>
           ))}
-          <li aria-hidden className="hidden bg-canvas sm:block" />
+          {Array.from({ length: (4 - (utilityIds.length % 4)) % 4 }, (_, i) => (
+            <li key={`wide-${i}`} aria-hidden className="hidden bg-canvas lg:block" />
+          ))}
+          {Array.from({ length: (2 - (utilityIds.length % 2)) % 2 }, (_, i) => (
+            <li key={`medium-${i}`} aria-hidden className="hidden bg-canvas sm:block lg:hidden" />
+          ))}
         </ul>
       </div>
     </section>
