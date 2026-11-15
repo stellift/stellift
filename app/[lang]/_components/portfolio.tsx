@@ -1,3 +1,4 @@
+import { portfolioCopy } from "@/lib/i18n/slices";
 import Slate from "@/app/[lang]/_components/slate";
 import PortfolioReel from "@/app/[lang]/_components/portfolio-reel";
 import { TechSprite } from "@/app/[lang]/_components/tech-stack";
@@ -30,7 +31,7 @@ export default function Portfolio({
 
       <TechSprite stacks={dict.portfolio.map((project) => project.stack)} />
 
-      <PortfolioReel dict={dict} />
+      <PortfolioReel dict={portfolioCopy(dict)} />
 
       <div className="shell pb-16">
         <p className="max-w-2xl text-xs leading-relaxed text-ink-faint">

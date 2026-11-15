@@ -1,3 +1,4 @@
+import { frameCopy } from "@/lib/i18n/slices";
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -95,7 +96,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <a href="#main" className="skip-link">
           {dict.ui.a11y.skipToContent}
         </a>
-        <Frame dict={dict} lang={lang} />
+        <Frame dict={frameCopy(dict)} lang={lang} />
         <main id="main" className="flex-1">
           {children}
         </main>

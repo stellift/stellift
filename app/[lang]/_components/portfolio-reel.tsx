@@ -13,7 +13,7 @@ import Image from "next/image";
 import { Maximize2 } from "lucide-react";
 import TechStack from "@/app/[lang]/_components/tech-stack";
 import ProjectDialog from "@/app/[lang]/_components/project-dialog";
-import type { Dictionary } from "@/lib/i18n/types";
+import type { PortfolioCopy } from "@/lib/i18n/slices";
 
 const MORPH = "project-shot";
 
@@ -40,7 +40,7 @@ function cardShot(name: string) {
   );
 }
 
-export default function PortfolioReel({ dict }: { dict: Dictionary }) {
+export default function PortfolioReel({ dict }: { dict: PortfolioCopy }) {
   const [active, setActive] = useState("all");
   const [open, setOpen] = useState<string | null>(null);
   const [shot, setShot] = useState(0);

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import TechStack from "@/app/[lang]/_components/tech-stack";
 import type { Dictionary } from "@/lib/i18n/types";
+import type { PortfolioCopy } from "@/lib/i18n/slices";
 
 type Project = Dictionary["portfolio"][number];
 
@@ -18,7 +19,7 @@ export default function ProjectDialog({
   onClose,
   dialogRef,
 }: {
-  dict: Dictionary;
+  dict: PortfolioCopy;
   project: Project | null;
   index: number;
   shot: number;

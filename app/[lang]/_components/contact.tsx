@@ -1,3 +1,4 @@
+import { formCopy } from "@/lib/i18n/slices";
 import { Code2, Mail, Users, type LucideIcon } from "lucide-react";
 import Slate from "@/app/[lang]/_components/slate";
 import ContactForm from "@/app/[lang]/_components/contact-form";
@@ -63,7 +64,7 @@ export default function Contact({
           </ul>
 
           <div className="cell lg:col-span-7">
-            <ContactForm dict={dict} />
+            <ContactForm dict={formCopy(dict)} />
           </div>
         </div>
       </div>

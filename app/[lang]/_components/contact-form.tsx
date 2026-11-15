@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
-import type { Dictionary } from "@/lib/i18n/types";
+import type { FormCopy } from "@/lib/i18n/slices";
 
 type Field = "name" | "email" | "message";
 type Errors = Partial<Record<Field, string>>;
@@ -17,7 +17,7 @@ function fieldClass(error?: string) {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-export default function ContactForm({ dict }: { dict: Dictionary }) {
+export default function ContactForm({ dict }: { dict: FormCopy }) {
   const [errors, setErrors] = useState<Errors>({});
   const [composed, setComposed] = useState<{
     mailto: string;

@@ -7,13 +7,13 @@ import LangSwitch from "@/app/[lang]/_components/lang-switch";
 import ThemeToggle from "@/app/[lang]/_components/theme-toggle";
 import LogoMark from "@/app/[lang]/_components/logo-mark";
 import { type Locale } from "@/lib/i18n/config";
-import type { Dictionary } from "@/lib/i18n/types";
+import type { FrameCopy } from "@/lib/i18n/slices";
 
 export default function Frame({
   dict,
   lang,
 }: {
-  dict: Dictionary;
+  dict: FrameCopy;
   lang: Locale;
 }) {
   const [active, setActive] = useState(-1);
