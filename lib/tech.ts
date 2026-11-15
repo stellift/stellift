@@ -211,14 +211,3 @@ export function parseStack(stack: string): Tech[] {
 
   return out;
 }
-
-export function stackSlugs(stacks: ReadonlyArray<string | undefined>): string[] {
-  const slugs = new Set<string>();
-  for (const stack of stacks) {
-    if (!stack) continue;
-    for (const tech of parseStack(stack)) {
-      if (tech.slug) slugs.add(tech.slug);
-    }
-  }
-  return [...slugs];
-}

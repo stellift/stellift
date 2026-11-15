@@ -1,28 +1,4 @@
-import { parseStack, stackSlugs, techIcons } from "@/lib/tech";
-
-export function TechSprite({
-  stacks,
-}: {
-  stacks: ReadonlyArray<string | undefined>;
-}) {
-  const slugs = stackSlugs(stacks);
-
-  return (
-    <svg aria-hidden className="hidden">
-      {slugs.map((slug) => (
-        <symbol
-          key={slug}
-          id={`tech-${slug}`}
-          viewBox={techIcons[slug].viewBox}
-        >
-          {techIcons[slug].paths.map((d) => (
-            <path key={d.slice(0, 24)} d={d} />
-          ))}
-        </symbol>
-      ))}
-    </svg>
-  );
-}
+import { parseStack } from "@/lib/tech";
 
 export default function TechStack({ stack }: { stack: string }) {
   const items = parseStack(stack);
@@ -38,7 +14,7 @@ export default function TechStack({ stack }: { stack: string }) {
                 aria-hidden
                 className="size-5"
               >
-                <use href={`#tech-${tech.slug}`} />
+                <use href={`/tech.svg#tech-${tech.slug}`} />
               </svg>
               <span className="sr-only">{tech.label}</span>
             </>

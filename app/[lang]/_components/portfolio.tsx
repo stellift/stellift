@@ -1,7 +1,6 @@
 import { portfolioCopy } from "@/lib/i18n/slices";
 import Slate from "@/app/[lang]/_components/slate";
 import PortfolioReel from "@/app/[lang]/_components/portfolio-reel";
-import { TechSprite } from "@/app/[lang]/_components/tech-stack";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Portfolio({
@@ -28,8 +27,6 @@ export default function Portfolio({
           title={dict.ui.portfolio.title}
         />
       </div>
-
-      <TechSprite stacks={dict.portfolio.map((project) => project.stack)} />
 
       <PortfolioReel dict={portfolioCopy(dict)} />
 
