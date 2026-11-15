@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Slate from "@/app/[lang]/_components/slate";
-import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
+import { calculatorIds, toolPath, utilityIds } from "@/app/[lang]/[slug]/_tools/config";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
@@ -33,7 +33,7 @@ export default function ToolsSection({
         </Slate>
 
         <ul className="reveal mt-10 border-t border-line">
-          {toolIds.map((id, i) => (
+          {calculatorIds.map((id, i) => (
             <li key={id} className="border-b border-line">
               <Link
                 href={toolPath(lang, id)}
@@ -53,6 +53,26 @@ export default function ToolsSection({
               </Link>
             </li>
           ))}
+        </ul>
+
+        <h3 className="reveal mt-16 font-serif text-2xl leading-tight text-ink lg:text-3xl">
+          {dict.tools.utilitiesTitle}
+        </h3>
+        <ul className="reveal grid-ruled mt-6 sm:grid-cols-2 lg:grid-cols-4">
+          {utilityIds.map((id) => (
+            <li key={id} className="cell cell-link group">
+              <span aria-hidden className="cell-mark" />
+              <Link href={toolPath(lang, id)} className="block h-full p-6">
+                <span className="block font-serif text-lg leading-tight text-ink">
+                  {dict.tools.items[id].name}
+                </span>
+                <span className="mt-2 block text-sm leading-relaxed text-ink-muted">
+                  {dict.tools.items[id].tagline}
+                </span>
+              </Link>
+            </li>
+          ))}
+          <li aria-hidden className="hidden bg-canvas sm:block" />
         </ul>
       </div>
     </section>
