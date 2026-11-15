@@ -137,14 +137,86 @@ export function Big({ children, labelledBy }: { children: ReactNode; labelledBy:
   );
 }
 
-export function Block({ children, labelledBy }: { children: ReactNode; labelledBy: string }) {
+export function Block({
+  children,
+  labelledBy,
+  prose = false,
+}: {
+  children: ReactNode;
+  labelledBy: string;
+  prose?: boolean;
+}) {
   return (
     <pre
       tabIndex={0}
       aria-labelledby={labelledBy}
-      className="max-h-[28rem] min-h-40 overflow-auto whitespace-pre-wrap break-all rounded-[2px] border border-line bg-surface p-4 font-mono text-[13px] leading-relaxed text-ink"
+      className={`max-h-[28rem] min-h-40 overflow-auto whitespace-pre-wrap ${prose ? "break-words" : "break-all"} rounded-[2px] border border-line bg-surface p-4 leading-relaxed text-ink ${prose ? "text-[15px]" : "font-mono text-[13px]"}`}
     >
       {children}
     </pre>
+  );
+}
+
+export function CopyRow({
+  label,
+  value,
+  shared,
+  literal = false,
+}: {
+  label: string;
+  value: string;
+  shared: CalculatorProps["shared"];
+  literal?: boolean;
+}) {
+  return (
+    <div className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 border-b border-line pb-4 last:border-b-0 last:pb-0">
+      <dt className={literal ? "field-label normal-case tracking-normal" : "field-label"}>{label}</dt>
+      <dd>
+        <CopyButton value={value} shared={shared} />
+      </dd>
+      <dd className="col-span-2 break-all font-mono text-[13px] leading-relaxed text-ink">
+        {value || "\u00a0"}
+      </dd>
+    </div>
+  );
+}
+
+export function TextInput({
+  id,
+  label,
+  value,
+  onChange,
+  rows = 8,
+  mono = true,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  rows?: number;
+  mono?: boolean;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="field-label mb-2.5">
+        {label}
+      </label>
+      <textarea
+        id={id}
+        rows={rows}
+        spellCheck={false}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className={`input resize-y ${mono ? "font-mono text-[14px]" : "text-[16px] leading-relaxed"}`}
+      />
+    </div>
+  );
+}
+
+export function Problem({ children }: { children: ReactNode }) {
+  return (
+    <p aria-live="polite" className="text-sm leading-relaxed text-accent">
+      {children}
+    </p>
   );
 }
