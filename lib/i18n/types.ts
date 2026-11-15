@@ -142,6 +142,13 @@ export type Dictionary = {
       lines: ToolCopy;
       csv: ToolCopy;
       cron: ToolCopy;
+      ratio: ToolCopy;
+      age: ToolCopy;
+      words: ToolCopy;
+      interest: ToolCopy;
+      hours: ToolCopy;
+      entities: ToolCopy;
+      timezone: ToolCopy;
     };
   };
   blog: {

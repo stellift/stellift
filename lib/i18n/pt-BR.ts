@@ -1523,6 +1523,220 @@ export const ptBR: Dictionary = {
           invalid: "Essa expressão não está no formato do cron. São cinco campos separados por espaço.",
         },
       },
+      ratio: {
+        name: "Regra de três",
+        tagline: "Descubra o valor que falta numa proporção, direta ou inversa.",
+        metaTitle: "Calculadora de regra de três simples",
+        metaDescription:
+          "Calcule regra de três simples, direta ou inversa. Preencha três " +
+          "valores e veja o quarto, com a conta mostrada passo a passo.",
+        intro:
+          "Preencha A, B e C e o X aparece na hora. Na direta, quando um lado " +
+          "cresce o outro cresce junto, como receita e ingredientes. Na inversa, " +
+          "um cresce e o outro diminui, como número de pessoas e tempo para " +
+          "terminar um trabalho.",
+        fields: [],
+        results: [],
+        note:
+          "A conta usada aparece embaixo do resultado, para você conferir ou " +
+          "copiar para um exercício.",
+        labels: {
+          kind: "Tipo",
+          direct: "Direta",
+          inverse: "Inversa",
+          readDirect: "A está para B assim como C está para X.",
+          readInverse: "A está para B assim como C está para X, só que de forma inversa.",
+        },
+      },
+      interest: {
+        name: "Juros compostos",
+        tagline: "Quanto um valor rende com aporte todo mês.",
+        metaTitle: "Calculadora de juros compostos com aporte mensal",
+        metaDescription:
+          "Simule juros compostos com valor inicial, aporte mensal, taxa ao mês " +
+          "ou ao ano e prazo em meses ou anos. Veja o total investido e quanto " +
+          "veio de juros.",
+        intro:
+          "Coloque quanto você tem hoje, quanto vai guardar por mês, a taxa e o " +
+          "prazo. O resultado separa o que você colocou do que veio de juros, e " +
+          "a tabela mostra a evolução ano a ano.",
+        fields: [],
+        results: [],
+        note:
+          "O aporte entra no fim de cada mês. Taxa anual é convertida na taxa " +
+          "mensal equivalente, e não dividida por 12. Imposto de renda e taxas " +
+          "da corretora não entram na conta.",
+        labels: {
+          principal: "Valor inicial",
+          monthly: "Aporte por mês",
+          rate: "Taxa de juros (%)",
+          ratePer: "Ao",
+          time: "Prazo",
+          timeIn: "Em",
+          month: "mês",
+          year: "ano",
+          months: "meses",
+          years: "anos",
+          final: "Valor no fim",
+          invested: "Total investido",
+          earned: "Total em juros",
+          equivalent: "Isso dá {rate}% ao mês.",
+          table: "Evolução do saldo",
+          when: "Quando",
+          balance: "Saldo",
+          yearShort: "Ano",
+          monthShort: "Mês",
+          invalid: "Confira os números. O prazo vai de 1 mês a 100 anos.",
+        },
+      },
+      words: {
+        name: "Valor por extenso",
+        tagline: "Escreve um valor em reais ou um número por extenso.",
+        metaTitle: "Valor por extenso em reais",
+        metaDescription:
+          "Digite um valor e veja ele escrito por extenso em reais e centavos, " +
+          "do jeito que vai no cheque, no recibo ou no contrato.",
+        intro:
+          "Digite o valor do jeito que você escreveria, com ponto no milhar e " +
+          "vírgula nos centavos, e o texto por extenso aparece pronto para " +
+          "copiar. Também dá para escrever um número qualquer, sem reais.",
+        fields: [],
+        results: [],
+        note:
+          "O \"e\" entre os grupos segue o uso mais comum, então fica mil e " +
+          "duzentos, mas mil duzentos e trinta. Usamos catorze, que vale tanto " +
+          "quanto quatorze. Vai até a casa dos quatrilhões.",
+        labels: {
+          input: "Valor",
+          inputHint: "Ex.: 1.250,75 ou R$ 35,90",
+          mode: "Escrever como",
+          money: "Reais",
+          number: "Número",
+          capital: "Começar com letra maiúscula",
+          result: "Por extenso",
+          invalid: "Não entendi esse valor. Use algo como 1.250,75.",
+        },
+      },
+      age: {
+        name: "Calculadora de idade",
+        tagline: "Idade exata em anos, meses e dias, e quanto falta para o aniversário.",
+        metaTitle: "Calculadora de idade exata",
+        metaDescription:
+          "Coloque a data de nascimento e veja a idade exata em anos, meses e " +
+          "dias, quantos dias já viveu e quanto falta para o próximo " +
+          "aniversário.",
+        intro:
+          "Coloque a data de nascimento e pronto. A conta é feita até hoje, mas " +
+          "dá para trocar a data de referência e ver a idade em qualquer outro " +
+          "dia.",
+        fields: [],
+        results: [],
+        note:
+          "Quem nasceu em 29 de fevereiro tem o aniversário contado em 28 de " +
+          "fevereiro nos anos que não são bissextos.",
+        labels: {
+          birth: "Data de nascimento",
+          on: "Idade em",
+          exact: "Idade exata",
+          lived: "Dias de vida",
+          next: "Próximo aniversário",
+          nextValue: "{date}, daqui a {days}, fazendo {age}",
+          today: "É hoje!",
+          born: "Dia da semana em que nasceu",
+          empty: "Coloque a data de nascimento.",
+          future: "A data de nascimento precisa ser antes da data de referência.",
+          dayOne: "dia",
+          dayMany: "dias",
+          weekOne: "semana",
+          weekMany: "semanas",
+          monthOne: "mês",
+          monthMany: "meses",
+          yearOne: "ano",
+          yearMany: "anos",
+        },
+      },
+      hours: {
+        name: "Calculadora de horas",
+        tagline: "Horas trabalhadas entre dois horários e soma de horas.",
+        metaTitle: "Calculadora de horas trabalhadas e soma de horas",
+        metaDescription:
+          "Calcule as horas trabalhadas entre a entrada e a saída, descontando o " +
+          "intervalo, e some uma lista de horas. Mostra também em horas " +
+          "decimais.",
+        intro:
+          "Do lado esquerdo, coloque a entrada, a saída e o intervalo para ver " +
+          "quanto tempo foi trabalhado. Do lado direito, cole uma lista de horas " +
+          "para somar, uma por linha.",
+        fields: [],
+        results: [],
+        note:
+          "Se a saída for antes da entrada, a conta entende que o turno passou " +
+          "da meia-noite. As horas decimais ajudam quando a planilha pede 7,8 em " +
+          "vez de 7:48.",
+        labels: {
+          spanTitle: "Entre dois horários",
+          start: "Entrada",
+          end: "Saída",
+          pause: "Intervalo",
+          overnight: "O turno passou da meia-noite.",
+          sumTitle: "Somar horas",
+          list: "Horas, uma por linha",
+          listHint: "Aceita 8:30, 2h15, 45min e 1,5. Coloque - na frente para subtrair.",
+          decimal: "{value} em horas decimais",
+          skipped: "Não entendi a linha {lines}, então ela ficou fora da soma.",
+        },
+      },
+      timezone: {
+        name: "Conversor de fuso horário",
+        tagline: "Que horas são em outra cidade quando aqui é um certo horário.",
+        metaTitle: "Conversor de fuso horário",
+        metaDescription:
+          "Escolha uma data, um horário e um fuso e veja que horas vão ser em " +
+          "São Paulo, Lisboa, Nova York, Tóquio e em qualquer outro fuso.",
+        intro:
+          "Escolha a data, o horário e o fuso de onde você está. A lista mostra " +
+          "que horas vão ser nas outras cidades, e dá para acrescentar qualquer " +
+          "fuso do mundo.",
+        fields: [],
+        results: [],
+        note:
+          "Os fusos vêm do próprio navegador, que já sabe quando cada lugar " +
+          "entra e sai do horário de verão. Por isso vale escolher a data certa, " +
+          "e não só o horário.",
+        labels: {
+          when: "Data e horário",
+          zone: "Fuso de origem",
+          add: "Acrescentar fuso",
+          addPlaceholder: "Escolha um fuso",
+          invalid: "Não consegui converter esse horário.",
+        },
+      },
+      entities: {
+        name: "HTML entities",
+        tagline: "Codifica e decodifica caracteres especiais de HTML.",
+        metaTitle: "Codificar e decodificar HTML entities online",
+        metaDescription:
+          "Transforme <, >, & e aspas em HTML entities para mostrar código numa " +
+          "página, ou decodifique entities de volta para texto.",
+        intro:
+          "Para mostrar um trecho de HTML numa página sem o navegador " +
+          "interpretar, os caracteres < > & \" e ' precisam virar entities. Cole " +
+          "o texto e copie o resultado.",
+        fields: [],
+        results: [],
+        note:
+          "Na decodificação, quem lê as entities é o próprio navegador, então " +
+          "funciona com nome (&eacute;), com número (&#233;) e com hexadecimal " +
+          "(&#xE9;).",
+        labels: {
+          mode: "Modo",
+          encode: "Codificar",
+          decode: "Decodificar",
+          input: "Texto",
+          nonAscii: "Codificar também acentos e emoji",
+          result: "Resultado",
+        },
+      },
     },
   },
 

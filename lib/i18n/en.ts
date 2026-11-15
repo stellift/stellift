@@ -1522,6 +1522,216 @@ export const en: Dictionary = {
           invalid: "This expression isn't in cron format. It needs five fields separated by spaces.",
         },
       },
+      ratio: {
+        name: "Rule of three",
+        tagline: "Find the missing value in a proportion, direct or inverse.",
+        metaTitle: "Rule of three calculator",
+        metaDescription:
+          "Solve a simple rule of three, direct or inverse. Fill in three values " +
+          "and get the fourth, with the working shown.",
+        intro:
+          "Fill in A, B and C and X shows up right away. In a direct one, when " +
+          "one side grows the other grows too, like a recipe and its " +
+          "ingredients. In an inverse one, one grows and the other shrinks, like " +
+          "people on a job and the time it takes.",
+        fields: [],
+        results: [],
+        note:
+          "The formula used shows up under the result, so you can check it or " +
+          "copy it into an exercise.",
+        labels: {
+          kind: "Type",
+          direct: "Direct",
+          inverse: "Inverse",
+          readDirect: "A is to B as C is to X.",
+          readInverse: "A is to B as C is to X, but inversely.",
+        },
+      },
+      interest: {
+        name: "Compound interest",
+        tagline: "How much money grows with a deposit every month.",
+        metaTitle: "Compound interest calculator with monthly deposits",
+        metaDescription:
+          "Simulate compound interest with a starting amount, a monthly deposit, " +
+          "a monthly or yearly rate and a term in months or years. See what you " +
+          "put in and what came from interest.",
+        intro:
+          "Put in what you have today, how much you'll save each month, the rate " +
+          "and the term. The result separates what you put in from what came " +
+          "from interest, and the table shows the balance year by year.",
+        fields: [],
+        results: [],
+        note:
+          "Deposits go in at the end of each month. A yearly rate is converted " +
+          "into the equivalent monthly rate, not divided by 12. Taxes and fees " +
+          "aren't included.",
+        labels: {
+          principal: "Starting amount",
+          monthly: "Monthly deposit",
+          rate: "Interest rate (%)",
+          ratePer: "Per",
+          time: "Term",
+          timeIn: "In",
+          month: "month",
+          year: "year",
+          months: "months",
+          years: "years",
+          final: "Final balance",
+          invested: "Total deposited",
+          earned: "Total interest",
+          equivalent: "That's {rate}% a month.",
+          table: "Balance over time",
+          when: "When",
+          balance: "Balance",
+          yearShort: "Year",
+          monthShort: "Month",
+          invalid: "Check the numbers. The term goes from 1 month to 100 years.",
+        },
+      },
+      words: {
+        name: "Number to words",
+        tagline: "Writes an amount of money or a number out in words.",
+        metaTitle: "Number to words converter, with dollars and cents",
+        metaDescription:
+          "Type a number and see it written out in words, as dollars and cents " +
+          "for a check or an invoice, or as a plain number.",
+        intro:
+          "Type the amount the way you'd write it, with commas for thousands and " +
+          "a dot for cents, and the words show up ready to copy. You can also " +
+          "write out a plain number, without dollars.",
+        fields: [],
+        results: [],
+        note:
+          "It follows American usage, so 1,250 is one thousand two hundred " +
+          "fifty, without an and. It goes up to the quadrillions.",
+        labels: {
+          input: "Amount",
+          inputHint: "E.g. 1,250.75 or $35.90",
+          mode: "Write as",
+          money: "Dollars",
+          number: "Number",
+          capital: "Start with a capital letter",
+          result: "In words",
+          invalid: "I didn't get that amount. Try something like 1,250.75.",
+        },
+      },
+      age: {
+        name: "Age calculator",
+        tagline: "Exact age in years, months and days, and how long until the next birthday.",
+        metaTitle: "Exact age calculator",
+        metaDescription:
+          "Enter a date of birth and see the exact age in years, months and " +
+          "days, how many days have gone by and how long until the next " +
+          "birthday.",
+        intro:
+          "Enter the date of birth and that's it. The count goes up to today, " +
+          "but you can change the reference date to see the age on any other " +
+          "day.",
+        fields: [],
+        results: [],
+        note:
+          "If you were born on February 29, the birthday is counted on February " +
+          "28 in years that aren't leap years.",
+        labels: {
+          birth: "Date of birth",
+          on: "Age on",
+          exact: "Exact age",
+          lived: "Days lived",
+          next: "Next birthday",
+          nextValue: "{date}, in {days}, turning {age}",
+          today: "It's today!",
+          born: "Day of the week you were born",
+          empty: "Enter the date of birth.",
+          future: "The date of birth has to come before the reference date.",
+          dayOne: "day",
+          dayMany: "days",
+          weekOne: "week",
+          weekMany: "weeks",
+          monthOne: "month",
+          monthMany: "months",
+          yearOne: "year",
+          yearMany: "years",
+        },
+      },
+      hours: {
+        name: "Hours calculator",
+        tagline: "Hours worked between two times, and adding up hours.",
+        metaTitle: "Hours worked calculator and time adder",
+        metaDescription:
+          "Work out the hours between clock-in and clock-out, minus the break, " +
+          "and add up a list of hours. Also shows decimal hours.",
+        intro:
+          "On the left, put in start, end and break to see how long was worked. " +
+          "On the right, paste a list of hours to add up, one per line.",
+        fields: [],
+        results: [],
+        note:
+          "If the end is earlier than the start, the shift is taken to run past " +
+          "midnight. Decimal hours help when a timesheet asks for 7.8 instead of " +
+          "7:48.",
+        labels: {
+          spanTitle: "Between two times",
+          start: "Start",
+          end: "End",
+          pause: "Break",
+          overnight: "The shift ran past midnight.",
+          sumTitle: "Add up hours",
+          list: "Hours, one per line",
+          listHint: "Takes 8:30, 2h15, 45min and 1.5. Put - in front to subtract.",
+          decimal: "{value} in decimal hours",
+          skipped: "I didn't understand line {lines}, so it was left out of the total.",
+        },
+      },
+      timezone: {
+        name: "Time zone converter",
+        tagline: "What time it is somewhere else when it's a certain time here.",
+        metaTitle: "Time zone converter",
+        metaDescription:
+          "Pick a date, a time and a time zone and see what time it will be in " +
+          "New York, London, Lisbon, Tokyo or any other zone.",
+        intro:
+          "Pick the date, the time and the zone you're in. The list shows what " +
+          "time it will be in other cities, and you can add any time zone in the " +
+          "world.",
+        fields: [],
+        results: [],
+        note:
+          "Time zones come from the browser itself, which already knows when " +
+          "each place goes in and out of daylight saving time. That's why it's " +
+          "worth picking the right date and not only the time.",
+        labels: {
+          when: "Date and time",
+          zone: "From time zone",
+          add: "Add a time zone",
+          addPlaceholder: "Pick a time zone",
+          invalid: "I couldn't convert that time.",
+        },
+      },
+      entities: {
+        name: "HTML entities",
+        tagline: "Encodes and decodes special HTML characters.",
+        metaTitle: "HTML entities encoder and decoder online",
+        metaDescription:
+          "Turn <, >, & and quotes into HTML entities to show code on a page, or " +
+          "decode entities back into text.",
+        intro:
+          "To show a piece of HTML on a page without the browser rendering it, " +
+          "the characters < > & \" and ' have to become entities. Paste the text " +
+          "and copy the result.",
+        fields: [],
+        results: [],
+        note:
+          "When decoding, the browser itself reads the entities, so named ones " +
+          "(&eacute;), numeric ones (&#233;) and hex ones (&#xE9;) all work.",
+        labels: {
+          mode: "Mode",
+          encode: "Encode",
+          decode: "Decode",
+          input: "Text",
+          nonAscii: "Also encode accents and emoji",
+          result: "Result",
+        },
+      },
     },
   },
 

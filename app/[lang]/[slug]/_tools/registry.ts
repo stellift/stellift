@@ -30,6 +30,13 @@ import Slug from "@/app/[lang]/[slug]/_tools/slug/calculator";
 import Lines from "@/app/[lang]/[slug]/_tools/lines/calculator";
 import Csv from "@/app/[lang]/[slug]/_tools/csv/calculator";
 import Cron from "@/app/[lang]/[slug]/_tools/cron/calculator";
+import Ratio from "@/app/[lang]/[slug]/_tools/ratio/calculator";
+import Age from "@/app/[lang]/[slug]/_tools/age/calculator";
+import Words from "@/app/[lang]/[slug]/_tools/words/calculator";
+import Interest from "@/app/[lang]/[slug]/_tools/interest/calculator";
+import Hours from "@/app/[lang]/[slug]/_tools/hours/calculator";
+import Entities from "@/app/[lang]/[slug]/_tools/entities/calculator";
+import TimeZone from "@/app/[lang]/[slug]/_tools/timezone/calculator";
 import type { CalculatorProps } from "@/app/[lang]/[slug]/_tools/props";
 import type { ToolId } from "@/app/[lang]/[slug]/_tools/config";
 
@@ -65,4 +72,11 @@ export const calculators: Record<ToolId, ComponentType<CalculatorProps>> = {
   lines: Lines,
   csv: Csv,
   cron: Cron,
+  ratio: Ratio,
+  age: Age,
+  words: Words,
+  interest: Interest,
+  hours: Hours,
+  entities: Entities,
+  timezone: TimeZone,
 };

@@ -25,6 +25,13 @@ import { slugs as slugTool } from "@/app/[lang]/[slug]/_tools/slug";
 import { slugs as lines } from "@/app/[lang]/[slug]/_tools/lines";
 import { slugs as csv } from "@/app/[lang]/[slug]/_tools/csv";
 import { slugs as cron } from "@/app/[lang]/[slug]/_tools/cron";
+import { slugs as ratio } from "@/app/[lang]/[slug]/_tools/ratio";
+import { slugs as age } from "@/app/[lang]/[slug]/_tools/age";
+import { slugs as words } from "@/app/[lang]/[slug]/_tools/words";
+import { slugs as interest } from "@/app/[lang]/[slug]/_tools/interest";
+import { slugs as hours } from "@/app/[lang]/[slug]/_tools/hours";
+import { slugs as entities } from "@/app/[lang]/[slug]/_tools/entities";
+import { slugs as timezone } from "@/app/[lang]/[slug]/_tools/timezone";
 import { slugs as downtimeCost } from "@/app/[lang]/[slug]/_tools/downtime-cost";
 import { slugs as estimate } from "@/app/[lang]/[slug]/_tools/estimate";
 import { slugs as hourlyCost } from "@/app/[lang]/[slug]/_tools/hourly-cost";
@@ -63,6 +70,13 @@ export const toolSlugs = {
   lines,
   csv,
   cron,
+  ratio,
+  age,
+  words,
+  interest,
+  hours,
+  entities,
+  timezone,
 } satisfies Record<string, Record<Locale, string>>;
 
 export type ToolId = keyof typeof toolSlugs;
@@ -80,7 +94,13 @@ export const calculatorIds: ToolId[] = [
 
 export const utilityIds: ToolId[] = [
   "percent",
+  "ratio",
+  "interest",
+  "words",
+  "age",
   "dates",
+  "hours",
+  "timezone",
   "draw",
   "cpf",
   "cnpj",
@@ -95,6 +115,7 @@ export const utilityIds: ToolId[] = [
   "csv",
   "base64",
   "url",
+  "entities",
   "timestamp",
   "base",
   "color",
