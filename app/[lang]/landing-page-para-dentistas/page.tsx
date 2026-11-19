@@ -14,7 +14,6 @@ import {
   LandingJsonLd,
   OtherLandings,
   Questions,
-  Rules,
   Seo,
   Steps,
   mailtoFor,
@@ -148,9 +147,8 @@ export default async function DentistsLanding() {
       <Swaps />
       <Anatomy niche={dentists} />
       <Questions niche={dentists} />
-      <Rules niche={dentists} />
-      <BeforeAfterConflict />
       <CheckYourPage niche={dentists} email={dict.site.email} />
+      <BeforeAfterConflict />
       <Seo niche={dentists} />
       <Steps niche={dentists} />
       <Bring niche={dentists} />

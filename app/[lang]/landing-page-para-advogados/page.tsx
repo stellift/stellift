@@ -14,7 +14,6 @@ import {
   LandingJsonLd,
   OtherLandings,
   Questions,
-  Rules,
   Seo,
   Steps,
   mailtoFor,
@@ -168,9 +167,8 @@ export default async function LawyersLanding() {
       <Questions niche={lawyers} />
       <ActivePassive />
       <Anatomy niche={lawyers} />
-      <Rules niche={lawyers} />
-      <Channels />
       <CheckYourPage niche={lawyers} email={dict.site.email} />
+      <Channels />
       <Seo niche={lawyers} />
       <Steps niche={lawyers} />
       <Bring niche={lawyers} />

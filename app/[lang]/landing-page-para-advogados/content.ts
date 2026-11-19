@@ -103,60 +103,6 @@ export const lawyers: Niche = {
       "É a norma da OAB sobre publicidade e marketing jurídico, junto com o " +
       "capítulo de publicidade do Código de Ética e Disciplina. Cada item leva o " +
       "artigo de onde saiu.",
-    includes: [
-      {
-        text: "Nome do advogado ou da sociedade e o número de inscrição na OAB.",
-        source: "CED, art. 44",
-      },
-      {
-        text:
-          "Títulos acadêmicos, endereço, e-mail, site, horário de atendimento e " +
-          "idiomas.",
-        source: "CED, art. 44, §1º",
-      },
-      {
-        text: "Fotos dos advogados e do escritório, e a identidade visual do escritório.",
-        source: "Prov. 205, art. 5º, §2º",
-      },
-      {
-        text: "WhatsApp e redes sociais como canal de contato.",
-        source: "Prov. 205, art. 4º, §3º",
-      },
-      {
-        text:
-          "Conteúdo jurídico informativo, sem citar resultados, clientes, " +
-          "valores ou gratuidade.",
-        source: "Prov. 205, Anexo Único",
-      },
-    ],
-    avoids: [
-      {
-        text: "Valor de honorários, forma de pagamento, gratuidade ou desconto.",
-        source: "Prov. 205, art. 3º, I",
-      },
-      {
-        text: "Promessa de resultado ou uso de caso concreto para oferecer serviço.",
-        source: "Prov. 205, art. 6º",
-      },
-      {
-        text: "Menção a decisões judiciais e resultados obtidos nos casos do escritório.",
-        source: "Prov. 205, art. 4º, §2º",
-      },
-      {
-        text: "Expressões de autoengrandecimento ou de comparação com outros escritórios.",
-        source: "Prov. 205, art. 3º, IV",
-      },
-      {
-        text:
-          "Anúncio de especialidade sem título certificado ou notória " +
-          "especialização.",
-        source: "Prov. 205, art. 3º, III",
-      },
-      {
-        text: "Logomarca e símbolos oficiais da OAB.",
-        source: "Prov. 205, art. 5º, §2º",
-      },
-    ],
     note:
       "A OAB abriu uma revisão do provimento em 2025. Até sair um texto novo, " +
       "vale este, e a página acompanha a mudança quando ela vier. A " +

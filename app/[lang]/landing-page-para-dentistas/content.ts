@@ -103,54 +103,6 @@ export const dentists: Niche = {
       "sobre anúncio e publicidade, alterado pela Resolução CFO-271/2025, e a " +
       "Resolução CFO-196/2019 trata de imagens. Cada item leva o artigo de onde " +
       "saiu.",
-    includes: [
-      {
-        text: "Nome e número de inscrição no CRO, com a profissão: cirurgião-dentista.",
-        source: "CEO, art. 43",
-      },
-      {
-        text: "Em clínica, também o nome e a inscrição do responsável técnico.",
-        source: "CEO, art. 43",
-      },
-      {
-        text:
-          "Lista dos especialistas da clínica com as qualificações, para cada " +
-          "especialidade anunciada.",
-        source: "CEO, art. 43, §2º",
-      },
-      {
-        text: "Endereço, telefone, horário, convênios e credenciamentos.",
-        source: "CEO, art. 43, §1º, IV",
-      },
-    ],
-    avoids: [
-      {
-        text: "Preço, serviço gratuito ou forma de pagamento.",
-        source: "CEO, art. 44, I",
-      },
-      {
-        text: 'Consulta ou diagnóstico gratuito ou "sem compromisso".',
-        source: "CEO, art. 20, IX",
-      },
-      {
-        text: "Chamar alguém de especialista sem inscrição da especialidade no CRO.",
-        source: "CEO, art. 24",
-      },
-      {
-        text: 'A palavra "popular".',
-        source: "CEO, art. 44, VII",
-      },
-      {
-        text:
-          "Sensacionalismo, autopromoção, concorrência desleal ou promessa de " +
-          "resultado.",
-        source: "Res. CFO-196/2019, art. 2º, §1º",
-      },
-      {
-        text: "Brinde, prêmio ou sorteio de tratamento.",
-        source: "CEO, art. 20, VIII",
-      },
-    ],
     note:
       "O Código diz que os donos da clínica, o responsável técnico e os " +
       "dentistas envolvidos respondem juntos por publicidade irregular (art. " +

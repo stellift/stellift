@@ -14,7 +14,6 @@ import {
   LandingJsonLd,
   OtherLandings,
   Questions,
-  Rules,
   Seo,
   Steps,
   mailtoFor,
@@ -123,7 +122,6 @@ export default async function RealEstateLanding() {
       <Anatomy niche={realEstate} />
       <LaunchMust />
       <CreciSection />
-      <Rules niche={realEstate} />
       <CheckYourPage niche={realEstate} email={dict.site.email} />
       <Seo niche={realEstate} />
       <Steps niche={realEstate} />

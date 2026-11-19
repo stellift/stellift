@@ -97,52 +97,6 @@ export const realEstate: Niche = {
       "Anúncio de imóvel tem regra em quatro lugares: a lei dos corretores, o " +
       "decreto que a regulamenta, as resoluções do COFECI e, para lançamento, " +
       "a lei de incorporações. Cada item leva a norma de onde saiu.",
-    includes: [
-      {
-        text: "Número de inscrição no CRECI em toda propaganda.",
-        source: "Decreto 81.871/78, art. 4º",
-      },
-      {
-        text:
-          "Imobiliária com CRECI seguido da letra J, num tamanho de pelo menos " +
-          "25% do nome da empresa.",
-        source: "Res. COFECI 1.065/07, art. 5º",
-      },
-      {
-        text:
-          'Corretor pessoa física com a expressão "corretor de imóveis" e o ' +
-          "número do CRECI depois do nome.",
-        source: "Res. COFECI 1.065/07, art. 2º",
-      },
-      {
-        text:
-          "Em lançamento, o número do registro da incorporação e o cartório " +
-          "onde ele foi feito.",
-        source: "Lei 4.591/64, art. 32, §3º",
-      },
-    ],
-    avoids: [
-      {
-        text:
-          "Anunciar imóvel sem contrato de mediação ou autorização escrita do " +
-          "dono.",
-        source: "Decreto 81.871/78, art. 5º",
-      },
-      {
-        text: "Omitir detalhe que deprecie o imóvel.",
-        source: "Res. COFECI 326/92, art. 4º, II",
-      },
-      {
-        text: "Anunciar de forma capciosa.",
-        source: "Res. COFECI 326/92, art. 6º, XVII",
-      },
-      {
-        text:
-          "Publicidade enganosa, inclusive por omissão de dado essencial do " +
-          "imóvel.",
-        source: "CDC, art. 37, §1º e §3º",
-      },
-    ],
     note: "Pelo CDC, o que o anúncio informa com precisão vale como oferta e entra no contrato (art. 30). Por isso metragem, vagas e prazo de entrega saem do memorial e do contrato, e você aprova cada número antes de publicar.",
   },
   checklist: {

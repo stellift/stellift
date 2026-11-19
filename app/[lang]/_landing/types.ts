@@ -22,7 +22,7 @@ export type Niche = {
   };
   questions: { title: string; lead: string; items: { title: string; text: string }[] };
   anatomy: { x: number; y: number; text: string; source: string | null }[];
-  rules: { title: string; lead: string; includes: Cited[]; avoids: Cited[]; note: string };
+  rules: { title: string; lead: string; note: string };
   checklist: { lead: string; items: (Cited & { id: string })[]; disclaimer: string };
   seo: { title: string; text: string }[];
   privacy: { title: string; text: string } | null;

@@ -111,53 +111,6 @@ export const doctors: Niche = {
     lead:
       "É a norma de publicidade médica em vigor desde março de 2024. Cada item " +
       "abaixo leva o artigo de onde saiu.",
-    includes: [
-      {
-        text:
-          "Nome, número do CRM e a palavra MÉDICO ou MÉDICA. Se houver " +
-          "especialidade registrada, ela vem com o número do RQE.",
-        source: "art. 4º",
-      },
-      {
-        text:
-          "Em clínica, o nome do estabelecimento com o cadastro no CRM e o " +
-          "nome do diretor técnico-médico com o CRM dele.",
-        source: "art. 5º",
-      },
-      {
-        text: "Valor da consulta e formas de pagamento, se você quiser divulgar.",
-        source: "art. 9º, VI",
-      },
-      {
-        text:
-          "Antes e depois só no formato que a resolução pede: com texto " +
-          "educativo, resultados bons e ruins, paciente não identificado e foto " +
-          "sem edição.",
-        source: "art. 14, II",
-      },
-    ],
-    avoids: [
-      {
-        text: "Prometer ou insinuar resultado de tratamento.",
-        source: "art. 11, XII",
-      },
-      {
-        text:
-          "Atribuir a você capacidade privilegiada numa técnica, mesmo que " +
-          "você seja o único a fazê-la.",
-        source: "art. 11, IX",
-      },
-      {
-        text: 'Títulos como "melhor médico" ou "médico do ano".',
-        source: "art. 11, XIII",
-      },
-      {
-        text:
-          "Depoimento de paciente com adjetivo de superioridade ou que sugira " +
-          "promessa de resultado.",
-        source: "art. 14, II, g",
-      },
-    ],
     note:
       "A gente monta a página dentro dessas regras, mas quem responde pela " +
       "publicidade perante o CRM é o médico e, no caso de clínica, o diretor " +

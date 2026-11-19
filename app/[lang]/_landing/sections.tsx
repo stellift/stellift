@@ -212,53 +212,6 @@ export function Anatomy({ niche }: { niche: Niche }) {
   );
 }
 
-export function Rules({ niche }: { niche: Niche }) {
-  return (
-    <section aria-labelledby="rules-title" className="border-b border-line">
-      <div className="shell py-16 sm:py-20">
-        <h2
-          id="rules-title"
-          className="max-w-2xl font-serif text-3xl leading-tight text-ink sm:text-4xl"
-        >
-          {niche.rules.title}
-        </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
-          {niche.rules.lead}
-        </p>
-        <div className="grid-ruled mt-10 lg:grid-cols-2">
-          {[
-            { heading: "A página traz", items: niche.rules.includes },
-            { heading: "A página evita", items: niche.rules.avoids },
-          ].map((column) => (
-            <div key={column.heading} className="cell p-7 sm:p-8">
-              <h3 className="eyebrow">{column.heading}</h3>
-              <ul className="mt-6 space-y-5">
-                {column.items.map((item) => (
-                  <li key={item.text} className="flex gap-4">
-                    <span
-                      aria-hidden
-                      className="mt-2 h-px w-4 shrink-0 bg-line-strong"
-                    />
-                    <p className="text-sm leading-relaxed text-ink">
-                      {item.text}{" "}
-                      <span className="font-mono text-[11px] text-ink-faint">
-                        {item.source}
-                      </span>
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 max-w-3xl text-sm leading-relaxed text-ink-muted">
-          {niche.rules.note}
-        </p>
-      </div>
-    </section>
-  );
-}
-
 export function CheckYourPage({
   niche,
   email,
@@ -273,10 +226,10 @@ export function CheckYourPage({
           id="check-title"
           className="max-w-2xl font-serif text-3xl leading-tight text-ink sm:text-4xl"
         >
-          Confira a página que você tem hoje
+          {niche.rules.title}
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
-          {niche.checklist.lead}
+          {niche.rules.lead} {niche.checklist.lead}
         </p>
         <div className="mt-10">
           <Checklist
@@ -288,6 +241,11 @@ export function CheckYourPage({
         <p className="mt-4 text-xs leading-relaxed text-ink-faint">
           {niche.checklist.disclaimer}
         </p>
+        <div className="mt-10 max-w-3xl border-l-2 border-accent pl-6">
+          <p className="text-sm leading-relaxed text-ink-muted">
+            {niche.rules.note}
+          </p>
+        </div>
       </div>
     </section>
   );
