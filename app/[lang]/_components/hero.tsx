@@ -8,8 +8,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       <Orbit className="drift-out pointer-events-none absolute left-1/2 top-1/2 h-[210vw] w-[210vw] -translate-x-1/2 -translate-y-1/2 sm:left-[32%] sm:h-[200vh] sm:w-[200vh]" />
 
       <LogoMark
-        variant="duo"
-        fold="#2a7fcb"
+        variant="mono"
         className="monument pointer-events-none absolute left-1/2 top-[30%] h-[30vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-9%] sm:top-1/2 sm:h-[60vh] sm:translate-x-0 lg:right-[-7%] lg:h-[74vh]"
       />
 

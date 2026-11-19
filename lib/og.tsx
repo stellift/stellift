@@ -2,8 +2,8 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import {
-  markFold,
-  markSilhouette,
+  markPath,
+  markTilePath,
   markViewBox,
 } from "@/app/[lang]/_components/logo-mark";
 
@@ -13,7 +13,6 @@ const canvas = "#06080b";
 const ink = "#f6f8fb";
 const muted = "#98a3b2";
 const accent = "#4eaefd";
-const foldTone = "#2a7fcb";
 
 let fonts: Promise<[Buffer, Buffer]> | null = null;
 
@@ -64,8 +63,7 @@ export async function ogCard({
           viewBox={markViewBox}
           style={{ position: "absolute", right: -54, top: 23 }}
         >
-          <path fill={accent} fillRule="evenodd" d={markSilhouette} />
-          <path fill={foldTone} fillRule="evenodd" d={markFold} />
+          <path fill={accent} d={markPath} />
         </svg>
 
         <div
@@ -81,8 +79,7 @@ export async function ogCard({
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <svg width={46} height={46} viewBox="0 0 460 460">
               <rect width="460" height="460" rx="40" fill={accent} />
-              <path fill="#ffffff" fillRule="evenodd" d={markSilhouette} />
-              <path fill="#d9e8fa" fillRule="evenodd" d={markFold} />
+              <path fill="#ffffff" d={markTilePath} />
             </svg>
             <div style={{ display: "flex", fontFamily: "Fraunces", fontSize: 38, color: ink }}>
               {brand}
