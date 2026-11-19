@@ -159,3 +159,12 @@ export function toolPath(locale: Locale, id: ToolId) {
 export function toolFromSlug(locale: Locale, slug: string): ToolId | null {
   return toolIds.find((id) => toolSlugs[id][locale] === slug) ?? null;
 }
+
+export const catalogSlugs: Record<Locale, string> = {
+  "pt-BR": "ferramentas",
+  en: "tools",
+};
+
+export function catalogPath(locale: Locale) {
+  return `/${locale}/${catalogSlugs[locale]}`;
+}

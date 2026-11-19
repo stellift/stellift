@@ -102,6 +102,9 @@ export type Dictionary = {
   tools: {
     title: string;
     lead: string;
+    metaTitle: string;
+    metaDescription: string;
+    navLabel: string;
     cta: string;
     backLabel: string;
     allLabel: string;

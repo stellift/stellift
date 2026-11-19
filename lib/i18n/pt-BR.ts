@@ -662,6 +662,10 @@ export const ptBR: Dictionary = {
       "São contas simples que costumam ficar para depois de assinar o " +
       "contrato, quando o SLA já foi aceito e a hora já foi combinada. " +
       "Rodam no seu navegador, sem cadastro.",
+    metaTitle: "Ferramentas grátis que rodam no navegador | stellift",
+    metaDescription:
+      "Calculadoras de SLA, custo de hora e estimativa, mais utilitários como CPF, JSON, JWT, QR code e regex. Rodam no seu navegador, sem cadastro.",
+    navLabel: "Ferramentas",
     cta: "Abrir ferramenta",
     backLabel: "Voltar para a stellift",
     allLabel: "Todas as ferramentas",

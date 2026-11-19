@@ -32,8 +32,17 @@ export default async function Image({
     });
   }
 
+  if (route.kind === "catalog") {
+    return ogCard({
+      brand: dict.site.name,
+      kicker: dict.tools.allLabel,
+      lines: [dict.tools.title],
+      description: dict.tools.metaDescription,
+    });
+  }
+
   const copy = dict.tools.items[route.id];
-  const kicker = dict.nav.find((item) => item.href === "#tools")?.label;
+  const kicker = dict.tools.allLabel;
 
   return ogCard({
     brand: dict.site.name,

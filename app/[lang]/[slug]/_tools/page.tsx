@@ -22,7 +22,7 @@ export default async function ToolPage({
   const Calculator = calculators[id];
   const toolsLabel = isUtility
     ? dict.tools.utilitiesTitle
-    : (dict.nav.find((item) => item.href === "#tools")?.label ?? dict.tools.allLabel);
+    : dict.tools.allLabel;
 
   return (
     <>

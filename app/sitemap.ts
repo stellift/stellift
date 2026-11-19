@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales, siteUrl } from "@/lib/i18n/config";
-import { toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
+import { catalogPath, toolIds, toolPath } from "@/app/[lang]/[slug]/_tools/config";
 import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
 import { landingPath, landings } from "@/app/[lang]/_landing/registry";
 import {
@@ -28,6 +28,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: lang === "pt-BR" ? 1 : 0.9,
     alternates: alternates((l) => `/${l}`),
+  }));
+
+  const catalog = locales.map((lang) => ({
+    url: `${siteUrl}${catalogPath(lang)}`,
+    changeFrequency: "monthly" as const,
+    priority: lang === "pt-BR" ? 0.8 : 0.7,
+    alternates: alternates((l) => catalogPath(l)),
   }));
 
   const tools = locales.flatMap((lang) =>
@@ -66,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...home,
+    ...catalog,
     ...tools,
     ...blog,
     ...articles,

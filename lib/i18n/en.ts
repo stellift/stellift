@@ -662,6 +662,10 @@ export const en: Dictionary = {
       "Simple sums that usually get done after the contract is signed, when " +
       "the SLA is already accepted and the hourly rate already agreed. They " +
       "run in your browser, no sign-up.",
+    metaTitle: "Free tools that run in your browser | stellift",
+    metaDescription:
+      "SLA, hourly cost and estimate calculators, plus utilities like JSON, JWT, QR code and regex. They run in your browser, no sign-up.",
+    navLabel: "Tools",
     cta: "Open tool",
     backLabel: "Back to stellift",
     allLabel: "All tools",

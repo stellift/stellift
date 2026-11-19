@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Accelerators from "@/app/[lang]/[slug]/_lists/accelerators/page";
 import ToolPage from "@/app/[lang]/[slug]/_tools/page";
+import Catalog from "@/app/[lang]/[slug]/_tools/catalog";
 import { isLocale } from "@/lib/i18n/config";
 import { acceleratorsMetadata } from "@/app/[lang]/[slug]/_lists/accelerators/metadata";
 import { resolveRoute, routeParams } from "@/app/[lang]/[slug]/_lib/routes";
-import { toolMetadata } from "@/app/[lang]/[slug]/_tools/metadata";
+import { catalogMetadata, toolMetadata } from "@/app/[lang]/[slug]/_tools/metadata";
 
 export function generateStaticParams() {
   return routeParams();
@@ -21,6 +22,7 @@ export async function generateMetadata({
   if (!route) return {};
 
   if (route.kind === "list") return acceleratorsMetadata();
+  if (route.kind === "catalog") return catalogMetadata(lang);
   return toolMetadata(lang, route.id);
 }
 
@@ -32,5 +34,6 @@ export default async function Page({ params }: PageProps<"/[lang]/[slug]">) {
   if (!route) notFound();
 
   if (route.kind === "list") return <Accelerators />;
+  if (route.kind === "catalog") return <Catalog lang={lang} />;
   return <ToolPage lang={lang} id={route.id} />;
 }
