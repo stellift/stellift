@@ -356,7 +356,7 @@ export const en: Dictionary = {
     },
     {
       name: "LumniHub",
-      tags: ["web", "ecommerce"],
+      tags: ["web"],
       niches: ["digital"],
       role: "A large part of the product",
       text:
@@ -371,7 +371,7 @@ export const en: Dictionary = {
     },
     {
       name: "Craftance",
-      tags: ["web", "mobile", "ecommerce"],
+      tags: ["web", "mobile"],
       niches: ["digital"],
       role: "Design, code and operation",
       text:
@@ -523,7 +523,7 @@ export const en: Dictionary = {
       },    },
     {
       name: "Neohor",
-      tags: ["web", "ecommerce"],
+      tags: ["web"],
       niches: ["varejo", "games"],
       role: "Design, code and operation",
       text:
@@ -548,7 +548,7 @@ export const en: Dictionary = {
     },
     {
       name: "BloxHarbor",
-      tags: ["web", "ecommerce"],
+      tags: ["web"],
       niches: ["varejo", "games"],
       role: "Design, code and operation",
       text:
@@ -2079,7 +2079,6 @@ export const en: Dictionary = {
         { id: "web", label: "Web" },
         { id: "mobile", label: "Mobile" },
         { id: "desktop", label: "Desktop" },
-        { id: "ecommerce", label: "Ecommerce" },
       ],
       platformTitle: "Platform",
       nicheTitle: "Niche",
