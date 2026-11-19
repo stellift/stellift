@@ -4,7 +4,7 @@ import JsonLd from "@/app/[lang]/_components/json-ld";
 import Star from "@/app/[lang]/_components/star";
 import { siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
-import { toolGroup, toolPath, utilityIds, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
+import { catalogPath, toolGroup, toolPath, utilityIds, type ToolId } from "@/app/[lang]/[slug]/_tools/config";
 import { currencies } from "@/app/[lang]/[slug]/_tools/metadata";
 
 export default async function ToolPage({
@@ -46,7 +46,9 @@ export default async function ToolPage({
         <div className="shell py-16 sm:py-24">
           <div className="mt-10 flex items-center gap-4">
             <span className="index">{String(group.indexOf(id) + 1).padStart(2, "0")}</span>
-            <span className="eyebrow">{toolsLabel}</span>
+            <Link href={catalogPath(lang)} className="eyebrow transition-colors hover:text-ink">
+              {toolsLabel}
+            </Link>
             <span aria-hidden className="h-px flex-1 bg-line" />
             <Star className="size-2.5 shrink-0 text-line-strong" />
           </div>

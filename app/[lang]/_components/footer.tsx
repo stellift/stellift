@@ -4,6 +4,7 @@ import { locales, localeNames, type Locale } from "@/lib/i18n/config";
 import * as list from "@/app/[lang]/[slug]/_lists/accelerators/data";
 import { landingLocale, landingPath, landings } from "@/app/[lang]/_landing/registry";
 import { blogPath } from "@/app/[lang]/blog/_content/posts";
+import { catalogPath } from "@/app/[lang]/[slug]/_tools/config";
 import type { Dictionary } from "@/lib/i18n/types";
 
 export default function Footer({
@@ -61,6 +62,14 @@ export default function Footer({
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href={catalogPath(lang)}
+                  className="text-sm text-ink-muted transition-colors hover:text-ink"
+                >
+                  {dict.tools.navLabel}
+                </a>
+              </li>
               <li>
                 <a
                   href={blogPath(lang)}
