@@ -24,7 +24,6 @@ export const ptBR: Dictionary = {
     { label: "Serviços", href: "#services" },
     { label: "Portfólio", href: "#portfolio" },
     { label: "Sobre", href: "#about" },
-    { label: "Ferramentas", href: "#tools" },
     { label: "Nossos talentos", href: "#talent" },
     { label: "Missão", href: "#mission" },
     { label: "Contato", href: "#contact" },

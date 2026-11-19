@@ -9,7 +9,6 @@ import JsonLd from "@/app/[lang]/_components/json-ld";
 import Mission from "@/app/[lang]/_components/mission";
 import Services from "@/app/[lang]/_components/services";
 import Talent from "@/app/[lang]/_components/talent";
-import ToolsSection from "@/app/[lang]/_components/tools-section";
 import { isLocale, locales, siteUrl } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/server";
 
@@ -84,15 +83,9 @@ export default async function Home() {
       <Services dict={dict} index="02" eyebrow={label("#services")} />
       <Portfolio dict={dict} index="03" eyebrow={label("#portfolio")} />
       <Statement dict={dict} index="04" eyebrow={label("#about")} />
-      <ToolsSection
-        dict={dict}
-        lang={locale}
-        index="05"
-        eyebrow={label("#tools")}
-      />
-      <Talent dict={dict} index="06" eyebrow={label("#talent")} />
-      <Mission dict={dict} index="07" eyebrow={label("#mission")} />
-      <Contact dict={dict} index="08" eyebrow={label("#contact")} />
+      <Talent dict={dict} index="05" eyebrow={label("#talent")} />
+      <Mission dict={dict} index="06" eyebrow={label("#mission")} />
+      <Contact dict={dict} index="07" eyebrow={label("#contact")} />
     </>
   );
 }

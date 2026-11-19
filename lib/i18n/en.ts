@@ -24,7 +24,6 @@ export const en: Dictionary = {
     { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "About", href: "#about" },
-    { label: "Tools", href: "#tools" },
     { label: "Our talent", href: "#talent" },
     { label: "Mission", href: "#mission" },
     { label: "Contact", href: "#contact" },
