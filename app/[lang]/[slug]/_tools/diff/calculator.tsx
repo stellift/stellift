@@ -38,9 +38,9 @@ export default function Diff({ copy, locale }: CalculatorProps) {
         ) : (
           <>
             <p aria-live="polite" className="text-sm text-ink-muted">
-              <span className="font-mono text-ink">+{number.format(added)}</span> {t("added")}
+              <span className="tabular-nums text-ink">+{number.format(added)}</span> {t("added")}
               {", "}
-              <span className="font-mono text-ink">−{number.format(removed)}</span> {t("removed")}
+              <span className="tabular-nums text-ink">−{number.format(removed)}</span> {t("removed")}
             </p>
             <span id={`${id}-out`} className="field-label">
               {t("result")}

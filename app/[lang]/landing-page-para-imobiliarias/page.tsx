@@ -99,7 +99,7 @@ function LaunchMust() {
               <dt className="eyebrow pt-0.5">{row.label}</dt>
               <dd>
                 <p className="text-sm leading-relaxed text-ink">{row.value}</p>
-                <p className="mt-1 font-mono text-[11px] text-ink-faint">{row.source}</p>
+                <p className="mt-1 text-[11px] text-ink-faint">{row.source}</p>
               </dd>
             </div>
           ))}

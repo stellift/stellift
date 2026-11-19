@@ -32,7 +32,7 @@ export function Validator({
             setInput(uppercase ? event.target.value.toUpperCase() : event.target.value)
           }
           aria-describedby={`${id}-hint ${id}-status`}
-          className="input font-mono text-[16px]"
+          className="input tabular-nums text-[16px]"
         />
         <p id={`${id}-hint`} className="mt-2 text-xs text-ink-faint">
           {t("inputHint")}

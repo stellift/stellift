@@ -124,7 +124,7 @@ export default function Stopwatch({ copy }: CalculatorProps) {
         <p
           role="timer"
           aria-live="off"
-          className={`font-mono text-6xl tabular-nums leading-none sm:text-8xl ${done ? "text-accent" : "text-ink"}`}
+          className={`tabular-nums text-6xl tabular-nums leading-none sm:text-8xl ${done ? "text-accent" : "text-ink"}`}
         >
           {shown}
         </p>
@@ -156,7 +156,7 @@ export default function Stopwatch({ copy }: CalculatorProps) {
           </button>
         </div>
         {laps.length ? (
-          <ol className="w-full max-w-sm font-mono text-sm tabular-nums">
+          <ol className="w-full max-w-sm tabular-nums text-sm tabular-nums">
             {laps.map((lap, i) => {
               const number = laps.length - i;
               const previous = laps[i + 1] ?? 0;

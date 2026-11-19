@@ -101,7 +101,7 @@ export default function TimeZone({ copy, locale }: CalculatorProps) {
               >
                 <span className="text-sm text-ink">
                   {name(target)}
-                  <span className="ml-2 font-mono text-[11px] text-ink-faint">{offsetLabel(instant, target)}</span>
+                  <span className="ml-2 text-[11px] text-ink-faint">{offsetLabel(instant, target)}</span>
                 </span>
                 <span className="text-right text-sm tabular-nums text-ink">
                   {new Intl.DateTimeFormat(locale, {

@@ -90,7 +90,7 @@ export default function Units({ copy, shared, locale }: CalculatorProps) {
                   <dd className="row-span-2 self-center">
                     <CopyButton value={result} shared={shared} />
                   </dd>
-                  <dd className="font-mono text-lg tabular-nums text-ink">{result || "–"}</dd>
+                  <dd className="tabular-nums text-lg tabular-nums text-ink">{result || "–"}</dd>
                 </div>
               );
             })}

@@ -140,11 +140,11 @@ function Channels() {
               {channels.map((row) => (
                 <tr key={row.channel} className="border-b border-line">
                   <th scope="row" className="py-4 pr-6 font-medium text-ink">{row.channel}</th>
-                  <td className={`py-4 pr-6 font-mono text-xs ${row.allowed ? "text-accent" : "text-danger"}`}>
+                  <td className={`py-4 pr-6 text-xs ${row.allowed ? "text-accent" : "text-danger"}`}>
                     {row.allowed ? "Pode" : "Não"}
                   </td>
                   <td className="py-4 pr-6 leading-relaxed text-ink-muted">{row.condition}</td>
-                  <td className="py-4 font-mono text-[11px] text-ink-faint">{row.source}</td>
+                  <td className="py-4 text-[11px] text-ink-faint">{row.source}</td>
                 </tr>
               ))}
             </tbody>

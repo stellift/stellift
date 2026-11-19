@@ -36,7 +36,7 @@ export default function Ratio({ copy, locale }: CalculatorProps) {
               <span className="field-label mb-2.5">X</span>
               <output
                 aria-live="polite"
-                className="flex h-[46px] items-center border border-line-strong px-3.5 font-mono text-[16px] text-ink"
+                className="flex h-[46px] items-center border border-line-strong px-3.5 tabular-nums text-[16px] text-ink"
               >
                 {result === null ? "?" : number.format(result)}
               </output>
@@ -51,7 +51,7 @@ export default function Ratio({ copy, locale }: CalculatorProps) {
           <p className="font-serif text-5xl tabular-nums leading-none text-ink">
             {result === null ? "–" : number.format(result)}
           </p>
-          <p className="font-mono text-sm text-ink-muted">
+          <p className="tabular-nums text-sm text-ink-muted">
             {result === null
               ? ""
               : kind === "direct"

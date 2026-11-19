@@ -72,7 +72,7 @@ export default function CreciSize() {
           <p className="break-words font-serif leading-none text-ink" style={{ fontSize: `${size}px` }}>
             {name}
           </p>
-          <p className="mt-3 font-mono leading-none text-ink-muted" style={{ fontSize: `${creciSize}px` }}>
+          <p className="mt-3 leading-none text-ink-muted" style={{ fontSize: `${creciSize}px` }}>
             {creci}
           </p>
         </div>

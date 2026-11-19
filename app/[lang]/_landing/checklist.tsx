@@ -46,7 +46,7 @@ export default function Checklist({
                 />
                 <span className="text-sm leading-relaxed text-ink">
                   {item.text}{" "}
-                  <span className="font-mono text-[11px] text-ink-faint">
+                  <span className="text-[11px] text-ink-faint">
                     {item.source}
                   </span>
                 </span>

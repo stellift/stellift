@@ -77,14 +77,14 @@ function Swaps() {
             <li key={swap.out} className="cell grid gap-4 p-6 sm:grid-cols-2 sm:gap-8 sm:p-7">
               <p className="text-sm leading-relaxed text-ink-faint">
                 <span className="line-through decoration-danger decoration-2">{swap.out}</span>{" "}
-                <span className="font-mono text-[11px]">{swap.outSource}</span>
+                <span className="text-[11px]">{swap.outSource}</span>
               </p>
               <p className="text-sm leading-relaxed text-ink">
                 {swap.in}
                 {swap.inSource ? (
                   <>
                     {" "}
-                    <span className="font-mono text-[11px] text-ink-faint">{swap.inSource}</span>
+                    <span className="text-[11px] text-ink-faint">{swap.inSource}</span>
                   </>
                 ) : null}
               </p>
@@ -110,7 +110,7 @@ function BeforeAfterConflict() {
               Lista &ldquo;expressões ou imagens de antes e depois&rdquo; entre as
               infrações.
             </p>
-            <p className="mt-3 font-mono text-[11px] text-ink-faint">art. 44, I e XII</p>
+            <p className="mt-3 text-[11px] text-ink-faint">art. 44, I e XII</p>
           </div>
           <div className="cell p-7 sm:p-8">
             <h3 className="eyebrow">Resolução CFO-196/2019</h3>
@@ -118,7 +118,7 @@ function BeforeAfterConflict() {
               Autoriza imagens do diagnóstico e da conclusão do tratamento, feitas
               pelo dentista que executou, com termo de consentimento do paciente.
             </p>
-            <p className="mt-3 font-mono text-[11px] text-ink-faint">art. 2º</p>
+            <p className="mt-3 text-[11px] text-ink-faint">art. 2º</p>
             <p className="mt-4 text-sm leading-relaxed text-ink-muted">
               Continua proibido mostrar o procedimento em andamento (art. 3º), e toda
               imagem leva o nome e o CRO de quem fez (art. 4º).

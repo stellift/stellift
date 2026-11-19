@@ -99,7 +99,7 @@ export function Hero({ niche, mailto }: { niche: Niche; mailto: string }) {
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
             <span aria-hidden className="size-2 rounded-full bg-line-strong" />
-            <span className="ml-3 min-w-0 truncate font-mono text-[11px] text-ink-muted">
+            <span className="ml-3 min-w-0 truncate text-[11px] text-ink-muted">
               {niche.demo.label}
             </span>
           </div>
@@ -180,7 +180,7 @@ export function Anatomy({ niche }: { niche: Niche }) {
                 key={item.text}
                 aria-hidden
                 style={{ left: `${item.x}%`, top: `${item.y}%` }}
-                className="absolute grid size-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-accent font-mono text-[11px] font-medium text-canvas ring-4 ring-accent/25 sm:size-7"
+                className="absolute grid size-6 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-accent text-[11px] font-medium text-canvas ring-4 ring-accent/25 sm:size-7"
               >
                 {index + 1}
               </span>
@@ -189,7 +189,7 @@ export function Anatomy({ niche }: { niche: Niche }) {
           <ol className="space-y-5 lg:col-span-4">
             {niche.anatomy.map((item, index) => (
               <li key={item.text} className="flex gap-4">
-                <span className="grid size-6 shrink-0 place-items-center rounded-full border border-accent font-mono text-[11px] text-accent">
+                <span className="grid size-6 shrink-0 place-items-center rounded-full border border-accent text-[11px] text-accent">
                   {index + 1}
                 </span>
                 <p className="text-sm leading-relaxed text-ink">
@@ -197,7 +197,7 @@ export function Anatomy({ niche }: { niche: Niche }) {
                   {item.source ? (
                     <>
                       {" "}
-                      <span className="font-mono text-[11px] text-ink-faint">
+                      <span className="text-[11px] text-ink-faint">
                         {item.source}
                       </span>
                     </>
@@ -396,7 +396,7 @@ export function Faq({ niche }: { niche: Niche }) {
                 {item.question}
                 <span
                   aria-hidden
-                  className="font-mono text-sm text-ink-faint transition-transform group-open:rotate-45"
+                  className="text-sm text-ink-faint transition-transform group-open:rotate-45"
                 >
                   +
                 </span>

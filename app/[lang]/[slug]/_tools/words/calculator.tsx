@@ -37,7 +37,7 @@ export default function Words({ copy, shared, locale }: CalculatorProps) {
               value={input}
               onChange={(event) => setInput(event.target.value)}
               aria-describedby={`${id}-hint`}
-              className="input font-mono text-[18px]"
+              className="input text-[18px]"
             />
             <p id={`${id}-hint`} className="mt-2 text-xs text-ink-faint">
               {t("inputHint")}

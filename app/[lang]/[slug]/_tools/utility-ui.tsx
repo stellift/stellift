@@ -130,7 +130,7 @@ export function Big({ children, labelledBy }: { children: ReactNode; labelledBy:
     <output
       aria-labelledby={labelledBy}
       aria-live="polite"
-      className="block break-all font-mono text-2xl leading-snug text-ink sm:text-[1.75rem]"
+      className="block break-all text-2xl leading-snug text-ink sm:text-[1.75rem]"
     >
       {children}
     </output>

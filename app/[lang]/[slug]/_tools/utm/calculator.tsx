@@ -66,7 +66,7 @@ export default function Utm({ copy, shared }: CalculatorProps) {
         ) : link ? (
           <>
             <OutputHeader id={id} label={t("result")} value={link} shared={shared} />
-            <p aria-labelledby={id} aria-live="polite" className="break-all font-mono text-sm leading-relaxed text-ink">
+            <p aria-labelledby={id} aria-live="polite" className="break-all text-sm leading-relaxed text-ink">
               {link}
             </p>
           </>
