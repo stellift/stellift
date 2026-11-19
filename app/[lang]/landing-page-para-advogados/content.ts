@@ -250,27 +250,23 @@ export const lawyers: Niche = {
   steps: [
     {
       title: "Conversa",
-      text:
-        "Áreas de atuação, quem são os advogados, o que o escritório já tem de " +
-        "conteúdo e de identidade visual.",
+      text: "Uma chamada para entender as áreas de atuação, quem são os advogados e o que o escritório já tem. Depois dela sai o orçamento, com escopo e prazo por escrito.",
+      you: "Contar como o escritório trabalha e separar o material da lista logo abaixo.",
     },
     {
       title: "Texto",
-      text:
-        "A gente escreve a partir da conversa. Você revisa cada frase, porque a " +
-        "responsabilidade ética pela publicidade é do advogado.",
+      text: "A gente escreve a página a partir da conversa, dentro das regras do Provimento 205/2021 da OAB.",
+      you: "Revisar e aprovar cada frase. A responsabilidade ética pela publicidade é do advogado.",
     },
     {
       title: "Construção",
-      text:
-        "Design, código e teste em celulares diferentes, com a página publicada " +
-        "num endereço de revisão antes de ir ao ar.",
+      text: "Design, código e teste em celulares diferentes. Enquanto isso, a página fica publicada num endereço de revisão.",
+      you: "Abrir o link de revisão no seu celular e apontar o que quer mudar.",
     },
     {
       title: "No ar",
-      text:
-        "A página vai para o seu domínio, com medição de quantas pessoas " +
-        "clicaram para ligar ou chamar no WhatsApp.",
+      text: "A página vai para o seu domínio, com medição de quantas pessoas clicaram para ligar ou chamar no WhatsApp.",
+      you: "Liberar o acesso ao domínio do escritório.",
     },
   ],
   bring: [

@@ -26,7 +26,7 @@ export type Niche = {
   checklist: { lead: string; items: (Cited & { id: string })[]; disclaimer: string };
   seo: { title: string; text: string }[];
   privacy: { title: string; text: string } | null;
-  steps: { title: string; text: string }[];
+  steps: { title: string; text: string; you: string }[];
   bring: string[];
   faq: { question: string; answer: string }[];
   sources: { label: string; href: string }[];

@@ -243,27 +243,23 @@ export const dentists: Niche = {
   steps: [
     {
       title: "Conversa",
-      text:
-        "Quais tratamentos entram, quem é o especialista de cada um e o que a " +
-        "clínica já tem: fotos, logotipo, domínio.",
+      text: "Uma chamada para entender quais tratamentos entram e quem é o especialista de cada um. Depois dela sai o orçamento, com escopo e prazo por escrito.",
+      you: "Contar como a clínica funciona e separar o material da lista logo abaixo.",
     },
     {
       title: "Texto",
-      text:
-        "A gente escreve a partir da conversa. O responsável técnico revisa e " +
-        "aprova cada frase antes de publicar.",
+      text: "A gente escreve a página a partir da conversa, dentro das regras do CFO para publicidade odontológica.",
+      you: "O responsável técnico revisa e aprova cada frase antes de publicar.",
     },
     {
       title: "Construção",
-      text:
-        "Design, código e teste em celulares diferentes, numa página de revisão " +
-        "antes de ir ao ar.",
+      text: "Design, código e teste em celulares diferentes. Enquanto isso, a página fica publicada num endereço de revisão.",
+      you: "Abrir o link de revisão no seu celular e apontar o que quer mudar.",
     },
     {
       title: "No ar",
-      text:
-        "A página vai para o seu domínio, com medição de quantas pessoas " +
-        "clicaram para marcar consulta ou chamar no WhatsApp.",
+      text: "A página vai para o seu domínio, com medição de quantas pessoas clicaram para marcar consulta ou chamar no WhatsApp.",
+      you: "Liberar o acesso ao domínio da clínica.",
     },
   ],
   bring: [

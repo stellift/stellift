@@ -353,18 +353,33 @@ export function Steps({ niche }: { niche: Niche }) {
         >
           Como funciona
         </h2>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-muted">
+          A página só vai para o seu domínio depois que você aprovou o texto e
+          viu tudo funcionando no seu celular.
+        </p>
         <ol className="grid-ruled mt-10 sm:grid-cols-2 lg:grid-cols-4">
           {niche.steps.map((step, index) => (
-            <li key={step.title} className="cell p-7">
-              <span className="index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-4 font-serif text-xl leading-tight text-ink">
-                {step.title}
-              </h3>
+            <li
+              key={step.title}
+              className="cell row-span-3 grid grid-rows-subgrid gap-y-0 p-7"
+            >
+              <div>
+                <span className="font-serif text-3xl leading-none text-accent">
+                  {index + 1}
+                </span>
+                <h3 className="mt-5 font-serif text-xl leading-tight text-ink">
+                  {step.title}
+                </h3>
+              </div>
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                 {step.text}
               </p>
+              <div className="mt-6 border-t border-line pt-5">
+                <p className="text-sm font-medium text-accent">Sua parte</p>
+                <p className="mt-1 text-sm leading-relaxed text-ink">
+                  {step.you}
+                </p>
+              </div>
             </li>
           ))}
         </ol>

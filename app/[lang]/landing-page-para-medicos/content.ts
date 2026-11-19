@@ -246,27 +246,23 @@ export const doctors: Niche = {
   steps: [
     {
       title: "Conversa",
-      text:
-        "Quem você quer atender, quais procedimentos entram e o que você já " +
-        "tem: fotos, logotipo, domínio, perfil no Google.",
+      text: "Uma chamada para entender quem você quer atender e quais procedimentos entram. Depois dela sai o orçamento, com escopo e prazo por escrito.",
+      you: "Contar como o consultório funciona e separar o material da lista logo abaixo.",
     },
     {
       title: "Texto",
-      text:
-        "A gente escreve a partir da conversa. Você revisa e aprova cada " +
-        "frase, porque a responsabilidade pelo conteúdo é sua.",
+      text: "A gente escreve a página a partir da conversa, dentro das regras da Resolução CFM 2.336/2023.",
+      you: "Revisar e aprovar cada frase. A responsabilidade pelo conteúdo é sua.",
     },
     {
       title: "Construção",
-      text:
-        "Design, código e teste em celulares diferentes, com a página " +
-        "publicada num endereço de revisão antes de ir ao ar.",
+      text: "Design, código e teste em celulares diferentes. Enquanto isso, a página fica publicada num endereço de revisão.",
+      you: "Abrir o link de revisão no seu celular e apontar o que quer mudar.",
     },
     {
       title: "No ar",
-      text:
-        "A página vai para o seu domínio, com medição de quantas pessoas " +
-        "clicaram para agendar ou chamar no WhatsApp.",
+      text: "A página vai para o seu domínio, com medição de quantas pessoas clicaram para agendar ou chamar no WhatsApp.",
+      you: "Liberar o acesso ao domínio do consultório.",
     },
   ],
   bring: [

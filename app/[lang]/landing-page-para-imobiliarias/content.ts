@@ -231,27 +231,23 @@ export const realEstate: Niche = {
   steps: [
     {
       title: "Conversa",
-      text:
-        "Qual empreendimento ou imóvel, quem é o comprador e o que já existe de " +
-        "material: memorial, plantas, imagens, tabela.",
+      text: "Uma chamada para entender qual empreendimento ou imóvel entra e quem é o comprador. Depois dela sai o orçamento, com escopo e prazo por escrito.",
+      you: "Contar como a venda funciona e separar o material da lista logo abaixo.",
     },
     {
       title: "Texto e números",
-      text:
-        "A gente escreve a partir do memorial. Você confere cada medida, porque " +
-        "o que está no anúncio vira parte da oferta.",
+      text: "A gente escreve a página a partir do memorial e desenha a planta em vetor.",
+      you: "Conferir cada medida e cada número. O que está no anúncio vira parte da oferta.",
     },
     {
       title: "Construção",
-      text:
-        "Design, planta em vetor e teste em celulares diferentes, numa página de " +
-        "revisão antes de ir ao ar.",
+      text: "Design, código e teste em celulares diferentes. Enquanto isso, a página fica publicada num endereço de revisão.",
+      you: "Abrir o link de revisão no seu celular e apontar o que quer mudar.",
     },
     {
       title: "No ar",
-      text:
-        "A página vai para o seu domínio, com medição de cliques em agendar " +
-        "visita e em falar no WhatsApp.",
+      text: "A página vai para o seu domínio, com medição de cliques em agendar visita e em falar no WhatsApp.",
+      you: "Liberar o acesso ao domínio.",
     },
   ],
   bring: [
