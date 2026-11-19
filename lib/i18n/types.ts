@@ -63,6 +63,7 @@ export type Dictionary = {
     href?: string;
     shot?: string;
     tags?: ReadonlyArray<string>;
+    niches?: ReadonlyArray<string>;
     detail?: {
       summary: string;
       ctaLabel?: string;
@@ -217,6 +218,10 @@ export type Dictionary = {
       filterLabel: string;
       allLabel: string;
       filters: ReadonlyArray<{ id: string; label: string }>;
+      platformTitle: string;
+      nicheTitle: string;
+      nicheFilterLabel: string;
+      nicheFilters: ReadonlyArray<{ id: string; label: string }>;
       openLabel: string;
       closeLabel: string;
       dialogLabel: string;

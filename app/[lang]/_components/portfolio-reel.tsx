@@ -42,6 +42,7 @@ function cardShot(name: string) {
 
 export default function PortfolioReel({ dict }: { dict: PortfolioCopy }) {
   const [active, setActive] = useState("all");
+  const [niche, setNiche] = useState("all");
   const [open, setOpen] = useState<string | null>(null);
   const [shot, setShot] = useState(0);
   const [plain, setPlain] = useState(true);
@@ -49,20 +50,36 @@ export default function PortfolioReel({ dict }: { dict: PortfolioCopy }) {
   const linked = useRef(false);
 
   const matches = useCallback(
-    (id: string) =>
-      id === "all"
-        ? dict.portfolio
-        : dict.portfolio.filter((project) => project.tags?.includes(id)),
+    (platform: string, field: string) =>
+      dict.portfolio.filter(
+        (project) =>
+          (platform === "all" || project.tags?.includes(platform)) &&
+          (field === "all" || project.niches?.includes(field)),
+      ),
     [dict.portfolio],
   );
 
-  const projects = matches(active);
+  const projects = matches(active, niche);
   const opened = dict.portfolio.find((project) => project.name === open) ?? null;
   const openedIndex = opened ? dict.portfolio.indexOf(opened) : 0;
 
-  const filters = [
-    { id: "all", label: dict.ui.portfolio.allLabel },
-    ...dict.ui.portfolio.filters,
+  const groups = [
+    {
+      title: dict.ui.portfolio.platformTitle,
+      label: dict.ui.portfolio.filterLabel,
+      filters: dict.ui.portfolio.filters,
+      value: active,
+      pick: setActive,
+      count: (id: string) => matches(id, niche).length,
+    },
+    {
+      title: dict.ui.portfolio.nicheTitle,
+      label: dict.ui.portfolio.nicheFilterLabel,
+      filters: dict.ui.portfolio.nicheFilters,
+      value: niche,
+      pick: setNiche,
+      count: (id: string) => matches(active, id).length,
+    },
   ];
 
   useLayoutEffect(() => {
@@ -136,34 +153,49 @@ export default function PortfolioReel({ dict }: { dict: PortfolioCopy }) {
 
   return (
     <>
-      <div className="shell mt-10">
-        <div
-          role="group"
-          aria-label={dict.ui.portfolio.filterLabel}
-          className="flex flex-wrap gap-2"
-        >
-          {filters.map((filter) => {
-            const on = filter.id === active;
-            return (
-              <button
-                key={filter.id}
-                type="button"
-                onClick={() => setActive(filter.id)}
-                aria-pressed={on}
-                className={`eyebrow border px-3.5 py-2.5 transition-colors ${
-                  on
-                    ? "border-ink bg-ink text-canvas"
-                    : "border-line text-ink-muted hover:border-line-strong hover:text-ink"
-                }`}
-              >
-                {filter.label}
-                <span className={`ml-2 ${on ? "opacity-60" : "text-ink-faint"}`}>
-                  {matches(filter.id).length}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+      <div className="shell mt-10 space-y-3">
+        {groups.map((group) => (
+          <div
+            key={group.title}
+            className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4"
+          >
+            <span className="eyebrow w-24 shrink-0 text-ink-faint">
+              {group.title}
+            </span>
+            <div
+              role="group"
+              aria-label={group.label}
+              className="flex flex-wrap gap-2"
+            >
+              {[
+                { id: "all", label: dict.ui.portfolio.allLabel },
+                ...group.filters,
+              ].map((filter) => {
+                const on = filter.id === group.value;
+                const total = group.count(filter.id);
+                return (
+                  <button
+                    key={filter.id}
+                    type="button"
+                    onClick={() => group.pick(filter.id)}
+                    aria-pressed={on}
+                    disabled={!on && total === 0}
+                    className={`eyebrow border px-3.5 py-2.5 transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+                      on
+                        ? "border-ink bg-ink text-canvas"
+                        : "border-line text-ink-muted enabled:hover:border-line-strong enabled:hover:text-ink"
+                    }`}
+                  >
+                    {filter.label}
+                    <span className={`ml-2 ${on ? "opacity-60" : "text-ink-faint"}`}>
+                      {total}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
 
       <div

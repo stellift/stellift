@@ -133,6 +133,7 @@ export const ptBR: Dictionary = {
     {
       name: "Pivenda",
       tags: ["desktop", "mobile"],
+      niches: ["varejo", "gestao"],
       role: "Projeto, código e operação",
       text:
         "PDV de desktop para loja de material de construção, com app de " +
@@ -230,6 +231,7 @@ export const ptBR: Dictionary = {
     {
       name: "Charita",
       tags: ["web"],
+      niches: ["terceiro-setor"],
       role: "Projeto, código e operação",
       text:
         "Plataforma de doações para ONGs verificadas, sem taxa da " +
@@ -353,6 +355,7 @@ export const ptBR: Dictionary = {
     {
       name: "LumniHub",
       tags: ["web", "ecommerce"],
+      niches: ["digital"],
       role: "Boa parte do produto",
       text:
         "Plataforma para criar, vender e afiliar cursos e ebooks. O " +
@@ -367,6 +370,7 @@ export const ptBR: Dictionary = {
     {
       name: "Craftance",
       tags: ["web", "mobile", "ecommerce"],
+      niches: ["digital"],
       role: "Projeto, código e operação",
       text:
         "Marketplace onde o desenvolvedor monta perfil, vende produto digital e " +
@@ -517,6 +521,7 @@ export const ptBR: Dictionary = {
     {
       name: "Neohor",
       tags: ["web", "ecommerce"],
+      niches: ["varejo", "games"],
       role: "Projeto, código e operação",
       text:
         "Loja de contas de jogos. O comprador busca, põe no carrinho e " +
@@ -529,6 +534,7 @@ export const ptBR: Dictionary = {
     {
       name: "HeartBit",
       tags: ["web", "mobile"],
+      niches: ["social"],
       role: "Projeto, código e operação",
       text:
         "App de relacionamento para cristãos brasileiros, com verificação feita " +
@@ -541,6 +547,7 @@ export const ptBR: Dictionary = {
     {
       name: "BloxHarbor",
       tags: ["web", "ecommerce"],
+      niches: ["varejo", "games"],
       role: "Projeto, código e operação",
       text:
         "Ecommerce de contas de Roblox. A conta cai na hora e a compra " +
@@ -552,6 +559,7 @@ export const ptBR: Dictionary = {
     {
       name: "ZapZap",
       tags: ["desktop"],
+      niches: ["social"],
       role: "Experimento, sem cliente",
       text:
         "Cliente alternativo do WhatsApp Desktop em Rust, com a meta de caber em " +
@@ -565,6 +573,7 @@ export const ptBR: Dictionary = {
     {
       name: "ServeCommand",
       tags: ["web"],
+      niches: ["gestao"],
       role: "Construção do produto",
       text:
         "Software de gestão para prestadores de serviço. O prestador " +
@@ -577,6 +586,7 @@ export const ptBR: Dictionary = {
     {
       name: "orce.me",
       tags: ["web"],
+      niches: ["gestao"],
       role: "Projeto, código e operação",
       text:
         "Sistema de orçamentos para pequenos negócios. Reúne produtos, " +
@@ -2078,6 +2088,17 @@ export const ptBR: Dictionary = {
         { id: "mobile", label: "Mobile" },
         { id: "desktop", label: "Desktop" },
         { id: "ecommerce", label: "Ecommerce" },
+      ],
+      platformTitle: "Plataforma",
+      nicheTitle: "Nicho",
+      nicheFilterLabel: "Filtrar projetos por nicho",
+      nicheFilters: [
+        { id: "varejo", label: "Varejo" },
+        { id: "gestao", label: "Gestão" },
+        { id: "games", label: "Games" },
+        { id: "digital", label: "Produtos digitais" },
+        { id: "social", label: "Social" },
+        { id: "terceiro-setor", label: "Terceiro setor" },
       ],
       openLabel: "Ver detalhes",
       closeLabel: "Fechar",

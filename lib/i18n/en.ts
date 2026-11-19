@@ -135,6 +135,7 @@ export const en: Dictionary = {
     {
       name: "Pivenda",
       tags: ["desktop", "mobile"],
+      niches: ["varejo", "gestao"],
       role: "Design, code and operation",
       text:
         "A desktop point of sale for building supply stores, with a scanning " +
@@ -233,6 +234,7 @@ export const en: Dictionary = {
     {
       name: "Charita",
       tags: ["web"],
+      niches: ["terceiro-setor"],
       role: "Design, code and operation",
       text:
         "Donation platform for verified nonprofits, with no platform fee. It " +
@@ -355,6 +357,7 @@ export const en: Dictionary = {
     {
       name: "LumniHub",
       tags: ["web", "ecommerce"],
+      niches: ["digital"],
       role: "A large part of the product",
       text:
         "A platform to create, sell and affiliate courses and ebooks. " +
@@ -369,6 +372,7 @@ export const en: Dictionary = {
     {
       name: "Craftance",
       tags: ["web", "mobile", "ecommerce"],
+      niches: ["digital"],
       role: "Design, code and operation",
       text:
         "A marketplace where developers build a profile, sell digital products " +
@@ -520,6 +524,7 @@ export const en: Dictionary = {
     {
       name: "Neohor",
       tags: ["web", "ecommerce"],
+      niches: ["varejo", "games"],
       role: "Design, code and operation",
       text:
         "A store for game accounts. The buyer searches, fills a cart " +
@@ -532,6 +537,7 @@ export const en: Dictionary = {
     {
       name: "HeartBit",
       tags: ["web", "mobile"],
+      niches: ["social"],
       role: "Design, code and operation",
       text:
         "A dating app for Brazilian Christians, verified by the person's own " +
@@ -543,6 +549,7 @@ export const en: Dictionary = {
     {
       name: "BloxHarbor",
       tags: ["web", "ecommerce"],
+      niches: ["varejo", "games"],
       role: "Design, code and operation",
       text:
         "An online store for Roblox accounts. The account lands right " +
@@ -554,6 +561,7 @@ export const en: Dictionary = {
     {
       name: "ZapZap",
       tags: ["desktop"],
+      niches: ["social"],
       role: "Experiment, no client",
       text:
         "An alternative WhatsApp Desktop client in Rust, aiming to fit in 10 MB. " +
@@ -566,6 +574,7 @@ export const en: Dictionary = {
     {
       name: "ServeCommand",
       tags: ["web"],
+      niches: ["gestao"],
       role: "Building the product",
       text:
         "Business software for contractors. The contractor sets the " +
@@ -577,6 +586,7 @@ export const en: Dictionary = {
     {
       name: "orce.me",
       tags: ["web"],
+      niches: ["gestao"],
       role: "Design, code and operation",
       text:
         "Quoting system for small businesses. Gathers products, services and " +
@@ -2070,6 +2080,17 @@ export const en: Dictionary = {
         { id: "mobile", label: "Mobile" },
         { id: "desktop", label: "Desktop" },
         { id: "ecommerce", label: "Ecommerce" },
+      ],
+      platformTitle: "Platform",
+      nicheTitle: "Niche",
+      nicheFilterLabel: "Filter projects by niche",
+      nicheFilters: [
+        { id: "varejo", label: "Retail" },
+        { id: "gestao", label: "Operations" },
+        { id: "games", label: "Gaming" },
+        { id: "digital", label: "Digital products" },
+        { id: "social", label: "Social" },
+        { id: "terceiro-setor", label: "Nonprofit" },
       ],
       openLabel: "See details",
       closeLabel: "Close",
