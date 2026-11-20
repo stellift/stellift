@@ -1,10 +1,16 @@
-export const markPath =
-  "M196.0,0.0L56.0,56.6C25.1,69.1 0.0,104.3 0.0,135.2L0.0,154.2C0.0,185.1 25.1,200.1 56.0,187.6L140.0,153.6L140.0,153.6C145.5,151.4 150.0,154.1 150.0,159.6L150.0,178.6C150.0,184.1 145.5,190.4 140.0,192.6L0.0,249.2L0.0,295.2L140.0,238.6C170.9,226.1 196.0,190.9 196.0,160.0L196.0,141.0C196.0,110.1 170.9,95.1 140.0,107.6L56.0,141.6C50.5,143.8 46.0,141.1 46.0,135.6L46.0,116.6C46.0,111.1 50.5,104.8 56.0,102.6L196.0,46.0Z";
+export const markLight =
+  "M115,0L145,160L115,190ZM230,190L145,220L115,190ZM115,300L85,220L115,190ZM0,190L85,160L115,190Z";
 
-export const markTilePath =
-  "M324.6,87.5L189.4,142.1C159.6,154.2 135.4,188.2 135.4,218.0L135.4,236.4C135.4,266.2 159.6,280.6 189.4,268.6L270.6,235.8L270.6,235.8C275.9,233.7 280.2,236.2 280.2,241.6L280.2,259.9C280.2,265.2 275.9,271.3 270.6,273.5L135.4,328.1L135.4,372.5L270.6,317.9C300.4,305.8 324.6,271.8 324.6,242.0L324.6,223.6C324.6,193.8 300.4,179.4 270.6,191.4L189.4,224.2C184.1,226.3 179.8,223.8 179.8,218.4L179.8,200.1C179.8,194.8 184.1,188.7 189.4,186.5L324.6,131.9Z";
+export const markDark =
+  "M115,0L115,190L85,160ZM230,190L115,190L145,160ZM115,300L115,190L145,220ZM0,190L115,190L85,220Z";
 
-export const markViewBox = "0 0 196.0 295.2";
+export const markTileLight =
+  "M230,80L260,240L230,270ZM345,270L260,300L230,270ZM230,380L200,300L230,270ZM115,270L200,240L230,270Z";
+
+export const markTileDark =
+  "M230,80L230,270L200,240ZM345,270L230,270L260,240ZM230,380L230,270L260,300ZM115,270L230,270L200,300Z";
+
+export const markViewBox = "0 0 230 300";
 
 export default function LogoMark({
   className,
@@ -13,19 +19,20 @@ export default function LogoMark({
   className?: string;
   variant?: "tile" | "mono";
 }) {
-  const tile = variant === "tile";
+  if (variant === "tile") {
+    return (
+      <svg viewBox="0 0 460 460" aria-hidden className={className}>
+        <rect width="460" height="460" rx="96" fill="#4eaefd" />
+        <path fill="#ffffff" d={markTileLight} />
+        <path fill="#d6eafe" d={markTileDark} />
+      </svg>
+    );
+  }
 
   return (
-    <svg
-      viewBox={tile ? "0 0 460 460" : markViewBox}
-      aria-hidden
-      className={className}
-    >
-      {tile ? <rect width="460" height="460" rx="40" fill="#4eaefd" /> : null}
-      <path
-        fill={tile ? "#ffffff" : "currentColor"}
-        d={tile ? markTilePath : markPath}
-      />
+    <svg viewBox={markViewBox} aria-hidden className={className}>
+      <path fill="currentColor" d={markLight} />
+      <path fill="currentColor" fillOpacity={0.68} d={markDark} />
     </svg>
   );
 }
