@@ -9,7 +9,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
 
       <LogoMark
         variant="mono"
-        className="monument pointer-events-none absolute left-1/2 top-[19%] h-[22vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-9%] sm:top-1/2 sm:h-[60vh] sm:translate-x-0 lg:right-[-7%] lg:h-[74vh]"
+        className="monument pointer-events-none absolute left-1/2 top-[30%] h-[30vh] -translate-x-1/2 -translate-y-1/2 text-[#4eaefd] sm:left-auto sm:right-[-9%] sm:top-1/2 sm:h-[60vh] sm:translate-x-0 lg:right-[-7%] lg:h-[74vh]"
       />
 
       <div className="hero-push shell relative">
